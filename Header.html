@@ -66,10 +66,13 @@ header#site-header #totalCart:hover {
 .btn-log{
     color: #fff;
     font-weight: 600;
-    float: right;
+    /* float: right; */
 } 
 .btn-log:hover {
-    color: #e3eff4;
+    color: #e3eff4 ;
+}
+.btn:focus {
+    box-shadow: none;
 }
         </style>
 </head>
@@ -142,27 +145,32 @@ header#site-header #totalCart:hover {
                 </div>
                 <div class="col-lg-1  order-lg-4">
 </div>
-                <div class="col-lg-4 col order-2 order-lg-5 pl-0 pl-lg-3">
-                    <div class="text-right">
+                <div class="col-lg-4 col order-2 order-lg-5 pl-0 pl-lg-3" style="display: flex;  justify-content: left;">
+                    <div class="text-right" style="display: flex;">
                         <button type="button" data-toggle="collapse" data-target="#mainSearch" aria-controls="mainSearch" aria-expanded="false" class="btn mr-2 p-0 text-dark text-hover-primary fs-14 d-inline-block d-lg-none"><i class="fas fa-search mr-lg-1"></i></button>
 
                         {{#is_logged_in}}      
-                        <a href="/contents/logout" class="btn btn-log mr-2 mr-lg-0 p-1 py-sm-1 px-sm-2 py-xl-3 px-xxl-4 fs-10 fs-sm-13 fs-lg-14 fs-xl-16 ">خروج</a>
+                        <a href="/contents/logout" class="btn btn-log mr-2 mr-lg-0 p-1 py-sm-1 px-sm-2 fs-10 fs-sm-13 fs-lg-14 fs-xl-16 ">  <i class="mr-1  fas fa-sign-out"></i> خروج</a>
                         {{/is_logged_in}}
 
                         {{^is_logged_in}}
-                        <a href="/contents/login" class="btn btn-log mr-2 mr-lg-0 p-1 py-sm-1 px-sm-2 py-xl-3 px-xl-4 fs-10 fs-sm-13 fs-lg-14 fs-xl-16 ">دخول</a>
-                        <a href="/contents/register" class="btn btn-log mr-2 mr-lg-0 p-1 py-sm-1 px-sm-2 py-xl-3 px-xl-4 fs-10 fs-sm-13 fs-lg-14 fs-xl-16 ">حساب جديد</a>
+                        <div style="display: grid; padding-left: 1cm;" >
+                        <a href="/contents/login" class="btn btn-log mr-2 mr-lg-0 p-1 py-sm-1 px-sm-2  fs-10 fs-sm-13 fs-lg-14 fs-xl-16 "><i class="fas fa-sign-in mr-1"></i>دخول</a>
+                        <a href="/contents/register" class="btn btn-log mr-2 mr-lg-0 p-1 py-sm-1 px-sm-2  fs-10 fs-sm-13 fs-lg-14 fs-xl-16 "><i class="fas fa-user-plus mr-1"></i>حساب جديد</a>
                         {{/is_logged_in}}
-
+                       </div>
                         <button class="btn mr-2 mr-lg-0 p-0 text-black lh-1 d-inline-block d-lg-none" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false">
                             <i class="far fa-bars fs-20"></i>
                         </button>
-                        <button type="button" class="cart-toggle-btn btn-focus-shadow-0 btn mr-2 mr-lg-0 p-0 py-lg-1 px-lg-2 py-xl-3 px-xl-5 fs-14 fs-xl-16 text-white secondary-hover"><i class="fas fa-shopping-cart mr-lg-1 fs-20 position-relative"><span id="totalCart"></span></i><span class="d-none d-lg-inline-block">عربة التسوق</span></button>
+                        <button type="button" class="cart-toggle-btn btn-focus-shadow-0 btn mr-2 mr-lg-0 p-0 py-lg-1 px-lg-2  fs-14 fs-xl-16 text-white secondary-hover"><i class="fas fa-shopping-cart mr-lg-1 position-relative"><span id="totalCart"></span></i><span class="d-none d-lg-inline-block">عربة التسوق</span></button>
 
                     </div>
                 </div>
             </div>
+<div>
+    fgg
+</div>
+
         </div>
         <div class="bg-primary b-b" width="100%"></div>
         <div id="mainSearch" class="collapse d-lg-none">
