@@ -9,16 +9,16 @@
     <style>
         *::selection {
             color: #fff;
-            background-color:#292770;
+            background-color:#1a2756;
         }
         body{
-            color: #292770;
+            color: #1a2756;
         }
         .container {
             max-width: 1480px
         }
         .bg-primary {
-            background-color: #292770 !important;
+            background-color: #1a2756 !important;
 
         } 
         .white {
@@ -61,7 +61,7 @@ header#site-header #totalCart {
 }
 header#site-header #totalCart:hover {
     background-color: #e3eff4 !important;
-    color: #292770 ;
+    color: #1a2756 ;
 }
 .cart-toggle-btn {
     font-weight: 600;
@@ -77,6 +77,59 @@ header#site-header #totalCart:hover {
 .btn:focus {
     box-shadow: none;
 }
+.collapse:not(.show) {
+    display: none !important;
+}
+a.nav-link {
+    color: #ffffffba;
+}
+
+a.nav-link:hover {
+    color: #e3eff4;
+}
+.bottom-nav .navbar-nav {
+    flex-direction: unset;
+}
+.login {
+    display: grid; 
+    padding-left: 1cm;
+}
+header#site-header .navbar .navbar-nav .nav-item .nav-link {
+    font-weight: 500;
+}
+  
+.rounded-end {
+    border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+}
+.rounded-start {
+    border-top-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
+}
+a.text-white:focus, a.text-white:hover {
+    color: #fff !important;
+}
+@media only screen and (max-width: 991px){
+    .login {
+        padding-left: 0px;
+       
+    }
+    header#site-header .col.col-lg-3 {
+        max-width: 50% !important;
+        flex: auto;
+        display: grid;
+    }
+    header#site-header .col.col-lg-3>div>a {
+ 
+    height: auto !important;
+}
+.logoo {
+    height: 52px !important;
+}
+header#site-header .col.col-lg-3>div {
+    width: auto;
+}
+}
         </style>
 </head>
 <body class="rtl">
@@ -84,18 +137,18 @@ header#site-header #totalCart:hover {
 <div id="top-header" class="bg-primary white b-b">
     <div class="container"> 
         <div class="row align-items-center">
-            <div class="col-lg-9 col flex-grow-0 white fs-sm ">
+            <div class="col-lg-9 col-4 col flex-grow-0 white fs-10 fs-lg-sm px-1">
                 خدمة العملاء: </span><a href="tel:+000000" class="hover-col white fs-sm secondary-hover">000000</a>
             </div>
-            <div class="col-lg-3 col flex-grow-0">
+            <div class="col-lg-3 col-8 col flex-grow-0 px-1">
                 <div  style="display: flex;float: left;">
-                    <a class="nav-link dashboard white my-1 py-0 px-2 fs-sm secondary-hover b-l" href="{{dashboard_url}}">
+                    <a class="nav-link dashboard white my-1 py-0 px-2 fs-10 fs-lg-sm secondary-hover b-l" href="{{dashboard_url}}">
                         <i class="fas fa-home-alt mr-1 d-lg-inline-block"></i><span>بوابة العميل</span>
                     </a>
-                    <a class="nav-link dashboard white my-1 py-0 px-2 fs-sm secondary-hover b-l" href="/contents/process_content/about_us">
+                    <a class="nav-link dashboard white my-1 py-0 px-2 fs-10 fs-lg-sm secondary-hover b-l" href="/contents/process_content/about_us">
                         <i class="fas fa-users mr-1 d-lg-inline-block"></i><span> عن الشركة</span>
                     </a>
-                    <a class="nav-link dashboard white my-1 py-0 px-2 fs-sm secondary-hover" href="/contents/process_content/contact_us">
+                    <a class="nav-link dashboard white my-1 py-0 px-2 fs-10 fs-lg-sm secondary-hover" href="/contents/process_content/contact_us">
                         <i class="fas fa-phone mr-1 d-lg-inline-block"></i><span>تواصل معنا </span>
                     </a>
                 </div>
@@ -108,9 +161,9 @@ header#site-header #totalCart:hover {
     <header id="site-header" class="bg-primary b-b">
         <div class="container">
             <div class="row align-items-center pt-4 pb-4">
-                <div class="col-lg-2 col flex-grow-0">
-                    <div class="text-left">
-                        <a class="font-weight-extrabold fs-22 text-uppercase" href="/home">
+                <div class="col-lg-3 col-6 col flex-grow-0">
+                    <div class="text-left px-0 px-lg-3">
+                        <a class="logoo font-weight-extrabold fs-22 text-uppercase" href="/home">
                             {{#logo}}
                             <img src="{{logo}}" class="logo" alt="Logo">
                             {{/logo}}
@@ -123,13 +176,14 @@ header#site-header #totalCart:hover {
                     </div>
                    
                 </div>
-                <div class="col-lg-1 col flex-grow-0 ">
+                <div class="col-lg-1 col-1 col flex-grow-0  d-none d-lg-block">
                     <button style="float: left;" class="btn mr-2 mr-lg-0 p-0 text-white lh-1" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false">
                         <i class="far fa-bars fs-24"></i>
                     </button>
-              
+                    
+
                 </div>
-                <div class="col-lg-4 col order-lg-2 d-none d-lg-block">
+                <div class="col-lg-4 col-0 col order-lg-2 d-none d-lg-block">
                     <div class="col-lg-11 col order-lg-2 d-none d-lg-block">
                         <div class="d-block">
                             <form action="/contents/products_list">
@@ -146,50 +200,56 @@ header#site-header #totalCart:hover {
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-1  order-lg-4">
+                <div class="col-lg-1 order-lg-4 d-none d-lg-flex">
 </div>
-                <div class="col-lg-4 col order-2 order-lg-5 pl-0 pl-lg-3" style="display: flex;  justify-content: left;">
-                    <div class="text-right" style="display: flex;">
-                        <button type="button" data-toggle="collapse" data-target="#mainSearch" aria-controls="mainSearch" aria-expanded="false" class="btn mr-2 p-0 text-dark text-hover-primary fs-14 d-inline-block d-lg-none"><i class="fas fa-search mr-lg-1"></i></button>
+                <div class="col-lg-3 col-6 col order-2 order-lg-5 pl-0 pl-lg-3" style="display: flex;  justify-content: left;">
+                    <div class="text-right pl-lg-3 pl-0 d-flex" >
+                        <button type="button" data-toggle="collapse" data-target="#mainSearch" aria-controls="mainSearch" aria-expanded="false" class="btn mr-2 p-0 text-dark text-hover-primary fs-14 d-inline-block d-lg-none"><i class="fas fa-search mr-lg-1 text-white"></i></button>
 
                         {{#is_logged_in}}      
-                        <a href="/contents/logout" class="btn btn-log mr-2 mr-lg-0 p-1 py-sm-1 px-sm-2 fs-10 fs-sm-13 fs-lg-14 fs-xl-16 ">  <i class="mr-1  fas fa-sign-out"></i> خروج</a>
+                        <a href="/contents/logout" class="log btn btn-log mr-2 mr-lg-0 p-1 py-sm-1 px-sm-2 fs-10 fs-sm-13 fs-lg-14 fs-xl-16 ">  <i class="mr-1  fas fa-sign-out"></i> خروج</a>
                         {{/is_logged_in}}
 
                         {{^is_logged_in}}
-                        <div style="display: grid; padding-left: 1cm;" >
-                        <a href="/contents/login" class="btn btn-log mr-2 mr-lg-0 p-1 py-sm-1 px-sm-2  fs-10 fs-sm-13 fs-lg-14 fs-xl-16 "><i class="fas fa-sign-in mr-1"></i>دخول</a>
-                        <a href="/contents/register" class="btn btn-log mr-2 mr-lg-0 p-1 py-sm-1 px-sm-2  fs-10 fs-sm-13 fs-lg-14 fs-xl-16 "><i class="fas fa-user-plus mr-1"></i>حساب جديد</a>
+                        <div class="login"  >
+                        <a href="/contents/login" class="log btn btn-log mr-2 mr-lg-0 p-1 py-sm-1 px-sm-2  fs-10 fs-sm-13 fs-lg-14 fs-xl-16 "><i class="fas fa-sign-in mr-1"></i>دخول</a>
+                        <a href="/contents/register" class="log btn btn-log mr-2 mr-lg-0 p-1 py-sm-1 px-sm-2  fs-10 fs-sm-13 fs-lg-14 fs-xl-16 "><i class="fas fa-user-plus mr-1"></i>حساب جديد</a>
                         {{/is_logged_in}}
                        </div>
-                        <button class="btn mr-2 mr-lg-0 p-0 text-black lh-1 d-inline-block d-lg-none" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false">
+                        <button class="btn mr-2 mr-lg-0 p-0 text-black lh-1 d-none" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false">
                             <i class="far fa-bars fs-20"></i>
                         </button>
-                        <button type="button" class="cart-toggle-btn btn-focus-shadow-0 btn mr-2 mr-lg-0 p-0 py-lg-1 px-lg-2  fs-14 fs-xl-16 text-white secondary-hover"><i class="fas fa-shopping-cart mr-lg-1 position-relative"><span id="totalCart"></span></i><span class="d-none d-lg-inline-block">عربة التسوق</span></button>
-
+                        <button type="button" class="cart-toggle-btn btn-focus-shadow-0 btn mr-2 mr-lg-0 p-0 py-lg-1 px-lg-2   fs-14 fs-xl-16 text-white secondary-hover"><i class="fas fa-shopping-cart mr-lg-1 position-relative"><span id="totalCart"></span></i><span class="d-none d-lg-inline-block">عربة التسوق</span></button>
+                        <button style="float: left;" class="btn my-auto mx-2 p-0 text-white lh-1 d-flex d-lg-none" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false">
+                            <i class="far fa-bars fs-24"></i>
+                        </button>
                     </div>
                 </div>
             </div>
-<div class="bottom-nav">
-
-</div>
 
         </div>
-        <div class="bg-primary b-b" width="100%"></div>
-        <div id="mainSearch" class="collapse d-lg-none">
+        <div class="bg-primary " width="100%"></div>
+        <div id="mainSearch" class="collapse d-lg-none bg-primary">
             <form action="/contents/products_list" class="border-top border-black py-5 px-4 text-center">
-                <input type="text" class="form-control bg-placeholder-2 border-0" placeholder="بحث في المتجر"  value="{{product_name}}" name="product_name">
-                <button class="btn btn-primary mx-auto mt-2 py-2 px-4 fs-18" type="submit"><i class="far fa-search mr-3"></i><span class="font-weight-medium">بحث</span></button>
+                <div class="d-lg-none d-block">
+                    <div class="input-group border-transparent align-items-stretch">
+                        <input type="text" class="form-control bg-white border-0 rounded-end" placeholder="Search" value="{{product_name}}" name="product_name">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-white border-0 bg-third py-0 px-3 fs-18 rounded-start button2" type="submit">
+                                <i class="far fa-search text-white"></i></button>
+                        </div>
+                    </div>
+                </div>
             </form>
         </div>
         <div class="">
-            <nav class="navbar navbar-expand-lg bg-primary py-0 d-lg-none">
+            <nav class="navbar navbar-expand-lg bg-primary py-0 b-b ">
                 <div class="container">
                     <div class="collapse navbar-collapse" id="mainNav">
                         <ul class="navbar-nav p-0">
                             {{# menuItems }}
                             <li class="nav-item dropdown">
-                                <a class="nav-link fs-xl-16 {{# has_children }} dropdown-toggle {{/ has_children }}" href="{{ link }}" {{# has_children }} role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" {{/ has_children }}>
+                                <a class="nav-link fs-xl-16 py-2 {{# has_children }} dropdown-toggle {{/ has_children }}" href="{{ link }}" {{# has_children }} role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" {{/ has_children }}>
                                 {{ title }}
                                 </a>
                                 {{# has_children }}
@@ -224,7 +284,7 @@ header#site-header #totalCart:hover {
                             {{/ menuItems }}
                         </ul>
                         {{#authenticated}}
-                        <ul class="navbar-nav p-0 ml-auto">
+                        <ul class="navbar-nav p-0 ml-auto d-none">
                             <li class="nav-item pl-4">
                                 <a class="nav-link fs-xl-16" href="{{dashboard_url}}">
                                     <i class="fas fa-home-alt mr-2 d-none d-lg-inline-block"></i>
@@ -235,8 +295,39 @@ header#site-header #totalCart:hover {
                         {{/authenticated}}
                     </div>
                 </div>
+          
             </nav>
+         
         </div>
+        <div class="bottom-nav bg-primary ">
+            <div class="container" >
+                <div class="navbar-collapse  p-0">
+                    <ul class="navbar-nav  p-0">
+                        <li class="nav-item px-1">
+                            <a class="nav-link fs-xl-16 d-flex text-white pl-lg-2 pr-lg-3 px-1 "  href="/contents/products_list?cat_id=3">
+                                <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/633957e6e5409_blobid1664702436903.png" title="fridge.png" width="50" height="50" caption="false" /> <p class="my-auto fs-13 fs-lg-16">مكييفات </p>
+                            </a>
+                        </li>
+                        <li class="nav-item px-1">
+                            <a class="nav-link fs-xl-16 d-flex text-white pl-lg-2 pr-lg-3 px-1"  href="/contents/products_list?cat_id=4">
+                                <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/6339580e1a1ec_blobid1664702476348.png" alt="" title="ac.png"  width="50" height="50" caption="false" /> <p class="my-auto fs-13 fs-lg-16">ثلاجات  </p>
+                            </a>
+                        </li>
+                        <li class="nav-item px-1">
+                            <a class="nav-link fs-xl-16 d-flex text-white pl-lg-2 pr-lg-3 px-1"  href="/contents/products_list?cat_id=5">
+                                <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/633956f2d8986_blobid1664702190271.png" title="fan.png" width="50" height="50" caption="false" /> <p class="my-auto fs-13 fs-lg-16">مراوح </p>
+                            </a>
+                        </li>
+                        <li class="nav-item px-1">
+                            <a class="nav-link fs-xl-16 d-flex text-white pl-lg-2 pr-lg-3 px-1"  href="/contents/products_list?cat_id=6">
+                                <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/63395876937b9_blobid1664702580602.png" title="ac (1).png" width="50" height="50" caption="false" /> <p class="my-auto fs-13 fs-lg-16">مكييفات صحراوية  </p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
     </header>
     {{cart:Cart.empty()}}
     <main id="main-content">
