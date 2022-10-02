@@ -5,8 +5,15 @@
     <meta charset="UTF-8"> <link rel="shortcut icon" href="/css/images/Daftra-favicon.ico" type="image/x-icon"> <link rel="shortcut icon" href="/css/images/Daftra-favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.daftra.com/templates/shop_1/css/app.min.css?v={{ css_ver }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.daftra.com/templates/shop_1/js/plugin_jquery.js?v={{ js_ver }}\"></script>
     <style>
+        *{
+            font-family: 'Tajawal', sans-serif ;
+
+        }
         *::selection {
             color: #fff;
             background-color:#1a2756;
@@ -108,6 +115,9 @@ header#site-header .navbar .navbar-nav .nav-item .nav-link {
 }
 a.text-white:focus, a.text-white:hover {
     color: #fff !important;
+}
+.font-weight-bold{
+    font-weight: 600 !important;
 }
 @media only screen and (max-width: 991px){
     .login {
@@ -555,5 +565,6 @@ header#site-header .col.col-lg-3>div {
 
                 }
             })
+           
         </script>
     
