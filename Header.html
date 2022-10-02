@@ -139,8 +139,57 @@ a.text-white:focus, a.text-white:hover {
 header#site-header .col.col-lg-3>div {
     width: auto;
 }
+#site-header  {
+    height: 2.5cm;
 }
+}
+
+#site-header {
+  margin: 0px; padding: 0px;
+  position: relative;
+  z-index: 50;
+  width: 100%; height: 3.1cm;
+}
+
+#site-header.fixedattop {
+  position: fixed; top: 0px;
+}
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:15%;
+	left:1%;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+.my-float{
+	margin-top:16px;
+}
+
         </style>
+        <script>
+$(document).scroll(function() {
+  var documentScrollTop = $(document).scrollTop();
+  if (documentScrollTop > $('#site').height()) {
+    $('#site-header').addClass('fixedattop');
+    var shiftContent = $('#site-header').height();
+    $('#content').css('margin-top', shiftContent + 'px');
+  }
+  else if ($('#site-header').hasClass('fixedattop')) {
+    $('#site-header').removeClass('fixedattop');
+    $('.bottom-nav').css('margin-top', '0px');
+  }
+});
+
+            </script>
+            
 </head>
 <body class="rtl">
 <div id="site">
@@ -339,6 +388,11 @@ header#site-header .col.col-lg-3>div {
         </div>
         
     </header>
+
+
+    <a href="https://api.whatsapp.com/send?phone=+2001149859561&text=Hello!!" class="float" target="_blank">
+    <i class="fab fa-whatsapp my-float"></i>
+        </a>
     {{cart:Cart.empty()}}
     <main id="main-content">
         <script src="/js/functions_v1.js?v={{ js_ver }}\"></script>
