@@ -20,9 +20,13 @@
         }
         body{
             color: #1a2756;
+            background-color: #f3f5f6;
         }
         .container {
             max-width: 1480px
+        }
+        .text-primary{
+            color: #1a2756 !important;
         }
         .bg-primary {
             background-color: #1a2756 !important;
@@ -40,6 +44,9 @@
         }
         .b-b{
             border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+        .b-secondary{
+            border-bottom: 1px solid #00badb ;
         }
 .b-l{
     border-left: 1px solid rgba(255,255,255,0.15)
@@ -119,6 +126,42 @@ a.text-white:focus, a.text-white:hover {
 .font-weight-bold{
     font-weight: 600 !important;
 }
+
+#site-header {
+  margin: 0px; padding: 0px;
+  position: relative;
+  z-index: 50;
+  width: 100%; 
+}
+
+#site-header.fixedattop {
+  position: fixed !important; top: 0px;
+}
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:15%;
+	left:1%;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+.my-float{
+	margin-top:16px;
+}
+.title {
+    font-size: 28px;
+}
+.item {
+    border-radius: 25px;
+    margin-left: 20px;
+}
 @media only screen and (max-width: 991px){
     .login {
         padding-left: 0px;
@@ -142,54 +185,26 @@ header#site-header .col.col-lg-3>div {
 #site-header  {
     height: 2.5cm;
 }
+.title {
+    font-size: 20px;
 }
-
-#site-header {
-  margin: 0px; padding: 0px;
-  position: relative;
-  z-index: 50;
-  width: 100%; height: 3.1cm;
-}
-
-#site-header.fixedattop {
-  position: fixed; top: 0px;
-}
-.float{
-	position:fixed;
-	width:60px;
-	height:60px;
-	bottom:15%;
-	left:1%;
-	background-color:#25d366;
-	color:#FFF;
-	border-radius:50px;
-	text-align:center;
-  font-size:30px;
-	box-shadow: 2px 2px 3px #999;
-  z-index:100;
-}
-
-.my-float{
-	margin-top:16px;
 }
 
         </style>
-        <script>
-$(document).scroll(function() {
-  var documentScrollTop = $(document).scrollTop();
-  if (documentScrollTop > $('#site').height()) {
-    $('#site-header').addClass('fixedattop');
-    var shiftContent = $('#site-header').height();
-    $('#content').css('margin-top', shiftContent + 'px');
-  }
-  else if ($('#site-header').hasClass('fixedattop')) {
-    $('#site-header').removeClass('fixedattop');
-    $('.bottom-nav').css('margin-top', '0px');
-  }
-});
-
-            </script>
-            
+     <script>
+        $(document).scroll(function() {
+          var documentScrollTop = $(document).scrollTop();
+          if (documentScrollTop > $('#site').height()) {
+            $('#site-header').addClass('fixedattop');
+            var shiftContent = $('#site-header').height();
+            $('#content').css('margin-top', shiftContent + 'px');
+          }
+          else if ($('#site-header').hasClass('fixedattop')) {
+            $('#site-header').removeClass('fixedattop');
+            $('.bottom-nav').css('margin-top', '0px');
+          }
+        });      
+                    </script>   
 </head>
 <body class="rtl">
 <div id="site">
@@ -358,37 +373,36 @@ $(document).scroll(function() {
             </nav>
          
         </div>
-        <div class="bottom-nav bg-primary ">
-            <div class="container" >
-                <div class="navbar-collapse  p-0">
-                    <ul class="navbar-nav  p-0">
-                        <li class="nav-item px-1">
-                            <a class="nav-link fs-xl-16 d-flex text-white pl-lg-2 pr-lg-3 px-1 "  href="/contents/products_list?cat_id=3">
-                                <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/633957e6e5409_blobid1664702436903.png" title="fridge.png" width="50" height="50" caption="false" /> <p class="my-auto fs-13 fs-lg-16">مكييفات </p>
-                            </a>
-                        </li>
-                        <li class="nav-item px-1">
-                            <a class="nav-link fs-xl-16 d-flex text-white pl-lg-2 pr-lg-3 px-1"  href="/contents/products_list?cat_id=4">
-                                <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/6339580e1a1ec_blobid1664702476348.png" alt="" title="ac.png"  width="50" height="50" caption="false" /> <p class="my-auto fs-13 fs-lg-16">ثلاجات  </p>
-                            </a>
-                        </li>
-                        <li class="nav-item px-1">
-                            <a class="nav-link fs-xl-16 d-flex text-white pl-lg-2 pr-lg-3 px-1"  href="/contents/products_list?cat_id=5">
-                                <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/633956f2d8986_blobid1664702190271.png" title="fan.png" width="50" height="50" caption="false" /> <p class="my-auto fs-13 fs-lg-16">مراوح </p>
-                            </a>
-                        </li>
-                        <li class="nav-item px-1">
-                            <a class="nav-link fs-xl-16 d-flex text-white pl-lg-2 pr-lg-3 px-1"  href="/contents/products_list?cat_id=6">
-                                <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/63395876937b9_blobid1664702580602.png" title="ac (1).png" width="50" height="50" caption="false" /> <p class="my-auto fs-13 fs-lg-16">مكييفات صحراوية  </p>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
         
     </header>
-
+    <div class="bottom-nav bg-primary ">
+        <div class="container" >
+            <div class="navbar-collapse  p-0">
+                <ul class="navbar-nav  p-0">
+                    <li class="nav-item px-1">
+                        <a class="nav-link fs-xl-16 d-flex text-white pl-lg-2 pr-lg-3 px-1 "  href="/contents/products_list?cat_id=3">
+                            <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/6339580e1a1ec_blobid1664702476348.png" alt="" title="ac.png" width="50" height="50" caption="false" /> <p class="my-auto fs-13 fs-lg-16">مكييفات </p>
+                        </a>
+                    </li>
+                    <li class="nav-item px-1">
+                        <a class="nav-link fs-xl-16 d-flex text-white pl-lg-2 pr-lg-3 px-1"  href="/contents/products_list?cat_id=4">
+                            <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/633957e6e5409_blobid1664702436903.png" title="fridge.png"      width="50" height="50" caption="false" /> <p class="my-auto fs-13 fs-lg-16">ثلاجات  </p>
+                        </a>
+                    </li>
+                    <li class="nav-item px-1">
+                        <a class="nav-link fs-xl-16 d-flex text-white pl-lg-2 pr-lg-3 px-1"  href="/contents/products_list?cat_id=5">
+                            <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/633956f2d8986_blobid1664702190271.png" title="fan.png" width="50" height="50" caption="false" /> <p class="my-auto fs-13 fs-lg-16">مراوح </p>
+                        </a>
+                    </li>
+                    <li class="nav-item px-1">
+                        <a class="nav-link fs-xl-16 d-flex text-white pl-lg-2 pr-lg-3 px-1"  href="/contents/products_list?cat_id=6">
+                            <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/63395876937b9_blobid1664702580602.png" title="ac (1).png" width="50" height="50" caption="false" /> <p class="my-auto fs-13 fs-lg-16">مكييفات صحراوية  </p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
     <a href="https://api.whatsapp.com/send?phone=+2001149859561&text=Hello!!" class="float" target="_blank">
     <i class="fab fa-whatsapp my-float"></i>
@@ -396,6 +410,8 @@ $(document).scroll(function() {
     {{cart:Cart.empty()}}
     <main id="main-content">
         <script src="/js/functions_v1.js?v={{ js_ver }}\"></script>
+     
+                        
         <script>
             var currencies = JSON.parse(`{{{currencies}}}`);
             var number_formats =JSON.parse(`{{{number_formats}}}`);
