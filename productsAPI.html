@@ -1,0 +1,17 @@
+<div id="main-content-sf"></div>
+<script>
+  $(document).ready(function () {
+    $(function () {
+      $.ajax({
+        url: "/contents/products_list",
+        type: "get",
+        success: function (resp) {
+          $("#main-content-sf").html(
+            $(resp).find("#products-section .row:nth-last-child(2)")
+          );
+        },
+      });
+      return false;
+    });
+  });
+</script>
