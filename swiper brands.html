@@ -1,0 +1,120 @@
+<!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- Demo styles -->
+    <style>
+          .swiper {
+        width: 100%;
+        height:200px;
+        background-color: #e3eff4;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background-color: transparent;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .swiper-button-prev,
+       {
+        background-image: none !important;
+        background-color: transparent;
+        color: #1a2756;
+      }
+      .swiper-button-next,
+      {
+        background-image: none;
+      
+      }
+      .swiper-button-prev, .swiper-rtl .swiper-button-next {
+        background-color: transparent !important;
+        color: #1a2756 !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <a class=""  href="/contents/products_list">
+                <img class="" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/633ac90793aed_blobid1664796933043.png" alt="" title="samsung.png" width="100%" height="auto" caption="false" />
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a class=""  href="/contents/products_list">
+                <img class="" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/633ac6bed4ed4_blobid1664796344051.png" alt="" title="lg.png" width="100%" height="auto" caption="false" />
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a class=""  href="/contents/products_list">
+                <img class="" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/633ac6ed3d0b9_blobid1664796395080.png" alt="" title="gree.png" width="100%" height="auto" caption="false" />
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a class=""  href="/contents/products_list">
+                <img class="" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/633ac709357f1_blobid1664796422114.png" alt="" title="carrier.png" width="100%" height="auto" caption="false" />
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a class=""  href="/contents/products_list">
+                <img class="" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/633ac73d76a7e_blobid1664796471468.png" alt="" title="toshipa.png" width="100%" height="auto" caption="false" />
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a class=""  href="/contents/products_list">
+                <img class="" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/633ac8113454b_blobid1664796686586.png" alt="" title="wh.png" width="100%" height="auto" caption="false" />
+            </a>
+        </div>
+      </div>
+      <div class="swiper-button-next" style=" background-color: transparent !important;
+      color: #1a2756 !important;"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 6,
+        spaceBetween: 40,
+        slidesPerGroup: 3,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false,
+        },
+        loop: true,
+        loopFillGroupWithBlank: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
