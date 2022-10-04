@@ -135,9 +135,6 @@ a.text-white:focus, a.text-white:hover {
   width: 100%; 
 }
 
-#site-header.fixedattop {
-  position: fixed !important; top: 0px;
-}
 .float{
 	position:fixed;
 	width:60px;
@@ -193,6 +190,10 @@ a.text-white:focus, a.text-white:hover {
 .box:hover{
   transform: scale(1.03); 
 }
+.img-cat {
+    height: 400px !important;
+    border-radius: 40px;
+} 
 @media only screen and (max-width: 991px){
     .login {
         padding-left: 0px;
@@ -222,20 +223,7 @@ header#site-header .col.col-lg-3>div {
 }
 
         </style>
-     <script>
-        $(document).scroll(function() {
-          var documentScrollTop = $(document).scrollTop();
-          if (documentScrollTop > $('#site').height()) {
-            $('#site-header').addClass('fixedattop');
-            var shiftContent = $('#site-header').height();
-            $('#content').css('margin-top', shiftContent + 'px');
-          }
-          else if ($('#site-header').hasClass('fixedattop')) {
-            $('#site-header').removeClass('fixedattop');
-            $('.bottom-nav').css('margin-top', '0px');
-          }
-        });      
-                    </script>   
+      
 </head>
 <body class="rtl">
 <div id="site">
@@ -410,24 +398,24 @@ header#site-header .col.col-lg-3>div {
         <div class="container" >
             <div class="navbar-collapse  p-0">
                 <ul class="navbar-nav  p-0">
-                    <li class="nav-item px-1">
+                    <li class="nav-item px-1 mr-3">
                         <a class="nav-link fs-xl-16 d-flex text-white pl-lg-2 pr-lg-3 px-1 "  href="/contents/products_list?cat_id=3">
-                            <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/6339580e1a1ec_blobid1664702476348.png" alt="" title="ac.png" width="50" height="50" caption="false" /> <p class="my-auto fs-13 fs-lg-16">مكييفات </p>
+                            <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/6339580e1a1ec_blobid1664702476348.png" alt="" title="ac.png" width="auto" height="45" caption="false" /> <p class="my-auto fs-13 fs-lg-16">مكييفات </p>
                         </a>
                     </li>
-                    <li class="nav-item px-1">
+                    <li class="nav-item px-1  mr-3">
                         <a class="nav-link fs-xl-16 d-flex text-white pl-lg-2 pr-lg-3 px-1"  href="/contents/products_list?cat_id=4">
-                            <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/633957e6e5409_blobid1664702436903.png" title="fridge.png"      width="50" height="50" caption="false" /> <p class="my-auto fs-13 fs-lg-16">ثلاجات  </p>
+                            <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/633957e6e5409_blobid1664702436903.png" title="fridge.png"      width="auto" height="45" caption="false" /> <p class="my-auto fs-13 fs-lg-16">ثلاجات  </p>
                         </a>
                     </li>
-                    <li class="nav-item px-1">
+                    <li class="nav-item px-1  mr-3">
                         <a class="nav-link fs-xl-16 d-flex text-white pl-lg-2 pr-lg-3 px-1"  href="/contents/products_list?cat_id=5">
-                            <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/633956f2d8986_blobid1664702190271.png" title="fan.png" width="50" height="50" caption="false" /> <p class="my-auto fs-13 fs-lg-16">مراوح </p>
+                            <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/633956f2d8986_blobid1664702190271.png" title="fan.png" width="auto" height="45" caption="false" /> <p class="my-auto fs-13 fs-lg-16">مراوح </p>
                         </a>
                     </li>
-                    <li class="nav-item px-1">
+                    <li class="nav-item px-1  mr-3">
                         <a class="nav-link fs-xl-16 d-flex text-white pl-lg-2 pr-lg-3 px-1"  href="/contents/products_list?cat_id=6">
-                            <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/63395876937b9_blobid1664702580602.png" title="ac (1).png" width="50" height="50" caption="false" /> <p class="my-auto fs-13 fs-lg-16">مكييفات صحراوية  </p>
+                            <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/63395876937b9_blobid1664702580602.png" title="ac (1).png" width="auto" height="45" caption="false" /> <p class="my-auto fs-13 fs-lg-16">مكييفات صحراوية  </p>
                         </a>
                     </li>
                 </ul>
