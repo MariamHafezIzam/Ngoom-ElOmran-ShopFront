@@ -41,9 +41,17 @@
   .list.grid-view-filter {
     flex-flow: row wrap;
   }
-
+  .list.list-view-filter .product {
+    display: flex;
+  }
+  .list.list-view-filter .pro-img {
+    width: 40%;
+  }
   .list.grid-view-filter .box {
     text-align: center;
+  }
+  .list.grid-view-filter .item {
+    padding-bottom: 32px !important;
   }
 </style>
 {{#Category.name}}
@@ -202,13 +210,13 @@
       <div class="col-lg-3 col-sm-6 py-3 px-4 box">
         <div class="item hover bg-white p-2">
           <div
-            class="align-items-start d-flex flex-column h-100 mb-6 mb-lg-0 product px-5 px-lg-0 pb-4"
+            class="h-100 mb-6 mb-lg-0 product px-5 px-lg-0"
             data-product-id="{{id}}"
             data-image="{{file_full_path}}"
             data-price="{{final_price_number}}"
             data-name="{{name}}"
           >
-            <div>
+            <div class="pro-img">
               <a
                 href="/contents/product_view/{{id}}"
                 class="text-decoration-none text-primary text-hover-black"
@@ -220,7 +228,7 @@
                 />
               </a>
             </div>
-            <div>
+            <div class="pro-info">
               <a
                 href="/contents/product_view/{{id}}"
                 class="text-decoration-none text-primary text-hover-black"
