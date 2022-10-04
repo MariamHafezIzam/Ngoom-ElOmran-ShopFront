@@ -1,3 +1,7 @@
-{{gallery:Media.listing(1)}} {{discount:Content.empty()}}
-{{category:Category.get_product_categories()}}
-{{featured_products:Product.getFeatured()}} {{site_content:Content.empty()}}
+{{gallery:Media.listing(1)}} {{products:Content.empty()}}
+{{category:Category.get_product_categories()}} {{bar:Content.empty()}}
+{{featured_products:Product.getFeatured()}} {{last_products:Content.empty()}}
+{{swiper_brands:Content.empty()}}
+<script>
+  $(".custom_content").eq(1).css({ padding: 0, maxWidth: "100%" });
+</script>

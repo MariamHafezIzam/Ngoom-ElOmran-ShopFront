@@ -1,0 +1,23 @@
+<section class="py-4" style="max-width: 1300px; margin: auto">
+  <h3 class="title font-weight-medium text-primary py-2 px-2">
+    <span class="b-secondary"> اخر المنتجات</span>
+  </h3>
+
+  <div id="last-products"></div>
+</section>
+<script>
+  $(document).ready(function () {
+    $(function () {
+      $.ajax({
+        url: "/contents/products_list",
+        type: "get",
+        success: function (resp) {
+          $("#last-products").html(
+            $(resp).find("#products-section .row:nth-last-child(2)")
+          );
+        },
+      });
+      return false;
+    });
+  });
+</script>
