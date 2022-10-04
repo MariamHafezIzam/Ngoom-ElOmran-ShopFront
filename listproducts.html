@@ -159,7 +159,7 @@
                 class="product-img-sm img-fluid h-180px w-100 mx-auto img-cover mb-3"
               />
               <h6
-                class="fs-16 font-weight-medium text-primary mb-2 name p-1"
+                class="fs-16 font-weight-medium text-primary name m-0 p-1"
                 style="min-height: 48px"
               >
                 {{ name }}<span
@@ -169,13 +169,13 @@
               </h6>
             </a>
             <p
-              class="fs-16 fs-md-14 fs-xl-16 font-weight-medium text-body mb-3"
+              class="fs-16 fs-md-14 fs-xl-16 font-weight-medium text-body m-0 p-1"
             >
               {{description}}
             </p>
             <div class="mb-3 font-weight-bold mt-auto px-1">
               {{#discount}}
-              <span class="price fs-22">{{final_price}}</span>
+              <span class="price fs-20">{{final_price}}</span>
               <del class="text-danger"
                 ><span
                   class="text-alto font-weight-extrabold fs-14 mr-2 discount"
@@ -184,7 +184,7 @@
               >
 
               {{/discount}} {{^discount}}
-              <span class="price fs-22">{{final_price}}</span>
+              <span class="text-primary fs-20">{{final_price}}</span>
               {{/discount}}
             </div>
             <button
