@@ -50,9 +50,6 @@
   .list.grid-view-filter .box {
     text-align: center;
   }
-  .list.grid-view-filter .item {
-    padding-bottom: 32px !important;
-  }
 </style>
 {{#Category.name}}
 <div id="home-slider-section" class="pt-lg-7">
@@ -235,7 +232,7 @@
               >
                 <h6
                   class="fs-16 font-weight-medium text-primary name m-0 p-1"
-                  style="min-height: 48px"
+                  style="min-height: 48px; text-align: right"
                 >
                   {{ name }}<span
                     class="font-weight-medium fs-16 text-body ml-2 d-none"
@@ -248,7 +245,10 @@
               >
                 {{description}}
               </p>
-              <div class="mb-3 font-weight-bold mt-auto px-1">
+              <div
+                class="mb-3 font-weight-bold mt-auto px-1"
+                style="text-align: right"
+              >
                 {{#discount}}
                 <span class="price fs-20">{{final_price}}</span>
                 <del class="text-danger"
