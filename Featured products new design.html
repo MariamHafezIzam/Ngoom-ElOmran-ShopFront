@@ -14,7 +14,7 @@
     </div>
     <div class="row">
       {{#items}}
-      <div class="col-lg-4 col-sm-6 py-2 px-4 box">
+      <div class="col-lg-4 col-sm-6 py-2 px-4 box card-product">
         <div class="item hover bg-white p-2">
           <div
             class="align-items-start d-flex flex-column h-100 mb-6 mb-lg-0 product px-5 px-lg-0"
@@ -122,3 +122,22 @@
   </div>
   {{/itemsCount}}
 </div>
+<script>
+  if (
+    window.location.href !=
+    "https://daftralayouts.daftra.com/contents/process_content/all_featured"
+  ) {
+    var cards = $(".card-product").length;
+
+    if (cards >= 6) {
+      $(".card-product")
+        .css("display", "none")
+        .filter(":nth-of-type(-n+6)")
+        .css("display", "flex");
+    } else {
+      console.log("More than 5");
+    }
+  } else {
+    console.log("HI");
+  }
+</script>

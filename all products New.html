@@ -222,8 +222,7 @@
 
 <div id="products-section" class="pb-4">
   <div class="container">
-    <!-- ====================== filter ======================================= -->
-    <div class="row px-4 py-6">
+    <div class="px-4 py-6">
       <a class="text-color fs-16 text-decoration-none" href="/home"
         >الصفحة الرئيسية
       </a>
@@ -234,6 +233,8 @@
         >كل المنتجات
       </a>
     </div>
+    <!-- ====================== filter ======================================= -->
+
     <div class="row">
       <div class="col-lg-2 col-12 filters">
         <div id="filter" class="d-none d-lg-block">
@@ -456,15 +457,12 @@
                       style="min-height: 48px; text-align: right"
                     >
                       {{ name }}<span
-                        class="font-weight-medium fs-16 text-body ml-2 d-none"
-                        >#{{id}}</span
+                        class="font-weight-medium fs-16 text-body ml-2 d-none id"
+                        >{{id}}</span
                       >
                     </h6>
                   </a>
-                  <p>
-                    {{brand}} {{Brand}} {{brands}} {{categories}} {{category}}
-                    {{category_name}}
-                  </p>
+                  <div class="newdiv"></div>
                   <p
                     class="fs-16 fs-md-14 fs-xl-16 font-weight-medium text-body m-0 p-1"
                   >
@@ -573,4 +571,26 @@
     filter.classList.remove("d-block");
     filter.classList.add("d-none");
   };
+
+  $(document).ready(function () {
+    let allProducts = $(".box");
+    $.each(allProducts, (i, val) => {
+      let productId = $(val).find(".product").data("product-id");
+      $.ajax({
+        url: "/api2/products/" + productId,
+        type: "GET",
+      }).done((data) => {
+        console.log(data);
+        let $thisProd = data.data.Product;
+        let brand = $thisProd.brand;
+        let cat = $thisProd.ProductCategory[0].name;
+        console.log(brand, cat);
+        $(val).attr("data-brand", brand);
+        $(val).attr("data-cat", cat);
+        //   let divdetails = `ID = ${productId} , Brand = ${brand} , CategoryName = ${catName}`;
+
+        //   console.log(divdetails);
+      });
+    });
+  });
 </script>
