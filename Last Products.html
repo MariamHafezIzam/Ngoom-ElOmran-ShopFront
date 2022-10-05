@@ -9,7 +9,7 @@
   $(document).ready(function () {
     $(function () {
       $.ajax({
-        url: "/contents/products_list",
+        url: "/contents/products_list/limit:4",
         type: "get",
         success: function (resp) {
           $("#last-products").html(
