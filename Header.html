@@ -105,9 +105,11 @@ a.nav-link:hover {
 .bottom-nav .navbar-nav {
     flex-direction: unset;
 }
-.login {
-    display: grid; 
-    padding-left: 1cm;
+.account {
+   
+    display: grid;
+    /* padding-right: 1cm; */
+
 }
 header#site-header .navbar .navbar-nav .nav-item .nav-link {
     font-weight: 500;
@@ -201,12 +203,67 @@ a.text-white:focus, a.text-white:hover {
 
 .item:hover{
     box-shadow: rgba(5, 16, 88, 0.5) 0px 3px 8px;
-transition: 0.3s;;
+transition: 0.3s;
 }
 .img-cat {
     height: 400px !important;
     border-radius: 40px;
 } 
+
+.list.grid-view-filter .box {
+    text-align: center;
+}
+.list.grid-view-filter .item {
+    padding-bottom: 32px !important;
+  }
+
+ .list.grid-view-filter  .price-no {
+    text-align: right;
+ }
+ .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 20;
+        }
+        
+        .dropdown-content a {
+            color: #1a2756;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: right;
+            font-weight: bold;
+            font-size: 14px !important;
+        }
+        
+        .dropdownn:hover .dropdown-content {
+            display: block;
+        }
+        .dropbtn  {
+    color: white;
+    vertical-align: text-top !important;
+}
+.logn:hover {
+    color: #2f65a8 !important;
+    margin-right: 12px;
+    transition: 0.5s;
+} 
+.btn.disabled, .btn:disabled {
+opacity: 1 !important;
+}
+ a.acc {
+    color: #fff;
+    text-decoration: none;
+} 
+.btn:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+
 @media only screen and (max-width: 991px){
     .login {
         padding-left: 0px;
@@ -233,17 +290,19 @@ header#site-header .col.col-lg-3>div {
 .title {
     font-size: 20px;
 }
+a.nav-link.dashboard {
+    font-size: 8px !important;
 }
-.list.grid-view-filter .box {
-    text-align: center;
-}
-.list.grid-view-filter .item {
-    padding-bottom: 32px !important;
-  }
+.dropdown-content {
 
- .list.grid-view-filter  .price-no {
-    text-align: right;
- }
+    left: 3px; 
+    min-width: 175px;
+}
+a.logn {
+    font-size: 12px !important;
+    padding: 12px;
+}
+}
         </style>
       
 </head>
@@ -293,7 +352,7 @@ header#site-header .col.col-lg-3>div {
                 </div>
                 <div class="col-lg-1 col-1 col flex-grow-0  d-none d-lg-block">
                     <button style="float: left;" class="btn mr-2 mr-lg-0 p-0 text-white lh-1" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false">
-                        <i class="far fa-bars fs-24"></i>
+                        <i class="far fa-bars fs-xl-24 fs-18"></i>
                     </button>
                     
 
@@ -315,28 +374,63 @@ header#site-header .col.col-lg-3>div {
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-1 order-lg-4 d-none d-lg-flex">
-</div>
-                <div class="col-lg-3 col-6 col order-2 order-lg-5 pl-0 pl-lg-3" style="display: flex;  justify-content: left;">
-                    <div class="text-right pl-lg-3 pl-0 d-flex" >
-                        <button type="button" data-toggle="collapse" data-target="#mainSearch" aria-controls="mainSearch" aria-expanded="false" class="btn mr-2 p-0 text-dark text-hover-primary fs-14 d-inline-block d-lg-none"><i class="fas fa-search mr-lg-1 text-white"></i></button>
+               
+                <div class="col-lg-4 col-6 col order-2 order-lg-2 pl-0 pl-lg-3" style="display: flex;  justify-content: left;">
+                    <div class="text-right pl-0 d-flex" >
+                        <button type="button" data-toggle="collapse" data-target="#mainSearch" aria-controls="mainSearch" aria-expanded="false" class="btn mr-2 p-0 text-dark text-hover-primary fs-14 d-inline-block d-lg-none"><i class="fas fa-search mr-lg-1 text-white fs-18"></i></button>
 
                         {{#is_logged_in}}      
-                        <a href="/contents/logout" class="log btn btn-log mr-2 mr-lg-0 p-1 py-sm-1 px-sm-2 fs-10 fs-sm-13 fs-lg-14 fs-xl-16 ">  <i class="mr-1  fas fa-sign-out"></i> خروج</a>
+                         <!-- start new menu -->
+                         <div style="align-self: center;" class="dropdownn">
+                            <button type="button" class="dropbtn login btn-focus-shadow-0 btn mx-2 mt-1 mt-xl-0 mr-lg-6 p-0 px-lg-2 px-xl-3 fs-14 fs-xl-15" disabled="disabled">
+                        <label class=" mt-0 fs-14  text-capitalize d-flex">
+                          
+                          <div style="align-self: center; " class="mr-2"><i class="fas fa-user fs-xl-24 fs-18"></i></div>
+                         <div class="d-lg-block d-none" style="text-align: right ;line-height: 1;"><span class="fs-10 fw-normal">مرحبا</span>  <br><span class="fs-xl-18 fs-12"> {{ logged_name }}</span></div>
+                        </label>
+                    </button>
+                            <div class="dropdown-content mx-lg-2 mx-xl-5 p-1">
+                                <a class="nav-link  logn" href="{{dashboard_url}}">
+                                    <i class="fas fa-home-alt mr-2 d-lg-inline-block"></i><span>لوحة التحكم</span>
+                                </a>
+                                <a href="/contents/logout" class=" logn">
+                                    <i class="mr-2 fas fa-sign-out"></i>الخروج</a>
+                            </div>
+                        </div>
+                        <!-- end new menu -->
+                        <!-- <a href="/contents/logout" class="log btn btn-log mr-2 mr-lg-0 p-1 py-sm-1 px-sm-2 fs-10 fs-sm-13 fs-lg-14 fs-xl-16 ">  <i class="mr-1  fas fa-sign-out"></i> خروج</a> -->
                         {{/is_logged_in}}
 
                         {{^is_logged_in}}
-                        <div class="login"  >
-                        <a href="/contents/login" class="log btn btn-log mr-2 mr-lg-0 p-1 py-sm-1 px-sm-2  fs-10 fs-sm-13 fs-lg-14 fs-xl-16 "><i class="fas fa-sign-in mr-1"></i>دخول</a>
-                        <a href="/contents/register" class="log btn btn-log mr-2 mr-lg-0 p-1 py-sm-1 px-sm-2  fs-10 fs-sm-13 fs-lg-14 fs-xl-16 "><i class="fas fa-user-plus mr-1"></i>حساب جديد</a>
-                        {{/is_logged_in}}
+                        <div class="account dropdownn" style="align-self: center;">
+                                              <button type="button" class=" btn-focus-shadow-0 btn p-0 m-0">
+                                <a href="/contents/logout" class="logn" style="display: none;">
+                                    <i class="mr-2 fas fa-sign-out"></i>Log Out</a> {{/is_logged_in}} {{^is_logged_in}}
+                            </button>
+                                <div style="align-self: center;" class="dropdownn">
+                                    <button type="button" class="dropbtn login btn-focus-shadow-0 btn mx-2 mr-lg-6 p-0 px-lg-2 px-xl-3 fs-14 fs-xl-15" disabled="disabled">
+                                    <a href="#" class=" acc">
+                                    <i class="fas fa-user fs-xl-24 fs-18 mr-1 mb-2 mb-lg-0"></i><span class="d-none d-lg-inline fs-14 fs-lg-16">الحساب</span></a> 
+                            </button>
+                                    <div class="dropdown-content mx-lg-2 p-1">
+                                        <a href="/contents/login" class=" logn "><i class="fas fa-sign-in mr-1"></i> دخول الحساب</a>
+                                        <a href="/contents/register" class="logn "><i class="fas fa-user-plus mr-1"></i>انشاء حساب </a>
+
+                                    </div>
+                                   
+
+                                </div>
+                               
+                                {{/is_logged_in}}
                        </div>
+                     
+                       <button type="button" class="cart-toggle-btn btn-focus-shadow-0 btn mr-xl-2 mr-lg-0 p-0 py-lg-1 px-lg-2  mr-1    fs-14 fs-xl-16 text-white secondary-hover"><i class="fas fa-shopping-cart mr-lg-1 position-relative fs-xl-24"><span id="totalCart"></span></i><span class="d-none d-lg-inline-block">عربة التسوق</span></button>
+
                         <button class="btn mr-2 mr-lg-0 p-0 text-black lh-1 d-none" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false">
                             <i class="far fa-bars fs-20"></i>
                         </button>
-                        <button type="button" class="cart-toggle-btn btn-focus-shadow-0 btn mr-2 mr-lg-0 p-0 py-lg-1 px-lg-2   fs-14 fs-xl-16 text-white secondary-hover"><i class="fas fa-shopping-cart mr-lg-1 position-relative"><span id="totalCart"></span></i><span class="d-none d-lg-inline-block">عربة التسوق</span></button>
                         <button style="float: left;" class="btn my-auto mx-2 p-0 text-white lh-1 d-flex d-lg-none" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false">
-                            <i class="far fa-bars fs-24"></i>
+                            <i class="far fa-bars fs-xl-24 fs-18"></i>
                         </button>
                     </div>
                 </div>
@@ -344,9 +438,9 @@ header#site-header .col.col-lg-3>div {
 
         </div>
         <div class="bg-primary " width="100%"></div>
-        <div id="mainSearch" class="collapse d-lg-none bg-primary">
+        <div id="mainSearch" class="collapse  bg-primary">
             <form action="/contents/products_list" class="border-top border-black py-5 px-4 text-center">
-                <div class="d-lg-none d-block">
+                <div class=" d-block">
                     <div class="input-group border-transparent align-items-stretch">
                         <input type="text" class="form-control bg-white border-0 rounded-end" placeholder="Search" value="{{product_name}}" name="product_name">
                         <div class="input-group-append">
@@ -360,7 +454,7 @@ header#site-header .col.col-lg-3>div {
         <div class="">
             <nav class="navbar navbar-expand-lg bg-primary py-0 b-b ">
                 <div class="container">
-                    <div class="collapse navbar-collapse" id="mainNav">
+                    <div class="collapse" id="mainNav">
                         <ul class="navbar-nav p-0">
                             {{# menuItems }}
                             <li class="nav-item dropdown">
@@ -418,7 +512,7 @@ header#site-header .col.col-lg-3>div {
     </header>
     <div class="bottom-nav bg-primary ">
         <div class="container" >
-            <div class="navbar-collapse  p-0">
+            <div class=" p-0">
                 <ul class="navbar-nav  p-0">
                     <li class="nav-item px-1 mr-3">
                         <a class="nav-link fs-xl-16 d-flex text-white pl-lg-2 pr-lg-3 px-1 "  href="/contents/products_list?cat_id=3">
@@ -435,7 +529,7 @@ header#site-header .col.col-lg-3>div {
                             <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/633956f2d8986_blobid1664702190271.png" title="fan.png" width="auto" height="45" caption="false" /> <p class="my-auto fs-13 fs-lg-16">مراوح </p>
                         </a>
                     </li>
-                    <li class="nav-item px-1  mr-3">
+                    <li class="nav-item px-1 mr-0">
                         <a class="nav-link fs-xl-16 d-flex text-white pl-lg-2 pr-lg-3 px-1"  href="/contents/products_list?cat_id=6">
                             <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/63395876937b9_blobid1664702580602.png" title="ac (1).png" width="auto" height="45" caption="false" /> <p class="my-auto fs-13 fs-lg-16">مكييفات صحراوية  </p>
                         </a>
