@@ -1,3 +1,5 @@
+
+
 <main id="main-content">
       <div class="py-8">
         <div class="container">
@@ -13,8 +15,8 @@
               {{ product.name }}
             </a>
           </div>
-          <div class="row">
-            <div class="col-lg-6">
+          <div class="row bg-white p-8">
+            <div class="col-lg-5">
               <div class="swiper-slider">
                 <div
                   class="swiper-container product-swiper swiper-container-initialized swiper-container-horizontal"
@@ -97,8 +99,8 @@
                 {{/product_images_count}}
               </div>
             </div>
-            <div class="col-lg-6 pt-4 pt-lg-0" data-product-id="{{id}}">
-              <h6 class="fs-40 text-dark font-weight-extrabold mb-3">
+            <div class="col-lg-7 pt-4 pt-lg-0" data-product-id="{{id}}">
+              <h6 class="fs-30 text-primary font-weight-bold mb-3">
                 {{ product.name }}
               </h6>
               <h6 class="fs-20 text-body font-weight-medium mb-3">
@@ -117,7 +119,7 @@
                 class="d-flex align-items-start align-items-lg-center justify-content-between flex-column flex-lg-row"
               >
                 <div>
-                  <span class="fs-32 text-black font-weight-bold price"
+                  <span class="fs-32 font-weight-bold price"
                     >{{ product.final_price_formatted }}</span
                   >
                   {{#product.has_discount}}
