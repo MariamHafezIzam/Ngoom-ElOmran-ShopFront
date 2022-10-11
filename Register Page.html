@@ -1,0 +1,163 @@
+<style>
+  .form-control {
+    border-color: #47537b85;
+    color: #47537b !important;
+  }
+  .form-control::placeholder {
+    color: #47537b !important;
+  }
+  .form-control::selection {
+    background-color: #47537b !important;
+  }
+  .form-control:focus {
+    color: #1a2756 !important;
+  }
+  .form-group-icon .form-icon {
+    color: #faa3a6;
+  }
+  .form-group-icon .form-control:focus ~ .form-icon {
+    color: #ff7d82 !important;
+  }
+  .form-group-icon .form-action,
+  .form-group-icon .form-action:hover {
+    color: #f25d75 !important;
+  }
+
+  .btn-success {
+    background-color: #ff7d82 !important;
+    border-color: #ff7d82 !important;
+    border-radius: 12px;
+  }
+  .btn-success:hover {
+    background-color: #1a2756 !important;
+    border-color: #1a2756 !important;
+    transform: scale(1.03);
+    transition: 0.3s;
+  }
+</style>
+<div id="register-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3"></div>
+      <div class="col-lg-6">
+        <form action="/contents/register" method="POST">
+          <div class="py-12">
+            <h2 class="fs-22 font-weight-semibold text-primary mb-6">
+              تسجيل حساب جديد
+            </h2>
+            <div class="mb-6">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="mb-4">
+                    <div class="form-group form-group-icon mb-0">
+                      <input
+                        name="data[Client][business_name]"
+                        value="{{ business_name }}"
+                        type="text"
+                        class="form-control form-control-lg {{#errors.business_name}} is-invalid {{/errors.business_name}}"
+                        placeholder="الاسم بالكامل *"
+                        required=""
+                      />
+                      <i class="form-icon far fa-user"></i>
+                    </div>
+                    {{#errors.business_name}}
+                    <small class="font-weight-semibold fs-13 text-danger"
+                      >{{ errors.business_name }}</small
+                    >
+                    {{/errors.business_name}}
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="mb-4">
+                    <div class="form-group form-group-icon mb-0">
+                      <input
+                        name="data[Client][email]"
+                        type="text"
+                        value="{{ email }}"
+                        class="form-control form-control-lg {{#errors.email}} is-invalid {{/errors.email}}"
+                        placeholder="البريد الالكتروني *"
+                        required=""
+                      />
+                      <i class="form-icon far fa-envelope"></i>
+                    </div>
+                    {{#errors.email}}
+                    <small class="font-weight-semibold fs-13 text-danger"
+                      >{{ errors.email }}</small
+                    >
+                    {{/errors.email}}
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="mb-4">
+                    <div class="form-group form-group-icon mb-0">
+                      <input
+                        name="data[Client][phone2]"
+                        type="number"
+                        min="0"
+                        value="{{ phone2 }}"
+                        class="form-control form-control-lg {{#errors.phone2}} is-invalid {{/errors.phone2}}"
+                        placeholder="الهاتف"
+                      />
+                      <i class="form-icon fas fa-mobile-alt"></i>
+                    </div>
+                    {{#errors.phone2}}
+                    <small class="font-weight-semibold fs-13 text-danger"
+                      >{{ errors.phone2 }}</small
+                    >
+                    {{/errors.phone2}}
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="mb-4">
+                    <div class="form-group form-group-icon mb-0">
+                      <input
+                        name="data[Client][password]"
+                        type="password"
+                        class="form-control form-control-lg {{#errors.password}} is-invalid {{/errors.password}}"
+                        placeholder="كلمة المرور *"
+                        required=""
+                      />
+                      <i class="form-icon far fa-lock-alt"></i>
+                      <i class="form-action far fa-eye"></i>
+                    </div>
+                    {{#errors.password}}
+                    <small class="font-weight-semibold fs-13 text-danger"
+                      >{{ errors.password }}</small
+                    >
+                    {{/errors.password}}
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="mb-4">
+                    <div class="form-group form-group-icon mb-0">
+                      <input
+                        name="data[Client][confirm_password]"
+                        type="password"
+                        class="form-control form-control-lg {{#errors.confirm_password}} is-invalid {{/errors.confirm_password}}"
+                        placeholder="تأكيد كلمة المرور *"
+                        required=""
+                      />
+                      <i class="form-icon far fa-lock-alt"></i>
+                      <i class="form-action far fa-eye"></i>
+                    </div>
+                    {{#errors.confirm_password}}
+                    <small class="font-weight-semibold fs-13 text-danger"
+                      >{{ errors.confirm_password }}</small
+                    >
+                    {{/errors.confirm_password}}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-right">
+              <button class="btn btn-success btn-lg fs-20" type="submit">
+                تسجيل
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-3"></div>
+    </div>
+  </div>
+</div>
