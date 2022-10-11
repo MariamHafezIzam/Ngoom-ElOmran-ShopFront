@@ -202,6 +202,119 @@
             </div>
           </div>
           <div class="col-lg-4 bg-white">
+            <form
+            id="placeOrderForm"
+            method="POST"
+            action="/client/contents/placeOrder"
+          >
+            {{#shippingOptionsCount}}
+            <input
+              type="hidden"
+              id="shipping_option_id"
+              name="shipping_option_id"
+            />
+            <input type="hidden" id="shipping_amount" name="shipping_amount" />
+
+            <div class="mb-5">
+              <div class="d-flex align-items-center text-primary mb-2">
+                <i class="fas fa-shipping-fast fs-22 mr-2"></i>
+                <h3 class="font-weight-bold fs-lg-24 fs-18 mb-0 mr-2">
+                  اختر طريقة الشحن
+                </h3>
+              </div>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th
+                        scope="col"
+                        class="text-primary fs-16 font-weight-bold"
+                      ></th>
+                      <th scope="col" width="170"></th>
+                      <th
+                        scope="col"
+                        width="100"
+                        class="text-primary text-right fs-16 font-weight-bold"
+                      ></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {{#shippingOptions}}
+                    <tr>
+                      <td colspan="2">
+                        <div
+                          class="custom-control custom-control-lg custom-radio w-100 d-block"
+                        >
+                          <input
+                            type="radio"
+                            id="shipping_method_{{id}}"
+                            name="shipping_method"
+                            class="custom-control-input shipping_method"
+                            data-id="{{id}}"
+                            data-fees="{{fees}}"
+                            data-amount="{{amount}}"
+                            data-tax-id="{{tax_id}}"
+                            data-tax-amount="{{tax_amount}}"
+                          />
+                          <label
+                            class="custom-control-label d-block"
+                            for="shipping_method_{{id}}"
+                          >
+                            <span
+                              class="fs-16 text-primary font-weight-semibold mr-1"
+                              >{{name}}</span
+                            >
+                            <span class="fs-14 text-secondary"
+                              >{{description}}</span
+                            >
+                          </label>
+                        </div>
+                      </td>
+                      <td class="text-right">
+                        <span class="fs-16 font-weight-medium text-primary"
+                          >{{fees}}</span
+                        >
+                      </td>
+                    </tr>
+                    {{/shippingOptions}}
+                    <tr>
+                      <td class="border-top-0"></td>
+                      <td class="border-top-0 py-1 text-nowrap">
+                        <span
+                          class="fs-14 fs-lg-16 font-weight-medium text-body mr-4"
+                          >قيمة الشحن :</span
+                        >
+                      </td>
+                      <td class="text-right border-top-0 py-1">
+                        <span
+                          class="fs-16 font-weight-bold text-primary"
+                          id="shipping_fees_amount"
+                          >0</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border-top-0"></td>
+                      <td class="border-top-0 px-0 py-0">
+                        <hr class="spacer border-dashed border-placeholder" />
+                      </td>
+                      <td class="border-top-0 px-0 py-0">
+                        <hr class="spacer border-dashed border-placeholder" />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            {{/shippingOptionsCount}} {{^shippingOptionsCount}}
+            <input
+              type="hidden"
+              id="shipping_disabled"
+              name="shipping_disabled"
+              value="1"
+            />
+            {{/shippingOptionsCount}}
+          </form>
             <div class="mb-6">
               <div class="d-flex align-items-center text-primary mb-2 heading">
                 <i class="fas fa-money-bill-wave fs-22 mr-2"></i>
@@ -248,20 +361,21 @@
                 </table>
               </div>
             </div>
+            <div>
             <a
               id="submitBtn"
               href="#"
-              class="btn btn-success d-flex align-items-center justify-content-between rounded-lg btn-block px-6 py-3 fs-20 font-weight-medium btn-lg"
+              class="btn btn-primary d-flex align-items-center justify-content-between rounded-lg btn-block px-6 py-3 fs-20 font-weight-medium btn-lg"
             >
               <span>احجز طلبك</span>
               <span class="fas fa-arrow-right fs-16"></span>
-            </a>
-            <div>
+            </a></div>
+            <div class="py-8">
               <a
                 href="/contents/products_list"
-                class="btn btn-primary text-hover-primary mt-2 mt-lg-0 d-inline-block font-weight-medium"
+                class="btn btn-primary d-flex align-items-center justify-content-between rounded-lg btn-block px-6 py-3 fs-20 font-weight-medium btn-lg"
                 ><span class=""
-                  ><i class="fas fa-arrow-left mr-1"></i>الرجوع الى التسوق</span
+                  ><i class="fas fa-arrow-left mr-1"></i></span><span></span> الرجوع الى التسوق</span
                 ></a
               >
             </div>
