@@ -1,0 +1,98 @@
+<style>
+  .form-control {
+    border-color: #47537b85;
+    color: #47537b !important;
+  }
+  .form-control::placeholder {
+    color: #47537b !important;
+  }
+  .form-control::selection {
+    background-color: #47537b !important;
+  }
+  .form-control:focus {
+    color: #1a2756 !important;
+  }
+  .form-group-icon .form-icon {
+    color: #faa3a6;
+  }
+  .form-group-icon .form-control:focus ~ .form-icon {
+    color: #ff7d82 !important;
+  }
+  .form-group-icon .form-action,
+  .form-group-icon .form-action:hover {
+    color: #f25d75 !important;
+  }
+
+  .btn-success {
+    background-color: #ff7d82 !important;
+    border-color: #ff7d82 !important;
+    border-radius: 12px;
+  }
+  .btn-success:hover {
+    background-color: #1a2756 !important;
+    border-color: #1a2756 !important;
+    transform: scale(1.03);
+    transition: 0.3s;
+  }
+</style>
+<div id="login-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3"></div>
+      <div class="col-lg-6">
+        <form action="/contents/login" method="post">
+          <div class="py-12">
+            <h2 class="fs-22 font-weight-semibold text-primary mb-6">
+              تسجيل دخول
+            </h2>
+            <div class="mb-6">
+              <div class="form-group form-group-icon mb-4">
+                <input
+                  name="data[Client][email]"
+                  type="text"
+                  value="{{ email }}"
+                  class="form-control form-control-lg"
+                  placeholder="البريد الالكتروني *"
+                  required=""
+                />
+                <i class="form-icon far fa-envelope"></i>
+              </div>
+              <div class="form-group form-group-icon mb-4">
+                <input
+                  name="data[Client][password]"
+                  type="password"
+                  class="form-control form-control-lg"
+                  placeholder="كلمة المرور *"
+                  required=""
+                />
+                <i class="form-icon far fa-lock-alt"></i>
+                <i class="form-action far fa-eye"></i>
+              </div>
+            </div>
+            <div
+              class="d-flex flex-column flex-lg-row align-items-lg-center justify-content-between"
+            >
+              <div class="mb-4 mb-lg-0">
+                <p class="font-weight-medium text-primary mb-0">
+                  ليس لديك حساب؟
+                  <a href="/clients/register" class="text-color"
+                    ><strong>حساب جديد</strong>
+                  </a>
+                </p>
+                <p class="font-weight-medium text-primary mb-0">
+                  <a href="/clients/forgot" class="text-color"
+                    ><strong>نسيت كلمة المرور؟</strong>
+                  </a>
+                </p>
+              </div>
+              <button class="btn btn-success btn-lg fs-20" type="submit">
+                تسجيل الدخول
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-3"></div>
+    </div>
+  </div>
+</div>
