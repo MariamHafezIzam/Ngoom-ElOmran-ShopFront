@@ -57,10 +57,11 @@
 
   <body>
     <!-- Swiper -->
-    <div class="bg-white">
-    <h3 class="title font-weight-medium text-primary py-2 px-2">
+    <div class="bg-white py-2 px-xl-10 px-4" style="position: relative;">
+    <!-- <h3 class="title font-weight-medium text-primary py-2 px-2">
       <span class="b-secondary"> العلامات التجارية </span>
-    </h3>
+    </h3> -->
+ 
     <div class="swiper mySwiper">
      
       <div class="swiper-wrapper">
@@ -95,10 +96,11 @@
             </a>
         </div>
       </div>
-      <div class="swiper-button-next" style=" background-color: transparent !important;
-      color: #1a2756 !important;"></div>
-      <div class="swiper-button-prev"></div>
+     
     </div>
+    <div class="swiper-button-next" style=" background-color: transparent !important;
+    color: #1a2756 !important;"></div>
+    <div class="swiper-button-prev"></div>
   </div>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
@@ -106,10 +108,10 @@
     <!-- Initialize Swiper -->
     <script>
       var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 6,
+        slidesPerView: 5,
         spaceBetween: 40,
-        slidesPerGroup: 3,
-        centeredSlides: true,
+        slidesPerGroup: 2,
+        // centeredSlides: true,
         autoplay: {
           delay: 2000,
           disableOnInteraction: false,

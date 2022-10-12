@@ -1,10 +1,13 @@
 <style>
   .form-control {
-    border-color: #47537b85;
-    color: #47537b !important;
+    border-color: #1a2756b6;
+    /* color: #47537b !important; */
   }
   .form-control::placeholder {
-    color: #47537b !important;
+    color: #1a2756b6 !important;
+  }
+  input:focus::placeholder {
+    color: #fff !important;
   }
   .form-control::selection {
     background-color: #1a2756 !important;
@@ -28,12 +31,11 @@
     background-color: #ff7d82 !important;
     border-color: #ff7d82 !important;
     border-radius: 12px;
+    transition: 0.3s;
   }
   .btn-success:hover {
     background-color: #1a2756 !important;
     border-color: #1a2756 !important;
-    transform: scale(1.03);
-    transition: 0.3s;
   }
 </style>
 <div id="register-section">

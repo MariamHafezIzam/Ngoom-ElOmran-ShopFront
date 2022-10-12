@@ -53,9 +53,11 @@
 
   .list.list-view-filter .pro-info {
     align-self: center;
-    width: 40%;
+    width: 45%;
   }
-
+  .page-item.active .page-link {
+    background-color: #1a2756 !important;
+  }
   .list.list-view-filter .price-add,
   .list.list-view-filter .pro-img {
     width: 30%;
@@ -445,10 +447,10 @@
         <div id="list" class="row list grid-view-filter">
           {{#products}}
           <!-- ======================== card ======================================= -->
-          <div class="col-lg-3 col-sm-6 py-3 px-4 box">
+          <div class="col-lg-3 col-sm-6 py-2 px-4 box">
             <div class="item hover bg-white p-2">
               <div
-                class="h-100 mb-6 mb-lg-0 product px-5 px-lg-0"
+                class="h-100 mb-6 mb-lg-0 product px-5 px-lg-0 pb-4"
                 data-product-id="{{id}}"
                 data-image="{{file_full_path}}"
                 data-price="{{final_price_number}}"
@@ -487,9 +489,10 @@
                   >
                     {{description}}
                   </p>
-                </div>
-                <div class="price-add">
-                  <div class="mb-3 font-weight-bold mt-auto px-1 price-no">
+
+                  <div
+                    class="price-add mb-3 font-weight-bold mt-auto px-1 price-no"
+                  >
                     {{#discount}}
                     <span class="price fs-20">{{final_price}}</span>
                     <del class="text-danger"
@@ -503,13 +506,13 @@
                     <span class="text-primary fs-20">{{final_price}}</span>
                     {{/discount}}
                   </div>
-                  <button
-                    data-name="sallamon"
-                    class="add-to-cart-btn btn btn-sm btn-primary text-uppercase font-weight-medium fs-16"
-                  >
-                    <i class="fal fa-cart-plus mr-2"></i>Add to Cart
-                  </button>
                 </div>
+                <button
+                  data-name="sallamon"
+                  class="add-to-cart-btn btn btn-sm btn-primary text-uppercase font-weight-medium fs-16"
+                >
+                  <i class="fal fa-cart-plus mr-2"></i>أضف الي العربة
+                </button>
               </div>
             </div>
           </div>
@@ -520,7 +523,7 @@
         {{#products_count}}
         <div class="row">
           <div class="col-lg-12">
-            <div class="text-center pt-8">
+            <div class="pl-4 pt-8">
               <nav class="d-inline-flex mb-0 align-items-center">
                 <span
                   class="text-primary fs-16 mr-2 font-weight-medium d-none d-lg-inline-block"
@@ -628,9 +631,13 @@
         let $thisProd = data.data.Product;
         let brand = $thisProd.brand;
         let cat = $thisProd.ProductCategory[0].name;
+        let dis = $thisProd.discount;
         // console.log(brand, cat);
         $(val).attr("data-brand", brand);
         $(val).attr("data-cat", cat);
+        if (dis == null) {
+          $(val).attr("data-discount", "no");
+        }
         //   let divdetails = `ID = ${productId} , Brand = ${brand} , CategoryName = ${catName}`;
 
         //   console.log(divdetails);

@@ -96,7 +96,7 @@ header#site-header #totalCart:hover {
     display: none !important;
 }
 a.nav-link {
-    color: #ffffffba;
+    color: #ffffff;
 }
 
 a.nav-link:hover {
@@ -184,9 +184,7 @@ a.text-white:focus, a.text-white:hover {
     color: #e3eff4;
 }
 .add-to-cart-btn:hover , .hover{
-    background-color: #00badb;
-    border-color: #00badb;
-    transform: scale(1.02); 
+    transform: scale(1.01) !important; 
 
     
 }
@@ -223,22 +221,29 @@ transition: 0.3s;
  .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #ffffff;
+            /* background-color: #ffffff; */
             min-width: 200px;
             box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             z-index: 20;
         }
         
         .dropdown-content a {
+           
             color: #1a2756;
             padding: 12px 16px;
+          
             text-decoration: none;
             display: block;
             text-align: right;
             font-weight: bold;
             font-size: 14px !important;
+            transition: 0.5s;
         }
-        
+        .dropdown-content div {
+            background-color: #fff;
+            min-width: 230px;
+        }
+ 
         .dropdownn:hover .dropdown-content {
             display: block;
         }
@@ -264,6 +269,9 @@ opacity: 1 !important;
 }
 div#home-featured-products-section {
     padding-bottom: 0px !important;
+}
+.custom_content .new {
+    color: #fff !important;
 }
 @media only screen and (max-width: 991px){
     .login {
@@ -364,7 +372,7 @@ a.logn {
                             <form action="/contents/products_list">
                                 <div class="d-none d-lg-block">
                                     <div class="input-group border-transparent align-items-stretch">
-                                        <input type="text" class="form-control bg-white border-0 rounded-end" placeholder="Search" value="{{product_name}}" name="product_name">
+                                        <input type="text" class="form-control bg-white border-0 rounded-end" placeholder="بحث" value="{{product_name}}" name="product_name">
                                         <div class="input-group-append">
                                             <button class="btn btn-outline-white border-0 bg-third py-0 px-3 fs-18 rounded-start button2" type="submit">
                                                 <i class="far fa-search"></i></button>
@@ -390,12 +398,13 @@ a.logn {
                          <div class="d-lg-block d-none" style="text-align: right ;line-height: 1;"><span class="fs-10 fw-normal">مرحبا</span>  <br><span class="fs-xl-18 fs-12"> {{ logged_name }}</span></div>
                         </label>
                     </button>
-                            <div class="dropdown-content mx-lg-2 mx-xl-5 p-1">
-                                <a class="nav-link  logn" href="{{dashboard_url}}">
+                            <div class="dropdown-content mx-lg-2 p-1 pt-2">
+                                
+                               <div><a class="nav-link  logn" href="{{dashboard_url}}">
                                     <i class="fas fa-home-alt mr-2 d-lg-inline-block"></i><span>لوحة التحكم</span>
-                                </a>
-                                <a href="/contents/logout" class=" logn">
-                                    <i class="mr-2 fas fa-sign-out"></i>الخروج</a>
+                                </a></div> 
+                                <div>  <a href="/contents/logout" class=" logn">
+                                    <i class="mr-2 fas fa-sign-out"></i>الخروج</a></div> 
                             </div>
                         </div>
                         <!-- end new menu -->
@@ -413,9 +422,10 @@ a.logn {
                                     <a href="#" class=" acc">
                                     <i class="fas fa-user fs-xl-24 fs-18 mr-1 mb-2 mb-lg-0"></i><span class="d-none d-lg-inline fs-14 fs-lg-16">الحساب</span></a> 
                             </button>
-                                    <div class="dropdown-content mx-lg-2 p-1">
-                                        <a href="/contents/login" class=" logn "><i class="fas fa-sign-in mr-1"></i> دخول الحساب</a>
-                                        <a href="/contents/register" class="logn "><i class="fas fa-user-plus mr-1"></i>انشاء حساب </a>
+                                    <div class="dropdown-content mx-lg-2 p-1 pt-2">
+                                        
+                                        <div>       <a href="/contents/login" class=" logn "><i class="fas fa-sign-in mr-1"></i> دخول الحساب</a> </div>
+                                    <div>     <a href="/contents/register" class="logn "><i class="fas fa-user-plus mr-1"></i>انشاء حساب </a> </div>
 
                                     </div>
                                    
@@ -443,7 +453,7 @@ a.logn {
             <form action="/contents/products_list" class="border-top border-black py-5 px-4 text-center">
                 <div class=" d-block">
                     <div class="input-group border-transparent align-items-stretch">
-                        <input type="text" class="form-control bg-white border-0 rounded-end" placeholder="Search" value="{{product_name}}" name="product_name">
+                        <input type="text" class="form-control bg-white border-0 rounded-end" placeholder="بحث" value="{{product_name}}" name="product_name">
                         <div class="input-group-append">
                             <button class="btn btn-outline-white border-0 bg-third py-0 px-3 fs-18 rounded-start button2" type="submit">
                                 <i class="far fa-search text-white"></i></button>
@@ -455,11 +465,11 @@ a.logn {
         <div class="">
             <nav class="navbar navbar-expand-lg bg-primary p-0 b-b ">
                 <div class="container">
-                    <div class="collapse" id="mainNav">
-                        <ul class="navbar-nav p-2">
+                    <div class="collapse show" id="mainNav">
+                        <ul class="navbar-nav px-0 py-2">
                             {{# menuItems }}
                             <li class="nav-item dropdown">
-                                <a class="nav-link fs-xl-16 py-2 {{# has_children }} dropdown-toggle {{/ has_children }}" href="{{ link }}" {{# has_children }} role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" {{/ has_children }}>
+                                <a class="nav-link fs-xl-16 py-2 px-3 {{# has_children }} dropdown-toggle {{/ has_children }}" href="{{ link }}" {{# has_children }} role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" {{/ has_children }}>
                                 {{ title }}
                                 </a>
                                 {{# has_children }}
