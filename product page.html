@@ -37,7 +37,7 @@
             <span class="px-1 fs-12"><i class="fas fa-chevron-right"></i></span
             ><a
               class="text-color fs-16 text-decoration-none"
-              href="/contents/product_view/{{product.product_code}}"
+              href="/contents/product_view/{{product.id}}"
             >
               {{ product.name }}
             </a>
@@ -141,6 +141,7 @@
                               Custom Fields Will Go Here
                               <p><span class="text-body">Color: </span>Red</p>
                       -->
+
               </div>
               <div
                 class="align-items-start align-items-lg-center justify-content-between flex-column flex-lg-row"
@@ -205,3 +206,29 @@
     </main>
   </h6></a
 >
+<script>
+$(document).ready(function(){
+let id = $(".product").data("product-id");
+$.ajax({
+        url: "/api2/products/" + id,
+        type: "GET",
+      }).done((data) => {
+       console.log(data);
+        let $thisProd = data.data.Product;
+        let brand = $thisProd.brand;
+        // // console.log(brand, cat);
+        // $(val).attr("data-brand", brand);
+        // $(val).attr("data-cat", cat);
+        // if (dis == null) {
+        //   $(val).attr("data-discount", "no");
+        // }
+        //   let divdetails = `ID = ${productId} , Brand = ${brand} , CategoryName = ${catName}`;
+
+        //   console.log(divdetails);
+      });
+
+
+
+});
+
+</script>
