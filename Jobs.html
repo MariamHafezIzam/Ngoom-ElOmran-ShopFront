@@ -1,3 +1,67 @@
+<style>
+  .button-wrapper {
+    position: relative;
+    width: 50%;
+  }
+
+  #upload {
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 50px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+  #comments {
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+    resize: none;
+    border-radius: 7px;
+    border-color: rgb(26 39 86 / 40%);
+    color: #1a2756;
+  }
+  .form-control {
+    border-radius: 7px;
+    color: #1a2756;
+    border-color: rgb(26 39 86 / 40%);
+  }
+  .form-control::placeholder {
+    color: #1a2756b6 !important;
+  }
+  input:focus::placeholder {
+    color: #fff !important;
+  }
+  .form-control::selection {
+    background-color: #1a2756 !important;
+    color: #fff;
+  }
+  .form-control:focus {
+    color: #1a2756 !important;
+  }
+  option {
+    color: #1a2756;
+  }
+  .whats {
+    background-color: #25d366;
+    border-radius: 10px;
+    text-align: center;
+    display: inline-flex;
+  }
+  .whatsbtn {
+    color: #fff;
+    display: flex;
+  }
+  .whatsbtn:hover {
+    color: #1a2756;
+  }
+  .icon {
+    font-size: 19px;
+  }
+</style>
 <div id="job-section">
   <div class="container px-0 px-lg-2" style="max-width: 1300px">
     <div class="py-4">
@@ -14,27 +78,177 @@
     </div>
     <div class="row py-4 border-bottom">
       <div class="col-12">
-        <h2 class="text-primary fs-lg-32 fs-24 font-weight-semibold mb-3">
+        <h2 class="text-primary fs-lg-32 fs-24 font-weight-semibold">
           طلب التوظيف :
         </h2>
-        <h4 class="text-color fs-lg-20 fs-16 font-weight-medium my-3">
-          استمارة طلب التوظيف
-        </h4>
-        <p class="text-justify py-1 my-0">الرجاء تعبئة جميع الحقول</p>
-        <p class="text-justify py-1 fs-16 my-0">
-          اختر القسم الذي يناسب مؤهلاتك :
-        </p>
-        <p class="text-justify py-1 my-0">
-          المبيعات خدمات مابعد البيع فني تكييف فني تأسيس فني مجاري هواء مدير
-          حسابات محاسب محامي معقب قسم الإشراف ميكانيكي سيارات كهربائي سيارات
-          التسويق والإعلام الموارد البشرية ضبط الجودة وخدمة العملاء التطوير
-          الرقمي والبرمجي ارجو كتابة هذه في الاقسام وامكانية رفع السيرة الذاتية
-        </p>
       </div>
-      <div class="row py-4">
+      <div class="row py-4 col-12 mx-auto">
         <div class="col-xl-2"></div>
+        <div class="col-xl-8">
+          <div class="">
+            <h4
+              class="text-color text-center fs-lg-20 fs-16 font-weight-medium my-3"
+            >
+              استمارة طلب التوظيف
+            </h4>
+            <p class="text-center py-1 my-0">الرجاء تعبئة جميع الحقول</p>
+            <p class="text-center py-1 fs-16 my-0">
+              اختر القسم الذي يناسب مؤهلاتك
+            </p>
+            <p class="text-center py-1 my-0 d-none">
+              المبيعات خدمات مابعد البيع فني تكييف فني تأسيس فني مجاري هواء مدير
+              حسابات محاسب محامي معقب قسم الإشراف ميكانيكي سيارات كهربائي سيارات
+              التسويق والإعلام الموارد البشرية ضبط الجودة وخدمة العملاء التطوير
+              الرقمي والبرمجي ارجو كتابة هذه في الاقسام وامكانية رفع السيرة
+              الذاتية
+            </p>
+          </div>
+          <form
+            accept-charset="UTF-8"
+            action=""
+            method="POST"
+            enctype="multipart/form-data"
+            target="_blank"
+            class="bg-white p-4"
+            style="border-radius: 20px"
+          >
+            <div class="row">
+              <div class="col-xl-6">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="fullname"
+                    class="form-control"
+                    id="exampleInputName"
+                    placeholder="الأسم *"
+                    required="required"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    class="form-control"
+                    name="tel"
+                    type="tel"
+                    placeholder=" رقم الهاتف *"
+                    id="example-tel-input"
+                    required="required"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    placeholder="البريد الالكتروني"
+                  />
+                </div>
+                <div class="form-group">
+                  <select id="dropdown-form" class="form-control" required>
+                    <option disabled selected>اختر القسم</option>
+                    <option value="1">قسم المبيعات</option>
+                    <option value="2">قسم خدمات مابعد البيع</option>
+                    <option value="3">قسم الموارد البشرية</option>
+                    <option value="4">قسم الدعم الفني</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <div class="button-wrapper mx-0">
+                    <span class="choose">
+                      أختر ملف <i class="far fa-plus ml-4"></i
+                    ></span>
+
+                    <input
+                      type="file"
+                      name="upload"
+                      id="upload"
+                      class="upload-box"
+                      placeholder="Upload File"
+                    />
+                  </div>
+                </div>
+                <textarea id="comments" placeholder="رسالة التقديم"></textarea>
+              </div>
+              <div class="col-xl-6" style="align-self: center">
+                <img
+                  src="https://nogoomfront.daftara.com/files/27d1f6af/logos/634e89364a337_blobid1666091316319.png"
+                  alt=""
+                  title="unnamed.png"
+                  width="100%"
+                  height="auto"
+                />
+              </div>
+            </div>
+            <div class="col-xl-12 text-center pb-2 pt-4">
+              <button
+                type="submit"
+                class="btn btn-primary fs-16 py-2 px-8 font-weight-semibold w-xl-25 w-50"
+              >
+                أرسل
+              </button>
+            </div>
+          </form>
+        </div>
         <div class="col-xl-2"></div>
-        <div class="col-xl-2"></div>
+      </div>
+    </div>
+    <div class="row py-4 border-bottom">
+      <div class="col-12">
+        <h2 class="text-primary fs-lg-32 fs-24 font-weight-semibold">
+          الموارد البشرية :
+        </h2>
+        <p class="text-justify py-1 my-0">
+          تعريف الموارد البشرية إنّ الموارد البشرية هي مجموعة من العمليات مثل
+          التخطيط والتنظيم والتوجيه والمراقبة لكافة النواحي التي تتعلق بالأفراد،
+          من أجل المحافظة عليهم وتنميتهم وتوعيتهم وعلاقات العمال وأصحاب العمل.
+          التوسع في التعليم والثقافة التي تختص بالموارد البشرية، وتشريع العمل.
+          ظهور التنظيمات والنقابات العالمية التي تقوم بالدفاع أهداف الموارد
+          البشرية الأهداف الأساسية: الاستمرارية في توفير الموارد البشرية
+          بالكفاءة والكم من أجل تمكين المؤسسة من تحقيق أهدافها، وأهداف المجتمع،
+          وأهداف العاملين بكل فاعلية وكفاءة. الأهداف التنظيمية: كتأدية إدارة
+          الموارد البشرية وظيفتها بشكل كامل ومترابط مع باقي الإدارات المختلفة،
+          وتقديم الإرشاد والنصح بكل ما يخص شؤون الأفراد. الأهداف الوظيفية: كضمان
+          الاستمرارية في تدفق القوى البشرية للمؤسسة بواسطة الاختيار والتعيين
+          والاستقطاب، والمحافظة على الاستمرارية في رغبة العاملين في العمل عن
+          طريق توفير نظام كامل . وضمان الاستفادة من الجهود البشرية من خلال
+          تطويرها وتدريبها. الأهداف الإنسانية: إتاحة الفرص من أجل تقدم الأفراد
+          في مجال أعمالهم بواسطة تهيئتهم من أجل زيادة دخولهم وإتاحة ظروف عمل
+          منشطة لهم، وتوفير سياسات موضوعية تستعمل بهدف الطاقات البشرية وحمايتها
+          من الأخطار. الأهداف الاجتماعية: كرفع مستويات المعيشة، ومساعدة الأفراد
+          في اختيار الوظائف المناسبة لهم، والمحافظة على قوة العمل في المجتمع.
+          وظائف الموارد البشرية الوظائف المتخصصة هي عبارة عن تهيئة الموارد
+          البشرية بواسطة: تطوير وتدريب الموارد البشرية والحفاظ عليها. تحضير
+          الموارد البشرية بالنوعية والكمية المطلوبة بهدف إنجاز العمل بكفاءة
+          عالية. مكافأة الموارد البشرية. الوظيفة الإدارية هي عبارة عن وظائف
+          الإدارة للتخطيط، والتنظيم، والتوجيه، والرقابة، وتحقق أهدافها عن طريق:
+          قيادة وتوجيه نشاطات العاملين. ممارسة تنظيم جهودها. رقابتها لعدم خروجها
+          عن سياستها العامة التي تعرقل تحقيق أهدافها. مراحل تخطيط الموارد
+          البشرية التعرف على خطة المؤسسة المتعددة بمعنى تقدير جميع الاحتياجات
+          المستقبلية من خلال: تحديد المتطلبات حسب التخصصات من أجل بلوغ المؤسسة
+          لأهدافها، ومعرفة مدى النقص في العمالة أو الفائض منها. تحليل الوضع
+          الحالي، ووضع الخطة بما يتناسب مع معالجة الموقف مستقبلاً بهدف مواجهة
+          متطلبات التوسع في الموارد البشرية. دراسة المتغيرات في البيئة الداخلية
+          والخارجية تحليل البيئة الخارجية، بالإضافة إلى تحليل العوامل المؤثرة
+          على سوق العمل. دراسة البيئة الداخلية عن طريق الخبرات والقدرات ونوع
+          المهارات وحجمها، مع مقارنتها بالعرض والطلب في سوق العمل. وضع
+          الافتراضات والتنبؤات تتراوح وسائل التنبؤ بين استعمال أساليب المحاكاة
+          المعقدة من خلال الحاسوب والاعتماد على تخمينات المسؤولين والتقديرات
+          الشخصية، واستعمال وسائل كمية أو غير كمية. مقارنة بين الطلب والعرض تكون
+          بعمل مقارنة بين الطلب والعرض على الأيدي العاملة؛ بمعنى التركيز على مدى
+          توفر العمالة داخل الشركة وحاجتها.
+        </p>
+        <div class="whats p-2 mx-0">
+          <a
+            href="https://api.whatsapp.com/send?phone=+2001149859561&text=Hello!!"
+            class="whatsbtn"
+            target="_blank"
+          >
+            <p class="fs-14 my-0">الارسال طريق الواتساب</p>
+            <i class="fab fa-whatsapp icon ml-2 my-auto"></i>
+          </a>
+        </div>
       </div>
     </div>
   </div>
