@@ -27,14 +27,10 @@
   .form-control {
     border-radius: 7px;
     color: #1a2756;
+    font-weight: 500;
     border-color: rgb(26 39 86 / 40%);
   }
-  .form-control::placeholder {
-    color: #1a2756b6 !important;
-  }
-  input:focus::placeholder {
-    color: #fff !important;
-  }
+
   .form-control::selection {
     background-color: #1a2756 !important;
     color: #fff;
@@ -60,6 +56,18 @@
   }
   .icon {
     font-size: 19px;
+  }
+  .form-group {
+    margin-bottom: 0.5rem;
+  }
+  .req {
+    color: #ff0000;
+  }
+  label {
+    color: #1a2756 !important;
+    font-size: 16px;
+    padding: 3px;
+    font-weight: 500;
   }
 </style>
 <div id="job-section">
@@ -115,36 +123,43 @@
             <div class="row">
               <div class="col-xl-6">
                 <div class="form-group">
+                  <label for="fullname"
+                    >الأسم <span class="req"> *</span></label
+                  >
                   <input
                     type="text"
                     name="fullname"
                     class="form-control"
                     id="exampleInputName"
-                    placeholder="الأسم *"
                     required="required"
                   />
                 </div>
                 <div class="form-group">
+                  <label for="tel">
+                    رقم الهاتف <span class="req"> *</span></label
+                  >
                   <input
                     class="form-control"
                     name="tel"
                     type="tel"
-                    placeholder=" رقم الهاتف *"
                     id="example-tel-input"
                     required="required"
                   />
                 </div>
                 <div class="form-group">
+                  <label for="email"> البريد الالكتروني </label>
                   <input
                     type="email"
                     name="email"
                     class="form-control"
                     id="exampleInputEmail1"
                     aria-describedby="emailHelp"
-                    placeholder="البريد الالكتروني"
                   />
                 </div>
+
                 <div class="form-group">
+                  <label for="option">اختر القسم</label>
+
                   <select id="dropdown-form" class="form-control" required>
                     <option disabled selected>اختر القسم</option>
                     <option value="1">قسم المبيعات</option>
@@ -155,7 +170,7 @@
                 </div>
 
                 <div class="form-group">
-                  <div class="button-wrapper mx-0">
+                  <div class="button-wrapper mx-0 py-2">
                     <span class="choose">
                       أختر ملف <i class="far fa-plus mx-4"></i
                     ></span>
@@ -169,11 +184,15 @@
                     />
                   </div>
                 </div>
-                <textarea
-                  id="comments"
-                  class="form-control"
-                  placeholder="رسالة التقديم"
-                ></textarea>
+
+                <div class="form-group">
+                  <label for="message">رسالة التقديم</label>
+                  <textarea
+                    id="comments"
+                    name="message"
+                    class="form-control"
+                  ></textarea>
+                </div>
               </div>
               <div class="col-xl-6" style="align-self: center">
                 <img
