@@ -55,9 +55,11 @@
     align-self: center;
     width: 45%;
   }
+
   .page-item.active .page-link {
     background-color: #1a2756 !important;
   }
+
   .list.list-view-filter .price-add,
   .list.list-view-filter .pro-img {
     width: 30%;
@@ -165,9 +167,12 @@
   }
 
   .filter__out {
-    background-color: #ff7d82;
+    position: absolute;
+    margin: -2em;
     width: 0;
-    margin: -1em;
+    height: 0;
+    opacity: 0;
+    top: 50%;
   }
 </style>
 
@@ -509,7 +514,7 @@
                 </div>
                 <button
                   data-name="sallamon"
-                  class="add-to-cart-btn btn btn-sm btn-primary text-uppercase font-weight-medium fs-16"
+                  class="add-to-cart-btn btn btn-sm btn-primary text-uppercase font-weight-medium fs-16 close-btn"
                 >
                   <i class="fal fa-cart-plus mr-2"></i>أضف الي العربة
                 </button>
@@ -594,27 +599,40 @@
     filter.classList.add("d-none");
   };
 
-  function filterOnDepartment(selectedCats, allProducts) {
-    // console.log("filtering!")
-    allProducts.removeClass("filter__out");
-    allProducts.filter((i, v) => {
+  // =============== Filter on Multi-Selection ====================
+  function filterOnDepartmentMulti(selectedCats, allProducts) {
+    // allProducts.removeClass("filter__out")
+    allProducts.removeClass("item__hidden");
+
+    let allfiltered = allProducts.map((i, v) => {
       let productCat = $(v).data("cat");
-      if (productCat != selectedCats) {
-        $(v).addClass("filter__out");
-        console.log("Filtered!", $(v));
-      } else {
-        $(v).removeClass("filter__out");
-      }
+      // selectedCats.includes(productCat) ? $(v).css({
+      //   background: "green"
+      // }) : $(v).css({
+      //   background: "red"
+      // })
+      selectedCats.includes(productCat)
+        ? console.log($(v))
+        : $(v).addClass("filter__out");
     });
   }
 
-  function onChangeFilters(allProducts) {
+  function onChangeFiltersMulti(allProducts) {
+    let selectedCats = [];
     let DepartFilterBlock = $(".filtter:nth-child(2) :checkbox");
     DepartFilterBlock.change(function () {
+      allProducts.removeClass("filter__out");
       let $this = $(this);
       let selectedCat = $this.val();
-      console.log(selectedCat);
-      filterOnDepartment(selectedCat, allProducts);
+      if ($this.is(":checked")) {
+        selectedCats.push(selectedCat);
+        console.log(selectedCat, selectedCats);
+      } else {
+        selectedCats.indexOf(selectedCat) != -1 &&
+          selectedCats.splice(selectedCats.indexOf(selectedCat), 1);
+        console.log(selectedCat, selectedCats);
+      }
+      filterOnDepartmentMulti(selectedCats, allProducts);
     });
   }
 
@@ -644,6 +662,6 @@
       });
     });
 
-    onChangeFilters(allProducts);
+    onChangeFiltersMulti(allProducts);
   });
 </script>
