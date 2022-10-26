@@ -16,84 +16,165 @@
   a:hover {
     text-decoration: none !important;
   }
+  .custom-model-main {
+    color: #1a2756;
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    height: 400px;
+    width: 100%;
+    right: 0;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+    visibility: visible;
+    opacity: 1;
+    overflow: hidden;
+    transition: 0.3s;
+  }
+
+  .model-open {
+    display: none !important;
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+  }
+  #site-sidebar {
+    width: 100% !important;
+    background-color: transparent;
+  }
+  .side-sidebar-wrap {
+    width: 25% !important ;
+    position: absolute !important;
+    left: 0 !important;
+    z-index: 100;
+  }
+  #services .box img {
+    display: none !important;
+  }
+  #services .box h6 {
+    min-height: auto !important;
+  }
 </style>
-<div id="site-sidebar">
-  <div class="side-sidebar-wrap">
-    <div class="side-sidebar-header">
-      <button
-        type="button"
-        class="cart-toggle-btn btn p-0 font-weight-semibold d-inline-flex align-items-center fs-16 text-color"
-      >
-        <i class="fas fa-arrow-circle-left mr-2 fs-18"></i>عربة التسوق
-      </button>
-    </div>
-    <div class="side-sidebar-body my-5">
-      <div class="cart-items">
-        <div style="display: none" class="cart-item">
-          <button
-            class="btn text-danger-30 text-hover-danger fs-16 p-0 mr-4 tip remove-cart-item"
-            title="أزالة منتج"
-          >
-            <i class="fas fa-trash-alt"></i>
-          </button>
-          <div class="cart-item-details">
-            <a href="#">
-              <img
-                src=""
-                width="64"
-                height="58"
-                alt="إسم المنتج"
-                class="cart-item-image"
-              />
-            </a>
-            <div class="flex-grow-1 ml-3">
-              <a href="#" class="text-primary"
-                ><h4 class="fs-16 font-weight-medium cart-item-name"></h4
-              ></a>
-              <div
-                class="mt-2 d-flex align-items-center justify-content-between"
-              >
-                <span
-                  class="text-color font-weight-medium cart-item-price"
-                ></span>
-                <div class="cart-item-count">
-                  <button
-                    class="btn p-0 fas fa-minus-circle fs-16 text-color minus"
-                  ></button>
-                  <input
-                    type="number"
-                    value=""
-                    class="form-control qty cart-item-qty"
-                    min="1"
-                    step="1"
-                    style="color: #ff7d82 !important"
-                  />
-                  <button
-                    class="btn p-0 fas fa-plus-circle fs-16 text-color plus"
-                  ></button>
+<div class="w-100">
+  <div id="site-sidebar">
+    <div class="side-sidebar-wrap">
+      <div class="side-sidebar-header">
+        <button
+          type="button"
+          class="cart-toggle-btn btn p-0 font-weight-semibold d-inline-flex align-items-center fs-16 text-color"
+        >
+          <i class="fas fa-arrow-circle-left mr-2 fs-18"></i>عربة التسوق
+        </button>
+      </div>
+
+      <div class="side-sidebar-body my-5">
+        <div class="cart-items">
+          <div style="display: none" class="cart-item">
+            <button
+              class="btn text-danger-30 text-hover-danger fs-16 p-0 mr-4 tip remove-cart-item"
+              title="أزالة منتج"
+            >
+              <i class="fas fa-trash-alt"></i>
+            </button>
+            <div class="cart-item-details">
+              <a href="#">
+                <img
+                  src=""
+                  width="64"
+                  height="58"
+                  alt="إسم المنتج"
+                  class="cart-item-image"
+                />
+              </a>
+              <div class="flex-grow-1 ml-3">
+                <a href="#" class="text-primary"
+                  ><h4 class="fs-16 font-weight-medium cart-item-name"></h4
+                ></a>
+                <div
+                  class="mt-2 d-flex align-items-center justify-content-between"
+                >
+                  <span
+                    class="text-color font-weight-medium cart-item-price"
+                  ></span>
+                  <div class="cart-item-count">
+                    <button
+                      class="btn p-0 fas fa-minus-circle fs-16 text-color minus"
+                    ></button>
+                    <input
+                      type="number"
+                      value=""
+                      class="form-control qty cart-item-qty"
+                      min="1"
+                      step="1"
+                      style="color: #ff7d82 !important"
+                    />
+                    <button
+                      class="btn p-0 fas fa-plus-circle fs-16 text-color plus"
+                    ></button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <div class="empty-cart-text"></div>
+        <div class="cart-subtotal">
+          <span class="font-weight-medium text-dark mr-3 qty-subtotal">
+            إجمالى ({{cart_items_count}} منتجات)
+          </span>
+          <span class="cart-total font-weight-bold text-color fs-24"> </span>
+        </div>
       </div>
-      <div class="empty-cart-text"></div>
-      <div class="cart-subtotal">
-        <span class="font-weight-medium text-dark mr-3 qty-subtotal">
-          إجمالى ({{cart_items_count}} منتجات)
-        </span>
-        <span class="cart-total font-weight-bold text-color fs-24"> </span>
+      <div class="side-sidebar-footer">
+        <a
+          id="checkout-btn"
+          href="/client/contents/order_summary"
+          class="disabled btn btn-primary d-flex align-items-center justify-content-between btn-block px-4 py-3 text-uppercase fs-16 font-weight-medium btn-lg mt-auto"
+        >
+          <span>الدفع</span>
+          <span class="fas fa-arrow-square-right"></span>
+        </a>
       </div>
     </div>
-    <div class="side-sidebar-footer">
-      <a
-        id="checkout-btn"
-        href="/client/contents/order_summary"
-        class="disabled btn btn-primary d-flex align-items-center justify-content-between btn-block px-4 py-3 text-uppercase fs-16 font-weight-medium btn-lg mt-auto"
-      >
-        <span>الدفع</span>
-        <span class="fas fa-arrow-square-right"></span>
-      </a>
+    <!-- ================= -->
+    <div class="custom-model-main text-primary bg-white">
+      <div class="custom-model-inner" style="max-width: 1300px; margin: auto">
+        <div class="custom-model-wrap">
+          <p class="text-center fs-18 p-2">
+            ما هو المكان المناسب لتركيب وحدة المكيف الخارجية؟
+          </p>
+          <div class="pop-up-content-wrap" id="services"></div>
+        </div>
+        <div
+          class="close-btn fs-20 px-4 py-2 font-weight-bold text-center py-2 d-none"
+        >
+          <button class="btn btn-primary">تم تحديد الخدمة</button>
+        </div>
+      </div>
     </div>
+    <!-- ================== -->
   </div>
 </div>
+<script>
+  $(document).ready(function () {
+    $(function () {
+      $.ajax({
+        url: "/contents/products_list?cat_id=8",
+        type: "get",
+        success: function (resp) {
+          $("#services").html(
+            $(resp).find("#products-section .row:nth-last-child(2)")
+          );
+        },
+      });
+
+      return false;
+    });
+  });
+  setTimeout(() => {
+    $(".close-btn, #services button").click(function () {
+      $(".custom-model-main").addClass("model-open");
+    });
+  }, "5000");
+</script>
