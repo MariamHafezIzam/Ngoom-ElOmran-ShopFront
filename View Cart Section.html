@@ -20,11 +20,11 @@
     color: #1a2756;
     position: absolute;
     z-index: 1000;
-    top: 10%;
-    height: 80%;
+    top: 20%;
+    height: fit-content;
     width: 50%;
     right: 22%;
-    display: block;
+    display: grid;
     visibility: visible;
     opacity: 1;
     overflow: auto;
@@ -188,17 +188,19 @@
     <!-- ================= -->
     <div class="bg-popup">
       <div class="custom-model-main text-primary bg-white">
-        <div class="custom-model-inner" style="max-width: 1300px; margin: auto">
-          <div class="close-btn fs-20 px-4 py-2 font-weight-bold text-left">
-            <button class="btn btn-primary fs-20 py-1 px-3 font-weight-medium">
-              x
-            </button>
-          </div>
+        <div
+          class="close-btn fs-20 px-4 py-2 font-weight-bold text-left col-12"
+        >
+          <button class="btn btn-primary fs-20 py-1 px-3 font-weight-medium">
+            x
+          </button>
+        </div>
+        <div class="custom-model-inner pl-4">
           <div class="custom-model-wrap">
-            <p class="text-center fs-18 p-2 m-0">
+            <p class="fs-18 p-2 m-0">
               ما هو المكان المناسب لتركيب وحدة المكيف الخارجية؟
             </p>
-            <div id="service-form " class="row p-4 fs-24">
+            <div id="service-form " class="row m-4 fs-24">
               <div class="col-6">
                 <input
                   type="radio"
