@@ -32,6 +32,7 @@
     font-size: 16px;
     padding: 3px;
     font-weight: 500;
+    margin-right: 0 !important;
   }
   .form-group {
     margin-bottom: 0.5rem;
@@ -138,16 +139,24 @@
                 aria-describedby="emailHelp"
               />
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="option"> نوع الموعد </label>
 
               <select id="dropdown-form" class="form-control" required>
-                <!-- <option disabled selected>نوع الموعد</option> -->
+                
                 <option value="1" selected>موعد تركيب مكيفات</option>
                 <option value="2">موعد تاسيس مواسير نحاسية</option>
                 <option value="3">موعد تصنيع وتركيب مجاري هواء</option>
                 <option value="4">موعد معاينة موقع</option>
               </select>
+            </div> -->
+            <div class="form-group">
+              <label for="reserve">برجاء تحديد نوع الخدمة المطلوبة </label>
+              <textarea
+                id="comments"
+                name="message"
+                class="form-control"
+              ></textarea>
             </div>
             <div class="form-group" style="position: relative">
               <label for="date">اختر اليوم المناسب لك </label>
@@ -159,7 +168,10 @@
               ></i>
             </div>
             <div class="form-group">
-              <label for="time">اختر الساعة المناسبة لك </label>
+              <label for="time"
+                >اختر الساعة المناسبة لك مع العلم ان المواعيد المتاحة من 8:30
+                صباحا الي 3:00 مساءا</label
+              >
 
               <input type="text" class="form-control" />
             </div>
