@@ -25,6 +25,19 @@
 .addtocart {
     width:72% !important;}
   }
+  .radius {
+    border-radius: 20px ;
+  }
+  .spec {
+    border:  1px solid #d3d3d3;
+  }
+  .spec tr:nth-child(odd) td {
+    background-color:#eff0f0 ;
+  }
+  .spec td {
+    font-size: 18px;
+    padding: 10px 5px;
+  }
 </style>
 
 <main id="main-content">
@@ -42,7 +55,7 @@
               {{ product.name }}
             </a>
           </div>
-          <div class="row bg-white p-xl-8 p-2">
+          <div class="row bg-white p-xl-8 p-2 radius mb-10" >
             <div class="col-lg-5">
               <div class="swiper-slider">
                 <div
@@ -201,6 +214,37 @@
               </div>
             </div>
           </div>
+          <h3 class="fs-xl-28 fs-20 font-weight-medium text-primary py-2 px-2">
+            <span class="b-secondary"> المزيد من المعلومات</span>
+          </h3>
+          <div class="row bg-white p-xl-8 p-2 radius" > 
+<table width="100%" class="spec">
+<tr>
+  <td width="15%">العلامة التجارية </td>
+  <td width="85%" id="brand"></td>
+</tr>
+<tr>
+  <td >الموديل</td>
+  <td id="model"></td>
+</tr>
+<tr>
+  <td >اللون</td>
+  <td id="color"></td>
+</tr>
+<tr>
+  <td >بارد / ساخن و بارد</td>
+  <td id="cool"></td>
+</tr>
+<tr>
+  <td >ضمان الجهاز</td>
+  <td id="guarantee"></td>
+</tr>
+<tr>
+  <td >بلد الصنع</td>
+  <td id="country"></td>
+</tr>
+</table>
+          </div>
         </div>
       </div>
     </main>
@@ -210,21 +254,24 @@
 $(document).ready(function(){
 let id = $(".product").data("product-id");
 $.ajax({
-        url: "/api2/products/" + id,
+        url: "/v2/api/entity/product/" + id,
         type: "GET",
       }).done((data) => {
-       console.log(data);
-        let $thisProd = data.data.Product;
-        let brand = $thisProd.brand;
-        // // console.log(brand, cat);
-        // $(val).attr("data-brand", brand);
-        // $(val).attr("data-cat", cat);
-        // if (dis == null) {
-        //   $(val).attr("data-discount", "no");
-        // }
-        //   let divdetails = `ID = ${productId} , Brand = ${brand} , CategoryName = ${catName}`;
-
-        //   console.log(divdetails);
+        
+       let model = data.custom_data.field_3
+       let color = data.custom_data.field_4
+       let cool = data.custom_data.field_5
+       let guarantee = data.custom_data.field_6
+       let country = data.custom_data.field_7
+       let brand = data.brand
+      
+       $("#brand").text(brand);
+       $("#model").text(model);
+       $("#color").text(color);
+       $("#guarantee").text(guarantee);
+       $("#cool").text(cool);
+       $("#country").text(country);
+        
       });
 
 
