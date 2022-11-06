@@ -20,20 +20,20 @@
         }
         *::selection {
             color: #fff;
-            background-color:#1a2756;
+            background-color:#0066a5;
         }
         body{
-            color: #1a2756;
+            color: #053858;
             background-color: #f3f5f6;
         }
         .container {
             max-width: 1480px
         }
         .text-primary{
-            color: #1a2756 !important;
+            color: #053858 !important;
         }
         .bg-primary {
-            background-color: #1a2756 !important;
+            background-color: #0066a5 !important;
 
         } 
         .white {
@@ -52,7 +52,9 @@
         .b-secondary{
             border-bottom: 1px solid #00badb ;
         }
-
+.text-secondary  {
+    color:#0066a5 !important;
+}
 .b-l{
     border-left: 1px solid rgba(255,255,255,0.15)
 }
@@ -63,25 +65,25 @@ min-height: auto;
     background-color: #e3eff4;
 }
 .bg-third {
-    background-color: #ff7d82 !important;
+    background-color: #fb513e !important;
 }
 .bg-third:hover{
     background-color: #e3eff4 !important;
-    color: #1a2756 !important;
+    color: #053858 !important;
 }
 .btn-outline-white:hover {
-    background-color: #ff7d82;
+    background-color: #fb513e;
 }
 .form-control {
 height: 45px;
 }
 header#site-header #totalCart {
-    background-color: #ff7d82 !important;
+    background-color: #fb513e !important;
     color: #fff;
 }
 header#site-header #totalCart:hover {
     background-color: #e3eff4 !important;
-    color: #1a2756 ;
+    color: #053858 ;
 }
 .cart-toggle-btn {
     font-weight: 600;
@@ -152,17 +154,21 @@ a.text-white:focus, a.text-white:hover {
     }
 .float{
 	position:fixed;
-	width:40px;
-	height:40px;
-	bottom:5%;
+	width:60px;
+	height:60px;
+	bottom:15%;
 	left:2%;
 	background-color:#25d366;
 	color:#FFF;
 	border-radius:50px;
 	text-align:center;
-  font-size:24px;
+  font-size:40px;
 	box-shadow: 2px 2px 10px 2px rgba(96, 94, 94, 0.456);
   z-index:100;
+}
+.float:hover{
+    color:#ebf4ff;
+
 }
 
 .my-float{
@@ -177,15 +183,18 @@ a.text-white:focus, a.text-white:hover {
 
    
 }
+label {
+    margin-right: 0px !important;
+}
 .name:hover {
     background-color:#e3eff4 ;
     border-radius: 10px;
 }
 .price {
-    color: #ff7d82;
+    color: #fb513e;
 }
 .price:hover{
-    color: #1a2756;
+    color: #053858;
 }
 .h-140px {
     height: 140px !important;
@@ -193,15 +202,17 @@ a.text-white:focus, a.text-white:hover {
 .add-to-cart-btn {
     align-self: center;
     border-radius: 20px;
-    background-color: #1a2756;
+    background-color: #0066a5;
     color: #e3eff4;
 }
-
+.btn-primary:hover {
+    background-color: #004067 !important;
+}
 .text-color {
-    color: #1a2756 !important;
+    color: #053858 !important;
 }
 .text-color:hover{
-    color: #ff7d82 !important;
+    color: #fb513e !important;
 }
 .box {
    transition: all .5s ease-in-out; 
@@ -243,7 +254,7 @@ a.text-white:focus, a.text-white:hover {
         
         .dropdown-content a {
            
-            color: #1a2756;
+            color: #053858;
             padding: 12px 16px;
           
             text-decoration: none;
@@ -292,10 +303,10 @@ div#home-featured-products-section {
     z-index: 0;
     display: inline-block;
     width: max-content;
-    background: #1a2756 !important;
+    background: #0066a5 !important;
     cursor: pointer;
     color: #fff;
-    padding: 10px 5px;
+    padding: 10px ;
     border-radius: 7px;
   }
   .input#example-date-input::-webkit-datetime-edit {
@@ -495,7 +506,7 @@ a.logn {
                         <ul class="navbar-nav px-0 py-2">
                             {{# menuItems }}
                             <li class="nav-item dropdown mr-2">
-                                <a class="nav-link fs-xl-16 py-2 px-3 {{# has_children }} dropdown-toggle {{/ has_children }}" href="{{ link }}" {{# has_children }} role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" {{/ has_children }}>
+                                <a class="nav-link fs-xl-20 py-2 px-3 {{# has_children }} dropdown-toggle {{/ has_children }}" href="{{ link }}" {{# has_children }} role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" {{/ has_children }}>
                                 {{ title }}
                                 </a>
                                 {{# has_children }}
@@ -553,29 +564,54 @@ a.logn {
                 <ul class="navbar-nav d-block p-0">
                     <li class="nav-item px-1 mr-3">
                         <a class="nav-link fs-xl-16 d-flex text-white pl-lg-2 pr-lg-3 px-1 "  href="/contents/products_list?cat_id=3">
-                            <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/6339580e1a1ec_blobid1664702476348.png" alt="" title="ac.png" width="auto" height="45" caption="false" /> <p class="my-auto fs-13 fs-lg-16">مكييفات </p>
+                            <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/6339580e1a1ec_blobid1664702476348.png" alt="" title="ac.png" width="auto" height="40" caption="false" /> <p class="my-auto fs-13 fs-lg-16">مكييفات </p>
                         </a>
                     </li>
-                    <li class="nav-item px-1  mr-3">
-                        <a class="nav-link fs-xl-16 d-flex text-white pl-lg-2 pr-lg-3 px-1"  href="/contents/products_list?cat_id=4">
-                            <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/633957e6e5409_blobid1664702436903.png" title="fridge.png"      width="auto" height="45" caption="false" /> <p class="my-auto fs-13 fs-lg-16">ثلاجات  </p>
+                    <li class="nav-item px-1 mr-3">
+                        <a class="nav-link fs-xl-16 d-flex text-white pl-lg-2 pr-lg-3 px-1 "  href="/contents/products_list?cat_id=1">
+                            <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftara.com/files/27d1f6af/logos/63675fd5ca5e6_blobid1667719122982.png" alt="" title="water-pipe (2).png" width="auto" height="40" /><p class="my-auto fs-13 fs-lg-16">تأسيس نحاس </p>
                         </a>
                     </li>
-                    <li class="nav-item px-1  mr-3">
-                        <a class="nav-link fs-xl-16 d-flex text-white pl-lg-2 pr-lg-3 px-1"  href="/contents/products_list?cat_id=5">
-                            <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/633956f2d8986_blobid1664702190271.png" title="fan.png" width="auto" height="45" caption="false" /> <p class="my-auto fs-13 fs-lg-16">مراوح </p>
+                    <li class="nav-item px-1 mr-3">
+                        <a class="nav-link fs-xl-16 d-flex text-white pl-lg-2 pr-lg-3 px-1 "  href="/contents/products_list?cat_id=1">
+                            <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftara.com/files/27d1f6af/logos/63676079ca1f2_blobid1667719288355.png" alt="" title="water-pipe (1).png" width="auto" height="40" />
+                            <p class="my-auto fs-13 fs-lg-16"> مجاري هواء </p>
                         </a>
                     </li>
                     <li class="nav-item px-1 mr-0">
                         <a class="nav-link fs-xl-16 d-flex text-white pl-lg-2 pr-lg-3 px-1"  href="/contents/products_list?cat_id=6">
-                            <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/63395876937b9_blobid1664702580602.png" title="ac (1).png" width="auto" height="45" caption="false" /> <p class="my-auto fs-13 fs-lg-16">مكييفات صحراوية  </p>
+                            <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/63395876937b9_blobid1664702580602.png" title="ac (1).png" width="auto" height="40" caption="false" /> <p class="my-auto fs-13 fs-lg-16">مكييفات صحراوية  </p>
+                        </a>
+                    </li>
+                    <li class="nav-item px-1  mr-3">
+                        <a class="nav-link fs-xl-16 d-flex text-white pl-lg-2 pr-lg-3 px-1"  href="/contents/products_list?cat_id=5">
+                            <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftara.com/files/27d1f6af/logos/636765a881562_blobid1667720615034.png" title="fan.png" width="auto" height="40" caption="false" /> <p class="my-auto fs-13 fs-lg-16"> مراوح شفط</p>
+                        </a>
+                    </li>
+                
+                    <li class="nav-item px-1  mr-3">
+                        <a class="nav-link fs-xl-16 d-flex text-white pl-lg-2 pr-lg-3 px-1"  href="/contents/products_list?cat_id=4">
+                            <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftara.com/files/27d1f6af/logos/636761afcbfa1_blobid1667719598320.png" alt="" title="freezing.png" width="auto" height="40" />
+                            <p class="my-auto fs-13 fs-lg-16">غرف تبريد وتجميد  </p>
+                        </a>
+                    </li>
+         
+                    <li class="nav-item px-1  mr-3">
+                        <a class="nav-link fs-xl-16 d-flex text-white pl-lg-2 pr-lg-3 px-1"  href="/contents/products_list?cat_id=4">
+                            <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftara.com/files/27d1f6af/logos/63676427751a4_blobid1667720230622.png" title="electric-appliance.png" width="auto" height="40" caption="false" />
+                            <p class="my-auto fs-13 fs-lg-16"> اجهزة منزلية   </p>
+                        </a>
+                    </li>
+                    <li class="nav-item px-1  mr-3">
+                        <a class="nav-link fs-xl-16 d-flex text-white pl-lg-2 pr-lg-3 px-1"  href="/contents/products_list?cat_id=4">
+                            <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftara.com/files/27d1f6af/logos/636764cfa619e_blobid1667720394027.png" title="tools.png" width="auto" height="40" caption="false" />
+                            <p class="my-auto fs-13 fs-lg-16"> صيانة    </p>
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
-
     <a href="https://api.whatsapp.com/send?phone=+2001149859561&text=Hello!!" class="float" target="_blank">
     <i class="fab fa-whatsapp my-float"></i>
         </a>
