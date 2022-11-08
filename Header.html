@@ -321,6 +321,15 @@ div#home-featured-products-section {
     position: absolute;
     right: 2%;
   }
+  .ui-datepicker {
+    width: 85% !important;
+    margin: auto;
+  }
+  .ui-datepicker td span,
+  .ui-datepicker td a {
+    padding: 5px 0px;
+    text-align: center;
+  }
   .cd-popup.is-visible {
     opacity: 1 !important ;
     visibility: visible !important;
@@ -716,13 +725,28 @@ a.logn {
                             cartItems[productId] = {name: name,id: productId,qty: qty, image: image, price: price};
 
                         }
-
+                        var productAll=   $(this).parents(".product").data("product-id");
+                        console.log(productAll)
+                        $.ajax({
+        url: "/api2/products/" + productId,
+        type: "GET",
+      }).done((data) => {
+        // console.log(data);
+        let $thisProd = data.data.Product;
+       
+        let cat = $thisProd.ProductCategory[0].name;
+        if (cat == "أجهزة التكييف") {
+            $(".custom-model-main").addClass("model-open");
+                        $(".bg-popup ").addClass("model-open");
+        }
+      });
+                      
+                      
                         $this.saveItemToBackEnd(productId);
                         $this.updateProductCartListItem(productId);
                         $("body").addClass("sidebar-active");
                         initTooltips();
-                        $(".custom-model-main").addClass("model-open");
-                        $(".bg-popup ").addClass("model-open");
+                       
                     });
                     
 
