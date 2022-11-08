@@ -4,11 +4,34 @@
     href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
   />
   <link rel="stylesheet" href="/resources/demos/style.css" />
+  <link
+    rel="stylesheet"
+    href=" https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/themes/redmond/jquery-ui.css"
+  />
+
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
   <script>
     $(function () {
-      $("#datepicker").datepicker();
+      //  $("#datepicker").datepicker();
+      $("#datepicker").datepicker({
+        beforeShowDay: noFridays,
+      });
+      function noFridays(date) {
+        if (date.getDay() === 5)
+          /* Friday */
+          return [false, "closed", "Closed on Friday"];
+        else return [true, "", ""];
+      }
+    });
+    $(function () {
+      $("#datePicker").igDatePicker();
+      $.ig.loader({
+        scriptPath: "/Scripts/ig/",
+        cssPath: "/Content/ig/",
+        resources: "igEditors",
+        theme: "redmond",
+      });
     });
   </script>
 </head>
@@ -29,13 +52,13 @@
   }
   label {
     color: #1a2756 !important;
-    font-size: 16px;
+    font-size: 18px;
     padding: 3px;
     font-weight: 500;
     margin-right: 0 !important;
   }
   .form-group {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
 
   .form-control::selection {
@@ -61,6 +84,33 @@
     border-color: rgb(26 39 86 / 40%);
     color: #1a2756;
   }
+  /* 
+  .ui-datepicker {
+    width: 300px;
+    color: #0066a5;
+  }
+  .ui-state-default,
+  .ui-widget-content .ui-state-default,
+  .ui-widget-header .ui-state-default,
+  .ui-button,
+  html .ui-button.ui-state-disabled:hover,
+  html .ui-button.ui-state-disabled:active {
+    border: 1px solid #c3dcff;
+    background: #f0f9ff;
+    text-align: center;
+    font-weight: normal;
+    color: #053858;
+  }
+  .ui-datepicker table {
+    background-color: #fff;
+  }
+  .ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all {
+    color: #fff;
+    background-color: #0066a5;
+  }
+  .ui-widget-header .ui-icon {
+    background-image: url(images/ui-icons_ffffff_256x240.png);
+  } */
   @media only screen and (max-width: 991px) {
     input[type="datetime-local"]::-webkit-calendar-picker-indicator {
       position: absolute;
@@ -169,13 +219,15 @@
             </div>
             <div class="form-group">
               <label for="time"
-                >اختر الساعة المناسبة لك مع العلم ان المواعيد المتاحة من 8:30
-                صباحا الي 3:00 مساءا</label
-              >
+                >اختر الساعة المناسبة لك
+                <span class="fs-14"
+                  >( المواعيد المتاحة من 8:30 صباحا الي 3:00 مساءا )
+                </span>
+              </label>
 
               <input type="text" class="form-control" />
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="message">رسالة </label>
 
               <textarea
@@ -183,7 +235,7 @@
                 name="message"
                 class="form-control"
               ></textarea>
-            </div>
+            </div> -->
             <div class="col-xl-12 text-center pb-2 pt-4">
               <button
                 type="submit"
