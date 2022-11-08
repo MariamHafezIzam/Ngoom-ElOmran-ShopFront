@@ -16,27 +16,29 @@
   a:hover {
     text-decoration: none !important;
   }
+
   .custom-model-main {
     color: #0066a5;
-    position: absolute;
+    /* position: absolute; */
     z-index: 1000;
     top: 20%;
     height: fit-content;
-    width: 50%;
-    right: 22%;
-    display: grid;
-    visibility: visible;
-    opacity: 1;
-    overflow: auto;
+    text-align: right;
+    width: 650px;
+    /* right: 22%; */
     transition: 0.3s;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  }
-
-  .model-open {
-    display: none !important;
+    display: none;
     visibility: hidden;
     opacity: 0;
     overflow: hidden;
+  }
+
+  .model-open {
+    display: grid !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    overflow: auto !important;
   }
   #site-sidebar {
     width: 100% !important;
@@ -54,33 +56,7 @@
   #services .box h6 {
     min-height: auto !important;
   }
-  input[type="radio"]:after {
-    width: 27px;
-    height: 27px;
-    border-radius: 15px;
-    top: -6px;
-    /* left: -1px; */
-    position: relative;
-    background-color: #d1d3d1;
-    content: "";
-    display: inline-block;
-    visibility: visible;
-    border: 2px solid white;
-  }
 
-  input[type="radio"]:checked:after {
-    width: 27px;
-    height: 27px;
-    border-radius: 15px;
-    top: -6px;
-    /* left: -1px; */
-    position: relative;
-    background-color: #fb513e;
-    content: "";
-    display: inline-block;
-    visibility: visible;
-    border: 2px solid white;
-  }
   label {
     margin-right: 15px;
   }
@@ -90,18 +66,76 @@
     height: 100%;
     position: absolute;
     z-index: 1000;
-    top: 0%;
-    right: 0%;
-    display: block;
-    visibility: visible;
-    opacity: 1;
-    overflow: auto;
+    /* top: 0%;
+    right: 0%; */
+    justify-content: center;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
     transition: 0.3s;
   }
 
-  /* input[name="select_services"] {
-    accent-color: green;
-  } */
+  .cont {
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+  }
+
+  /* Hide the browser's default radio button */
+  .cont input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  /* Create a custom radio button */
+  .checkmarks {
+    position: absolute;
+    top: 6px;
+    left: 2%;
+    height: 25px;
+    width: 25px;
+    background-color: #c0c0c0;
+    border-radius: 50%;
+  }
+
+  /* On mouse-over, add a grey background color */
+  .cont:hover input ~ .checkmarks {
+    background-color: #ccc;
+  }
+
+  /* When the radio button is checked, add a blue background */
+  .cont input:checked ~ .checkmarks {
+    background-color: #0066a5;
+  }
+
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmarks:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  /* Show the indicator (dot/circle) when checked */
+  .cont input:checked ~ .checkmarks:after {
+    display: block;
+  }
+
+  /* Style the indicator (dot/circle) */
+  .cont .checkmarks:after {
+    top: 8px;
+    left: 8px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #fff;
+  }
+  .service {
+    background-color: #f3f4f6;
+    border: 1px solid #f4eeee;
+  }
 </style>
 
 <div class="w-100">
@@ -191,50 +225,89 @@
         <div
           class="close-btn fs-20 px-4 py-2 font-weight-bold text-left col-12"
         >
-          <button class="btn btn-primary fs-20 py-1 px-3 font-weight-medium">
+          <button class="btn text-color fs-20 py-1 px-3 font-weight-semibold">
             x
           </button>
         </div>
-        <div class="custom-model-inner pl-4">
+        <div class="custom-model-inner">
           <div class="custom-model-wrap">
-            <p class="fs-18 p-2 m-0">
+            <p class="fs-18 p-2 m-0 text-center">
               ما هو المكان المناسب لتركيب وحدة المكيف الخارجية؟
             </p>
             <div id="service-form " class="row m-4 fs-24">
-              <div class="col-6">
-                <input
-                  type="radio"
-                  id="zero"
-                  name="select_services"
-                  value="8"
-                />
-                <label for="zero">الطابق الارضي</label><br />
+              <div class="py-2 col-12 service">
+                <label for="zero" class="cont">
+                  <div style="width: 37%">الطابق الارضي</div>
 
-                <input
-                  type="radio"
-                  id="first"
-                  name="select_services"
-                  value="9"
-                />
-                <label for="first">الطابق الاول</label><br />
+                  <div
+                    style="width: 33%; text-align-last: center; color: #fb513e"
+                  >
+                    200.00 ج.م
+                  </div>
+                  <input
+                    type="radio"
+                    id="zero"
+                    name="select_services"
+                    value="8"
+                  />
+                  <span class="checkmarks"></span>
+                </label>
               </div>
-              <div class="col-6">
-                <input
-                  type="radio"
-                  id="second"
-                  name="select_services"
-                  value="10"
-                />
-                <label for="second">الطابق الثاني</label><br />
-                <input
-                  type="radio"
-                  id="third"
-                  name="select_services"
-                  value="11"
-                />
-                <label for="third">الطابق الثالث</label>
+              <div class="py-2 col-12 service">
+                <label for="first" class="cont">
+                  <div style="width: 37%">الطابق الاول</div>
+                  <div
+                    style="width: 33%; text-align-last: center; color: #fb513e"
+                  >
+                    300.00 ج.م
+                  </div>
+                  <input
+                    type="radio"
+                    id="first"
+                    name="select_services"
+                    value="9"
+                  />
+                  <span class="checkmarks"></span>
+                </label>
               </div>
-              <div class="col-12 pt-3 text-center">
+
+              <div class="py-2 col-12 service">
+                <label for="second" class="cont">
+                  <div style="width: 37%">الطابق الثاني</div>
+
+                  <div
+                    style="width: 33%; text-align-last: center; color: #fb513e"
+                  >
+                    400.00 ج.م
+                  </div>
+                  <input
+                    type="radio"
+                    id="second"
+                    name="select_services"
+                    value="10"
+                  />
+                  <span class="checkmarks"></span>
+                </label>
+              </div>
+              <div class="py-2 col-12 service">
+                <label for="third" class="cont">
+                  <div style="width: 37%">الطابق الثالث</div>
+                  <div
+                    style="width: 33%; text-align-last: center; color: #fb513e"
+                  >
+                    500.00 ج.م
+                  </div>
+
+                  <input
+                    type="radio"
+                    id="third"
+                    name="select_services"
+                    value="11"
+                  /><span class="checkmarks"></span>
+                </label>
+              </div>
+
+              <div class="col-12 pt-8 text-center">
                 <p class="text-center">
                   <input
                     class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary close-btn"
@@ -254,6 +327,7 @@
         </div>
       </div>
     </div>
+
     <!-- ================== -->
   </div>
 </div>
@@ -275,10 +349,19 @@
   });
 
   $(".close-btn").click(function () {
-    $(".custom-model-main").addClass("model-open");
-    $(".bg-popup ").addClass("model-open");
+    $(".custom-model-main").removeClass("model-open");
+    $(".bg-popup ").removeClass("model-open");
   });
+
+  // $(".sidebar-active")
   $(document).ready(function () {
+    setTimeout(() => {
+      // let price = $(".price-no span");
+      // $.each(price, (i, val) => {
+      //   let productPrice = $(val).text();
+      //   console.log(productPrice);
+      // });
+    }, "1000");
     $("input[type='button']").click(function () {
       var radiovalue = $('input[name="select_services"]:checked').val();
       $("#services .box .product ").filter((i, val) => {

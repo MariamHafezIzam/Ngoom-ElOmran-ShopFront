@@ -276,6 +276,14 @@ label {
     color: white;
     vertical-align: text-top !important;
 }
+a.dropdown-item  {
+    color: #0066a5;
+    transition: 0.5s;
+}
+a.dropdown-item:hover {
+    color: #004067;
+    padding-right: 25px;
+}
 .logn:hover {
     color: #2f65a8 !important;
     margin-right: 12px;
@@ -312,6 +320,13 @@ div#home-featured-products-section {
   .input#example-date-input::-webkit-datetime-edit {
     position: absolute;
     right: 2%;
+  }
+  .cd-popup.is-visible {
+    opacity: 1 !important ;
+    visibility: visible !important;
+    -webkit-transition: opacity 0.3s 0s, visibility 0s 0s;
+    -moz-transition: opacity 0.3s 0s, visibility 0s 0s;
+    transition: opacity 0.3s 0s, visibility 0s 0s;
   }
 @media only screen and (max-width: 991px){
     .login {
@@ -706,9 +721,21 @@ a.logn {
                         $this.updateProductCartListItem(productId);
                         $("body").addClass("sidebar-active");
                         initTooltips();
+                        $(".custom-model-main").addClass("model-open");
+                        $(".bg-popup ").addClass("model-open");
                     });
+                    
 
 
+
+                    $(".bg-popup").click(function () { 
+                    $("body").addClass("sidebar-active");
+                    })
+                    
+                    $(".close-btn").click(function () {
+                    $(".custom-model-main").removeClass("model-open");
+                    $(".bg-popup ").removeClass("model-open");
+                    });
                     this.updateItemQty = function(productId) {
                         productId = parseInt(productId);
                         cartItems[productId].qty = $(".product-id-"+productId).find(".cart-item-qty").val();
