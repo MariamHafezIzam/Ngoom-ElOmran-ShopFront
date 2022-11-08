@@ -42,22 +42,24 @@
         background-image: none !important;
         background-color: transparent;
         color: #1a2756;
+        display: none;
       }
       .swiper-button-next
       {
-        background-image: none;
+        background-image: none;   display: none;
       
       }
       .swiper-button-prev, .swiper-rtl .swiper-button-next {
         background-color: transparent !important;
-        color: #1a2756 !important;
+        color: #1a2756 !important;     
+
       }
     </style>
   </head>
 
   <body>
     <!-- Swiper -->
-    <div class="bg-white py-2 my-4 px-xl-10 px-4" style="position: relative;border-radius: 20px;">
+    <div class="bg-white py-2 my-4 px-xl-10 px-4" style="position: relative;border-radius: 20px;box-shadow: 2px 2px 6px 0px rgb(96 94 94 / 46%)">
     <!-- <h3 class="title font-weight-medium text-primary py-2 px-2">
       <span class="b-secondary"> العلامات التجارية </span>
     </h3> -->
@@ -108,7 +110,7 @@
     <!-- Initialize Swiper -->
     <script>
       var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 10,
+        slidesPerView: 6,
         spaceBetween: 40,
         slidesPerGroup: 2,
         // centeredSlides: true,
