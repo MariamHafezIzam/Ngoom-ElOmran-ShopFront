@@ -1,3 +1,17 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+  />
+  <link rel="stylesheet" href="/resources/demos/style.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+    $(function () {
+      $("#datepicker").datepicker();
+    });
+  </script>
+</head>
 <style>
   .form-group {
     margin-bottom: 0.5rem;
@@ -17,7 +31,7 @@
     transition: opacity 0.3s 0s, visibility 0s 0.3s;
   }
   .cd-popup.is-visible {
-    opacity: 1;
+    opacity: 1 !important ;
     visibility: visible;
     -webkit-transition: opacity 0.3s 0s, visibility 0s 0s;
     -moz-transition: opacity 0.3s 0s, visibility 0s 0s;
@@ -106,9 +120,17 @@
             <div
               class="row py-4 col-10 bg-white mx-auto form-rev cd-popup-container"
             >
-              <div class="col-xl-1"></div>
-              <div class="col-xl-10">
+              <!-- <div class="col-xl-1"></div> -->
+              <div class="col-xl-12">
                 <div class="">
+                  <div class="text-left">
+                    <p
+                      class="cd-popup-close text-secondary fs-18 w-auto"
+                      style="cursor: pointer"
+                    >
+                      <i class="fas fa-times"></i>
+                    </p>
+                  </div>
                   <h4
                     class="text-color text-center fs-lg-24 fs-16 font-weight-medium my-3"
                   >
@@ -163,25 +185,33 @@
                     <label for="option"> نوع الموعد </label>
 
                     <select id="dropdown-form" class="form-control" required>
-                      <!-- <option disabled selected>نوع الموعد</option> -->
                       <option value="1" selected>موعد تركيب مكيفات</option>
                       <option value="2">موعد تاسيس مواسير نحاسية</option>
                       <option value="3">موعد تصنيع وتركيب مجاري هواء</option>
                       <option value="4">موعد معاينة موقع</option>
+                      <option value="5">تركيب اجهزة دكت</option>
                     </select>
                   </div>
-                  <div class="form-group">
-                    <label for="date">اختر اليوم والساعة المناسبين لك </label>
 
-                    <input
-                      class="form-control"
-                      name="date"
-                      type="datetime-local"
-                      value="2022-10-01T09:00"
-                      id="example-date-input"
-                    />
+                  <div class="form-group" style="position: relative">
+                    <label for="date">اختر اليوم المناسب لك </label>
+
+                    <input type="text" class="form-control" id="datepicker" />
+                    <i
+                      class="fas fa-calendar-alt"
+                      style="left: 2%; position: absolute; top: 66%"
+                    ></i>
                   </div>
+                  <div class="form-group">
+                    <label for="time"
+                      >اختر الساعة المناسبة لك
+                      <span class="fs-14"
+                        >( المواعيد المتاحة من 8:30 صباحا الي 3:00 مساءا )
+                      </span></label
+                    >
 
+                    <input type="text" class="form-control" />
+                  </div>
                   <div class="form-group">
                     <label for="message">رسالة </label>
 
@@ -194,17 +224,14 @@
                   <div class="col-xl-12 text-center pb-2 pt-4">
                     <button
                       type="submit"
-                      class="btn btn-primary fs-16 py-2 mx-auto font-weight-semibold w-50"
+                      class="btn btn-primary fs-16 py-2 px-8 font-weight-semibold w-xl-25 w-50"
                     >
                       أرسل
                     </button>
                   </div>
                 </form>
               </div>
-              <div class="col-xl-1"></div>
-              <a href="#0" class="cd-popup-close img-replace"
-                ><i class="fas fa-times"></i
-              ></a>
+              <!-- <div class="col-xl-1"></div> -->
             </div>
           </div>
         </div>
@@ -221,21 +248,24 @@
       $(".cd-popup").addClass("is-visible");
     });
 
-    //close popup
-    $(".cd-popup").on("click", function (event) {
-      if (
-        $(event.target).is(".cd-popup-close") ||
-        $(event.target).is(".cd-popup")
-      ) {
-        event.preventDefault();
-        $(this).removeClass("is-visible");
-      }
+    // //close popup
+    // $(".cd-popup").on("click", function (event) {
+    //   if (
+    //     $(event.target).is(".cd-popup-close") ||
+    //     $(event.target).is(".cd-popup")
+    //   ) {
+    //     event.preventDefault();
+    //     $(".cd-popup").removeClass("is-visible");
+    //   }
+    // });
+    $(".cd-popup-close").click(function () {
+      $(".cd-popup").removeClass("is-visible");
     });
     //close popup when clicking the esc keyboard button
-    $(document).keyup(function (event) {
-      if (event.which == "27") {
-        $(".cd-popup").removeClass("is-visible");
-      }
-    });
+    // $(document).keyup(function (event) {
+    //   if (event.which == "27") {
+    //     $(".cd-popup").removeClass("is-visible");
+    //   }
+    // });
   });
 </script>
