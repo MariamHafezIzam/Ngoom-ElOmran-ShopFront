@@ -1,0 +1,194 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+  />
+  <link rel="stylesheet" href="/resources/demos/style.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+    $(function () {
+      $("#datepicker").datepicker();
+    });
+  </script>
+</head>
+<style>
+  input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    left: 5%;
+  }
+  input#example-date-input::-webkit-datetime-edit {
+    position: absolute;
+    right: 3%;
+  }
+  .form-control {
+    border-radius: 7px;
+    font-weight: 500;
+    color: #1a2756;
+    border-color: rgb(26 39 86 / 40%);
+  }
+  label {
+    color: #1a2756 !important;
+    font-size: 16px;
+    padding: 3px;
+    font-weight: 500;
+    margin-right: 0 !important;
+  }
+  .form-group {
+    margin-bottom: 0.5rem;
+  }
+
+  .form-control::selection {
+    background-color: #1a2756 !important;
+    color: #fff;
+  }
+  .form-control:focus {
+    color: #1a2756 !important;
+  }
+  option {
+    color: #1a2756;
+    font-weight: 400;
+  }
+  .req {
+    color: #ff0000;
+  }
+  #comments {
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+    resize: none;
+    border-radius: 7px;
+    border-color: rgb(26 39 86 / 40%);
+    color: #1a2756;
+  }
+  @media only screen and (max-width: 991px) {
+    input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      left: 12%;
+    }
+  }
+</style>
+<div id="complaints-section">
+  <div class="container px-0 px-lg-2" style="max-width: 1300px">
+    <div class="py-4">
+      <a class="text-color fs-16 text-decoration-none" href="/home"
+        >الصفحة الرئيسية
+      </a>
+      <span class="px-1 fs-12"><i class="fas fa-chevron-right"></i></span
+      ><a
+        class="text-color fs-16 text-decoration-none"
+        href="/contents/process_content/reservation"
+      >
+        حجز موعد
+      </a>
+    </div>
+
+    <div class="row py-4 border-bottom">
+      <div class="col-12">
+        <h2 class="text-primary fs-lg-32 fs-24 font-weight-semibold d-none">
+          حجز موعد "معاينة"
+        </h2>
+      </div>
+      <div class="row py-4 col-12 mx-auto">
+        <div class="col-xl-2"></div>
+        <div class="col-xl-8">
+          <div class="">
+            <h4
+              class="text-color text-center fs-lg-24 fs-16 font-weight-medium my-3"
+            >
+              حجز موعد "معاينة"
+            </h4>
+            <p class="text-center py-1 my-0">الرجاء تعبئة جميع الحقول</p>
+          </div>
+          <form
+            accept-charset="UTF-8"
+            action=""
+            method="POST"
+            enctype="multipart/form-data"
+            target="_blank"
+            class="bg-white p-4"
+            style="border-radius: 20px"
+          >
+            <div class="form-group">
+              <label for="fullname">الأسم <span class="req"> *</span></label>
+              <input
+                type="text"
+                name="fullname"
+                class="form-control"
+                id="exampleInputName"
+                required="required"
+              />
+            </div>
+            <div class="form-group">
+              <label for="tel"> رقم الهاتف <span class="req"> *</span></label>
+              <input
+                class="form-control"
+                name="tel"
+                type="tel"
+                id="example-tel-input"
+                required="required"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email"> البريد الالكتروني </label>
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="form-group">
+              <label for="option"> نوع الموعد </label>
+
+              <select id="dropdown-form" class="form-control" required>
+                <option value="1" selected>موعد تركيب مكيفات</option>
+                <option value="2">موعد تاسيس مواسير نحاسية</option>
+                <option value="3">موعد تصنيع وتركيب مجاري هواء</option>
+                <option value="4">موعد معاينة موقع</option>
+                <option value="5">تركيب اجهزة دكت</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="position: relative">
+              <label for="date">اختر اليوم المناسب لك </label>
+
+              <input type="text" class="form-control" id="datepicker" />
+              <i
+                class="fas fa-calendar-alt"
+                style="left: 2%; position: absolute; top: 66%"
+              ></i>
+            </div>
+            <div class="form-group">
+              <label for="time"
+                >اختر الساعة المناسبة لك مع العلم ان المواعيد المتاحة من 8:30
+                صباحا الي 3:00 مساءا</label
+              >
+
+              <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="message">رسالة </label>
+
+              <textarea
+                id="comments"
+                name="message"
+                class="form-control"
+              ></textarea>
+            </div>
+            <div class="col-xl-12 text-center pb-2 pt-4">
+              <button
+                type="submit"
+                class="btn btn-primary fs-16 py-2 px-8 font-weight-semibold w-xl-25 w-50"
+              >
+                أرسل
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="col-xl-2"></div>
+      </div>
+    </div>
+  </div>
+</div>
