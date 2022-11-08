@@ -174,33 +174,6 @@
     opacity: 0;
     top: 50%;
   }
-
-  .custom-model-main {
-    text-align: center;
-    color: #1a2756;
-    overflow: hidden;
-    position: fixed;
-    top: 50%;
-    right: 0;
-    bottom: 0;
-    left: 0; /* z-index: 1050; */
-    -webkit-overflow-scrolling: touch;
-    outline: 0;
-    opacity: 0;
-    -webkit-transition: opacity 0.15s linear, z-index 0.15;
-    -o-transition: opacity 0.15s linear, z-index 0.15;
-    transition: opacity 0.15s linear, z-index 0.15;
-    z-index: -1;
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
-
-  .model-open {
-    z-index: 1022 !important;
-    visibility: visible;
-    opacity: 1;
-    overflow: hidden;
-  }
 </style>
 
 {{#Category.name}}
@@ -546,16 +519,7 @@
                   <i class="fal fa-cart-plus mr-2"></i>أضف الي العربة
                 </button>
                 <!-- ====================== -->
-                <div class="Click-here text-primary">Click Here</div>
-                <div class="custom-model-main text-primary bg-white">
-                  <div class="custom-model-inner">
-                    <div class="close-btn">×</div>
-                    <div class="custom-model-wrap">
-                      <div class="pop-up-content-wrap">Content Here</div>
-                    </div>
-                  </div>
-                  <div class="bg-overlay"></div>
-                </div>
+
                 <!-- ========================== -->
               </div>
             </div>
@@ -701,12 +665,6 @@
     onChangeFiltersMulti(allProducts);
   });
 
-  $(".Click-here").on("click", function () {
-    $(".custom-model-main").addClass("model-open");
-  });
-  $(".close-btn, .bg-overlay").click(function () {
-    $(".custom-model-main").removeClass("model-open");
-  });
   //   $.each($(".box"), (i, val) => {
   //     console.log(i);
   //     if ($(i).data("cat") == "أجهزة التكييف") {
