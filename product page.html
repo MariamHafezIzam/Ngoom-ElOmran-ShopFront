@@ -36,7 +36,7 @@
   }
   .spec td {
     font-size: 18px;
-    padding: 10px 5px;
+    padding: 12px;
   }
 </style>
 
@@ -56,7 +56,7 @@
             </a>
           </div>
           <div class="row bg-white p-xl-8 p-2 radius mb-10" >
-            <div class="col-lg-5">
+            <div class="col-lg-6">
               <div class="swiper-slider">
                 <div
                   class="swiper-container product-swiper swiper-container-initialized swiper-container-horizontal"
@@ -75,8 +75,8 @@
                       style="width: 540px"
                     >
                       <a
-                        class="position-relative d-block w-100"
-                        href="#"
+                        class="position-relative d-block "
+                        href="#" style="width: 80% !important;margin: auto;"
                         disabled="true"
                       >
                         <img
@@ -96,8 +96,8 @@
                       style="width: 540px"
                     >
                       <a
-                        class="position-relative d-block w-100"
-                        href="{{.}}"
+                        class="position-relative d-block "
+                        href="{{.}}" style="width: 80% !important;margin: auto;"
                         data-fancybox="images"
                       >
                         <img
@@ -139,7 +139,7 @@
                 {{/product_images_count}}
               </div>
             </div>
-            <div class="col-lg-7 pt-4 pt-lg-0 pl-xl-10">
+            <div class="col-lg-6 pt-4 pt-lg-0 pl-xl-10">
               <h6 class="fs-xl-30 fs-22 text-primary font-weight-bold mb-3">
                 {{ product.name }}
               </h6>
@@ -179,7 +179,7 @@
                   data-name="{{ product.name }}"
                 >
                   <div
-                    class="input-group col cart-item-count px-0 pr-lg-3 mr-2 mr-lg-0"
+                    class="input-group col cart-item-count px-0 pr-lg-6 mr-2 mr-lg-0"
                   >   <input
                   type="text"
                   class="form-control border-placeholder text-center p-0 qty"
@@ -220,8 +220,8 @@
           <div class="row bg-white p-xl-8 p-2 radius" > 
 <table width="100%" class="spec">
 <tr>
-  <td width="15%">العلامة التجارية </td>
-  <td width="85%" id="brand"></td>
+  <td width="13%">العلامة التجارية </td>
+  <td width="87%" id="brand"></td>
 </tr>
 <tr>
   <td >الموديل</td>
@@ -255,9 +255,10 @@ $(document).ready(function(){
 let id = $(".product").data("product-id");
 $.ajax({
         url: "/v2/api/entity/product/" + id,
+        headers: { 'apikey': '9992fd9e5d9471b3f0a7871ff3ea7ee839eb856b'},
         type: "GET",
       }).done((data) => {
-        
+      console.log(data)  
        let model = data.custom_data.field_3
        let color = data.custom_data.field_4
        let cool = data.custom_data.field_5
