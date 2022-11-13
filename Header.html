@@ -136,7 +136,16 @@ a.text-white:focus, a.text-white:hover {
 .font-weight-bold{
     font-weight: 600 !important;
 }
-
+.ui-selectmenu-text, .ui-menu .ui-menu-item-wrapper {
+    direction: ltr !important;
+    text-align: center !important;
+  }
+  ul#time-menu{
+    height: 250px ;
+  }
+  .ui-selectmenu-icon.ui-icon {
+    margin-top: 4px !important;
+  }
 #site-header {
   margin: 0px; padding: 0px;
   position: relative;
@@ -300,6 +309,11 @@ opacity: 1 !important;
     color: #fff;
     text-decoration: none;
 }
+select#time {
+    margin: auto !important;
+    width: 35% !important;
+    padding: 5px;
+  }
 div#home-featured-products-section {
     padding-bottom: 0px !important;
 }
@@ -456,7 +470,7 @@ a.logn {
                         <label class=" mt-0 fs-14  text-capitalize d-flex text-white">
                           
                           <div style="align-self: center; " class="mr-2"><i class="fas fa-user fs-xl-24 fs-18"></i></div>
-                         <div class="d-lg-block d-none" style="text-align: right ;line-height: 1;"><span class="fs-10 fw-normal">مرحبا</span>  <br><span class="fs-xl-18 fs-12"> {{ logged_name }}</span></div>
+                         <div class="d-lg-block d-none" style="text-align: right ;line-height: 1;"><span class="fs-10 fw-normal">مرحبا</span>  <br><span class="fs-xl-18 fs-12 name-logged"> {{ logged_name }}</span></div>
                         </label>
                     </button>
                             <div class="dropdown-content mx-lg-2 p-1 pt-2">
@@ -701,7 +715,30 @@ a.logn {
                         }
                         $this.updateCartTotals();
                     }
+                    
+    //                 setTimeout(() => {
+    //   let allProducts = $(".box");
 
+    //   $.each(allProducts, (i, val) => {
+    //     let productId = $(val).find(".product").data("product-id");
+    //     $.ajax({
+    //       url: "/api2/products/" + productId,
+    //       type: "GET",
+    //     }).done((data) => {
+    //     //   console.log(data);
+    //       let $thisProd = data.data.Product;
+    //       let brand = $thisProd.brand;
+    //       let cat = $thisProd.ProductCategory[0].name;
+    //     //   console.log(brand, cat);
+
+
+    //       $(val).find(".product").attr("data-brand", brand);
+    //       $(val).find(".product").attr("data-cat", cat);
+          
+
+    //     })
+    //   });
+    // }, "6000");      
                     $("body").on("click", ".add-to-cart-btn", function (e) {
 
                         e.stopPropagation();
@@ -725,33 +762,33 @@ a.logn {
                             cartItems[productId] = {name: name,id: productId,qty: qty, image: image, price: price};
 
                         }
-                        var productAll=   $(this).parents(".product").data("product-id");
+                        var productAll=   $(this).parents(".product").data("data-cat");
+
+                    //   var productAll=   $(this).parents(".box").parent().data("data-cat");
+                     //var productAll=   $(this).parents(".product").html()
                         console.log(productAll)
                         $.ajax({
-        url: "/api2/products/" + productId,
-        type: "GET",
+                            url: "/v2/api/entity/product/" + productId,
+                            type: 'GET',
+                            headers: { 'apikey': '9992fd9e5d9471b3f0a7871ff3ea7ee839eb856b'},
+                            dataType: 'json'
       }).done((data) => {
-        // console.log(data);
-        let $thisProd = data.data.Product;
-       
-        let cat = $thisProd.ProductCategory[0].name;
-        if (cat == "أجهزة التكييف") {
+     let catId = data.items_categories[0].category_id
+      if (catId == 3) {
             $(".custom-model-main").addClass("model-open");
                         $(".bg-popup ").addClass("model-open");
         }
       });
-                      
+     
                       
                         $this.saveItemToBackEnd(productId);
                         $this.updateProductCartListItem(productId);
                         $("body").addClass("sidebar-active");
                         initTooltips();
-                       
+                        // $(".custom-model-main").addClass("model-open");
+                        // $(".bg-popup ").addClass("model-open");
                     });
                     
-
-
-
                     $(".bg-popup").click(function () { 
                     $("body").addClass("sidebar-active");
                     })
