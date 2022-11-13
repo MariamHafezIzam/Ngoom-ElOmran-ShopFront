@@ -31,5 +31,25 @@
 
       return false;
     });
+
+    // setTimeout(() => {
+    //   let allProducts = $(".box");
+    //   $.each(allProducts, (i, val) => {
+    //     let productId = $(val).find(".product").data("product-id");
+    //     $.ajax({
+    //       url: "/api2/products/" + productId,
+    //       type: "GET",
+    //     }).done((data) => {
+    //       let $thisProd = data.data.Product;
+    //       let brand = $thisProd.brand;
+    //       let cat = $thisProd.ProductCategory[0].name;
+    //       $(val).attr("data-brand", brand);
+    //       $(val).attr("data-cat", cat);
+    //       //   let divdetails = `ID = ${productId} , Brand = ${brand} , CategoryName = ${catName}`;
+
+    //       //   console.log(divdetails);
+    //     });
+    //   });
+    // }, "5000");
   });
 </script>
