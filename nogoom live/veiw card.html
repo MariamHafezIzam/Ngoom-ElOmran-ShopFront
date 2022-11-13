@@ -1,0 +1,368 @@
+<style>
+  .cart-subtotal {
+    place-content: center !important;
+  }
+  .btn-primary {
+    background-color: #0066a5 !important;
+    border-color: #0066a5 !important;
+    border-radius: 12px;
+    transition: 0.3s;
+  }
+  .btn-primary:hover {
+    background-color: #053858 !important;
+    border-color: #053858 !important;
+    /* transform: scale(1.01); */
+  }
+  a:hover {
+    text-decoration: none !important;
+  }
+
+  .custom-model-main {
+    color: #0066a5;
+    /* position: absolute; */
+    z-index: 1000;
+    top: 20%;
+    height: fit-content;
+    text-align: right;
+    width: 650px;
+    margin-top: 65px;
+    transition: 0.3s;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  .model-open {
+    display: grid !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    overflow: auto !important;
+  }
+  #site-sidebar {
+    width: 100% !important;
+    background-color: transparent;
+  }
+  .side-sidebar-wrap {
+    width: 25% !important ;
+    position: absolute !important;
+    left: 0 !important;
+    z-index: 50;
+  }
+  #services .box img {
+    display: none !important;
+  }
+  #services .box h6 {
+    min-height: auto !important;
+  }
+
+  label {
+    margin-right: 15px;
+  }
+  .bg-popup {
+    background-color: rgba(0, 0, 0, 0.55);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1000;
+    /* top: 0%;
+      right: 0%; */
+    justify-content: center;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+    transition: 0.3s;
+  }
+
+  .cont {
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+  }
+
+  /* Hide the browser's default radio button */
+  .cont input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  /* Create a custom radio button */
+  .checkmarks {
+    position: absolute;
+    top: 6px;
+    left: 2%;
+    height: 25px;
+    width: 25px;
+    background-color: #c0c0c0;
+    border-radius: 50%;
+  }
+
+  /* On mouse-over, add a grey background color */
+  .cont:hover input ~ .checkmarks {
+    background-color: #ccc;
+  }
+
+  /* When the radio button is checked, add a blue background */
+  .cont input:checked ~ .checkmarks {
+    background-color: #0066a5;
+  }
+
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmarks:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  /* Show the indicator (dot/circle) when checked */
+  .cont input:checked ~ .checkmarks:after {
+    display: block;
+  }
+
+  /* Style the indicator (dot/circle) */
+  .cont .checkmarks:after {
+    top: 8px;
+    left: 8px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #fff;
+  }
+  .service {
+    background-color: #eef1f7;
+    border: 1px solid #e1e1e1;
+  }
+</style>
+
+<div class="w-100">
+  <div id="site-sidebar">
+    <div class="side-sidebar-wrap">
+      <div class="side-sidebar-header">
+        <button
+          type="button"
+          class="cart-toggle-btn btn p-0 font-weight-semibold d-inline-flex align-items-center fs-16 text-color"
+        >
+          <i class="fas fa-arrow-circle-left mr-2 fs-18"></i>عربة التسوق
+        </button>
+      </div>
+
+      <div class="side-sidebar-body my-5">
+        <div class="cart-items">
+          <div style="display: none" class="cart-item">
+            <button
+              class="btn text-danger-30 text-hover-danger fs-16 p-0 mr-4 tip remove-cart-item"
+              title="أزالة منتج"
+            >
+              <i class="fas fa-trash-alt"></i>
+            </button>
+            <div class="cart-item-details">
+              <a href="#">
+                <img
+                  src=""
+                  width="64"
+                  height="58"
+                  alt="إسم المنتج"
+                  class="cart-item-image"
+                />
+              </a>
+              <div class="flex-grow-1 ml-3">
+                <a href="#" class="text-primary"
+                  ><h4 class="fs-16 font-weight-medium cart-item-name"></h4
+                ></a>
+                <div
+                  class="mt-2 d-flex align-items-center justify-content-between"
+                >
+                  <span
+                    class="text-color font-weight-medium cart-item-price"
+                  ></span>
+                  <div class="cart-item-count">
+                    <button
+                      class="btn p-0 fas fa-minus-circle fs-16 text-color minus"
+                    ></button>
+                    <input
+                      type="number"
+                      value=""
+                      class="form-control qty cart-item-qty"
+                      min="1"
+                      step="1"
+                      style="color: #fb513e !important"
+                    />
+                    <button
+                      class="btn p-0 fas fa-plus-circle fs-16 text-color plus"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="empty-cart-text"></div>
+        <div class="cart-subtotal">
+          <span class="font-weight-medium text-dark mr-3 qty-subtotal">
+            إجمالى ({{cart_items_count}} منتجات)
+          </span>
+          <span class="cart-total font-weight-bold text-color fs-24"> </span>
+        </div>
+      </div>
+      <div class="side-sidebar-footer">
+        <a
+          id="checkout-btn"
+          href="/client/contents/order_summary"
+          class="disabled btn btn-primary d-flex align-items-center justify-content-between btn-block px-4 py-3 text-uppercase fs-16 font-weight-medium btn-lg mt-auto"
+        >
+          <span>الدفع</span>
+          <span class="fas fa-arrow-square-right"></span>
+        </a>
+      </div>
+    </div>
+    <!-- ================= -->
+    <div class="bg-popup">
+      <div class="custom-model-main text-primary bg-white">
+        <div
+          class="close-btn fs-20 px-4 py-2 font-weight-bold text-left col-12"
+        >
+          <button class="btn text-color fs-24 p-0 font-weight-semibold">
+            x
+          </button>
+        </div>
+        <div class="custom-model-inner">
+          <div class="custom-model-wrap">
+            <p class="fs-18 p-2 m-0 text-center">
+              ما هو المكان المناسب لتركيب وحدة المكيف الخارجية؟
+            </p>
+            <div id="service-form " class="row m-4 fs-20 font-weight-medium">
+              <div class="py-2 col-12 service">
+                <label for="zero" class="cont">
+                  <div style="width: 37%">الطابق الارضي</div>
+
+                  <div
+                    style="width: 33%; text-align-last: center; color: #fb513e"
+                  >
+                    200.00 ج.م
+                  </div>
+                  <input
+                    type="radio"
+                    id="zero"
+                    name="select_services"
+                    value="6565"
+                  />
+                  <span class="checkmarks"></span>
+                </label>
+              </div>
+              <div class="py-2 col-12 service">
+                <label for="first" class="cont">
+                  <div style="width: 37%">الطابق الاول</div>
+                  <div
+                    style="width: 33%; text-align-last: center; color: #fb513e"
+                  >
+                    300.00 ج.م
+                  </div>
+                  <input
+                    type="radio"
+                    id="first"
+                    name="select_services"
+                    value="6566"
+                  />
+                  <span class="checkmarks"></span>
+                </label>
+              </div>
+
+              <div class="py-2 col-12 service">
+                <label for="second" class="cont">
+                  <div style="width: 37%">الطابق الثاني</div>
+
+                  <div
+                    style="width: 33%; text-align-last: center; color: #fb513e"
+                  >
+                    400.00 ج.م
+                  </div>
+                  <input
+                    type="radio"
+                    id="second"
+                    name="select_services"
+                    value="6567"
+                  />
+                  <span class="checkmarks"></span>
+                </label>
+              </div>
+              <div class="py-2 col-12 service">
+                <label for="third" class="cont">
+                  <div style="width: 37%">الطابق الثالث فما فوق</div>
+                  <div
+                    style="width: 33%; text-align-last: center; color: #fb513e"
+                  >
+                    500.00 ج.م
+                  </div>
+
+                  <input
+                    type="radio"
+                    id="third"
+                    name="select_services"
+                    value="6568"
+                  /><span class="checkmarks"></span>
+                </label>
+              </div>
+
+              <div class="col-12 pt-6 text-center">
+                <p class="text-center">
+                  <input
+                    class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary close-btn"
+                    type="button"
+                    value="تم تحديد الخدمة"
+                  />
+                </p>
+              </div>
+            </div>
+            <div class="pop-up-content-wrap d-none" id="services"></div>
+          </div>
+          <div
+            class="close-btn fs-20 px-4 py-2 font-weight-bold text-center d-none"
+          >
+            <button class="btn btn-primary">تم تحديد الخدمة</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================== -->
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    $(function () {
+      $.ajax({
+        url: "/contents/products_list?cat_id=108",
+        type: "get",
+        success: function (resp) {
+          $("#services").html(
+            $(resp).find("#products-section .row:nth-last-child(2)")
+          );
+        },
+      });
+
+      return false;
+    });
+  });
+
+  $(".close-btn").click(function () {
+    $(".custom-model-main").removeClass("model-open");
+    $(".bg-popup ").removeClass("model-open");
+  });
+
+  // $(".sidebar-active")
+  $(document).ready(function () {
+    $("input[type='button']").click(function () {
+      var radiovalue = $('input[name="select_services"]:checked').val();
+      $("#services .box .product ").filter((i, val) => {
+        $(val).data("product-id") == radiovalue
+          ? $(val).find("button").trigger("click")
+          : "";
+      });
+    });
+  });
+</script>
