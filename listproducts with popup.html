@@ -186,7 +186,7 @@
           class="py-22 px-14 bg-placeholder text-center text-lg-left bg-cover bg-center"
           style="background-image: url({{Category.image_full_path}})"
         >
-          <h1 class="text-dark fs-30 fs-lg-40">{{Category.name}}</h1>
+          <h1 class="text-dark fs-30 fs-lg-40 d-none">{{Category.name}}</h1>
         </div>
         {{/Category.image_full_path}} {{^Category.image_full_path}}
         <div class="py-22 px-14 bg-placeholder text-center text-lg-left">
@@ -197,7 +197,7 @@
     </div>
   </div>
   {{#categories_count}}
-  <div id="home-categories-section" class="py-7">
+  <div id="home-categories-section " class="py-7 d-none">
     <div class="container">
       <div class="row">
         {{#categories}}
@@ -455,7 +455,7 @@
           <div class="col-lg-3 col-sm-6 py-2 px-4 box">
             <div class="item hover bg-white p-2">
               <div
-                class="h-100 mb-6 mb-lg-0 product px-5 px-lg-0 pb-4"
+                class="h-100 mb-6 mb-lg-0 product px-5 px-lg-0"
                 data-product-id="{{id}}"
                 data-image="{{file_full_path}}"
                 data-price="{{final_price_number}}"
@@ -514,7 +514,7 @@
                 </div>
                 <button
                   data-name="sallamon"
-                  class="add-to-cart-btn btn btn-sm btn-primary text-uppercase font-weight-medium fs-16 Click-here"
+                  class="add-to-cart-btn btn btn-sm btn-primary text-uppercase font-weight-medium fs-16 Click-here mt-2"
                 >
                   <i class="fal fa-cart-plus mr-2"></i>أضف الي العربة
                 </button>
