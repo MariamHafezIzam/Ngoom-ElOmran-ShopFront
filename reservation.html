@@ -26,6 +26,9 @@
         else return [true, "", ""];
       }
     });
+    $(function () {
+      $("#time").selectmenu();
+    });
   </script>
 </head>
 <style>
@@ -64,9 +67,17 @@
   option {
     color: #1a2756;
     font-weight: 400;
+    font-weight: 600;
+    background-color: #dfeffc;
+    direction: ltr;
+    text-align: center;
   }
   .req {
     color: #ff0000;
+  }
+  select#time {
+    margin: auto !important;
+    width: 35% !important;
   }
   #comments {
     width: 100%;
@@ -78,19 +89,31 @@
     color: #1a2756;
   }
   .ui-datepicker {
-    width: 85% !important;
-    margin: auto;
+    width: 80% !important;
+    margin: 20px auto;
+  }
+  .ui-selectmenu-icon.ui-icon {
+    margin-top: 4px !important;
   }
   .ui-datepicker td span,
   .ui-datepicker td a {
     padding: 5px 0px;
     text-align: center;
   }
+  .ui-selectmenu-text {
+    direction: ltr !important;
+  }
   @media only screen and (max-width: 991px) {
     input[type="datetime-local"]::-webkit-calendar-picker-indicator {
       position: absolute;
       left: 12%;
     }
+  }
+  .btn-primary:disabled {
+    background-color: #004067 !important;
+    color: aliceblue;
+    opacity: 0.8 !important;
+    cursor: auto;
   }
 </style>
 <div id="complaints-section">
@@ -140,7 +163,7 @@
                 type="text"
                 name="fullname"
                 class="form-control"
-                id="exampleInputName"
+                id="inputName"
                 required="required"
               />
             </div>
@@ -150,7 +173,7 @@
                 class="form-control"
                 name="tel"
                 type="tel"
-                id="example-tel-input"
+                id="inputTel"
                 required="required"
               />
             </div>
@@ -160,7 +183,7 @@
                 type="email"
                 name="email"
                 class="form-control"
-                id="exampleInputEmail1"
+                id="inputEmail"
                 aria-describedby="emailHelp"
               />
             </div>
@@ -188,20 +211,37 @@
               <div id="datepicker"></div>
               <input
                 type="text"
-                name="date"
+                name="something"
                 value="thevalue"
-                class="form-control d-none"
+                class="d-none"
+                id="date"
               />
             </div>
             <div class="form-group">
-              <label for="time"
+              <label for="time" style="width: 72%"
                 >اختر الساعة المناسبة لك
                 <span class="fs-14"
                   >( المواعيد المتاحة من 8:30 صباحا الي 3:00 مساءا )
                 </span>
               </label>
 
-              <input type="text" class="form-control" />
+              <select class="form-control" id="time">
+                <option value="08:30:00">8:30 AM</option>
+                <option value="09:00:00">9:00 AM</option>
+                <option value="09:30:00">9:30 AM</option>
+                <option value="10:00:00">10:00 AM</option>
+                <option value="10:30:00">10:30 AM</option>
+                <option value="11:00:00">11:00 AM</option>
+                <option value="11:30:00">11:30 AM</option>
+                <option value="12:00:00">12:00 PM</option>
+                <option value="12:30:00">12:30 PM</option>
+                <option value="13:00:00">1:00 PM</option>
+                <option value="13:30:00">1:30 PM</option>
+                <option value="14:00:00">2:00 PM</option>
+                <option value="14:30:00">2:30 PM</option>
+                <option value="15:00:00">3:00 PM</option>
+                <option value="15:30:00">3:30 PM</option>
+              </select>
             </div>
             <!-- <div class="form-group">
               <label for="message">رسالة </label>
@@ -212,10 +252,22 @@
                 class="form-control"
               ></textarea>
             </div> -->
+            <div>
+              <p
+                id="log"
+                class="d-none text-primary fs-14 pt-2 my-0 text-center"
+                style="text-decoration: underline"
+              >
+                الرجاء التأكد من تسجيل الدخول لكي يتم حجز الموعد
+                <a class="text-color" href="/contents/login"
+                  >يمكنك حجز الموعد من هنا
+                </a>
+              </p>
+            </div>
             <div class="col-xl-12 text-center pb-2 pt-4">
               <button
                 type="submit"
-                class="btn btn-primary fs-16 py-2 px-8 font-weight-semibold w-xl-25 w-50"
+                class="submit btn btn-primary fs-16 py-2 px-8 font-weight-semibold w-xl-25 w-50"
               >
                 أرسل
               </button>
@@ -226,4 +278,88 @@
       </div>
     </div>
   </div>
+  <div id="test" class="d-none"></div>
+  <p class="clntId d-none"></p>
 </div>
+<script>
+  let apikey = "9992fd9e5d9471b3f0a7871ff3ea7ee839eb856b";
+  $(document).ready(function () {
+    var loggedName = $(".name-logged").text().trim();
+    console.log(loggedName);
+    if (loggedName == "nogoomfront" || loggedName == "") {
+      $(".submit").attr("disabled", "disabled");
+      $("#log").removeClass("d-none");
+    } else {
+      $(function () {
+        $.ajax({
+          url: "/client/clients/profile/",
+          type: "get",
+          headers: { apikey: apikey },
+          success: function (resp) {
+            $("#test").html($(resp).find(".responsive"));
+          },
+        });
+
+        return false;
+      });
+
+      setTimeout(() => {
+        console.log(client_id);
+        $(".clntId").text(client_id);
+      }, "3000");
+    }
+  });
+
+  $(".submit").click((e) => {
+    e.preventDefault();
+    let name = $("#inputName").val();
+    let phone = $("#inputTel").val();
+    let email = $("#inputEmail").val();
+    let type = $("#comments").val();
+    let date = $("#date").val();
+    date = date.split("/");
+    date = `${date[2]}-${date[0]}-${date[1]}`;
+    let time = $("#time").find(":selected").val();
+
+    console.log(name, phone, email, type, date, time, client_id);
+    taric(name, phone, email, type, date, time, client_id);
+  });
+
+  function taric(name, phone, email, type, date, time, client_id) {
+    let ourBody = `
+    <p> الاسم:  ${name}</p> 
+    <p> رقم الهاتف: ${phone}</p> 
+    <p>البريد ئ :  ${email}</p> 
+    <p>نوع الخدمة :  ${type}</p> 
+    `;
+    let dateAndTime = `${date} ${time} `;
+    let id = `${client_id}`;
+
+    let allData = {
+      ClientAppointment: {
+        item_id: id,
+        date: dateAndTime,
+        body: ourBody,
+      },
+    };
+    let data = JSON.stringify(allData);
+    console.log(data);
+    $.ajax({
+      url: "https://nogoomfront.daftara.com/api2/client_appointments",
+      method: "POST",
+      headers: {
+        apiKey: apikey,
+      },
+      data: data,
+      contentType: "application/json",
+      accept: "application/json",
+    })
+
+      .done(function (res) {
+        console.log("success", res);
+      })
+      .fail((err) => {
+        console.log("failed", err);
+      });
+  }
+</script>
