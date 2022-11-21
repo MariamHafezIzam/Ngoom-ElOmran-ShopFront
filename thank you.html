@@ -4,23 +4,122 @@
     href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
   />
   <link rel="stylesheet" href="/resources/demos/style.css" />
+  <link
+    rel="stylesheet"
+    href=" https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/themes/redmond/jquery-ui.css"
+  />
+
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
   <script>
     $(function () {
-      $("#datepicker").datepicker();
+      $("#datepicker").datepicker({
+        beforeShowDay: noFridays,
+        onSelect: function (dateText, inst) {
+          $("input[name='something']").val(dateText);
+        },
+      });
+      function noFridays(date) {
+        if (date.getDay() === 5)
+          /* Friday */
+          return [false, "closed", "Closed on Friday"];
+        else return [true, "", ""];
+      }
+    });
+    $(function () {
+      $("#time").selectmenu();
     });
   </script>
 </head>
 <style>
+  input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    left: 5%;
+  }
+  input#example-date-input::-webkit-datetime-edit {
+    position: absolute;
+    right: 3%;
+  }
+  .form-control {
+    border-radius: 7px;
+    font-weight: 500;
+    color: #1a2756;
+    border-color: rgb(26 39 86 / 40%);
+  }
+  label {
+    color: #1a2756 !important;
+    font-size: 16px;
+    padding: 3px;
+    font-weight: 500;
+    margin-right: 0 !important;
+  }
   .form-group {
-    margin-bottom: 0.5rem;
-    text-align: right;
+    margin-bottom: 1rem;
+    width:100%
+  }
+
+  .form-control::selection {
+    background-color: #1a2756 !important;
+    color: #fff;
+  }
+  .form-control:focus {
+    color: #1a2756 !important;
+  }
+  option {
+    color: #1a2756;
+    font-weight: 400;
+    font-weight: 600;
+    background-color: #dfeffc;
+    direction: ltr;
+    text-align: center;
+  }
+  .req {
+    color: #ff0000;
+  }
+  select#time {
+    margin: auto !important;
+    width: 35% !important;
+  }
+  #comments {
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+    resize: none;
+    border-radius: 7px;
+    border-color: rgb(26 39 86 / 40%);
+    color: #1a2756;
+  }
+  .ui-datepicker {
+    width: 80% !important;
+    margin: 20px auto;
+  }
+  .ui-selectmenu-icon.ui-icon {
+    margin-top: 4px !important;
+  }
+  .ui-datepicker td span,
+  .ui-datepicker td a {
+    padding: 5px 0px;
+    text-align: center;
+  }
+  .ui-selectmenu-text {
+    direction: ltr !important;
+  }
+  @media only screen and (max-width: 991px) {
+    input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      left: 12%;
+    }
+  }
+  .btn-primary:disabled {
+    background-color: #004067 !important;
+    color: aliceblue;
+    opacity: 0.8 !important;
+    cursor: auto;
   }
   .cd-popup {
     position: absolute;
     left: 0;
-    top: 10%;
+    top: 0%;
     height: 70%;
     width: 100%;
     z-index: 10000;
@@ -109,6 +208,7 @@
             ><span>العودة للرئيسية</span></a
           >
         </div>
+   
         <div class="text-center pt-4 pb-8">
           <a
             href="#0"
@@ -116,6 +216,8 @@
           >
             حجز موعد
           </a>
+    
+          </div>
           <div class="cd-popup" role="alert">
             <div
               class="row py-4 col-10 bg-white mx-auto form-rev cd-popup-container"
@@ -132,9 +234,9 @@
                     </p>
                   </div>
                   <h4
-                    class="text-color text-center fs-lg-24 fs-16 font-weight-medium my-3"
+                    class="text-color text-center fs-lg-18 fs-16 font-weight-medium my-0"
                   >
-                    حجز موعد "معاينة"
+             حجز موعد 
                   </h4>
                   <p class="text-center py-1 my-0">الرجاء تعبئة جميع الحقول</p>
                 </div>
@@ -147,74 +249,95 @@
                   class="bg-white p-4"
                   style="border-radius: 20px"
                 >
-                  <div class="form-group">
-                    <label for="fullname"
-                      >الأسم <span class="req"> *</span></label
-                    >
-                    <input
-                      type="text"
-                      name="fullname"
-                      class="form-control"
-                      id="exampleInputName"
-                      required="required"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="tel">
-                      رقم الهاتف <span class="req"> *</span></label
-                    >
-                    <input
-                      class="form-control"
-                      name="tel"
-                      type="tel"
-                      id="example-tel-input"
-                      required="required"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="email"> البريد الالكتروني </label>
-                    <input
-                      type="email"
-                      name="email"
-                      class="form-control"
-                      id="exampleInputEmail1"
-                      aria-describedby="emailHelp"
-                    />
-                  </div>
+                <div class="form-group">
+                  <label for="fullname">الأسم <span class="req"> *</span></label>
+                  <input
+                    type="text"
+                    name="fullname"
+                    class="form-control"
+                    id="inputName"
+                    required="required"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="tel"> رقم الهاتف <span class="req"> *</span></label>
+                  <input
+                    class="form-control"
+                    name="tel"
+                    type="tel"
+                    id="inputTel"
+                    required="required"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email"> البريد الالكتروني </label>
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-control"
+                    id="inputEmail"
+                    aria-describedby="emailHelp"
+                  />
+                </div>
                   <div class="form-group">
                     <label for="option"> نوع الموعد </label>
-
-                    <select id="dropdown-form" class="form-control" required>
-                      <option value="1" selected>موعد تركيب مكيفات</option>
-                      <option value="2">موعد تاسيس مواسير نحاسية</option>
-                      <option value="3">موعد تصنيع وتركيب مجاري هواء</option>
-                      <option value="4">موعد معاينة موقع</option>
-                      <option value="5">تركيب اجهزة دكت</option>
+  
+                    <select id="resrve-type" class="form-control" required>
+                      <option value="موعد تركيب مكيفات" selected>
+                        موعد تركيب مكيفات
+                      </option>
+                      <option value="موعد تاسيس مواسير نحاسية">
+                        موعد تاسيس مواسير نحاسية
+                      </option>
+                      <option value="موعد تصنيع وتركيب مجاري هواء">
+                        موعد تصنيع وتركيب مجاري هواء
+                      </option>
+                      <option value="موعد معاينة موقع">موعد معاينة موقع</option>
+                      <option value="تركيب اجهزة دكت">تركيب اجهزة دكت</option>
                     </select>
                   </div>
-
-                  <div class="form-group" style="position: relative">
-                    <label for="date">اختر اليوم المناسب لك </label>
-
-                    <input type="text" class="form-control" id="datepicker" />
-                    <i
-                      class="fas fa-calendar-alt"
-                      style="left: 2%; position: absolute; top: 66%"
-                    ></i>
+                </div>
+                <div class="form-group" style="position: relative">
+                  <label for="date">اختر اليوم المناسب لك </label>
+                  <div id="datepicker"></div>
+                  <input
+                    type="text"
+                    name="something"
+                    value="thevalue"
+                    class="d-none"
+                    id="date"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="time"
+                    >اختر الساعة المناسبة لك
+                    <span class="fs-14"
+                      >( المواعيد المتاحة من 8:30 صباحا الي 3:00 مساءا )
+                    </span>
+                  </label>
+                  <div class="select-time pt-2" style="text-align-last: center">
+                    <select class="form-control" id="time">
+                      <option value="08:30:00">8:30 AM</option>
+                      <option value="09:00:00">9:00 AM</option>
+                      <option value="09:30:00">9:30 AM</option>
+                      <option value="10:00:00">10:00 AM</option>
+                      <option value="10:30:00">10:30 AM</option>
+                      <option value="11:00:00">11:00 AM</option>
+                      <option value="11:30:00">11:30 AM</option>
+                      <option value="12:00:00">12:00 PM</option>
+                      <option value="12:30:00">12:30 PM</option>
+                      <option value="13:00:00">1:00 PM</option>
+                      <option value="13:30:00">1:30 PM</option>
+                      <option value="14:00:00">2:00 PM</option>
+                      <option value="14:30:00">2:30 PM</option>
+                      <option value="15:00:00">3:00 PM</option>
+                      <option value="15:30:00">3:30 PM</option>
+                    </select>
                   </div>
-                  <div class="form-group">
-                    <label for="time"
-                      >اختر الساعة المناسبة لك
-                      <span class="fs-14"
-                        >( المواعيد المتاحة من 8:30 صباحا الي 3:00 مساءا )
-                      </span></label
-                    >
-
-                    <input type="text" class="form-control" />
-                  </div>
+                </div>
                   <div class="form-group">
                     <label for="message">رسالة </label>
-
+  
                     <textarea
                       id="comments"
                       name="message"
@@ -223,49 +346,120 @@
                   </div>
                   <div class="col-xl-12 text-center pb-2 pt-4">
                     <button
-                      type="submit"
-                      class="btn btn-primary fs-16 py-2 px-8 font-weight-semibold w-xl-25 w-50"
-                    >
-                      أرسل
-                    </button>
+                    type="submit"
+                    class="submit btn btn-primary fs-16 py-2 px-8 font-weight-semibold w-xl-25 w-50"
+                  >
+                    أرسل
+                  </button>
                   </div>
                 </form>
               </div>
               <!-- <div class="col-xl-1"></div> -->
             </div>
-          </div>
         </div>
       </div>
       <div class="col-xl-3 col-lg-2"></div>
     </div>
   </div>
+  <div id="test" class="d-none"></div>
+  <p class="clntId d-none"></p>
 </div>
 <script>
-  jQuery(document).ready(function ($) {
-    //open popup
-    $(".cd-popup-trigger").on("click", function (event) {
+  let apikey = "9992fd9e5d9471b3f0a7871ff3ea7ee839eb856b";
+  $(document).ready(function () {
+    var loggedName = $(".name-logged").text().trim();
+    console.log(loggedName);
+    if (loggedName == "nogoomfront" || loggedName == "") {
+      $(".submit").attr("disabled", "disabled");
+      $("#log").removeClass("d-none");
+    } else {
+      $(function () {
+        $.ajax({
+          url: "/client/clients/profile/",
+          type: "get",
+          headers: { apikey: apikey },
+          success: function (resp) {
+            $("#test").html($(resp).find(".responsive"));
+          },
+        });
+
+        return false;
+      });
+
+      setTimeout(() => {
+        console.log(client_id);
+        $(".clntId").text(client_id);
+      }, "3000");
+    }
+  });
+
+  $(".submit").click((e) => {
+    e.preventDefault();
+    let name = $("#inputName").val();
+    let phone = $("#inputTel").val();
+    let email = $("#inputEmail").val();
+    let type = $("#comments").val();
+    let date = $("#date").val();
+    date = date.split("/");
+    date = `${date[2]}-${date[0]}-${date[1]}`;
+    let time = $("#time").find(":selected").val();
+
+    console.log(name, phone, email, type, date, time, client_id);
+    taric(name, phone, email, type, date, time, client_id);
+  });
+
+  function taric(name, phone, email, type, date, time, client_id) {
+    let dateNow = new Date();
+    let day = dateNow.toISOString().split("T")[0];
+    let currTime = dateNow.toISOString().split("T")[1];
+
+    let ourBody = `
+    <p><strong> تم حجز هذا الموعد بواسطة العميل</strong> </p>
+    <p> وقت الحجز ${day} ${time}</p>
+    <p> الاسم:  ${name}</p> 
+    <p> رقم الهاتف: ${phone}</p> 
+    <p>البريد :  ${email}</p> 
+    <p>نوع الخدمة :  ${type}</p> 
+    `;
+    let dateAndTime = `${date} ${time} `;
+    let id = `${client_id}`;
+
+    let allData = {
+      ClientAppointment: {
+        item_id: id,
+        action_id: "6",
+        date: dateAndTime,
+        body: ourBody,
+      },
+    };
+    let data = JSON.stringify(allData);
+    console.log(data);
+    $.ajax({
+      url: "https://nogoomfront.daftara.com/api2/client_appointments",
+      method: "POST",
+      headers: {
+        apiKey: apikey,
+      },
+      data: data,
+      contentType: "application/json",
+      accept: "application/json",
+    })
+
+      .done(function (res) {
+        console.log("success", res);
+      })
+      .fail((err) => {
+        console.log("failed", err);
+      });
+  }
+  $(".cd-popup-trigger").on("click", function (event) {
       event.preventDefault();
       $(".cd-popup").addClass("is-visible");
     });
 
-    // //close popup
-    // $(".cd-popup").on("click", function (event) {
-    //   if (
-    //     $(event.target).is(".cd-popup-close") ||
-    //     $(event.target).is(".cd-popup")
-    //   ) {
-    //     event.preventDefault();
-    //     $(".cd-popup").removeClass("is-visible");
-    //   }
-    // });
     $(".cd-popup-close").click(function () {
       $(".cd-popup").removeClass("is-visible");
     });
-    //close popup when clicking the esc keyboard button
-    // $(document).keyup(function (event) {
-    //   if (event.which == "27") {
-    //     $(".cd-popup").removeClass("is-visible");
-    //   }
-    // });
-  });
+
 </script>
+
