@@ -103,6 +103,25 @@
   .ui-selectmenu-text {
     direction: ltr !important;
   }
+
+  .cd-popup2 {
+    position: absolute;
+    left: 0;
+    top: -100%;
+    height: 70%;
+    width: 100%;
+    z-index: 10000;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+    -moz-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+    transition: opacity 0.3s 0s, visibility 0s 0.3s;
+    box-shadow: none;
+  }
+  .cd-popup2-container {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
   @media only screen and (max-width: 991px) {
     input[type="datetime-local"]::-webkit-calendar-picker-indicator {
       position: absolute;
@@ -132,7 +151,7 @@
     </div>
 
     <div class="row py-4 border-bottom">
-      <div class="col-12">
+      <div class="col-12" style="position: relative">
         <h2 class="text-primary fs-lg-32 fs-24 font-weight-semibold d-none">
           حجز موعد "معاينة"
         </h2>
@@ -253,18 +272,7 @@
                 class="form-control"
               ></textarea>
             </div> -->
-            <div>
-              <p
-                id="log"
-                class="d-none text-primary fs-14 pt-2 my-0 text-center"
-                style="text-decoration: underline"
-              >
-                الرجاء التأكد من تسجيل الدخول لكي يتم حجز الموعد
-                <a class="text-color" href="/contents/login"
-                  >يمكنك تسجيل الدخول من هنا
-                </a>
-              </p>
-            </div>
+
             <div class="col-xl-12 text-center pb-2 pt-4">
               <button
                 type="submit"
@@ -272,6 +280,38 @@
               >
                 أرسل
               </button>
+              <div class="cd-popup2" role="alert">
+                <div
+                  class="row py-4 col-10 bg-white mx-auto form-rev cd-popup2-container"
+                >
+                  <div class="col-xl-12">
+                    <div class="text-left">
+                      <p
+                        class="cd-popup-close text-secondary fs-18 w-auto my-0"
+                        style="cursor: pointer"
+                      >
+                        <i class="fas fa-times"></i>
+                      </p>
+                    </div>
+                    <div>
+                      <p
+                        id="log"
+                        class="text-primary fs-18 font-weight-medium pt-2 my-0 text-center"
+                      >
+                        الرجاء التأكد من تسجيل الدخول لكي يتم حجز الموعد
+                      </p>
+                      <p>
+                        <a
+                          class="text-color pt-2 fs-16"
+                          href="/contents/login"
+                          style="text-decoration: underline"
+                          >يمكنك تسجيل الدخول من هنا
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </form>
         </div>
@@ -279,6 +319,7 @@
       </div>
     </div>
   </div>
+
   <div id="test" class="d-none"></div>
   <p class="clntId d-none"></p>
 </div>
@@ -288,8 +329,16 @@
     var loggedName = $(".name-logged").text().trim();
     console.log(loggedName);
     if (loggedName == "nogoomfront" || loggedName == "") {
-      $(".submit").attr("disabled", "disabled");
-      $("#log").removeClass("d-none");
+      $(".submit").click((e) => {
+        e.preventDefault();
+        console.log("HHII");
+        $(".cd-popup2").show();
+      });
+      $(".cd-popup-close").click(function () {
+        $(".cd-popup2").hide();
+      });
+      //   $(".submit").attr("disabled", "disabled");
+      //  $("#log").removeClass("d-none");
     } else {
       $(function () {
         $.ajax({
@@ -308,22 +357,22 @@
         console.log(client_id);
         $(".clntId").text(client_id);
       }, "3000");
+
+      $(".submit").click((e) => {
+        e.preventDefault();
+        let name = $("#inputName").val();
+        let phone = $("#inputTel").val();
+        let email = $("#inputEmail").val();
+        let type = $("#comments").val();
+        let date = $("#date").val();
+        date = date.split("/");
+        date = `${date[2]}-${date[0]}-${date[1]}`;
+        let time = $("#time").find(":selected").val();
+
+        console.log(name, phone, email, type, date, time, client_id);
+        taric(name, phone, email, type, date, time, client_id);
+      });
     }
-  });
-
-  $(".submit").click((e) => {
-    e.preventDefault();
-    let name = $("#inputName").val();
-    let phone = $("#inputTel").val();
-    let email = $("#inputEmail").val();
-    let type = $("#comments").val();
-    let date = $("#date").val();
-    date = date.split("/");
-    date = `${date[2]}-${date[0]}-${date[1]}`;
-    let time = $("#time").find(":selected").val();
-
-    console.log(name, phone, email, type, date, time, client_id);
-    taric(name, phone, email, type, date, time, client_id);
   });
 
   function taric(name, phone, email, type, date, time, client_id) {
