@@ -116,26 +116,27 @@
     opacity: 0.8 !important;
     cursor: auto;
   }
-  .cd-popup {
+  .cd-popup2 {
     position: absolute;
     left: 0;
     top: 0%;
     height: 70%;
     width: 100%;
     z-index: 10000;
-    opacity: 0;
-    visibility: hidden;
+    opacity: 1;
+    visibility: visible;
+    display: none;
     -webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s;
     -moz-transition: opacity 0.3s 0s, visibility 0s 0.3s;
     transition: opacity 0.3s 0s, visibility 0s 0.3s;
   }
-  .cd-popup.is-visible {
+  /* .cd-popup.is-visible {
     opacity: 1 !important ;
     visibility: visible;
     -webkit-transition: opacity 0.3s 0s, visibility 0s 0s;
     -moz-transition: opacity 0.3s 0s, visibility 0s 0s;
     transition: opacity 0.3s 0s, visibility 0s 0s;
-  }
+  } */
   input#example-date-input::-webkit-datetime-edit {
     right: 5%;
   }
@@ -150,18 +151,18 @@
     color: transparent;
     white-space: nowrap;
   }
-  .cd-popup-container {
+  .cd-popup2-container {
     position: relative;
   }
-  .cd-popup-container .cd-popup-close {
+  .cd-popup2-container .cd-popup2-close {
     position: absolute;
     top: 8px;
     right: 8px;
     width: 30px;
     height: 30px;
   }
-  .cd-popup-container .cd-popup-close::before,
-  .cd-popup-container .cd-popup-close::after {
+  .cd-popup2-container .cd-popup2-close::before,
+  .cd-popup2-container .cd-popup2-close::after {
     content: "";
     position: absolute;
     top: 12px;
@@ -169,7 +170,7 @@
     height: 3px;
     background-color: #8f9cb5;
   }
-  .cd-popup-container .cd-popup-close::before {
+  .cd-popup2-container .cd-popup2-close::before {
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
@@ -177,7 +178,7 @@
     transform: rotate(45deg);
     left: 8px;
   }
-  .cd-popup-container .cd-popup-close::after {
+  .cd-popup2-container .cd-popup2-close::after {
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
@@ -209,25 +210,25 @@
           >
         </div>
    
-        <div class="text-center pt-4 pb-8">
+        <div class="text-center pt-4 pb-8 new-height">
           <a
             href="#0"
-            class="cd-popup-trigger btn btn-primary fs-16 py-2 px-8 font-weight-semibold w-xl-25 w-50"
+            class="cd-popup2-trigger btn btn-primary fs-16 py-2 px-8 font-weight-semibold w-xl-25 w-50"
           >
             حجز موعد
           </a>
     
           </div>
-          <div class="cd-popup" role="alert">
+          <div class="cd-popup2" role="alert">
             <div
-              class="row py-4 col-10 bg-white mx-auto form-rev cd-popup-container"
+              class="row py-4 col-10 bg-white mx-auto form-rev cd-popup2-container"
             >
               <!-- <div class="col-xl-1"></div> -->
               <div class="col-xl-12">
                 <div class="">
                   <div class="text-left">
                     <p
-                      class="cd-popup-close text-secondary fs-18 w-auto"
+                      class="cd-popup2-close text-secondary fs-18 w-auto"
                       style="cursor: pointer"
                     >
                       <i class="fas fa-times"></i>
@@ -452,13 +453,17 @@
         console.log("failed", err);
       });
   }
-  $(".cd-popup-trigger").on("click", function (event) {
+  $(".cd-popup2-trigger").on("click", function (event) {
       event.preventDefault();
-      $(".cd-popup").addClass("is-visible");
-    });
+  $(".cd-popup2").show(); 
+$(".new-height").css("height", "15cm")
+});
 
-    $(".cd-popup-close").click(function () {
-      $(".cd-popup").removeClass("is-visible");
+    $(".cd-popup2-close").click(function () {
+      $(".cd-popup2").hide();
+      $(".new-height").css("height", "4cm")
+
+
     });
 
 </script>
