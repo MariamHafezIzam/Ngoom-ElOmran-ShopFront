@@ -445,18 +445,18 @@ a.logn {
                     </div>
                 </div>
                
-                <div class="col-lg-4 col-6 col order-2 order-lg-2 pl-0 pl-lg-3" style="display: flex;  justify-content: left;">
-                    <div class="text-right pl-0 d-flex" >
+                <div class="col-lg-4 col-6 col order-2 order-lg-2 px-0" style="display: flex;  justify-content: left;">
+                    <div class="text-right pl-0 d-flex" style="width: 100%;">
                         <button type="button" data-toggle="collapse" data-target="#mainSearch" aria-controls="mainSearch" aria-expanded="false" class="btn mr-2 p-0 text-dark text-hover-primary fs-14 d-inline-block d-lg-none"><i class="fas fa-search mr-lg-1 text-white fs-18"></i></button>
 
                         {{#is_logged_in}}      
                          <!-- start new menu -->
                          <div style="align-self: center;" class="dropdownn">
-                            <button type="button" class="dropbtn login btn-focus-shadow-0 btn mx-2 mt-1 mt-xl-0 mr-lg-6 p-0 px-lg-2 px-xl-3 fs-14 fs-xl-15" disabled="disabled">
+                            <button type="button" class="dropbtn login btn-focus-shadow-0 btn mx-0 mt-1 mt-xl-0  p-0 px-lg-2 px-xl-3 fs-14 fs-xl-15" disabled="disabled">
                         <label class=" mt-0 fs-14  text-capitalize d-flex text-white">
                           
                           <div style="align-self: center; " class="mr-2"><i class="fas fa-user fs-xl-24 fs-18"></i></div>
-                         <div class="d-lg-block d-none" style="text-align: right ;line-height:1.3;"><span class="fs-10 fw-normal">مرحبا</span>  <br><span class="fs-xl-18 fs-12 na"> {{ logged_name }}</span></div>
+                         <div class="d-lg-block d-none" style="text-align: right ;line-height:1.3;"><span class="fs-10 fw-normal">مرحبا</span>  <br><span class="name-logged fs-xl-16 fs-12 na"> {{ logged_name }}</span></div>
                         </label>
                     </button>
                             <div class="dropdown-content mx-lg-2 p-1 pt-2">
@@ -473,7 +473,7 @@ a.logn {
                         {{/is_logged_in}}
 
                         {{^is_logged_in}}
-                        <div class="account dropdownn" style="align-self: center;">
+                        <div class="account dropdownn" style="align-self: center;width: 50%;">
                                               <button type="button" class=" btn-focus-shadow-0 btn p-0 m-0">
                                 <a href="/contents/logout" class="logn" style="display: none;">
                                     <i class="mr-2 fas fa-sign-out"></i>Log Out</a> {{/is_logged_in}} {{^is_logged_in}}
@@ -496,7 +496,7 @@ a.logn {
                                 {{/is_logged_in}}
                        </div>
                      
-                       <button type="button" style="width: 35%;" class="cart-toggle-btn btn-focus-shadow-0 btn mr-xl-2 mr-lg-0 p-0 py-lg-1 px-lg-2  mr-1    fs-14 fs-xl-16 text-white secondary-hover"><i class="fas fa-shopping-cart mr-lg-1 position-relative fs-xl-24"><span id="totalCart"></span></i><span class="d-none d-lg-inline-block">عربة التسوق</span></button>
+                       <button type="button" style="width: 50%; text-align: end;" class="cart-toggle-btn btn-focus-shadow-0 btn mr-xl-2 mr-lg-0 p-0 py-lg-1 px-lg-2  mr-1    fs-14 fs-xl-16 text-white secondary-hover"><i class="fas fa-shopping-cart mr-lg-1 position-relative fs-xl-24"><span id="totalCart"></span></i><span class="d-none d-lg-inline-block">عربة التسوق</span></button>
 
                         <button class="btn mr-2 mr-lg-0 p-0 text-black lh-1 d-none" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false">
                             <i class="far fa-bars fs-20"></i>
