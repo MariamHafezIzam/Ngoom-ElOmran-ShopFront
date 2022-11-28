@@ -243,6 +243,29 @@ label {
  .dropdown-menu{
     min-width: 220px;
  }
+ .ui-state-default
+  {
+    background: #dfeffc url(images) 50% 50% repeat-x  !important;
+  }
+  .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    background: #fbec88 !important;
+}
+.ui-state-active, .ui-widget-content .ui-state-active {
+    background: #ffffff !important;
+}
+.ui-widget-header {
+    background: #5c9ccc url(images) 50% 50% repeat-x !important;
+}
+.custom_content .ui-button {
+    background-image: url(images) !important;
+    background-color: #dfeffb !important;
+}
+
+.ui-selectmenu-text, .ui-menu .ui-menu-item-wrapper {
+    direction: ltr !important;
+    text-align: center !important;
+}
+
  .dropdown-content {
             display: none;
             position: absolute;
@@ -376,6 +399,36 @@ a.logn {
     padding: 12px;
 }
 }
+
+
+.newOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background-color: #51525259;
+  }
+  .hidden {
+    display: none;
+  }
+
+  .newOverlay-contain {
+    display: none;
+    width: 100px;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    z-index: 1001;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px;
+    height: 80px;
+    border-radius: 5px;
+  }
+  .newOverlay-contain img {
+    width: 100%;
+  }
         </style>
 
 </head>
@@ -641,7 +694,18 @@ a.logn {
             </div>
         </div>
     </div>
-    <a href="https://api.whatsapp.com/send?phone=+2001149859561&text=Hello!!" class="float" target="_blank">
+    
+  <div id="products-section" class="pb-4">
+    <div class="newOverlay hidden">
+      <div class="newOverlay-contain">
+        <img
+          src="https://nogoomfront.daftara.com/files/27d1f6af/logos/636a5d32d2628_blobid1667915056629.gif"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <a href="https://api.whatsapp.com/send?phone=+966509912853&text=Hello!!" class="float" target="_blank">
     <i class="fab fa-whatsapp my-float"></i>
         </a>
     {{cart:Cart.empty()}}
@@ -707,9 +771,23 @@ a.logn {
                         $this.updateCartTotals();
                     }
 
+                    const loader = {
+    hideloder: () => {
+      $(".newOverlay").hide();
+      $(".newOverlay-contain").hide();
+    },
+    showloder: () => {
+      $(".newOverlay").show();
+      $(".newOverlay-contain").show();
+    },
+  };
+
                     $("body").on("click", ".add-to-cart-btn", function (e) {
 
                         e.stopPropagation();
+                        loader.showloder();
+
+                        console.log("Test")
                         qtyEl = $(this).parents(".product").find("input.qty");
                         var qty = 1;
                         if(qtyEl.length) {
@@ -737,17 +815,28 @@ a.logn {
                             headers: { 'apikey': '380492af89d4f32c4ac246557b86ee60510e1a44'},
                             dataType: 'json'
       }).done((data) => {
-     let catId = data.items_categories[0].category_id
+        let catId = data.items_categories[0].category_id
+
+        console.log("HI" + catId)
       if (catId == 3) {
+        loader.hideloder();
+
             $(".custom-model-main").addClass("model-open");
                         $(".bg-popup ").addClass("model-open");
+                        $("body").addClass("sidebar-active");
+        }
+        else{
+            loader.hideloder();
+
+            $("body").addClass("sidebar-active");
+
         }
       });
                       
                       
                         $this.saveItemToBackEnd(productId);
                         $this.updateProductCartListItem(productId);
-                        $("body").addClass("sidebar-active");
+                      //  $("body").addClass("sidebar-active");
                         initTooltips();
                         // $(".custom-model-main").addClass("model-open");
                         // $(".bg-popup ").addClass("model-open");
