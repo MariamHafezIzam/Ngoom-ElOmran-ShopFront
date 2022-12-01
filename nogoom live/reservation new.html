@@ -324,7 +324,7 @@
   <p class="clntId d-none"></p>
 </div>
 <script>
-  let apikey = "380492af89d4f32c4ac246557b86ee60510e1a44";
+  let apikey = "e668a92a32e3a9b8247915d4b7f8f9072794cdb0";
   $(document).ready(function () {
     var loggedName = $(".name-logged").text().trim();
     console.log(loggedName);
@@ -344,7 +344,7 @@
         $.ajax({
           url: "/client/clients/profile/",
           type: "get",
-          headers: { apikey: "380492af89d4f32c4ac246557b86ee60510e1a44" },
+          headers: { apikey: "e668a92a32e3a9b8247915d4b7f8f9072794cdb0" },
           success: function (resp) {
             $("#test").html($(resp).find(".responsive"));
           },
@@ -405,7 +405,7 @@
       url: "https://ostarssa.daftara.com/api2/client_appointments",
       method: "POST",
       headers: {
-        apikey: "380492af89d4f32c4ac246557b86ee60510e1a44",
+        apikey: "e668a92a32e3a9b8247915d4b7f8f9072794cdb0",
       },
       data: data,
       contentType: "application/json",
