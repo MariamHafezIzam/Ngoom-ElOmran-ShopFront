@@ -282,7 +282,7 @@
                     <div class="form-group">
                       <label for="option"> نوع الموعد </label>
     
-                      <select id="resrve-type" class="form-control" required>
+                      <select id="resrve" class="form-control" required>
                         <option value="موعد تركيب مكيفات" selected>
                           موعد تركيب مكيفات
                         </option>
@@ -365,7 +365,7 @@
     <p class="clntId d-none"></p>
   </div>
   <script>
-    let apikey = "9992fd9e5d9471b3f0a7871ff3ea7ee839eb856b";
+    let apikey = "e668a92a32e3a9b8247915d4b7f8f9072794cdb0";
     $(document).ready(function () {
       var loggedName = $(".name-logged").text().trim();
       console.log(loggedName);
@@ -398,17 +398,18 @@
       let name = $("#inputName").val();
       let phone = $("#inputTel").val();
       let email = $("#inputEmail").val();
+      let reserveType = $("#resrve").find(":selected").val();
       let type = $("#comments").val();
       let date = $("#date").val();
       date = date.split("/");
       date = `${date[2]}-${date[0]}-${date[1]}`;
       let time = $("#time").find(":selected").val();
   
-      console.log(name, phone, email, type, date, time, client_id);
-      taric(name, phone, email, type, date, time, client_id);
+      console.log(name, phone, email, type, date, time, client_id, reserveType);
+      taric(name, phone, email, type, date, time, client_id,reserveType);
     });
   
-    function taric(name, phone, email, type, date, time, client_id) {
+    function taric(name, phone, email, type, date, time, client_id, reserveType) {
       let dateNow = new Date();
       let day = dateNow.toISOString().split("T")[0];
       let currTime = dateNow.toISOString().split("T")[1];
@@ -419,7 +420,8 @@
       <p> الاسم:  ${name}</p> 
       <p> رقم الهاتف: ${phone}</p> 
       <p>البريد :  ${email}</p> 
-      <p>نوع الخدمة :  ${type}</p> 
+      <p> نوع الموعد : ${reserveType}</p>
+      <p> الرسالة :  ${type}</p> 
       `;
       let dateAndTime = `${date} ${time} `;
       let id = `${client_id}`;
@@ -427,7 +429,7 @@
       let allData = {
         ClientAppointment: {
           item_id: id,
-          action_id: "6",
+          action_id: "93",
           date: dateAndTime,
           body: ourBody,
         },
@@ -458,7 +460,7 @@
   $(".new-height").css("height", "18cm")
   });
   
-      $(".cd-popup2-close").click(function () {
+      $(".cd-popup2-close, .submit").click(function () {
         $(".cd-popup2").hide();
         $(".new-height").css("height", "4cm")
   
