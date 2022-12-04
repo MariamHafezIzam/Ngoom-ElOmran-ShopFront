@@ -14,7 +14,7 @@
       </a>
     </div>
   </div>
-  <div id="main-content-sf"></div>
+  <div id="main-content-offers"></div>
 </section>
 <script>
   $(document).ready(function () {
@@ -23,8 +23,8 @@
         url: "/contents/products_list/limit:4?cat_id=117",
         type: "get",
         success: function (resp) {
-          $("#main-content-sf").html(
-            $(resp).find("#products-section .row:nth-last-child(2)")
+          $("#main-content-offers").html(
+            $(resp).find("#products-section .row:nth-last-child(2)").last()
           );
         },
       });
