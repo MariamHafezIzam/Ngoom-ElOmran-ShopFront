@@ -13,7 +13,7 @@
         type: "get",
         success: function (resp) {
           $("#last-products").html(
-            $(resp).find("#products-section .row:nth-last-child(2)")
+            $(resp).find("#products-section .row:nth-last-child(2)").last()
           );
         },
       });
