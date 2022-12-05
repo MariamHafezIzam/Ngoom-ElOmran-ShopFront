@@ -266,7 +266,7 @@ label {
     text-align: center !important;
 }
 
- .dropdown-content {
+ .dropdown-content , .dropdown-content-cat{
             display: none;
             position: absolute;
             /* background-color: #ffffff; */
@@ -275,7 +275,7 @@ label {
             z-index: 20;
         }
         
-        .dropdown-content a {
+        .dropdown-content a ,     .dropdown-content-cat a{
            
             color: #053858;
             padding: 12px 16px;
@@ -291,8 +291,12 @@ label {
             background-color: #fff;
             min-width: 230px;
         }
- 
-        .dropdownn:hover .dropdown-content {
+        .dropdown-content-cat div {
+            background-color: #fff;
+            min-width: 215px;
+
+        }
+        .dropdownn:hover .dropdown-content ,   .dropdownn-cat:hover .dropdown-content-cat {
             display: block;
         }
         .dropbtn  {
@@ -360,7 +364,14 @@ div#home-featured-products-section {
     -moz-transition: opacity 0.3s 0s, visibility 0s 0s;
     transition: opacity 0.3s 0s, visibility 0s 0s;
   }
+ .navbar-nav .nav-item, .navbar-nav .nav-item {
+    float: unset !important;
+    display: inline-block;
+}
 @media only screen and (max-width: 991px){
+    .navbar-nav .nav-item, .navbar-nav .nav-item {
+    display: flex;
+}
     .login {
         padding-left: 0px;
        
@@ -389,7 +400,7 @@ header#site-header .col.col-lg-3>div {
 a.nav-link.dashboard {
     font-size: 8px !important;
 }
-.dropdown-content {
+.dropdown-content , .dropdown-content-cat {
 
     left: 3px; 
     min-width: 175px;
@@ -397,6 +408,9 @@ a.nav-link.dashboard {
 a.logn {
     font-size: 12px !important;
     padding: 12px;
+}
+.dropdown-content-cat {
+    display: none;
 }
 }
 
@@ -429,6 +443,11 @@ a.logn {
   .newOverlay-contain img {
     width: 100%;
   }
+
+  .dropdown-content-cat {
+    margin-top: -8px !important;
+  }
+
         </style>
 
 </head>
@@ -639,16 +658,49 @@ a.logn {
         <div class="container" >
             <div class=" p-0">
                 <ul class="navbar-nav d-block p-0">
-                    <li class="nav-item px-1 mr-4">
-                        <a class="nav-link fs-xl-16 d-flex text-white px-0 "  href="/contents/products_list?cat_id=3">
-                            <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/6339580e1a1ec_blobid1664702476348.png" alt="" title="ac.png" width="auto" height="36" caption="false" /> <p class="my-auto fs-13 fs-lg-16"> مكييفات سبليت </p>
+                    <li class="nav-item px-1 mr-4 dropdownn-cat">
+                        <a class="nav-link fs-xl-16 d-flex text-white px-0 "  href="/contents/products_list?cat_id=109">
+                            <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/6339580e1a1ec_blobid1664702476348.png" alt="" title="ac.png" width="auto" height="36" caption="false" /> <p class="my-auto fs-13 fs-lg-16"> مكييفات  </p>
                         </a>
+                        <div class="dropdown-content-cat p-0 ">
+                            <div class="px-3">
+                                <a class=" fs-xl-16 d-flex px-0 logn"  href="/contents/products_list?cat_id=118">
+ <p class="my-auto fs-13 fs-lg-16"> مكيفات اسبلت</p>
+                                </a>
+                            </div>
+                            <div class="px-3">
+                                <a class=" fs-xl-16 d-flex px-0 logn"  href="/contents/products_list?cat_id=119">
+ <p class="my-auto fs-13 fs-lg-16">مكيفات شباك</p>
+                                </a>
+                            </div>
+                            <div class="px-3">
+                                <a class=" fs-xl-16 d-flex px-0 logn"  href="/contents/products_list?cat_id=120">
+ <p class="my-auto fs-13 fs-lg-16"> مكييفات دكت سبليت </p>
+                                </a>
+                            </div>
+                            <div class="px-3">
+                                <a class=" fs-xl-16 d-flex px-0 logn"  href="/contents/products_list?cat_id=121">
+ <p class="my-auto fs-13 fs-lg-16"> مكيفات كاست </p>
+                                </a>
+                            </div>
+                            <div class="px-3">
+                                <a class=" fs-xl-16 d-flex px-0 logn"  href="/contents/products_list?cat_id=122">
+ <p class="my-auto fs-13 fs-lg-16"> مكيفات دولابي </p>
+                                </a>
+                            </div>
+                            <div class="px-3">
+                                <a class=" fs-xl-16 d-flex px-0 logn"  href="/contents/products_list?cat_id=123">
+ <p class="my-auto fs-13 fs-lg-16"> مكيفات باكيج </p>
+                                </a>
+                            </div>
+                          </div>
+                          
                     </li>
-                    <li class="nav-item px-1 mr-4">
+                    <!-- <li class="nav-item px-1 mr-4">
                         <a class="nav-link fs-xl-16 d-flex text-white px-0 "  href="/contents/products_list?cat_id=3">
                             <img class="pr-2 d-lg-flex d-none" src="https://ostarssa.daftara.com/files/7aae9582/logos/637b5280ce77b_blobid1669026430009.png" alt="" title="ac.png" width="auto" height="36" caption="false" /> <p class="my-auto fs-13 fs-lg-16"> مكييفات دكت سبليت </p>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="nav-item px-1 mr-4">
                         <a class="nav-link fs-xl-16 d-flex text-white px-0 "  href="/contents/products_list?cat_id=110">
                             <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftara.com/files/27d1f6af/logos/63675fd5ca5e6_blobid1667719122982.png" alt="" title="water-pipe (2).png" width="auto" height="36" /><p class="my-auto fs-13 fs-lg-16">تأسيس نحاس </p>
