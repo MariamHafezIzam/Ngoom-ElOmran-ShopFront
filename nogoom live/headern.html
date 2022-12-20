@@ -49,6 +49,9 @@
         .b-b{
             border-bottom: 1px solid rgba(255,255,255,0.15);
         }
+        .b-t{
+            border-top: 1px solid rgba(255,255,255,0.15);
+        }
         .b-secondary{
             border-bottom: 1px solid #00badb ;
         }
@@ -225,6 +228,10 @@ label {
     box-shadow: rgba(5, 16, 88, 0.5) 0px 3px 8px;
 
 }
+#products-section {
+    padding-bottom: 0 !important;
+
+}
 .img-cat {
     height: 400px !important;
     border-radius: 40px;
@@ -369,6 +376,10 @@ div#home-featured-products-section {
     display: inline-block;
 }
 @media only screen and (max-width: 991px){
+    .img-cat {
+    height: 170px !important;
+    border-radius: 30px;
+} 
     .navbar-nav .nav-item, .navbar-nav .nav-item {
     display: flex;
 }
@@ -456,10 +467,12 @@ a.logn {
 <div id="top-header" class="bg-primary white b-b">
     <div class="container"> 
         <div class="row align-items-center">
-            <div class="col-lg-9 col-4 col flex-grow-0 white fs-10 fs-lg-sm px-1">
+            <div class="col-lg-3 col-4 col flex-grow-0 white fs-10 fs-lg-sm px-1">
                 خدمة العملاء: </span><a href="tel:+000000" class="hover-col white fs-sm secondary-hover">000000</a>
             </div>
-            <div class="col-lg-3 col-8 col flex-grow-0 px-1">
+            <div class="col-lg-6 col-6 col flex-grow-0 white fs-16 fs-lg-sm px-1 local-text text-lg-center text-right d-none d-lg-block">
+            </div>
+            <div class="col-lg-3 col-8 col flex-grow-0 px-1 ">
                 <div  style="display: flex;float: left;">
                     <a class="nav-link dashboard white my-1 py-0 px-2 fs-10 fs-lg-sm secondary-hover b-l" href="{{dashboard_url}}">
                         <i class="fas fa-home-alt mr-1 d-lg-inline-block"></i><span>بوابة العميل</span>
@@ -471,6 +484,8 @@ a.logn {
                         <i class="fas fa-phone mr-1 d-lg-inline-block"></i><span>تواصل معنا </span>
                     </a>
                 </div>
+            </div>
+            <div class="col-lg-6 col-12 col flex-grow-0 white fs-16 fs-lg-sm p-1 local-text text-center d-lg-none d-block b-t">
             </div>
         </div>
     </div>
@@ -598,7 +613,56 @@ a.logn {
         <div class="">
             <nav class="navbar navbar-expand-lg bg-primary p-0 b-b ">
                 <div class="container">
-                    <div class="collapse show" id="mainNav">
+                    <div class="collapse show d-none d-lg-block" id="mainNav">
+                        <ul class="navbar-nav px-0 py-2">
+                            {{# menuItems }}
+                            <li class="nav-item dropdown mr-2">
+                                <a class="nav-link fs-xl-20 py-2 px-3 {{# has_children }} dropdown-toggle {{/ has_children }}" href="{{ link }}" {{# has_children }} role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" {{/ has_children }}>
+                                {{ title }}
+                                </a>
+                                {{# has_children }}
+                                <ul class="dropdown-menu">
+                                    {{/ has_children }}
+
+                                    {{# children }}
+                                    <li {{# has_grand_children }} class="dropdown-submenu" {{/ has_grand_children }}>
+                                    <a class="dropdown-item {{# has_grand_children }} dropdown-toggle {{/ has_grand_children }}" href="{{ link }}" {{# has_grand_children }} role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" {{/ has_grand_children }}>{{ title }}</a>
+
+                                    {{# has_grand_children }}
+                                    <ul class="dropdown-menu">
+                                        {{/ has_grand_children }}
+
+                                        {{# children }}
+                                        <li>
+                                            <a class="dropdown-item" href="{{ link }}">{{ title }}</a>
+                                        </li>
+                                        {{/ children }}
+
+                                        {{# has_grand_children }}
+                                    </ul>
+                                    {{/ has_grand_children }}
+
+                                    </li>
+                                    {{/ children }}
+
+                                    {{# has_children }}
+                                </ul>
+                                {{/ has_children }}
+                            </li>
+                            {{/ menuItems }}
+                        </ul>
+                        {{#authenticated}}
+                        <ul class="navbar-nav p-0 ml-auto d-none">
+                            <li class="nav-item pl-4">
+                                <a class="nav-link fs-xl-16" href="{{dashboard_url}}">
+                                    <i class="fas fa-home-alt mr-2 d-none d-lg-inline-block"></i>
+                                    الرجوع للوحة التحكم
+                                </a>
+                            </li>
+                        </ul>
+                        {{/authenticated}}
+                    </div>
+                    <div class="collapse d-block d-lg-none" id="mainNav">
                         <ul class="navbar-nav px-0 py-2">
                             {{# menuItems }}
                             <li class="nav-item dropdown mr-2">
@@ -654,7 +718,7 @@ a.logn {
         </div>
         
     </header>
-    <div class="bottom-nav bg-primary ">
+    <div class="bottom-nav bg-primary d-none d-lg-block">
         <div class="container" >
             <div class=" p-0">
                 <ul class="navbar-nav d-block p-0">
@@ -867,10 +931,18 @@ a.logn {
                             headers: { 'apikey': 'e668a92a32e3a9b8247915d4b7f8f9072794cdb0'},
                             dataType: 'json'
       }).done((data) => {
-        let catId = data.items_categories[0].category_id
+        let catId = data.items_categories.length < 2
+                ? data.items_categories[0].category_id
+                : data.items_categories[1].category_id;
+        console.log(catId)
 
-        console.log("HI" + catId)
-      if (catId == 3) {
+          if (catId != "109" ) {
+            catId = data.items_categories[0].category_id
+               
+            console.log("HI" + catId)
+
+          }
+      if (catId == 109) {
         loader.hideloder();
 
             $(".custom-model-main").addClass("model-open");
@@ -1038,7 +1110,25 @@ a.logn {
                     shopFront.setCartData(cartItems);
 
                 }
+
             })
            
         </script>
-    
+    <script>
+          $(document).ready(function () {
+
+                        function getHeaderText() {
+                    $.ajax({
+              url: "/v2/api/entity/le_shopfront-text/1",
+              headers: { apikey: "e668a92a32e3a9b8247915d4b7f8f9072794cdb0" },
+              type: "GET",
+            }).done((data) => {
+                var textD = data.shopfront_header_text
+             console.log(textD)
+ $(".local-text").text(textD)
+
+                })
+                }
+                getHeaderText();
+            })
+    </script>
