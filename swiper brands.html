@@ -110,9 +110,19 @@
     <!-- Initialize Swiper -->
     <script>
       var swiper = new Swiper(".mySwiper", {
+        breakpoints: {
+      300: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+        
+      },
+      1100: {
         slidesPerView: 6,
         spaceBetween: 40,
         slidesPerGroup: 2,
+      }
+    },
+       
         // centeredSlides: true,
         autoplay: {
           delay: 2000,
