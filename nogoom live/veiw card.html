@@ -133,24 +133,16 @@
     border-radius: 50%;
     background: #fff;
   }
-  .service {
-    background-color: #eef1f7;
-    border: 1px solid #e1e1e1;
+  .service,
+  .choose-bkg {
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
   }
 </style>
 
 <div class="w-100">
   <div id="site-sidebar">
     <div class="side-sidebar-wrap">
-      <div class="side-sidebar-header">
-        <button
-          type="button"
-          class="cart-toggle-btn btn p-0 font-weight-semibold d-inline-flex align-items-center fs-16 text-color"
-        >
-          <i class="fas fa-arrow-circle-left mr-2 fs-18"></i>عربة التسوق
-        </button>
-      </div>
-
       <div class="side-sidebar-body my-5">
         <div class="cart-items">
           <div style="display: none" class="cart-item">
@@ -209,6 +201,15 @@
           <span class="cart-total font-weight-bold text-color fs-24"> </span>
         </div>
       </div>
+      <div class="side-sidebar-header py-2">
+        <button
+          type="button"
+          class="btn-primary cart-toggle-btn btn w-100 font-weight-semibold d-inline-flex align-items-center fs-16 text-white align-items-center justify-content-between"
+        >
+          <i class="fas fa-arrow-alt-square-right"></i>العودة الي التسوق
+        </button>
+      </div>
+
       <div class="side-sidebar-footer">
         <a
           id="checkout-btn"
@@ -231,7 +232,37 @@
           </button>
         </div>
         <div class="custom-model-inner">
-          <div class="custom-model-wrap">
+          <div class="select-service">
+            <p class="fs-18 p-2 m-0 text-center font-weight-bold">
+              اختر الخدمة المطلوبة
+            </p>
+            <div id="service-forms " class="row m-4 fs-20 font-weight-medium">
+              <div class="py-2 col-12 choose-bkg">
+                <label class="cont">
+                  <div style="width: 37%">توريد فقط</div>
+                  <input type="radio" name="choose-service" value="0" />
+                  <span class="checkmarks"></span>
+                </label>
+              </div>
+              <div class="py-2 col-12 choose-bkg">
+                <label class="cont">
+                  <div style="width: 37%">توريد وتركيب</div>
+                  <input type="radio" name="choose-service" value="1" />
+                  <span class="checkmarks"></span>
+                </label>
+              </div>
+
+              <div class="col-12 pt-6 text-center">
+                <p class="text-center">
+                  <input
+                    class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary selected"
+                    value="تم تحديد الخدمة"
+                  />
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="custom-model-wrap d-none">
             <p class="fs-18 p-2 m-0 text-center">
               ما هو المكان المناسب لتركيب وحدة المكيف الخارجية؟
             </p>
@@ -312,7 +343,7 @@
                   <input
                     class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary close-btn"
                     type="button"
-                    value="تم تحديد الخدمة"
+                    value="تم الأختيار"
                   />
                 </p>
               </div>
@@ -322,7 +353,7 @@
           <div
             class="close-btn fs-20 px-4 py-2 font-weight-bold text-center d-none"
           >
-            <button class="btn btn-primary">تم تحديد الخدمة</button>
+            <button class="btn btn-primary">تم الأختيار</button>
           </div>
         </div>
       </div>
@@ -360,7 +391,10 @@
       return false;
     });
   });
-
+  // $(".close-service").click(() => {
+  //   $(".select-service").addClass("d-none");
+  //   $(".custom-model-wrap ").removeClass("d-none");
+  // });
   $(".close-btn").click(function () {
     $(".custom-model-main").removeClass("model-open");
     $(".bg-popup ").removeClass("model-open");
@@ -368,6 +402,16 @@
 
   // $(".sidebar-active")
   $(document).ready(function () {
+    $(".selected").click(function () {
+      var serviceValue = $('input[name="choose-service"]:checked').val();
+      console.log(serviceValue);
+      if (serviceValue == "1") {
+        $(".select-service").addClass("d-none");
+        $(".custom-model-wrap ").removeClass("d-none");
+      } else {
+        $(".bg-popup ").removeClass("model-open");
+      }
+    });
     $("input[type='button']").click(function () {
       var radiovalue = $('input[name="select_services"]:checked').val();
       let product = $("#services .box .product ");
