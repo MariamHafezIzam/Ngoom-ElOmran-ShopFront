@@ -1,0 +1,56 @@
+{{#count}}
+<div id="home-categories-section" class="py-7">
+  <div class="container" style="max-width: 1335px; margin: auto">
+    <div class="row">
+      <div class="col-lg-12">
+        <h3 class="title font-weight-medium text-primary py-4 px-2">
+          <span class="b-secondary">التصنيفات</span>
+        </h3>
+      </div>
+    </div>
+    <div class="row">
+      {{#items}}
+      <div class="col-lg-3 col-sm-6 col-6 main-card">
+        <a
+          href="/contents/products_list?cat_id={{id}}"
+          class="text-decoration-none text-black text-hover-primary cat-card"
+        >
+          <div class="text-center mb-6 mb-lg-0">
+            {{#image_full_path}}
+            <img
+              src="{{image_full_path}}"
+              width="168"
+              height="125"
+              alt="Sandwiches"
+              class="img-fluid w-100 mx-auto img-cover mb-3 img-cat"
+            />
+            {{/image_full_path}} {{^image_full_path}}
+            <img
+              src="https://cdn.daftra.com/templates/shop_1/img/category_thumb.svg"
+              width="168"
+              height="125"
+              alt="Sandwiches"
+              class="img-fluid w-100 mx-auto img-cover mb-3 img-cat"
+            />
+            {{/image_full_path}}
+            <h6 class="fs-18 font-weight-bold mb-2 d-none">{{name}}</h6>
+          </div>
+        </a>
+      </div>
+      {{/items}}
+    </div>
+  </div>
+</div>
+{{/count}}
+<script>
+  $(document).ready(function () {
+    let card = $(".main-card");
+    $.each(card, (i, val) => {
+      let src = $(val).find(".img-cat").attr("src");
+      if (src.includes("_اخفاء")) {
+        console.log(src);
+        $(val).addClass("d-none");
+      }
+    });
+  });
+</script>
