@@ -20,6 +20,15 @@
     .swiper-pagination-bullet {
     margin: 0 4px !important;
   }
+
+  @media only screen and (max-width: 991px) {
+    .home-slide.swiper-slide {
+      border-radius: 0px !important;
+    }
+    #home-slider-section .home-slide {
+      height: 180px !important;
+    }
+  }
 </style>
 <div id="home-slider-section" class="pt-lg-7">
   <div class="container">
@@ -31,7 +40,7 @@
               {{#items}}
               <div
                 class="home-slide swiper-slide"
-                style="border-radius:20px ;background-image: url({{file}})"
+                style="  border-radius: 20px ;background-image: url({{file}})"
               >
                 <div class="container">
                   <div class="row">
