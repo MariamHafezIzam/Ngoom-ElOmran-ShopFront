@@ -1,0 +1,26 @@
+<div
+  class="flex-grow-0 fs-lg-sm p-2 local-text-parent text-center new-transtion"
+>
+  <div class="local-text"></div>
+  <div class="exit"><i class="fas fa-times"></i></div>
+</div>
+<script>
+  $(document).ready(function () {
+    function getHeaderText() {
+      $.ajax({
+        url: "/v2/api/entity/le_shopfront-text/1",
+        headers: { apikey: "e668a92a32e3a9b8247915d4b7f8f9072794cdb0" },
+        type: "GET",
+      }).done((data) => {
+        var textD = data.shopfront_header_text;
+        console.log(textD);
+        $(".local-text-parent").removeClass("new-transtion");
+        $(".local-text").text(textD);
+      });
+    }
+    $(".exit").click(function () {
+      $(".local-text-parent").addClass("new-transtion");
+    });
+    getHeaderText();
+  });
+</script>
