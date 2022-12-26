@@ -48,7 +48,6 @@
     $.each(card, (i, val) => {
       let src = $(val).find(".img-cat").attr("src");
       if (src.includes("_اخفاء")) {
-        console.log(src);
         $(val).addClass("d-none");
       }
     });
