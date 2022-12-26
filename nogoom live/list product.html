@@ -271,7 +271,7 @@
       <div class="container">
         <div class="row">
           {{#categories}}
-          <div class="col-lg-2 col-sm-4 col-6">
+          <div class="col-lg-2 col-sm-4 col-6 main-card">
             <a
               href="/contents/products_list?cat_id={{id}}"
               class="text-decoration-none text-black text-hover-primary"
@@ -283,7 +283,7 @@
                   width="168"
                   height="125"
                   alt="Sandwiches"
-                  class="img-fluid w-100 h-125px mx-auto img-cover mb-3 category-img-sm"
+                  class="img-fluid w-100 h-125px mx-auto img-cover mb-3 category-img-sm img-cat"
                 />
                 {{/image_full_path}} {{^image_full_path}}
                 <img
@@ -679,6 +679,18 @@
   </div>
 </div>
 <script>
+  $(document).ready(function () {
+    let card = $(".main-card");
+    $.each(card, (i, val) => {
+      let src = $(val).find(".img-cat").attr("src");
+      console.log(src);
+      if (src.includes("_اخفاء")) {
+        console.log(src);
+        $(val).addClass("d-none");
+      }
+    });
+  });
+
   const listViewButton = document.querySelector(".list-view-button");
   const gridViewButton = document.querySelector(".grid-view-button");
   const list = document.querySelector("#list");
