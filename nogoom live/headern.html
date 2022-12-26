@@ -376,6 +376,9 @@ div#home-featured-products-section {
     display: inline-block;
 }
 @media only screen and (max-width: 991px){
+    .nav-link {
+        padding: 8px !important;
+    }
     .img-cat {
     height: 170px !important;
     border-radius: 30px;
@@ -423,9 +426,20 @@ a.logn {
 .dropdown-content-cat {
     display: none;
 }
+.navbar-nav .nav-item, .navbar-nav .nav-item {
+    display: block;
 }
+.navbar-nav .dropdown-menu {
+background-color: #0066a5 !important;
 
-
+}
+a.dropdown-item {
+    color: #fff !important; 
+}
+.dropdown-menu {
+    box-shadow: none !important;
+}
+}
 .newOverlay {
     position: absolute;
     width: 100%;
@@ -458,6 +472,10 @@ a.logn {
   .dropdown-content-cat {
     margin-top: -8px !important;
   }
+  .dropdown-item {
+    padding-right:40px !important
+  }
+
 
         </style>
 
@@ -489,6 +507,9 @@ a.logn {
             </div>
         </div>
     </div>
+
+
+
 
 </div>
     <header id="site-header" class="bg-primary">
@@ -533,8 +554,11 @@ a.logn {
                 </div>
                
                 <div class="col-lg-4 col-6 col order-2 order-lg-2 px-0" style="display: flex;  justify-content: left;">
-                    <div class="text-right pl-0 d-flex" style="width: 100%;">
-                        <button type="button" data-toggle="collapse" data-target="#mainSearch" aria-controls="mainSearch" aria-expanded="false" class="btn mr-2 p-0 text-dark text-hover-primary fs-14 d-inline-block d-lg-none"><i class="fas fa-search mr-lg-1 text-white fs-18"></i></button>
+                    <div class="text-right pl-4 d-flex" style="width: 100%;">
+                        <button class="btn my-auto mr-3 p-0 text-white lh-1 d-flex d-lg-none btn-menu" >
+                            <i class="fas fa-cubes fs-xl-24 fs-18"></i>
+                        </button>
+                        <button type="button" data-toggle="collapse" data-target="#mainSearch" aria-controls="mainSearch" aria-expanded="false" class="btn mr-3 p-0 text-dark text-hover-primary fs-14 d-inline-block d-lg-none"><i class="fas fa-search mr-lg-1 text-white fs-18"></i></button>
 
                         {{#is_logged_in}}      
                          <!-- start new menu -->
@@ -718,43 +742,43 @@ a.logn {
         </div>
         
     </header>
-    <div class="bottom-nav bg-primary d-none d-lg-block">
+    <div class="bottom-nav bg-primary d-none d-lg-block" id="second-menu">
         <div class="container" >
             <div class=" p-0">
-                <ul class="navbar-nav d-block p-0">
-                    <li class="nav-item px-1 mr-4 dropdownn-cat">
+                <ul class="navbar-nav d-block p-0 ">
+                    <li class="nav-item px-1 mr-4 dropdownn-cat" >
                         <a class="nav-link fs-xl-16 d-flex text-white px-0 "  href="/contents/products_list?cat_id=109">
-                            <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/6339580e1a1ec_blobid1664702476348.png" alt="" title="ac.png" width="auto" height="36" caption="false" /> <p class="my-auto fs-13 fs-lg-16"> مكييفات  </p>
+                            <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/6339580e1a1ec_blobid1664702476348.png" alt="" title="ac.png" width="auto" height="36" caption="false" /> <p class="my-auto fs-12 fs-lg-16"> مكييفات  </p>
                         </a>
                         <div class="dropdown-content-cat p-0 ">
                             <div class="px-3">
                                 <a class=" fs-xl-16 d-flex px-0 logn"  href="/contents/products_list?cat_id=118">
- <p class="my-auto fs-13 fs-lg-16"> مكيفات اسبلت</p>
+ <p class="my-auto fs-12 fs-lg-16"> مكيفات اسبلت</p>
                                 </a>
                             </div>
                             <div class="px-3">
                                 <a class=" fs-xl-16 d-flex px-0 logn"  href="/contents/products_list?cat_id=119">
- <p class="my-auto fs-13 fs-lg-16">مكيفات شباك</p>
+ <p class="my-auto fs-12 fs-lg-16">مكيفات شباك</p>
                                 </a>
                             </div>
                             <div class="px-3">
                                 <a class=" fs-xl-16 d-flex px-0 logn"  href="/contents/products_list?cat_id=120">
- <p class="my-auto fs-13 fs-lg-16"> مكييفات دكت سبليت </p>
+ <p class="my-auto fs-12 fs-lg-16"> مكييفات دكت سبليت </p>
                                 </a>
                             </div>
                             <div class="px-3">
                                 <a class=" fs-xl-16 d-flex px-0 logn"  href="/contents/products_list?cat_id=121">
- <p class="my-auto fs-13 fs-lg-16"> مكيفات كاست </p>
+ <p class="my-auto fs-12 fs-lg-16"> مكيفات كاست </p>
                                 </a>
                             </div>
                             <div class="px-3">
                                 <a class=" fs-xl-16 d-flex px-0 logn"  href="/contents/products_list?cat_id=122">
- <p class="my-auto fs-13 fs-lg-16"> مكيفات دولابي </p>
+ <p class="my-auto fs-12 fs-lg-16"> مكيفات دولابي </p>
                                 </a>
                             </div>
                             <div class="px-3">
                                 <a class=" fs-xl-16 d-flex px-0 logn"  href="/contents/products_list?cat_id=123">
- <p class="my-auto fs-13 fs-lg-16"> مكيفات باكيج </p>
+ <p class="my-auto fs-12 fs-lg-16"> مكيفات باكيج </p>
                                 </a>
                             </div>
                           </div>
@@ -1116,7 +1140,12 @@ a.logn {
         </script>
     <script>
           $(document).ready(function () {
+            $(".btn-menu").click(function () { 
+                    $("#second-menu").toggleClass("d-none");
+                    $(".collapse ").removeClass("show");
 
+                    
+                    })
                         function getHeaderText() {
                     $.ajax({
               url: "/v2/api/entity/le_shopfront-text/1",
@@ -1129,6 +1158,7 @@ a.logn {
 
                 })
                 }
+                
                 getHeaderText();
             })
     </script>
