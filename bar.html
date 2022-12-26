@@ -43,13 +43,13 @@
 
 <div class="news-holder">
   <div class="news">
-    <span class="new">منصة نجوم العمران الالكترونية . </span>
-    <span class="mx-3"></span>
-    <span class="new">خدمة التركيب للمكيفات . </span>
+    <!-- <span class="bar-text mx-3"> </span> -->
+    <!-- <span class="mx-3"></span> -->
+    <!-- <span class="new">خدمة التركيب للمكيفات . </span>
     <span class="mx-3"></span>
     <span class="new">خدمة الشراء عبر الهاتف . </span>
     <span class="mx-3"></span>
-    <span class="new">خدمة التوصيل والشحن . </span>
+    <span class="new">خدمة التوصيل والشحن . </span> -->
   </div>
 </div>
 <script>
@@ -90,4 +90,22 @@
   $(".news-holder").on("mouseleave", function () {
     newsBar();
   });
+
+  function barText() {
+    $.ajax({
+      url: "/v2/api/entity/le_shopfront-bar-text/1",
+      headers: { apikey: "e668a92a32e3a9b8247915d4b7f8f9072794cdb0" },
+      type: "GET",
+    }).done((data) => {
+      console.log(data);
+      var textD =
+        data["le_shopfront-bar-text_le_shopfront-bar-text_shopfront_bar"];
+      $.each(textD, async (i, val) => {
+        let barText = val.textnew;
+        let barSpan = ` <span class="new bar-text mx-3 fs-18"> ${barText}  </span>`;
+        $(".news").append(barSpan);
+      });
+    });
+  }
+  barText();
 </script>
