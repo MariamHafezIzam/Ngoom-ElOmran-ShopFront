@@ -70,6 +70,9 @@ min-height: auto;
 .bg-third {
     background-color: #fb513e !important;
 }
+.bg-yellow {
+    background-color: #fbee14 !important;
+}
 .bg-third:hover{
     background-color: #e3eff4 !important;
     color: #053858 !important;
@@ -117,7 +120,7 @@ a.nav-link:hover {
 }
 .account {
    
-    display: grid;
+    display: flex;
     /* padding-right: 1cm; */
 
 }
@@ -179,9 +182,10 @@ a.text-white:focus, a.text-white:hover {
 }
 .title {
     font-size: 28px;
+    color: #f75a27;
 }
 .item {
-    border-radius: 25px;
+    border-radius: 0;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
    
@@ -189,13 +193,7 @@ a.text-white:focus, a.text-white:hover {
 label {
     margin-right: 0px !important;
 }
-.name:hover {
-    background-color:#e3eff4 ;
-    border-radius: 10px;
-}
-.price {
-    color: #fb513e;
-}
+
 .price:hover{
     color: #053858;
 }
@@ -228,6 +226,10 @@ label {
     box-shadow: rgba(5, 16, 88, 0.5) 0px 3px 8px;
 
 }
+.air-cat {
+    box-shadow: rgba(5, 16, 88, 0.5) 0px 3px 8px;
+
+}
 #products-section {
     padding-bottom: 0 !important;
 
@@ -240,9 +242,7 @@ label {
 .list.grid-view-filter .box {
     text-align: center;
 }
-.list.grid-view-filter .item {
-    padding-bottom: 32px !important;
-  }
+
 
  .list.grid-view-filter  .price-no {
     text-align: right;
@@ -316,7 +316,7 @@ a.dropdown-item  {
 }
 a.dropdown-item:hover {
     color: #004067;
-    padding-right: 25px;
+    padding-right: 50px !important;
 }
 .logn:hover {
     color: #2f65a8 !important;
@@ -417,7 +417,7 @@ header#site-header .col.col-lg-3>div {
 a.nav-link.dashboard {
     font-size: 8px !important;
 }
-.dropdown-content , .dropdown-content-cat {
+.dropdown-content {
 
     left: 3px; 
     min-width: 175px;
@@ -501,18 +501,26 @@ a.dropdown-item {
     margin-top: -8px !important;
   }
   .dropdown-item {
-    padding-right:40px !important
-  }
+    padding: 15px 40px 15px 15px !important
 
+  }
+  .exit {
+    position: absolute;
+    top:0;
+    left: 42px;
+    box-shadow: 2px 6px 10px 2px rgb(96 94 94 / 46%);
+    left: 42px;
+    padding: 6px 12px;
+}
 .local-text-parent {
     position: absolute;
     visibility: visible;
   opacity: 1;
     top: 0;
     display: flex;
-    width: 100vw;
+    width: 100%;
     color: #fff;
-    justify-content: space-evenly;
+    justify-content: center;
     z-index: 1000;
     box-shadow: 2px 2px 10px 2px rgb(96 94 94 / 46%);
     font-size: 18px;
@@ -524,7 +532,26 @@ a.dropdown-item {
   opacity: 0;
   transition: visibility 0s, opacity 0.5s linear;
 }
-
+.button2 {
+    color: #0066a5 !important;
+}
+.reg {
+    height: 28px;
+                border-bottom: 40px solid #fff;
+                border-left: 40px solid transparent;
+}
+.reg-top {
+    height: 28px;
+      border-top: 40px solid #fff;
+      border-right: 40px solid transparent;
+}
+.custom_content .new{
+    color: #004067 !important;
+    font-weight: 600;
+}
+.btn-primary {
+    border-radius:0px !important;
+}
         </style>
 
 </head>
@@ -577,14 +604,20 @@ a.dropdown-item {
 
                     </div>
                 </div>
-                <div class="col-lg-1 col-1 col flex-grow-0  d-none d-lg-block">
+                <!-- <div class="col-lg-1 col-1 col flex-grow-0  d-none d-lg-block">
                     <button style="float: left;" class="btn mr-2 mr-lg-0 p-0 text-white lh-1" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false">
                         <i class="far fa-bars fs-xl-24 fs-18"></i>
                     </button>
                     
 
-                </div>
-                <div class="col-lg-4 col-0 col order-lg-2 d-none d-lg-block">
+                </div> -->
+                <div class="col-lg-4 col-0 col order-lg-2 d-none d-lg-flex">
+                    <div class="col-lg-1 col order-lg-2 d-none d-lg-block m-auto px-0">
+                        <button style="float: left;" class="btn mr-2 mr-lg-0 p-0 text-white lh-1" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false">
+                            <i class="far fa-bars fs-xl-24 fs-18"></i>
+                        </button>
+                    </div>
+                 
                     <div class="col-lg-11 col order-lg-2 d-none d-lg-block">
                         <div class="d-block">
                             <form action="/contents/products_list">
@@ -592,7 +625,7 @@ a.dropdown-item {
                                     <div class="input-group border-transparent align-items-stretch">
                                         <input type="text" class="form-control bg-white border-0 rounded-end" placeholder="بحث" value="{{product_name}}" name="product_name">
                                         <div class="input-group-append">
-                                            <button class="btn btn-outline-white border-0 bg-third py-0 px-3 fs-18 rounded-start button2" type="submit">
+                                            <button class="btn btn-outline-white border-0 bg-yellow py-0 px-3 fs-18 rounded-start button2" type="submit">
                                                 <i class="far fa-search"></i></button>
                                         </div>
                                     </div>
@@ -600,10 +633,11 @@ a.dropdown-item {
                             </form>
                         </div>
                     </div>
+                   
                 </div>
                
-                <div class="col-lg-4 col-6 col order-2 order-lg-2 px-0" style="display: flex;  justify-content: left;">
-                    <div class="text-right pl-4 d-flex" style="width: 100%;">
+                <div class="col-lg-5 col-6 col order-2 order-lg-2 px-0" style="display: flex;  justify-content: left;">
+                    <div class="text-right pl-4 d-flex" >
                         <button class="btn my-auto mr-3 p-0 text-white lh-1 d-flex d-lg-none btn-menu" >
                             <i class="fas fa-cubes fs-xl-24 fs-18"></i>
                         </button>
@@ -612,7 +646,7 @@ a.dropdown-item {
                         {{#is_logged_in}}      
                          <!-- start new menu -->
                          <div style="align-self: center;" class="dropdownn">
-                            <button type="button" class="dropbtn login btn-focus-shadow-0 btn mx-0 mt-1 mt-xl-0  p-0 px-lg-2 px-xl-3 fs-14 fs-xl-15" disabled="disabled">
+                            <button type="button" class="dropbtn login btn-focus-shadow-0 btn mx-0 mt-1 mt-xl-0  p-0 px-lg-2 pr-xl-12 fs-14 fs-xl-15" disabled="disabled">
                         <label class=" mt-0 fs-14  text-capitalize d-flex text-white">
                           
                           <div style="align-self: center; " class="mr-2"><i class="fas fa-user fs-xl-24 fs-18"></i></div>
@@ -639,9 +673,9 @@ a.dropdown-item {
                                     <i class="mr-2 fas fa-sign-out"></i>Log Out</a> {{/is_logged_in}} {{^is_logged_in}}
                             </button>
                                 <div style="align-self: center;" class="dropdownn">
-                                    <button type="button" class="dropbtn login btn-focus-shadow-0 btn mx-2 mr-lg-6 p-0 px-lg-2 px-xl-3 fs-14 fs-xl-15" disabled="disabled">
+                                    <button type="button" class="dropbtn login btn-focus-shadow-0 btn mx-2 mr-lg-4 p-0 px-lg-2 px-xl-3 fs-14 fs-xl-15" disabled="disabled">
                                     <a href="#" class=" acc">
-                                    <i class="fas fa-user fs-xl-24 fs-18 mr-1 mb-2 mb-lg-0"></i><span class="d-none d-lg-inline fs-14 fs-lg-16">الحساب</span></a> 
+                                        <i class="far fa-home-alt fs-xl-24 fs-18 mr-1 mb-2 mb-lg-0 font-weight-light"></i><span class="d-none d-lg-inline fs-14 fs-lg-16">بوابة العميل</span><i class="fal fa-chevron-down  ml-1 mb-2 mb-lg-0 font-weight-bold" ></i></a> 
                             </button>
                                     <div class="dropdown-content mx-lg-2 p-1 pt-2">
                                         
@@ -652,11 +686,41 @@ a.dropdown-item {
                                    
 
                                 </div>
+                             
                                
+                   
                                 {{/is_logged_in}}
+
+                              
                        </div>
                      
-                       <button type="button" style="width: 50%; text-align: end;" class="cart-toggle-btn btn-focus-shadow-0 btn mr-xl-2 mr-lg-0 p-0 py-lg-1 px-lg-2  mr-1    fs-14 fs-xl-16 text-white secondary-hover"><i class="fas fa-shopping-cart mr-lg-1 position-relative fs-xl-24"><span id="totalCart"></span></i><span class="d-none d-lg-inline-block">عربة التسوق</span></button>
+                       {{^is_logged_in}}
+                       <div class="account dropdownn" style="">
+                                             <button type="button" class=" btn-focus-shadow-0 btn p-0 m-0">
+                               <a href="/contents/logout" class="logn" style="display: none;">
+                                   <i class="mr-2 fas fa-sign-out"></i>Log Out</a> {{/is_logged_in}} {{^is_logged_in}}
+                           </button>
+                               <div style="align-self: center;" class="dropdownn">
+                                   <button type="button" class="dropbtn login btn-focus-shadow-0 btn mx-2 mr-lg-3 p-0 px-lg-2 px-xl-3 fs-14 fs-xl-15" disabled="disabled">
+                                   <a href="#" class=" acc">
+                                       <i class="far fa-home-alt fs-xl-20 fs-18 mr-1 mb-2 mb-lg-0 font-weight-light"></i><span class="d-none d-lg-inline fs-14 fs-lg-16">بوابة الموظفيين</span><i class="fal fa-chevron-down  ml-1 mb-2 mb-lg-0 font-weight-bold" ></i></a> 
+                           </button>
+                                   <div class="dropdown-content mx-lg-2 p-1 pt-2">
+                                       
+                                       <div>       <a href="/contents/login" class=" logn "><i class="fas fa-sign-in mr-1"></i> دخول الحساب</a> </div>
+                                   <div>     <a href="/contents/register" class="logn "><i class="fas fa-user-plus mr-1"></i>انشاء حساب </a> </div>
+
+                                   </div>
+                                  </div>
+                                  {{/is_logged_in}}
+
+                                  <button type="button" style=" text-align: end;" class="cart-toggle-btn btn-focus-shadow-0 btn mr-xl-2 mr-lg-0 p-0 py-lg-1 px-lg-2  mr-1    fs-14 fs-xl-16 text-white secondary-hover"><i class="fas fa-shopping-cart mr-lg-1 position-relative fs-xl-24"><span id="totalCart"></span></i><span class="d-none d-lg-inline-block">عربة التسوق</span></button>
+
+                               </div>
+                            
+                              
+                  
+
 
                         <button class="btn mr-2 mr-lg-0 p-0 text-black lh-1 d-none" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false">
                             <i class="far fa-bars fs-20"></i>
@@ -676,7 +740,7 @@ a.dropdown-item {
                     <div class="input-group border-transparent align-items-stretch">
                         <input type="text" class="form-control bg-white border-0 rounded-end" placeholder="بحث" value="{{product_name}}" name="product_name">
                         <div class="input-group-append">
-                            <button class="btn btn-outline-white border-0 bg-third py-0 px-3 fs-18 rounded-start button2" type="submit">
+                            <button class="btn btn-outline-white border-0 bg-yellow py-0 px-3 fs-18 rounded-start button2" type="submit">
                                 <i class="far fa-search text-white"></i></button>
                         </div>
                     </div>
@@ -1001,7 +1065,7 @@ a.dropdown-item {
                         $.ajax({
                             url: "/v2/api/entity/product/" + productId,
                             type: 'GET',
-                            headers: { 'apikey': 'e668a92a32e3a9b8247915d4b7f8f9072794cdb0'},
+                            headers: { 'apikey': 'eca5f677185bdbdb49f89fcc4ac9bf108cf76e90'},
                             dataType: 'json'
       }).done((data) => {
         let catId = data.items_categories.length < 2
@@ -1199,7 +1263,7 @@ a.dropdown-item {
                         function getHeaderText() {
                     $.ajax({
               url: "/v2/api/entity/le_shopfront-text/1",
-              headers: { apikey: "e668a92a32e3a9b8247915d4b7f8f9072794cdb0" },
+              headers: { apikey: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90" },
               type: "GET",
             }).done((data) => {
                 var textD = data.shopfront_header_text
@@ -1214,7 +1278,7 @@ a.dropdown-item {
                                        
                     }) 
                 getHeaderText();
-                $(".air-link").click(function () { 
+                $("#air-link").click(function () { 
                     $(".dropdown-content-cat").toggleClass("appear-submenu");
 
                     
@@ -1223,3 +1287,4 @@ a.dropdown-item {
                
             })
     </script>
+    
