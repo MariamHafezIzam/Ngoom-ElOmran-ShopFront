@@ -344,7 +344,7 @@
                 <i class="fas fa-times-circle"></i>
               </div>
             </div>
-            <div class="filtter mb-6">
+            <div class="filtter mb-6 d-none">
               <h2 class="fs-24 font-weight-medium text-primary py-2 px-2">
                 <span class="b-secondary"> القسم</span>
               </h2>
@@ -421,7 +421,7 @@
                 <span class="checkmark"></span>
               </label>
             </div>
-            <div class="filtter mb-6">
+            <div class="filtter mb-6 d-none">
               <h2 class="fs-24 font-weight-medium text-primary py-2 px-2">
                 <span class="b-secondary"> العلامة التجارية</span>
               </h2>
@@ -555,39 +555,33 @@
           <div id="list" class="row list grid-view-filter">
             {{#products}}
             <!-- ======================== card ======================================= -->
-            <div class="col-lg-3 col-sm-6 py-2 px-4 box">
-              <div class="item hover bg-white p-2">
+            <div class="col-lg-4 col-sm-6 py-2 px-4 box">
+              <div class="item hover" style="border: 1px solid #0066a5">
                 <div
-                  class="h-100 mb-6 mb-lg-0 product px-5 px-lg-0 pb-4"
+                  class="align-items-start d-flex flex-column m-0 product p-0"
+                  style="background-image: url({{file_full_path}});    background-size: cover;height: 415px;
+                  background-position: center;
+              "
                   data-product-id="{{id}}"
                   data-image="{{file_full_path}}"
                   data-price="{{final_price_number}}"
                   data-name="{{name}}"
                 >
-                  <div class="pro-img">
-                    <a
-                      href="/contents/product_view/{{id}}"
-                      class="text-decoration-none text-primary text-hover-black"
-                    >
-                      <img
-                        src="{{file_full_path}}"
-                        alt=""
-                        class="product-img-sm img-fluid h-180px w-100 mx-auto img-cover p-2"
-                      />
-                    </a>
-                  </div>
-                  <div class="pro-info pt-2">
+                  <div
+                    class="pro-info d-flex"
+                    style="align-self: center; padding-top: 240px"
+                  >
                     <a
                       href="/contents/product_view/{{id}}"
                       class="text-decoration-none text-primary text-hover-black"
                     >
                       <h6
-                        class="fs-16 font-weight-medium text-primary name m-0 p-1"
-                        style="min-height: 48px; text-align: right"
+                        class="fs-20 font-weight-semibold p-1 name"
+                        style="min-height: 52px"
                       >
                         {{ name }}<span
-                          class="font-weight-medium fs-16 text-body ml-2 d-none id"
-                          >{{id}}</span
+                          class="font-weight-medium fs-16 text-body ml-2 d-none"
+                          >#{{id}}</span
                         >
                       </h6>
                     </a>
@@ -598,28 +592,32 @@
                       {{description}}
                     </p>
 
-                    <div
-                      class="price-add mb-3 font-weight-bold mt-auto px-1 price-no"
-                    >
+                    <div class="p-1 font-weight-bold my-auto">
                       {{#discount}}
-                      <span class="price fs-20">{{final_price}}</span>
-                      <del class="text-danger"
-                        ><span
-                          class="text-alto font-weight-extrabold fs-14 mr-2 discount"
+                      <span
+                        class="price fs-18 p-1"
+                        style="background-color: #ff0000"
+                        >{{final_price}}</span
+                      >
+                      <del class="text-white"
+                        ><span class="text-alto fs-14 mr-2 discount"
                           >{{unit_price}}</span
                         ></del
                       >
-
                       {{/discount}} {{^discount}}
-                      <span class="text-primary fs-20">{{final_price}}</span>
+                      <span
+                        class="text-white fs-18 p-1"
+                        style="background-color: #ff0000"
+                        >{{final_price}}</span
+                      >
                       {{/discount}}
                     </div>
                   </div>
                   <button
-                    data-name="sallamon"
-                    class="add-to-cart-btn btn btn-sm btn-primary text-uppercase font-weight-medium fs-16 Click-here"
+                    data-name="{{name}}"
+                    class="add-to-cart-btn btn btn-sm btn-primary text-uppercase font-weight-medium fs-18 p-3 m-4 w-75"
                   >
-                    <i class="fal fa-cart-plus mr-2"></i>أضف الي العربة
+                    أضف للسلة
                   </button>
                   <!-- ====================== -->
 
@@ -634,7 +632,7 @@
           {{#products_count}}
           <div class="row test">
             <div class="col-lg-12">
-              <div class="text-center pt-8">
+              <div class="text-center py-8">
                 <nav class="d-inline-flex mb-0 align-items-center">
                   <span
                     class="text-primary fs-16 mr-2 font-weight-medium d-none d-lg-inline-block"
@@ -815,7 +813,7 @@
       $.each(allProducts, async (i, val) => {
         let productId = $(val).find(".product").data("product-id");
         console.log(productId);
-        let apiKey = "e668a92a32e3a9b8247915d4b7f8f9072794cdb0";
+        let apiKey = "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90";
 
         $.ajax({
           type: "GET",
