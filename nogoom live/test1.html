@@ -1,0 +1,32 @@
+<div class="account dropdownn" style="">
+  <button type="button" class="btn-focus-shadow-0 btn p-0 m-0">
+    <a href="/contents/logout" class="logn" style="display: none">
+      <i class="mr-2 fas fa-sign-out"></i>Log Out</a
+    >
+    {{/is_logged_in}} {{^is_logged_in}}
+  </button>
+  <div style="align-self: center" class="dropdownn">
+    <button
+      type="button"
+      class="dropbtn login btn-focus-shadow-0 btn mx-2 mr-lg-6 p-0 px-lg-2 px-xl-3 fs-14 fs-xl-15"
+      disabled="disabled"
+    >
+      <a href="#" class="acc">
+        <i class="fas fa-user fs-xl-24 fs-18 mr-1 mb-2 mb-lg-0"></i
+        ><span class="d-none d-lg-inline fs-14 fs-lg-16">الحساب</span></a
+      >
+    </button>
+    <div class="dropdown-content mx-lg-2 p-1 pt-2">
+      <div>
+        <a href="/contents/login" class="logn"
+          ><i class="fas fa-sign-in mr-1"></i> دخول الحساب</a
+        >
+      </div>
+      <div>
+        <a href="/contents/register" class="logn"
+          ><i class="fas fa-user-plus mr-1"></i>انشاء حساب
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
