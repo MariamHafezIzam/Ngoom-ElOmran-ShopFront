@@ -1,7 +1,7 @@
 <style>
   .news-holder {
     height: 50px;
-    background-color: #0066a5;
+
     position: relative;
     overflow: hidden;
     margin-top: 20px;
@@ -16,9 +16,7 @@
     height: 40px;
     line-height: 40px;
   }
-  .custom_content .new {
-    color: #fff !important;
-  }
+
   .news .new {
     display: inline-block;
     padding: 0 10px;
@@ -41,16 +39,8 @@
   }
 </style>
 
-<div class="news-holder">
-  <div class="news">
-    <!-- <span class="bar-text mx-3"> </span> -->
-    <!-- <span class="mx-3"></span> -->
-    <!-- <span class="new">خدمة التركيب للمكيفات . </span>
-    <span class="mx-3"></span>
-    <span class="new">خدمة الشراء عبر الهاتف . </span>
-    <span class="mx-3"></span>
-    <span class="new">خدمة التوصيل والشحن . </span> -->
-  </div>
+<div class="news-holder bg-yellow">
+  <div class="news"></div>
 </div>
 <script>
   // Activating the animation of the news bar
@@ -94,7 +84,7 @@
   function barText() {
     $.ajax({
       url: "/v2/api/entity/le_shopfront-bar-text/1",
-      headers: { apikey: "e668a92a32e3a9b8247915d4b7f8f9072794cdb0" },
+      headers: { apikey: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90" },
       type: "GET",
     }).done((data) => {
       console.log(data);
