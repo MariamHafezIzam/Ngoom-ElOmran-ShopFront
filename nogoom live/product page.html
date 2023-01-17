@@ -1,282 +1,283 @@
 <style>
-    .addtocart {
-      width: 80% !important;
-      border-radius: 10px !important;
-      height: 50px;
-    }
-    .plus , .minus {
-      height: 25px;
-      width: 25px;
-    }
-    .qty{
-      height: auto
-    }
-    .arrow {
-      border: 1px solid rgba(187, 187, 187, 0.726);
-    }
-    i.fas.fa-arrow-left,i.fas.fa-arrow-right {
-      width: 38px;
-      height: 38px;
-    }
-    @media only screen and (max-width: 991px){ 
-  .img-product {
-    max-height: 250px !important;
-  }
   .addtocart {
-      width:72% !important;}
-    }
-    .radius {
-      border-radius: 20px ;
-    }
-    .spec {
-      border:  1px solid #d3d3d3;
-    }
-    .spec tr:nth-child(odd) td {
-      background-color:#eff0f0 ;
-    }
-    .spec td {
-      font-size: 18px;
-      padding: 12px;
-    }
-  </style>
-  
-  <main id="main-content">
-        <div class="py-8">
-          <div class="container">
-            <div class="pb-8">
-              <a class="text-color fs-16 text-decoration-none" href="/home"
-                >الصفحة الرئيسية
-              </a>
-              <span class="px-1 fs-12"><i class="fas fa-chevron-right"></i></span
-              ><a
-                class="text-color fs-16 text-decoration-none"
-                href="/contents/product_view/{{product.id}}"
-              >
-                {{ product.name }}
-              </a>
-            </div>
-            <div class="row bg-white p-xl-8 p-2 radius mb-10" >
-              <div class="col-lg-6">
-                <div class="swiper-slider">
+    width: 80% !important;
+    border-radius: 10px !important;
+    height: 50px;
+  }
+  .plus , .minus {
+    height: 25px;
+    width: 25px;
+  }
+  .qty{
+    height: auto
+  }
+  .arrow {
+    border: 1px solid rgba(187, 187, 187, 0.726);
+  }
+  i.fas.fa-arrow-left,i.fas.fa-arrow-right {
+    width: 38px;
+    height: 38px;
+  }
+  @media only screen and (max-width: 991px){ 
+.img-product {
+  max-height: 250px !important;
+}
+.addtocart {
+    width:72% !important;}
+  }
+  .radius {
+    border-radius: 20px ;
+  }
+  .spec {
+    border:  1px solid #d3d3d3;
+  }
+  .spec tr:nth-child(odd) td {
+    background-color:#eff0f0 ;
+  }
+  .spec td {
+    font-size: 18px;
+    padding: 12px;
+  }
+</style>
+
+<main id="main-content">
+      <div class="py-8">
+        <div class="container">
+          <div class="pb-8">
+            <a class="text-color fs-16 text-decoration-none" href="/home"
+              >الصفحة الرئيسية
+            </a>
+            <span class="px-1 fs-12"><i class="fas fa-chevron-right"></i></span
+            ><a
+              class="text-color fs-16 text-decoration-none"
+              href="/contents/product_view/{{product.id}}"
+            >
+              {{ product.name }}
+            </a>
+          </div>
+          <div class="row bg-white p-xl-8 p-2 radius mb-10" >
+            <div class="col-lg-6">
+              <div class="swiper-slider">
+                <div
+                  class="swiper-container product-swiper swiper-container-initialized swiper-container-horizontal"
+                  style="cursor: grab"
+                >
                   <div
-                    class="swiper-container product-swiper swiper-container-initialized swiper-container-horizontal"
-                    style="cursor: grab"
+                    class="swiper-wrapper"
+                    style="
+                      transform: translate3d(0px, 0px, 0px);
+                      transition-duration: 0ms;
+                    "
                   >
+                    {{^product_images_count}}
                     <div
-                      class="swiper-wrapper"
-                      style="
-                        transform: translate3d(0px, 0px, 0px);
-                        transition-duration: 0ms;
-                      "
+                      class="swiper-slide swiper-slide-active"
+                      style="width: 540px"
                     >
-                      {{^product_images_count}}
-                      <div
-                        class="swiper-slide swiper-slide-active"
-                        style="width: 540px"
+                      <a
+                        class="position-relative d-block "
+                        href="#" style="width: 80% !important;margin: auto;"
+                        disabled="true"
                       >
-                        <a
-                          class="position-relative d-block "
-                          href="#" style="width: 80% !important;margin: auto;"
-                          disabled="true"
-                        >
-                          <img
-                            src="https://cdn.daftra.com/templates/shop_1/img/product_img.svg"
-                            alt="{{ product.name }}"
-                            class="img-fluid w-100 mx-auto img-cover img-product"
-                          />
-                        </a>
-                        <div class="caption text-center">
-                          <h4>بدون صورة</h4>
-                        </div>
+                        <img
+                          src="https://cdn.daftra.com/templates/shop_1/img/product_img.svg"
+                          alt="{{ product.name }}"
+                          class="img-fluid w-100 mx-auto img-cover img-product"
+                        />
+                      </a>
+                      <div class="caption text-center">
+                        <h4>بدون صورة</h4>
                       </div>
-                      {{/product_images_count}} {{#product_images_count}}
-                      {{#product_images}}
-                      <div
-                        class="swiper-slide swiper-slide-active"
-                        style="width: 540px"
-                      >
-                        <a
-                          class="position-relative d-block "
-                          href="{{.}}" style="width: 80% !important;margin: auto;"
-                          data-fancybox="images"
-                        >
-                          <img
-                            src="{{.}}"
-                            alt="{{ product.name }}"
-                            class="img-fluid w-100 mx-auto img-cover img-product"
-                          />
-                        </a>
-                      </div>
-                      {{/product_images}} {{/product_images_count}}
                     </div>
-                    <span
-                      class="swiper-notification"
-                      aria-live="assertive"
-                      aria-atomic="true"
-                    ></span>
+                    {{/product_images_count}} {{#product_images_count}}
+                    {{#product_images}}
+                    <div
+                      class="swiper-slide swiper-slide-active"
+                      style="width: 540px"
+                    >
+                      <a
+                        class="position-relative d-block "
+                        href="{{.}}" style="width: 80% !important;margin: auto;"
+                        data-fancybox="images"
+                      >
+                        <img
+                          src="{{.}}"
+                          alt="{{ product.name }}"
+                          class="img-fluid w-100 mx-auto img-cover img-product"
+                        />
+                      </a>
+                    </div>
+                    {{/product_images}} {{/product_images_count}}
                   </div>
-                  {{#product_images_count}}
                   <span
-                    class="swiper-button-prev-icon swiper-button-disabled"
-                    tabindex="0"
-                    role="button"
-                    aria-label="Previous slide"
-                    aria-disabled="true"
-                    ><i
-                      class="fas fa-arrow-left  d-inline-flex align-items-center justify-content-center bg-primary bg-hover-primary-2 text-white"
-                    ></i
+                    class="swiper-notification"
+                    aria-live="assertive"
+                    aria-atomic="true"
                   ></span>
-                  <span
-                    class="swiper-button-next-icon"
-                    tabindex="0"
-                    role="button"
-                    aria-label="Next slide"
-                    aria-disabled="false"
-                    ><i
-                      class="fas fa-arrow-right w-38px w-lg-42px h-38px h-lg-42px d-inline-flex align-items-center justify-content-center bg-primary bg-hover-primary-2 text-white"
-                    ></i
-                  ></span>
-                  {{/product_images_count}}
                 </div>
+                {{#product_images_count}}
+                <span
+                  class="swiper-button-prev-icon swiper-button-disabled"
+                  tabindex="0"
+                  role="button"
+                  aria-label="Previous slide"
+                  aria-disabled="true"
+                  ><i
+                    class="fas fa-arrow-left  d-inline-flex align-items-center justify-content-center bg-primary bg-hover-primary-2 text-white"
+                  ></i
+                ></span>
+                <span
+                  class="swiper-button-next-icon"
+                  tabindex="0"
+                  role="button"
+                  aria-label="Next slide"
+                  aria-disabled="false"
+                  ><i
+                    class="fas fa-arrow-right w-38px w-lg-42px h-38px h-lg-42px d-inline-flex align-items-center justify-content-center bg-primary bg-hover-primary-2 text-white"
+                  ></i
+                ></span>
+                {{/product_images_count}}
               </div>
-              <div class="col-lg-6 pt-4 pt-lg-0 pl-xl-10">
-                <h6 class="fs-xl-30 fs-22 text-primary font-weight-bold mb-3">
-                  {{ product.name }}
-                </h6>
-                <h6 class="fs-20 text-body font-weight-medium mb-3">
-                  {{ product.product_code }}
-                </h6>
-                <p class="fs-16 font-weight-medium text-body">
-                  {{ product.description }}
-                </p>
-                <div class="mt-10 fs-16 text-dark font-weight-medium mb-8">
-                  <!--
-                                Custom Fields Will Go Here
-                                <p><span class="text-body">Color: </span>Red</p>
-                        -->
-  
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 pl-xl-10">
+              <h6 class="fs-xl-30 fs-22 text-primary font-weight-bold mb-3">
+                {{ product.name }}
+              </h6>
+              <h6 class="fs-20 text-body font-weight-medium mb-3">
+                {{ product.product_code }}
+              </h6>
+              <p class="fs-16 font-weight-medium text-body">
+                {{ product.description }}
+              </p>
+              <div class="mt-10 fs-16 text-dark font-weight-medium mb-8">
+                <!--
+                              Custom Fields Will Go Here
+                              <p><span class="text-body">Color: </span>Red</p>
+                      -->
+
+              </div>
+              <div
+                class="align-items-start align-items-lg-center justify-content-between flex-column flex-lg-row"
+              >
+                <div class="pb-4">
+                  <span class="fs-xl-32 fs-24 font-weight-bold price"
+                    >{{ product.final_price_formatted }}</span
+                  >
+                  {{#product.has_discount}}
+                  <del class="text-danger mx-4"
+                    ><span class="text-alto fs-14 mr-2 font-weight-extrabold"
+                      >{{ product.unit_price_formatted }}</span
+                    ></del
+                  >
+                  {{/product.has_discount}}
                 </div>
                 <div
-                  class="align-items-start align-items-lg-center justify-content-between flex-column flex-lg-row"
+                  class="product d-flex align-items-center py-4 border-top"
+                  data-product-id="{{ product.id }}"
+                  data-image="{{ product_images.0 }}"
+                  data-price="{{ product.final_price_number }}"
+                  data-name="{{ product.name }}"
                 >
-                  <div class="pb-4">
-                    <span class="fs-xl-32 fs-24 font-weight-bold price"
-                      >{{ product.final_price_formatted }}</span
-                    >
-                    {{#product.has_discount}}
-                    <del class="text-danger mx-4"
-                      ><span class="text-alto fs-14 mr-2 font-weight-extrabold"
-                        >{{ product.unit_price_formatted }}</span
-                      ></del
-                    >
-                    {{/product.has_discount}}
-                  </div>
                   <div
-                    class="product d-flex align-items-center py-4 border-top"
-                    data-product-id="{{ product.id }}"
-                    data-image="{{ product_images.0 }}"
-                    data-price="{{ product.final_price_number }}"
-                    data-name="{{ product.name }}"
-                  >
-                    <div
-                      class="input-group col cart-item-count px-0 pr-lg-6 mr-2 mr-lg-0"
-                    >   <input
-                    type="text"
-                    class="form-control border-placeholder text-center p-0 qty"
-                    value="1"
-                    max="999"
-                    min="1"
-                    step="1"
-                    style="color:#1a2756 ;"
-                  />
-                  <div class="d-block">
-                      <div class="arrow">
-                        <button
-                          type="button"
-                          class="far fa-minus d-inline-flex align-items-center justify-content-center fs-13  btn p-0 btn-placeholder d-inline-block minus"
-                        ></button>
-                      </div>
-                    
-                      <div class="arrow">
-                        <button
-                          type="button"
-                          class="far fa-plus d-inline-flex align-items-center justify-content-center fs-13  btn p-0 btn-placeholder d-inline-block plus"
-                        ></button>
-                      </div>
+                    class="input-group col cart-item-count px-0 pr-lg-6 mr-2 mr-lg-0"
+                  >   <input
+                  type="text"
+                  class="form-control border-placeholder text-center p-0 qty"
+                  value="1"
+                  max="999"
+                  min="1"
+                  step="1"
+                  style="color:#1a2756 ;"
+                />
+                <div class="d-block">
+                    <div class="arrow">
+                      <button
+                        type="button"
+                        class="far fa-minus d-inline-flex align-items-center justify-content-center fs-13  btn p-0 btn-placeholder d-inline-block minus"
+                      ></button>
                     </div>
+                  
+                    <div class="arrow">
+                      <button
+                        type="button"
+                        class="far fa-plus d-inline-flex align-items-center justify-content-center fs-13  btn p-0 btn-placeholder d-inline-block plus"
+                      ></button>
                     </div>
-                    <button
-                      class="add-to-cart-btn btn btn-sm btn-primary text-uppercase font-weight-medium fs-16 addtocart"
-                    >
-                      <i class="fal fa-cart-plus mr-2"></i>اضافة الي العربة
-                    </button>
                   </div>
+                  </div>
+                  <button
+                    class="add-to-cart-btn btn btn-sm btn-primary text-uppercase font-weight-medium fs-16 addtocart"
+                  >
+                    <i class="fal fa-cart-plus mr-2"></i>اضافة الي العربة
+                  </button>
                 </div>
               </div>
             </div>
-            <h3 class="fs-xl-28 fs-20 font-weight-medium text-primary py-2 px-2">
-              <span class="b-secondary"> المزيد من المعلومات</span>
-            </h3>
-            <div class="row bg-white p-xl-8 p-2 radius" > 
-  <table width="100%" class="spec">
-  <tr>
-    <td width="13%">العلامة التجارية </td>
-    <td width="87%" id="brand"></td>
-  </tr>
-  <tr>
-    <td >الموديل</td>
-    <td id="model"></td>
-  </tr>
-  <tr>
-    <td >اللون</td>
-    <td id="color"></td>
-  </tr>
-  <tr>
-    <td >بارد / ساخن و بارد</td>
-    <td id="cool"></td>
-  </tr>
-  <tr>
-    <td >ضمان الجهاز</td>
-    <td id="guarantee"></td>
-  </tr>
-  <tr>
-    <td >بلد الصنع</td>
-    <td id="country"></td>
-  </tr>
-  </table>
-            </div>
+          </div>
+          <h3 class="fs-xl-28 fs-20 font-weight-medium text-primary py-2 px-2">
+            <span class="b-secondary"> المزيد من المعلومات</span>
+          </h3>
+          <div class="row bg-white p-xl-8 p-2 radius" > 
+<table width="100%" class="spec">
+<tr>
+  <td width="13%">العلامة التجارية </td>
+  <td width="87%" id="brand"></td>
+</tr>
+<tr>
+  <td >الموديل</td>
+  <td id="model"></td>
+</tr>
+<tr>
+  <td >اللون</td>
+  <td id="color"></td>
+</tr>
+<tr>
+  <td >بارد / ساخن و بارد</td>
+  <td id="cool"></td>
+</tr>
+<tr>
+  <td >ضمان الجهاز</td>
+  <td id="guarantee"></td>
+</tr>
+<tr>
+  <td >بلد الصنع</td>
+  <td id="country"></td>
+</tr>
+</table>
           </div>
         </div>
-      </main>
-    </h6></a
-  >
-  <script>
-  $(document).ready(function(){
-  let id = $(".product").data("product-id");
-  $.ajax({
-          url: "/v2/api/entity/product/" + id,
-          headers: { 'apikey': 'e668a92a32e3a9b8247915d4b7f8f9072794cdb0'},
-          type: "GET",
-        }).done((data) => {
-        // console.log(data)  
-         let model = data.custom_data.field_38
-         let color = data.custom_data.field_39
-         let cool = data.custom_data.field_40
-         let guarantee = data.custom_data.field_41
-         let country = data.custom_data.field_42
-         let brand = data.brand
+      </div>
+    </main>
+  </h6></a
+>
+<script>
+$(document).ready(function(){
+let id = $(".product").data("product-id");
+$.ajax({
+        url: "/v2/api/entity/product/" + id,
+        headers: { 'apikey': 'eca5f677185bdbdb49f89fcc4ac9bf108cf76e90'},
+        type: "GET",
+      }).done((data) => {
+      // console.log(data)  
+       let model = data.custom_data.field_38
+       let color = data.custom_data.field_39
+       let cool = data.custom_data.field_40
+       let guarantee = data.custom_data.field_41
+       let country = data.custom_data.field_42
+       let brand = data.brand
+      
+       $("#brand").text(brand);
+       $("#model").text(model);
+       $("#color").text(color);
+       $("#guarantee").text(guarantee);
+       $("#cool").text(cool);
+       $("#country").text(country);
         
-         $("#brand").text(brand);
-         $("#model").text(model);
-         $("#color").text(color);
-         $("#guarantee").text(guarantee);
-         $("#cool").text(cool);
-         $("#country").text(country);
-          
-        });
+      });
+
+
+
+});
+
+</script>
   
-  
-  
-  });
-  
-  </script>
