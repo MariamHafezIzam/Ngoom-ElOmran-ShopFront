@@ -1,48 +1,38 @@
 {{#itemsCount}}
 <div id="home-featured-products-section" class="pb-4">
-  <div class="container" style="max-width: 1335px; margin: auto">
-    <div class="row">
-      <div class="col-lg-12 px-0 px-lg-3">
-        <div class="border-placeholder pb-8"></div>
-      </div>
-      <div class="col-lg-12 text-center"></div>
-    </div>
+  <div class="container px-0" style="max-width: 100%; margin: auto">
     <div>
-      <h3 class="title font-weight-medium text-primary py-2 px-2">
-        <span class="b-secondary"> منتجات مميزة</span>
+      <h3
+        class="title font-weight-medium pt-0 pb-4 px-0"
+        style="color: #f75a27"
+      >
+        <span> الاكثر مبيعا .....</span>
       </h3>
     </div>
     <div class="row">
       {{#items}}
       <div class="col-lg-4 col-sm-6 py-2 px-4 card-product box">
-        <div class="item hover bg-white p-2">
+        <div class="item hover" style="border: 1px solid #0066a5">
           <div
-            class="align-items-start d-flex flex-column h-100 mb-6 mb-lg-0 product px-5 px-lg-0"
+            class="align-items-start d-flex flex-column m-0 product p-0"
+            style="background-image: url({{file_full_path}});     background-size: cover;height: 415px;
+            background-position: center;"
             data-product-id="{{id}}"
             data-image="{{file_full_path}}"
             data-price="{{final_price_number}}"
             data-name="{{name}}"
           >
-            <div class="row">
-              <div class="col-lg-4 col-sm-6 px-4">
-                <a
-                  href="/contents/product_view/{{id}}"
-                  class="text-decoration-none text-primary text-hover-black"
-                >
-                  <img
-                    src="{{file_full_path}}"
-                    alt=""
-                    class="img-fluid h-140px w-100 mx-auto img-cover"
-                  />
-                </a>
-              </div>
-              <div class="col-lg-8 col-sm-6" style="align-self: center">
+            <div
+              class="row w-100"
+              style="align-self: center; padding-top: 230px"
+            >
+              <div class="col-lg-6 px-0">
                 <a
                   href="/contents/product_view/{{id}}"
                   class="text-decoration-none text-primary text-hover-black"
                 >
                   <h6
-                    class="fs-16 font-weight-medium p-1 name"
+                    class="fs-20 font-weight-semibold p-1 name"
                     style="min-height: 52px"
                   >
                     {{ name }}<span
@@ -56,25 +46,38 @@
                 >
                   {{description}}
                 </p>
-                <div class="mb-1 p-1 font-weight-bold mt-auto">
+              </div>
+              <div
+                class="col-lg-6"
+                style="align-self: center; border-right: 1px solid #0066a5"
+              >
+                <div class="m-0 p-1 font-weight-bold mt-auto">
                   {{#discount}}
-                  <span class="price fs-20">{{final_price}}</span>
-                  <del class="text-danger"
+                  <span
+                    class="price fs-18 p-1"
+                    style="background-color: #ff0000"
+                    >{{final_price}}</span
+                  >
+                  <del class="text-white"
                     ><span class="text-alto fs-14 mr-2 discount"
                       >{{unit_price}}</span
                     ></del
                   >
                   {{/discount}} {{^discount}}
-                  <span class="text-primary fs-20">{{final_price}}</span>
+                  <span
+                    class="text-white fs-18 p-1"
+                    style="background-color: #ff0000"
+                    >{{final_price}}</span
+                  >
                   {{/discount}}
                 </div>
               </div>
             </div>
             <button
               data-name="{{name}}"
-              class="add-to-cart-btn btn btn-sm btn-primary text-uppercase font-weight-medium fs-14 p-2 m-4 w-75"
+              class="add-to-cart-btn btn btn-sm btn-primary text-uppercase font-weight-medium fs-18 p-3 m-4 w-75"
             >
-              <i class="fal fa-cart-plus mr-2"></i>اضف الي العربة
+              أضف للسلة
             </button>
             <!-- <a
               href="/contents/product_view/{{id}}"
@@ -129,10 +132,10 @@
   ) {
     var cards = $(".card-product").length;
 
-    if (cards >= 6) {
+    if (cards >= 3) {
       $(".card-product")
         .css("display", "none")
-        .filter(":nth-of-type(-n+6)")
+        .filter(":nth-of-type(-n+3)")
         .css("display", "flex");
     } else {
       console.log("More than 5");
