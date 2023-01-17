@@ -378,7 +378,7 @@
             let newId = $(val).data("price-id");
             $.ajax({
               url: "/v2/api/entity/product/" + newId,
-              headers: { apikey: "e668a92a32e3a9b8247915d4b7f8f9072794cdb0" },
+              headers: { apikey: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90" },
               type: "GET",
             }).done((data) => {
               let newPrice = data.unit_price;
