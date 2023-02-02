@@ -1,0 +1,1786 @@
+<style>
+  .conditioner-link-visited,
+  .air-link:hover {
+    background-color: #fff;
+    border-bottom: 1px solid #fff !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
+  }
+  a.price-filter:hover,
+  .link-api:hover,
+  .link-api-visited,
+  .link-api-visited .name {
+    background-color: #1467ab;
+    color: #fff !important;
+    margin-right: 0 !important;
+  }
+
+  .link-api:hover .name {
+    color: #fff !important;
+  }
+  .air-all-cat {
+    transition: 0.3s;
+  }
+
+  .appear-menu {
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: 480px !important;
+    transition: visibility 0s, opacity 0.5s linear, height 0.5s ease;
+  }
+  .appear-menu2 {
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: 325px !important;
+    transition: visibility 0s, opacity 0.5s linear, height 0.5s ease;
+  }
+  .appear-before {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 3px 8px;
+    position: unset;
+    margin: 0;
+    height: 0px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear, height 0.5s ease;
+  }
+  #price:hover,
+  #brand:hover {
+    background-color: #ddebf4 !important;
+  }
+  #offers .col-xl-3 {
+    max-width: 50% !important;
+    flex: 50%;
+  }
+  .air-link.disabled,
+  .air-link:disabled {
+    opacity: 0.4 !important;
+    cursor: default !important;
+  }
+</style>
+
+{{bar:Content.empty()}} {{gallery:Media.listing(1)}}
+<div class="container px-0">
+  <div class="px-4 py-6">
+    <a
+      class="text-color fs-24 text-decoration-none font-weight-medium"
+      href="/home"
+      >الصفحة الرئيسية
+    </a>
+    <span class="px-1 fs-12"
+      ><i class="fas fa-chevron-right text-primary"></i
+    ></span>
+    <a
+      class="text-color fs-24 text-decoration-none font-weight-medium"
+      href="https://ostarssa.daftara.com/contents/products_list"
+      >كل المنتجات
+    </a>
+    <span class="px-1 fs-12 arrow-icon"
+      ><i class="fas fa-chevron-right text-primary"></i
+    ></span>
+    <span class="text-primary fs-24 font-weight-medium cat-name"
+      >{{Category.name}}</span
+    >
+  </div>
+</div>
+<div id="all-cat" class="container">
+  <div class="row">
+    <div class="col col-lg-6 my-2 d-flex">
+      <div class="pl-4 pr-0" style="width: 380px">
+        <div class="cat-link">
+          <button
+            data-cat-id="109"
+            class="btn nav-link fs-xl-16 text-secondary px-4 py-2 d-flex w-100 air-link"
+            style="
+              justify-content: space-between;
+              border-bottom: 2px solid #0066a5;
+            "
+          >
+            <div class="d-flex">
+              <img
+                class=""
+                src="https://ostarssa.daftra.com/files/7aae9582/logos/63c660c2129fa_blobid1673945280479.png"
+                alt=""
+                title="ac.png"
+                width="auto"
+                height="60"
+                caption="false"
+              />
+
+              <p
+                class="fs-lg-22 p-0 my-auto mx-3 text-secondary font-weight-medium"
+              >
+                مكييفات
+              </p>
+            </div>
+            <i class="fas fa-chevron-right my-auto fs-20 text-primary"></i>
+          </button>
+          <div
+            class="overlay d-none"
+            style="
+              border-right: 2px solid #0066a5;
+              position: absolute;
+              left: 2%;
+              text-align: center;
+              background: white;
+              z-index: 5;
+              top: 0%;
+              width: 45%;
+              height: 100%;
+            "
+          >
+            <img
+              style="padding-top: 200px"
+              class="loading-overlay-image"
+              src="https://ostarssa.daftara.com/files/7aae9582/logos/63d66770b4f05_blobid1674995567373.gif"
+              width="10%"
+            />
+          </div>
+          <div
+            class="air-all-cat d-none"
+            style="
+              position: absolute;
+              left: 2%;
+              top: 0%;
+              height: 100%;
+              width: 45%;
+            "
+          >
+            <div
+              class="bg-white mr-0 h-100 first-sub-cat"
+              style="
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+                border-right: 2px solid #0066a5;
+              "
+            ></div>
+          </div>
+        </div>
+
+        <div class="cat-link">
+          <button
+            data-cat-id="110"
+            class="btn nav-link fs-xl-16 text-secondary px-4 py-2 d-flex w-100 air-link"
+            style="
+              justify-content: space-between;
+              border-bottom: 2px solid #0066a5;
+            "
+          >
+            <div class="d-flex">
+              <img
+                src="https://ostarssa.daftra.com/files/7aae9582/logos/63c663677226c_blobid1673945957794.png"
+                title="tubes.png"
+                width="auto"
+                height="60"
+                caption="false"
+              />
+
+              <p
+                class="fs-lg-22 p-0 my-auto mx-3 text-secondary font-weight-medium"
+              >
+                تأسيس نحاس
+              </p>
+            </div>
+            <i class="fas fa-chevron-right my-auto fs-20 text-primary"></i>
+          </button>
+          <div
+            class="air-all-cat d-none"
+            style="
+              position: absolute;
+              left: 2%;
+              top: 0%;
+              height: 100%;
+              width: 45%;
+            "
+          >
+            <div
+              class="bg-white mr-0 h-100 first-sub-cat"
+              style="
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+                border-right: 1px solid #0066a5;
+              "
+            ></div>
+          </div>
+        </div>
+
+        <div class="cat-link">
+          <button
+            data-cat-id="111"
+            class="btn nav-link fs-xl-16 text-secondary px-4 py-2 d-flex w-100 air-link"
+            style="
+              justify-content: space-between;
+              border-bottom: 2px solid #0066a5;
+            "
+          >
+            <div class="d-flex">
+              <img
+                src="https://ostarssa.daftra.com/files/7aae9582/logos/63c663d407400_blobid1673946066702.png"
+                title="water-pipe.png"
+                width="auto"
+                height="60"
+                caption="false"
+              />
+
+              <p
+                class="fs-lg-22 p-0 my-auto mx-3 text-secondary font-weight-medium"
+              >
+                مجاري هواء دكت
+              </p>
+            </div>
+            <i class="fas fa-chevron-right my-auto fs-20 text-primary"></i>
+          </button>
+          <div
+            class="air-all-cat d-none"
+            style="
+              position: absolute;
+              left: 2%;
+              top: 0%;
+              height: 100%;
+              width: 45%;
+            "
+          >
+            <div
+              class="bg-white mr-0 h-100 first-sub-cat"
+              style="
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+                border-right: 1px solid #0066a5;
+              "
+            ></div>
+          </div>
+        </div>
+
+        <div class="cat-link">
+          <button
+            data-cat-id="112"
+            class="btn nav-link fs-xl-16 text-secondary px-4 py-2 d-flex w-100 air-link"
+            style="
+              justify-content: space-between;
+              border-bottom: 2px solid #0066a5;
+            "
+          >
+            <div class="d-flex">
+              <img
+                src="https://ostarssa.daftra.com/files/7aae9582/logos/63c6702aa0993_blobid1673949224028.png"
+                title="air-conditioner.png"
+                width="auto"
+                height="60"
+                caption="false"
+              />
+
+              <p
+                class="fs-lg-22 p-0 my-auto mx-3 text-secondary font-weight-medium"
+              >
+                مكييفات صحراوية
+              </p>
+            </div>
+            <i class="fas fa-chevron-right my-auto fs-20 text-primary"></i>
+          </button>
+          <div
+            class="air-all-cat d-none"
+            style="
+              position: absolute;
+              left: 2%;
+              top: 0%;
+              height: 100%;
+              width: 45%;
+            "
+          >
+            <div
+              class="bg-white mr-0 h-100 first-sub-cat"
+              style="
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+                border-right: 1px solid #0066a5;
+              "
+            ></div>
+          </div>
+        </div>
+
+        <div class="cat-link">
+          <button
+            data-cat-id="113"
+            class="btn nav-link fs-xl-16 text-secondary px-4 py-2 d-flex w-100 air-link"
+            style="
+              justify-content: space-between;
+              border-bottom: 2px solid #0066a5;
+            "
+          >
+            <div class="d-flex">
+              <img
+                src="https://ostarssa.daftra.com/files/7aae9582/logos/63c66ed26784b_blobid1673948880428.png"
+                title="fan.png"
+                width="auto"
+                height="60"
+              />
+
+              <p
+                class="fs-lg-22 p-0 my-auto mx-3 text-secondary font-weight-medium"
+              >
+                مراوح شفط
+              </p>
+            </div>
+            <i class="fas fa-chevron-right my-auto fs-20 text-primary"></i>
+          </button>
+          <div
+            class="air-all-cat d-none"
+            style="
+              position: absolute;
+              left: 2%;
+              top: 0%;
+              height: 100%;
+              width: 45%;
+            "
+          >
+            <div
+              class="bg-white mr-0 h-100 first-sub-cat"
+              style="
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+                border-right: 1px solid #0066a5;
+              "
+            ></div>
+          </div>
+        </div>
+
+        <div class="cat-link">
+          <button
+            data-cat-id="114"
+            class="btn nav-link fs-xl-16 text-secondary px-4 py-2 d-flex w-100 air-link"
+            style="
+              justify-content: space-between;
+              border-bottom: 2px solid #0066a5;
+            "
+          >
+            <div class="d-flex">
+              <img
+                src="https://ostarssa.daftra.com/files/7aae9582/logos/63c67049a3b48_blobid1673949256154.png"
+                title="freezing.png"
+                width="auto"
+                height="60"
+                caption="false"
+              />
+
+              <p
+                class="fs-lg-22 p-0 my-auto mx-3 text-secondary font-weight-medium"
+              >
+                غرف تبريد وتجميد
+              </p>
+            </div>
+            <i class="fas fa-chevron-right my-auto fs-20 text-primary"></i>
+          </button>
+          <div
+            class="air-all-cat d-none"
+            style="
+              position: absolute;
+              left: 2%;
+              top: 0%;
+              height: 100%;
+              width: 45%;
+            "
+          >
+            <div
+              class="bg-white mr-0 h-100 first-sub-cat"
+              style="
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+                border-right: 1px solid #0066a5;
+              "
+            ></div>
+          </div>
+        </div>
+
+        <div class="cat-link">
+          <button
+            data-cat-id="115"
+            class="btn nav-link fs-xl-16 text-secondary px-4 py-2 d-flex w-100 air-link"
+            style="
+              justify-content: space-between;
+              border-bottom: 2px solid #0066a5;
+            "
+          >
+            <div class="d-flex">
+              <img
+                src="https://ostarssa.daftra.com/files/7aae9582/logos/63c66fb488bdb_blobid1673949106991.png"
+                title="electric-appliance.png"
+                width="auto"
+                height="60"
+                caption="false"
+              />
+
+              <p
+                class="fs-lg-22 p-0 my-auto mx-3 text-secondary font-weight-medium"
+              >
+                اجهزة منزلية
+              </p>
+            </div>
+            <i class="fas fa-chevron-right my-auto fs-20 text-primary"></i>
+          </button>
+          <div
+            class="air-all-cat d-none"
+            style="
+              position: absolute;
+              left: 2%;
+              top: 0%;
+              height: 100%;
+              width: 45%;
+            "
+          >
+            <div
+              class="bg-white mr-0 h-100 first-sub-cat"
+              style="
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+                border-right: 1px solid #0066a5;
+              "
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col col-lg-3 my-2 pl-0 pr-4 pl-2">
+      <div
+        class="px-6 py-2 bg-white"
+        id="price"
+        style="box-shadow: rgba(0, 0, 0, 0.27) 0px 3px 8px"
+      >
+        <button
+          style="justify-content: space-between"
+          class="w-100 btn fs-22 text-primary font-weight-medium py-4 my-auto d-flex"
+        >
+          <p class="my-0">تسوق حسب السعر</p>
+          <i class="far fa-chevron-down my-auto"></i>
+        </button>
+      </div>
+      <div class="mt-2 bg-white p-2 price-list appear-before appear-menu">
+        <a
+          href="#"
+          class="d-flex price-filter px-6 py-2 fs-lg-22 font-weight-medium text-primary"
+          data-cat-search="0"
+          data-price-range="1000"
+          style="justify-content: space-between"
+        >
+          <div style="width: 40%" class="text-center">0 ريال</div>
+          <div class="text-center">-</div>
+          <div style="width: 40%" class="text-center">1000 ريال</div>
+        </a>
+        <a
+          href="#"
+          class="d-flex price-filter px-6 py-2 fs-lg-22 font-weight-medium text-primary"
+          data-cat-search="0"
+          data-price-range="5000"
+          style="justify-content: space-between"
+        >
+          <div style="width: 40%" class="text-center">1000 ريال</div>
+          <div class="text-center">-</div>
+          <div style="width: 40%" class="text-center">5000 ريال</div>
+        </a>
+        <a
+          href="#"
+          class="d-flex price-filter px-6 py-2 fs-lg-22 font-weight-medium text-primary"
+          data-cat-search="0"
+          data-price-range="10000"
+          style="justify-content: space-between"
+        >
+          <div style="width: 40%" class="text-center">5000 ريال</div>
+          <div class="text-center">-</div>
+          <div style="width: 40%" class="text-center">10000 ريال</div>
+        </a>
+        <a
+          href="#"
+          class="d-flex price-filter px-6 py-2 fs-lg-22 font-weight-medium text-primary"
+          data-cat-search="0"
+          data-price-range="20000"
+          style="justify-content: space-between"
+        >
+          <div style="width: 40%" class="text-center">10000 ريال</div>
+          <div class="text-center">-</div>
+          <div style="width: 40%" class="text-center">20000 ريال</div>
+        </a>
+      </div>
+    </div>
+    <div class="col col-lg-3 my-2 pl-4 pr-0">
+      <div
+        class="px-6 py-2 bg-white"
+        id="brand"
+        style="box-shadow: rgba(0, 0, 0, 0.27) 0px 3px 8px"
+      >
+        <button
+          style="justify-content: space-between"
+          class="w-100 btn fs-22 text-primary font-weight-medium py-4 my-auto d-flex"
+        >
+          <p class="my-0">تسوق حسب الماركة</p>
+          <i class="far fa-chevron-down my-auto"></i>
+        </button>
+      </div>
+
+      <div
+        class="mt-2 bg-white p-2 brand-list appear-before appear-menu"
+        style="height: 490px; box-shadow: rgba(0, 0, 0, 0.12) 0px 3px 8px"
+      >
+        <div class="row px-2 my-auto h-100">
+          <div class="col col-lg-4 p-2">
+            <a
+              href="#"
+              class="brand-filter"
+              data-cat-search="0"
+              data-brand=""
+              style="
+                border: 1px solid #ff0000;
+                height: 90px;
+                align-items: center;
+                display: flex;
+              "
+            >
+              <img
+                class="mx-auto"
+                src="https://ostarssa.daftra.com/files/7aae9582/logos/63ce74c9eedad_blobid1674474696234.png"
+                alt=""
+                title="carrier.png"
+                width="100%"
+                height="auto
+                "
+                caption="false"
+              />
+            </a>
+          </div>
+          <div class="col col-lg-4 p-2">
+            <a
+              href="#"
+              class="brand-filter"
+              data-cat-search="0"
+              data-brand=""
+              style="
+                border: 1px solid #ff0000;
+                height: 90px;
+                align-items: center;
+                display: flex;
+              "
+            >
+              <img
+                class="mx-auto"
+                src="https://ostarssa.daftara.com/files/7aae9582/logos/63cfea30668b9_blobid1674570285903.png"
+                alt=""
+                title="carrier.png"
+                width="100%"
+                height="auto
+                "
+                caption="false"
+              />
+            </a>
+          </div>
+          <div class="col col-lg-4 p-2">
+            <a
+              href="#"
+              class="brand-filter"
+              data-cat-search="0"
+              data-brand=""
+              style="
+                border: 1px solid #ff0000;
+                height: 90px;
+                align-items: center;
+                display: flex;
+              "
+            >
+              <img
+                class="mx-auto"
+                src="https://ostarssa.daftra.com/files/7aae9582/logos/63ce660608dce_blobid1674470916016.png"
+                alt=""
+                title="carrier.png"
+                width="100%"
+                height="auto
+                "
+                caption="false"
+              />
+            </a>
+          </div>
+          <div class="col col-lg-4 p-2">
+            <a
+              href="#"
+              class="brand-filter"
+              data-cat-search="0"
+              data-brand=""
+              style="
+                border: 1px solid #ff0000;
+                height: 90px;
+                align-items: center;
+                display: flex;
+              "
+            >
+              <img
+                class="mx-auto"
+                src="https://ostarssa.daftra.com/files/7aae9582/logos/63ce74e7ab2f5_blobid1674474725929.png"
+                alt=""
+                title="carrier.png"
+                width="100%"
+                height="auto
+                "
+                caption="false"
+              />
+            </a>
+          </div>
+          <div class="col col-lg-4 p-2">
+            <a
+              href="#"
+              class="brand-filter"
+              data-cat-search="0"
+              data-brand=""
+              style="
+                border: 1px solid #ff0000;
+                height: 90px;
+                align-items: center;
+                display: flex;
+              "
+            >
+              <img
+                class="mx-auto"
+                src="https://ostarssa.daftra.com/files/7aae9582/logos/63ce7667635a9_blobid1674475109671.png"
+                alt=""
+                title="carrier.png"
+                width="100%"
+                height="auto
+                "
+                caption="false"
+              />
+            </a>
+          </div>
+          <div class="col col-lg-4 p-2">
+            <a
+              href="#"
+              class="brand-filter"
+              data-cat-search="0"
+              data-brand=""
+              style="
+                border: 1px solid #ff0000;
+                height: 90px;
+                align-items: center;
+                display: flex;
+              "
+            >
+              <img
+                class="mx-auto"
+                src="https://ostarssa.daftra.com/files/7aae9582/logos/63ce74af822b8_blobid1674474669898.png"
+                alt=""
+                title="carrier.png"
+                width="100%"
+                height="auto
+                "
+                caption="false"
+              />
+            </a>
+          </div>
+          <div class="col col-lg-4 p-2">
+            <a
+              href="#"
+              class="brand-filter"
+              data-cat-search="0"
+              data-brand=""
+              style="
+                border: 1px solid #ff0000;
+                height: 90px;
+                align-items: center;
+                display: flex;
+              "
+            >
+              <img
+                class="mx-auto"
+                src="https://ostarssa.daftra.com/files/7aae9582/logos/63ce74976d821_blobid1674474645123.png"
+                alt=""
+                title="carrier.png"
+                width="100%"
+                height="auto
+                "
+                caption="false"
+              />
+            </a>
+          </div>
+          <div class="col col-lg-4 p-2">
+            <a
+              href="#"
+              class="brand-filter"
+              data-cat-search="0"
+              data-brand=""
+              style="
+                border: 1px solid #ff0000;
+                height: 90px;
+                align-items: center;
+                display: flex;
+              "
+            >
+              <img
+                class="mx-auto"
+                src="https://ostarssa.daftra.com/files/7aae9582/logos/63ce76858e878_blobid1674475139648.png"
+                alt=""
+                title="carrier.png"
+                width="100%"
+                height="auto
+                "
+                caption="false"
+              />
+            </a>
+          </div>
+          <div class="col col-lg-4 p-2">
+            <a
+              href="#"
+              class="brand-filter"
+              data-cat-search="0"
+              data-brand=""
+              style="
+                border: 1px solid #ff0000;
+                height: 90px;
+                align-items: center;
+                display: flex;
+              "
+            >
+              <img
+                class="mx-auto"
+                src="https://ostarssa.daftra.com/files/7aae9582/logos/63ce76083b9e4_blobid1674475014098.png"
+                alt=""
+                title="carrier.png"
+                width="100%"
+                height="auto
+                "
+                caption="false"
+              />
+            </a>
+          </div>
+          <div class="col col-lg-4 p-2">
+            <a
+              href="#"
+              class="brand-filter"
+              data-cat-search="0"
+              data-brand=""
+              style="
+                border: 1px solid #ff0000;
+                height: 90px;
+                align-items: center;
+                display: flex;
+              "
+            >
+              <img
+                class="mx-auto"
+                src="https://ostarssa.daftra.com/files/7aae9582/logos/63ce762a0718b_blobid1674475048372.png"
+                alt=""
+                title="carrier.png"
+                width="100%"
+                height="auto
+                "
+                caption="false"
+              />
+            </a>
+          </div>
+          <div class="col col-lg-4 p-2">
+            <a
+              href="#"
+              class="brand-filter"
+              data-cat-search="0"
+              data-brand=""
+              style="
+                border: 1px solid #ff0000;
+                height: 90px;
+                align-items: center;
+                display: flex;
+              "
+            >
+              <img
+                class="mx-auto"
+                src="https://ostarssa.daftra.com/files/7aae9582/logos/63ce764410aaa_blobid1674475074272.png"
+                alt=""
+                title="carrier.png"
+                width="100%"
+                height="auto
+                "
+                caption="false"
+              />
+            </a>
+          </div>
+          <div class="col col-lg-4 p-2">
+            <a
+              href="#"
+              class="brand-filter"
+              data-cat-search="0"
+              data-brand=""
+              style="
+                border: 1px solid #ff0000;
+                height: 90px;
+                align-items: center;
+                display: flex;
+              "
+            >
+              <img
+                class="mx-auto"
+                src="https://ostarssa.daftra.com/files/7aae9582/logos/63ce751bb0ef9_blobid1674474777867.png"
+                alt=""
+                title="carrier.png"
+                width="100%"
+                height="auto
+                "
+                caption="false"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  id="air-cat"
+  class="container"
+  style="position: relative; min-height: 650px"
+>
+  <div
+    class="overlay"
+    style="
+      position: absolute;
+      left: 0%;
+      text-align: center;
+      background: #f3fbff;
+      z-index: 5;
+      top: 0%;
+      width: 100%;
+      height: 100%;
+    "
+  >
+    <img
+      style="padding-top: 200px"
+      class="loading-overlay-image"
+      src="https://ostarssa.daftara.com/files/7aae9582/logos/63d66770b4f05_blobid1674995567373.gif"
+      width="3%"
+    />
+  </div>
+  <div class="row">
+    <div class="col col-lg-3 my-2 pl-4 pr-0 get-parent-cat test-case"></div>
+    <div class="d-none">
+      <div class="test-case">
+        <div class="">
+          <a
+            href="/contents/products_list?cat_id=109"
+            data-cat-id="109"
+            class="btn nav-link fs-xl-16 text-secondary px-0 py-2 d-flex w-100 air-link"
+            style="border-bottom: 2px solid #0066a5"
+          >
+            <div class="d-flex">
+              <img
+                class=""
+                src="https://ostarssa.daftra.com/files/7aae9582/logos/63c660c2129fa_blobid1673945280479.png"
+                alt=""
+                title="ac.png"
+                width="auto"
+                height="60"
+                caption="false"
+              />
+
+              <p
+                class="fs-lg-22 p-0 my-auto mx-3 text-secondary font-weight-medium"
+              >
+                مكييفات
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="">
+          <a
+            href="/contents/products_list?cat_id=110"
+            data-cat-id="110"
+            class="btn nav-link fs-xl-16 text-secondary px-0 py-2 d-flex w-100 air-link"
+            style="
+              justify-content: space-between;
+              border-bottom: 2px solid #0066a5;
+            "
+          >
+            <div class="d-flex">
+              <img
+                src="https://ostarssa.daftra.com/files/7aae9582/logos/63c663677226c_blobid1673945957794.png"
+                title="tubes.png"
+                width="auto"
+                height="60"
+                caption="false"
+              />
+
+              <p
+                class="fs-lg-22 p-0 my-auto mx-3 text-secondary font-weight-medium"
+              >
+                تأسيس نحاس
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="">
+          <a
+            href="/contents/products_list?cat_id=111"
+            data-cat-id="111"
+            class="btn nav-link fs-xl-16 text-secondary px-0 py-2 d-flex w-100 air-link"
+            style="
+              justify-content: space-between;
+              border-bottom: 2px solid #0066a5;
+            "
+          >
+            <div class="d-flex">
+              <img
+                src="https://ostarssa.daftra.com/files/7aae9582/logos/63c663d407400_blobid1673946066702.png"
+                title="water-pipe.png"
+                width="auto"
+                height="60"
+                caption="false"
+              />
+
+              <p
+                class="fs-lg-22 p-0 my-auto mx-3 text-secondary font-weight-medium"
+              >
+                مجاري هواء دكت
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="">
+          <a
+            href="/contents/products_list?cat_id=112"
+            data-cat-id="112"
+            class="btn nav-link fs-xl-16 text-secondary px-0 py-2 d-flex w-100 air-link"
+            style="
+              justify-content: space-between;
+              border-bottom: 2px solid #0066a5;
+            "
+          >
+            <div class="d-flex">
+              <img
+                src="https://ostarssa.daftra.com/files/7aae9582/logos/63c6702aa0993_blobid1673949224028.png"
+                title="air-conditioner.png"
+                width="auto"
+                height="60"
+                caption="false"
+              />
+
+              <p
+                class="fs-lg-22 p-0 my-auto mx-3 text-secondary font-weight-medium"
+              >
+                مكييفات صحراوية
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="">
+          <a
+            href="/contents/products_list?cat_id=113"
+            data-cat-id="113"
+            class="btn nav-link fs-xl-16 text-secondary px-0 py-2 d-flex w-100 air-link"
+            style="
+              justify-content: space-between;
+              border-bottom: 2px solid #0066a5;
+            "
+          >
+            <div class="d-flex">
+              <img
+                src="https://ostarssa.daftra.com/files/7aae9582/logos/63c66ed26784b_blobid1673948880428.png"
+                title="fan.png"
+                width="auto"
+                height="60"
+              />
+
+              <p
+                class="fs-lg-22 p-0 my-auto mx-3 text-secondary font-weight-medium"
+              >
+                مراوح شفط
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="">
+          <a
+            href="/contents/products_list?cat_id=114"
+            data-cat-id="114"
+            class="btn nav-link fs-xl-16 text-secondary px-0 py-2 d-flex w-100 air-link"
+            style="
+              justify-content: space-between;
+              border-bottom: 2px solid #0066a5;
+            "
+          >
+            <div class="d-flex">
+              <img
+                src="https://ostarssa.daftra.com/files/7aae9582/logos/63c67049a3b48_blobid1673949256154.png"
+                title="freezing.png"
+                width="auto"
+                height="60"
+                caption="false"
+              />
+
+              <p
+                class="fs-lg-22 p-0 my-auto mx-3 text-secondary font-weight-medium"
+              >
+                غرف تبريد وتجميد
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="">
+          <a
+            href="/contents/products_list?cat_id=115"
+            data-cat-id="115"
+            class="btn nav-link fs-xl-16 text-secondary px-0 py-2 d-flex w-100 air-link"
+            style="
+              justify-content: space-between;
+              border-bottom: 2px solid #0066a5;
+            "
+          >
+            <div class="d-flex">
+              <img
+                src="https://ostarssa.daftra.com/files/7aae9582/logos/63c66fb488bdb_blobid1673949106991.png"
+                title="electric-appliance.png"
+                width="auto"
+                height="60"
+                caption="false"
+              />
+
+              <p
+                class="fs-lg-22 p-0 my-auto mx-3 text-secondary font-weight-medium"
+              >
+                اجهزة منزلية
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="col col-lg-3 my-2 pl-0 pr-4 pl-2 w-100 bg-white sub-cat"
+      style="
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 3px 8px;
+        border-right: 2px solid #0066a5;
+      "
+    >
+      <!-- sub cat -->
+      {{#categories_count}}
+      <div id="home-categories-section" class="py-0">
+        <div class="container">
+          <div class="row">
+            {{#categories}}
+            <div class="col-lg-4 col-6 p-2 main-card">
+              <a
+                href="/contents/products_list?cat_id={{id}}"
+                class="text-decoration-none my-0"
+                style="
+                  border: 1px solid #ff0000;
+                  height: 90px;
+                  align-items: center;
+                  display: flex;
+                "
+              >
+                {{#image_full_path}}
+                <img
+                  src="{{image_full_path}}"
+                  width="100%"
+                  height="auto"
+                  alt="Sandwiches"
+                  class="mx-auto img-cat-sub"
+                  style="max-height: 100%"
+                />
+                {{/image_full_path}} {{^image_full_path}}
+                <img
+                  src="https://cdn.daftra.com/templates/shop_1/img/category_thumb.svg"
+                  width="168"
+                  height="125"
+                  alt="Sandwiches"
+                  class="img-fluid w-100 mx-auto img-cover category-img-sm img-cat-sub"
+                />
+                {{/image_full_path}}
+                <h6 class="fs-18 font-weight-bold mb-2 d-none">{{name}}</h6>
+              </a>
+            </div>
+            {{/categories}}
+          </div>
+        </div>
+      </div>
+      {{/categories_count}}
+    </div>
+    <div class="col col-lg-3 my-2 px-4 pt-2 last-sub-price d-none">
+      <div
+        class="px-6 py-2 bg-white"
+        id="price2"
+        style="box-shadow: rgba(0, 0, 0, 0.27) 0px 3px 8px"
+      >
+        <button
+          style="justify-content: space-between"
+          class="w-100 btn fs-22 text-primary font-weight-medium py-4 my-auto d-flex"
+        >
+          <p class="my-0">تسوق حسب السعر</p>
+          <i class="far fa-chevron-down my-auto"></i>
+        </button>
+      </div>
+      <div class="mt-2 bg-white p-2 price-list appear-before appear-menu2">
+        <a
+          href="#"
+          class="d-flex price-filter px-3 py-2 fs-lg-22 font-weight-medium text-primary"
+          data-cat-search="0"
+          data-price-range="1000"
+          style="justify-content: space-between"
+        >
+          <div style="width: 40%" class="text-center">0 ريال</div>
+          <div class="text-center">-</div>
+          <div style="width: 40%" class="text-center">1000 ريال</div>
+        </a>
+        <a
+          href="#"
+          class="d-flex price-filter px-3 py-2 fs-lg-22 font-weight-medium text-primary"
+          data-cat-search="0"
+          data-price-range="5000"
+          style="justify-content: space-between"
+        >
+          <div style="width: 40%" class="text-center">1000 ريال</div>
+          <div class="text-center">-</div>
+          <div style="width: 40%" class="text-center">5000 ريال</div>
+        </a>
+        <a
+          href="#"
+          class="d-flex price-filter px-3 py-2 fs-lg-22 font-weight-medium text-primary"
+          data-cat-search="0"
+          data-price-range="10000"
+          style="justify-content: space-between"
+        >
+          <div style="width: 40%" class="text-center">5000 ريال</div>
+          <div class="text-center">-</div>
+          <div style="width: 40%" class="text-center">10000 ريال</div>
+        </a>
+        <a
+          href="#"
+          class="d-flex price-filter px-3 py-2 fs-lg-22 font-weight-medium text-primary"
+          data-cat-search="0"
+          data-price-range="20000"
+          style="justify-content: space-between"
+        >
+          <div style="width: 40%" class="text-center">10000 ريال</div>
+          <div class="text-center">-</div>
+          <div style="width: 40%" class="text-center">20000 ريال</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="col col-lg-6 my-2 pl-4 pr-0" id="offers"></div>
+  </div>
+</div>
+
+{{#Category.name}}
+<div class="pt-lg-7">
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-lg-12 px-4 py-2 px-lg-3">
+        {{#Category.image_full_path}}
+        <div
+          class="py-22 px-14 bg-placeholder text-center text-lg-left bg-cover bg-center"
+          style="background-image: url({{Category.image_full_path}})"
+        >
+          <h1 class="text-dark fs-30 fs-lg-40">{{Category.name}}</h1>
+        </div>
+        {{/Category.image_full_path}} {{^Category.image_full_path}}
+        <div class="py-22 px-14 bg-placeholder text-center text-lg-left">
+          <h1 class="text-dark fs-30 fs-lg-40">{{Category.name}}</h1>
+        </div>
+        {{/Category.image_full_path}}
+      </div>
+    </div>
+  </div> -->
+  {{#categories_count}}
+  <div id="home-categories-section" class="py-0 d-none">
+    <div class="container">
+      <div class="row">
+        {{#categories}}
+        <div class="col-lg-2 col-sm-4 col-6 cat-child">
+          <a
+            href="/contents/products_list?cat_id={{id}}"
+            class="text-decoration-none text-black text-hover-primary"
+          >
+            <div class="text-center mb-6 mb-lg-0">
+              {{#image_full_path}}
+              <img
+                src="{{image_full_path}}"
+                width="168"
+                height="125"
+                alt="Sandwiches"
+                class="img-fluid w-100 h-125px mx-auto img-cover mb-3 category-img-sm"
+              />
+              {{/image_full_path}} {{^image_full_path}}
+              <img
+                src="https://cdn.daftra.com/templates/shop_1/img/category_thumb.svg"
+                width="168"
+                height="125"
+                alt="Sandwiches"
+                class="img-fluid h-125px w-100 mx-auto img-cover mb-3 category-img-sm"
+              />
+              {{/image_full_path}}
+              <h6 class="fs-18 font-weight-bold mb-2 text">{{name}}</h6>
+            </div>
+          </a>
+        </div>
+        {{/categories}}
+      </div>
+    </div>
+  </div>
+  {{/categories_count}}
+</div>
+{{/Category.name}} {{#query}}
+<div id="home-slider-section" class="pt-lg-7">
+  <div class="container">
+    <div class="row">
+      <div class="py-22 px-14 text-center">
+        <h1 class="text-dark fs-30 fs-lg-40">{{query}}</h1>
+      </div>
+    </div>
+  </div>
+</div>
+{{/query}}
+<div id="products-section" class="pb-4">
+  <div class="container">
+    <div class="row d-none">
+      <div class="col-lg-12">
+        <div class="pt-8">
+          <div class="row">
+            <div class="col col-lg-8">
+              <div class="text-left">
+                <div
+                  class="d-inline-flex flex-column flex-lg-row align-items-lg-center text-left w-100"
+                >
+                  <span
+                    class="fs-16 d-block d-lg-inline-block font-weight-medium text-primary mr-2"
+                  >
+                    ترتيب حسب:
+                  </span>
+                  <div class="sort-filter">
+                    <select class="form-control mr-1 d-inline-block w-auto">
+                      {{#sortFields}}
+                      <option value="{{field_name}}">{{title}}</option>
+                      {{/sortFields}}
+                    </select>
+                    <button
+                      type="button"
+                      class="fas fa-arrow-down d-inline-flex align-items-center justify-content-center w-38px h-38px btn p-0 btn-placeholder d-inline-block sort-dir-desc"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="DESC"
+                    ></button>
+                    <button
+                      type="button"
+                      class="fas fa-arrow-up d-inline-flex align-items-center justify-content-center w-38px h-38px btn p-0 btn-placeholder d-inline-block sort-dir-asc"
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="ASC"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col flex-grow-0 col-lg-4">
+              <div class="text-right">
+                <div
+                  class="d-inline-flex flex-column flex-lg-row align-items-lg-center text-left"
+                >
+                  <span
+                    class="fs-16 d-block d-lg-inline-block font-weight-medium text-primary mr-2"
+                  >
+                    ظهور:
+                  </span>
+                  <select id="" class="form-control show-limit">
+                    {{#limits}}
+                    <option value="{{text}}" {{#active}} selected="selected">
+                      {{/active}} >{{text}}
+                    </option>
+                    {{/limits}}
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 px-0 px-lg-3">
+        <div class="pt-8 d-none"></div>
+        <div class="border-top border-placeholder pb-8"></div>
+      </div>
+    </div>
+
+    <div id="list" class="row row-swiper">
+      <div class="swiper mySwiper testnew" id="mySwiper2">
+        <div class="swiper-wrapper">
+          {{#products}}
+
+          <!-- ======================== card ======================================= -->
+          <div
+            class="swiper-slide col-lg-4 col-sm-6 py-2 px-4 card-product box"
+          >
+            <div class="item hover" style="border: 1px solid #0066a5">
+              <div
+                class="align-items-start d-flex flex-column m-0 product p-0"
+                style="background-image: url({{file_full_path}});     background-size: cover;height: 415px;
+                  background-position: center;"
+                data-product-id="{{id}}"
+                data-image="{{file_full_path}}"
+                data-price="{{final_price_number}}"
+                data-name="{{name}}"
+              >
+                <div
+                  class="row w-100"
+                  style="align-self: center; padding-top: 240px"
+                >
+                  <div
+                    class="col-lg-7 px-0"
+                    style="height: 90px; display: flex; align-items: center"
+                  >
+                    <a
+                      href="/contents/product_view/{{id}}"
+                      class="text-decoration-none text-primary text-hover-black"
+                    >
+                      <h6
+                        class="fs-18 font-weight-semibold p-1 px-3 name my-auto"
+                      >
+                        {{ name }}<span
+                          class="font-weight-medium fs-16 text-body ml-2 d-none"
+                          >#{{id}}</span
+                        >
+                      </h6>
+                    </a>
+                    <p
+                      class="fs-16 fs-md-14 fs-xl-16 font-weight-medium text-body mb-0 d-none"
+                    >
+                      {{description}}
+                    </p>
+                  </div>
+                  <div
+                    class="col-lg-5 d-flex"
+                    style="align-self: center; border-right: 1px solid #0066a5"
+                  >
+                    <div
+                      class="m-0 p-1 font-weight-bold"
+                      style="text-align-last: center"
+                    >
+                      <p style="height: 20px" class="m-0"></p>
+                      {{#discount}}
+                      <span
+                        class="price fs-14 px-2"
+                        style="background-color: #ff0000"
+                        >{{final_price}}</span
+                      >
+                      <del class="text-white"
+                        ><span class="text-alto fs-14 mr-2 discount"
+                          >{{unit_price}}</span
+                        ></del
+                      >
+                      {{/discount}} {{^discount}}
+                      <span
+                        class="text-white fs-14 px-1"
+                        style="background-color: #ff0000"
+                        >{{final_price}}</span
+                      >
+                      {{/discount}}
+                    </div>
+                  </div>
+                </div>
+                <button
+                  data-name="{{name}}"
+                  class="add-to-cart-btn btn btn-sm btn-primary text-uppercase font-weight-medium fs-18 p-3 m-4 w-75"
+                >
+                  أضف للسلة
+                </button>
+              </div>
+            </div>
+          </div>
+          {{/products}}
+        </div>
+        <div class="swiper-button-next"></div>
+
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+
+    <div id="list-products" class="row">
+      {{#products}}
+      <!-- ======================== card ======================================= -->
+      <div class="col-xl-3 col-sm-6 py-2 px-4 card-product box">
+        <div class="item hover" style="border: 1px solid #0066a5">
+          <div
+            class="align-items-start d-flex flex-column m-0 product-x p-0"
+            style="background-image: url({{file_full_path}});     background-size: cover;height: 415px;
+              background-position: center;"
+            data-product-id="{{id}}"
+            data-image="{{file_full_path}}"
+            data-price="{{final_price_number}}"
+            data-name="{{name}}"
+          >
+            <div
+              class="row w-100"
+              style="align-self: center; padding-top: 240px"
+            >
+              <div
+                class="col-lg-7 px-0"
+                style="height: 90px; display: flex; align-items: center"
+              >
+                <a
+                  href="/contents/product_view/{{id}}"
+                  class="text-decoration-none text-primary text-hover-black"
+                >
+                  <h6 class="fs-18 font-weight-semibold p-1 px-3 name my-auto">
+                    {{ name }}<span
+                      class="font-weight-medium fs-16 text-body ml-2 d-none"
+                      >#{{id}}</span
+                    >
+                  </h6>
+                </a>
+                <p
+                  class="fs-16 fs-md-14 fs-xl-16 font-weight-medium text-body mb-0 d-none"
+                >
+                  {{description}}
+                </p>
+              </div>
+              <div
+                class="col-lg-5 d-flex"
+                style="align-self: center; border-right: 1px solid #0066a5"
+              >
+                <div
+                  class="m-0 p-1 font-weight-bold"
+                  style="text-align-last: center"
+                >
+                  <p style="height: 20px" class="m-0"></p>
+                  {{#discount}}
+                  <span
+                    class="price fs-14 px-2"
+                    style="background-color: #ff0000"
+                    >{{final_price}}</span
+                  >
+                  <del class="text-white"
+                    ><span class="text-alto fs-14 mr-2 discount"
+                      >{{unit_price}}</span
+                    ></del
+                  >
+                  {{/discount}} {{^discount}}
+                  <span
+                    class="text-white fs-14 px-1"
+                    style="background-color: #ff0000"
+                    >{{final_price}}</span
+                  >
+                  {{/discount}}
+                </div>
+              </div>
+            </div>
+            <button
+              data-name="{{name}}"
+              class="add-to-cart-btn btn btn-sm btn-primary text-uppercase font-weight-medium fs-18 p-3 m-4 w-75"
+            >
+              أضف للسلة
+            </button>
+          </div>
+        </div>
+      </div>
+      {{/products}} {{^products_count}}
+      <p class="not-found d-none">لا يوجد منتجات</p>
+      {{/products_count}}
+    </div>
+
+    {{#products_count}}
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="text-center py-8">
+          <nav class="d-inline-flex mb-0 align-items-center">
+            <span
+              class="text-primary fs-16 mr-2 font-weight-medium d-none d-lg-inline-block"
+            >
+              صفحة:
+            </span>
+            <ul class="pagination mb-0">
+              {{#prevPage}}
+              <li class="page-item">
+                <a
+                  class="page-link bg-placeholder bg-hover-primary"
+                  href="{{prevPageLink}}"
+                  ><i class="fa fas fa-arrow-left"></i
+                ></a>
+              </li>
+              {{/prevPage}} {{#pages}} {{#active}}
+              <li class="page-item active">
+                <a class="page-link" href="{{link}}"> {{page}} </a>
+              </li>
+              {{/active}} {{^active}}
+              <li class="page-item">
+                <a class="page-link" href="{{link}}"> {{page}} </a>
+              </li>
+              {{/active}} {{/pages}} {{#nextPage}}
+              <li class="page-item">
+                <a
+                  class="page-link bg-placeholder bg-hover-primary"
+                  href="{{nextPageLink}}"
+                  ><i class="fas fa-arrow-right"></i
+                ></a>
+              </li>
+              {{/nextPage}}
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    {{/products_count}}
+  </div>
+</div>
+<div id="prods" class="d-none"></div>
+{{swiper_brands:Content.empty()}}
+<script>
+  $(document).ready(function () {
+    var url = window.location.href;
+    let currCat = url.replace(/^\D+/g, "").replace("/", "");
+
+    console.log(currCat);
+
+    $.ajax({
+      type: "GET",
+      url: "/v2/api/entity/category/" + currCat,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        APIKEY: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90",
+      },
+      credentials: "same-origin",
+      contentType: "application/json",
+    }).done((data) => {
+      let parentCat = data.parent_id;
+      $.ajax({
+        type: "GET",
+        url:
+          "/v2/api/entity/category/list/1?per_page=30&filter[parent_id]=" +
+          parentCat,
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          APIKEY: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90",
+        },
+        credentials: "same-origin",
+        contentType: "application/json",
+      })
+        .done((data) => {
+          let newData = data.data;
+          $.each(newData, async (i, val) => {
+            let id = val.id;
+            let name = val.name;
+            let newDiv = ` <div class="">
+        <a
+          href="/contents/products_list?cat_id=${id}" data-cat-id="${id}"
+          class="btn nav-link fs-xl-16 text-secondary px-4 py-2 d-flex w-100 air-link cat-link" 
+          style="
+            justify-content: space-between;
+            border-bottom: 2px solid #0066a5;
+            height: 88px;
+          "
+        >
+          <p class="my-auto fs-12 fs-lg-22 font-weight-medium text-primary">
+          ${name}
+          </p>
+          <i class="fas fa-chevron-right my-auto fs-20 text-primary"></i>
+        </a>
+      </div>`;
+
+            $(".get-parent-cat").append(newDiv);
+          });
+          $(".overlay").addClass("d-none");
+        })
+        .done(() => {
+          // add parent cat if it not exist
+          let firstDivParent = $(".get-parent-cat").text().trim();
+          console.log(firstDivParent);
+          let swapDiv = $(".test-case");
+          if (firstDivParent == "") {
+            $(".get-parent-cat").append(swapDiv);
+          }
+        })
+        .done(() => {
+          let allCatId = $(".test-case .air-link");
+          console.log(allCatId);
+          $.each(allCatId, async (i, val) => {
+            let dataCatId = $(val).data("cat-id");
+
+            if (dataCatId == currCat) {
+              $(val).addClass("conditioner-link-visited");
+            }
+            $(val).click(function () {
+              $(".air-link").removeClass("conditioner-link-visited");
+              $(val).addClass("conditioner-link-visited");
+            });
+          });
+        });
+    });
+    console.log(currCat);
+    if (url.includes("contents")) {
+      $("#list").addClass("d-none");
+    }
+    //    $(".custom_content").eq(0).css({ padding: 0, maxWidth: "100%" });
+    // $(".custom_content").eq(1).css({ padding: 0, width: "100%" });
+    let catName = $(".cat-name").text();
+    if (catName == "") {
+      $(".arrow-icon").hide();
+      $("#air-cat").hide();
+    } else {
+      $("#all-cat").hide();
+    }
+
+    let catBtn = $(".cat-link .air-link");
+    $.each(catBtn, async (i, val) => {
+      $(val).click(function () {
+        $(val).parent().find(".air-all-cat").removeClass("d-none");
+        $(".air-link").removeClass("conditioner-link-visited");
+        $(val).addClass("conditioner-link-visited");
+        $(".conditioner-link-visited").removeClass("disabled");
+        $(".conditioner-link-visited").attr("disabled", false);
+        let parentLink = $(val).data("cat-id");
+        $(".overlay").removeClass("d-none");
+        var arr = new Array();
+        $(function () {
+          $.ajax({
+            url: `/contents/products_list?cat_id=${parentLink}`,
+            type: "get",
+            success: function (resp) {
+              $("#prods").html($(resp).find("#home-categories-section"));
+              setTimeout(() => {
+                let allCat = $("#home-categories-section .cat-child");
+                $.each(allCat, async (i, val) => {
+                  let catChildID = $(val).find("a").attr("href");
+                  catChildID = catChildID.replace(/^\D+/g, "");
+                  let catName = $(val).find(".text").text();
+                  console.log(catChildID, catName);
+                  let newDiv = ` <div class="">
+                       <button
+                         class="btn fs-xl-16 d-flex logn link-api w-100 text-left px-3 py-6"
+                         data-id="${catChildID}"
+                       >
+                         <p
+                           class="my-auto fs-12 fs-lg-22 font-weight-medium text-primary name mx-2"
+                         >
+                         ${catName}
+                         </p>
+                       </button>
+                     </div>`;
+                  arr.push(newDiv);
+                  $(".overlay").addClass("d-none");
+                  $(".first-sub-cat").html(arr);
+                });
+              }, 100);
+            },
+          }).done(() => {
+            setTimeout(() => {
+              var subCat = $(".link-api");
+              $.each(subCat, async (i, val) => {
+                $(val).click(() => {
+                  $(".link-api").removeClass("link-api-visited ");
+                  $(val).addClass("link-api-visited ");
+                  let dataId = $(val).data("id");
+                  $(".price-filter").attr("data-cat-search", `${dataId}`);
+                  $(".brand-filter").attr("data-cat-search", `${dataId}`);
+                  let priceLink = $(".price-filter");
+                  $.each(priceLink, async (i, val) => {
+                    $(val).on("click", function (e) {
+                      e.originalEvent.currentTarget.href = `/contents/products_list?cat_id=${dataId}`;
+                    });
+                  });
+                });
+              });
+            }, 200);
+          });
+        });
+      });
+    });
+
+    // $.each(catBtn, async (i, val) => {
+    //   $(val).click(function () {
+    //     var clicks = $(this).data("clicks");
+    //     if (!clicks) {
+    //       $(val).find(".air-all-cat").removeClass("d-none");
+    //       $(".air-link").removeClass("conditioner-link-visited");
+    //       $(val).find(".air-link").addClass("conditioner-link-visited");
+    //       $(".conditioner-link-visited").removeClass("disabled");
+    //       $(".conditioner-link-visited").attr("disabled", false);
+    //       let parentLink = $(val).data("cat-id");
+    //       $(".overlay").removeClass("d-none");
+    //       var arr = new Array();
+    //       $(function () {
+    //         $.ajax({
+    //           url: `/contents/products_list?cat_id=${parentLink}`,
+    //           type: "get",
+    //           success: function (resp) {
+    //             $("#prods").html($(resp).find("#home-categories-section"));
+    //             setTimeout(() => {
+    //               let allCat = $("#home-categories-section .cat-child");
+    //               $.each(allCat, async (i, val) => {
+    //                 let catChildID = $(val).find("a").attr("href");
+    //                 catChildID = catChildID.replace(/^\D+/g, "");
+
+    //                 let catName = $(val).find(".text").text();
+    //                 console.log(catChildID, catName);
+    //                 let newDiv = ` <div class="">
+    //            <button
+    //              class="btn fs-xl-16 d-flex logn link-api w-100 text-left px-3 py-6"
+    //              data-id="${catChildID}"
+    //            >
+    //              <p
+    //                class="my-auto fs-12 fs-lg-22 font-weight-medium text-primary name mx-2"
+    //              >
+    //              ${catName}
+    //              </p>
+    //            </button>
+    //          </div>`;
+    //                 arr.push(newDiv);
+    //                 $(".overlay").addClass("d-none");
+    //                 $(".first-sub-cat").html(arr);
+    //               });
+    //             }, 100);
+    //           },
+    //         });
+    //         return false;
+    //       });
+    //     } else {
+    //       console.log(clicks + "geftk");
+    //       var subCat = $(".link-api");
+    //       $.each(subCat, async (i, val) => {
+    //         $(val).click(function () {
+    //           console.log(val);
+    //         });
+    //       });
+
+    //       // if (condition) {
+    //       // } else {
+    //       //   $(val).find(".air-all-cat").addClass("d-none");
+    //       //   $(val).find(".air-link").removeClass("conditioner-link-visited");
+    //       // }
+    //     }
+    //     $(this).data("clicks", !clicks);
+    //   });
+    // });
+
+    $("#price").click(function () {
+      $(".price-list").toggleClass("appear-menu");
+    });
+    $("#price2").click(function () {
+      $(".price-list").toggleClass("appear-menu2");
+    });
+    $("#brand").click(function () {
+      $(".brand-list").toggleClass("appear-menu");
+    });
+    let card = $(".main-card");
+    $.each(card, (i, val) => {
+      let src = $(val).find(".img-cat-sub").attr("src");
+      if (src.includes("_اخفاء")) {
+        $(val).addClass("d-none");
+      }
+    });
+    $(function () {
+      $.ajax({
+        url: "/contents/products_list/limit:2?cat_id=" + currCat,
+        type: "get",
+        success: function (resp) {
+          $("#offers").html($(resp).find("#list-products"));
+        },
+      });
+
+      return false;
+    });
+    let test = $(".sub-cat").text().trim();
+    if (test == "") {
+      $(".sub-cat").addClass("d-none");
+    }
+    let subCatExist = $("#home-categories-section").length;
+    console.log(subCatExist);
+    if (subCatExist == 0) {
+      $(".last-sub-price").removeClass("d-none");
+    }
+    $(".price-filter").click(function () {
+      console.log($(".price-filter").data("cat-search") + "DOOOONE");
+    });
+  });
+</script>
