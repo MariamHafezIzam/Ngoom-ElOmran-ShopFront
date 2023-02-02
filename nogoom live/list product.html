@@ -255,8 +255,8 @@
       <a class="text-color fs-16 text-decoration-none" href="/home"
         >الصفحة الرئيسية
       </a>
-      <span class="px-1 fs-12"><i class="fas fa-chevron-right"></i></span
-      ><a
+      <span class="px-1 fs-12"><i class="fas fa-chevron-right"></i></span>
+      <a
         class="text-color fs-16 text-decoration-none"
         href="https://ostarssa.daftara.com/contents/products_list"
         >كل المنتجات
@@ -266,6 +266,7 @@
         >{{Category.name}}</span
       >
     </div>
+
     {{#categories_count}}
     <div id="home-categories-section" class="py-7">
       <div class="container">
@@ -555,62 +556,73 @@
           <div id="list" class="row list grid-view-filter">
             {{#products}}
             <!-- ======================== card ======================================= -->
-            <div class="col-lg-4 col-sm-6 py-2 px-4 box">
+            <div class="col-lg-4 col-sm-6 py-2 px-4 card-product box">
               <div class="item hover" style="border: 1px solid #0066a5">
                 <div
                   class="align-items-start d-flex flex-column m-0 product p-0"
-                  style="background-image: url({{file_full_path}});    background-size: cover;height: 415px;
-                  background-position: center;
-              "
+                  style="background-image: url({{file_full_path}});     background-size: cover;height: 415px;
+                  background-position: center;"
                   data-product-id="{{id}}"
                   data-image="{{file_full_path}}"
                   data-price="{{final_price_number}}"
                   data-name="{{name}}"
                 >
                   <div
-                    class="pro-info d-flex"
+                    class="row w-100"
                     style="align-self: center; padding-top: 240px"
                   >
-                    <a
-                      href="/contents/product_view/{{id}}"
-                      class="text-decoration-none text-primary text-hover-black"
+                    <div
+                      class="col-lg-7 px-0"
+                      style="height: 90px; display: flex; align-items: center"
                     >
-                      <h6
-                        class="fs-20 font-weight-semibold p-1 name"
-                        style="min-height: 52px"
+                      <a
+                        href="/contents/product_view/{{id}}"
+                        class="text-decoration-none text-primary text-hover-black"
                       >
-                        {{ name }}<span
-                          class="font-weight-medium fs-16 text-body ml-2 d-none"
-                          >#{{id}}</span
+                        <h6 class="fs-18 font-weight-semibold p-1 name my-auto">
+                          {{ name }}<span
+                            class="font-weight-medium fs-16 text-body ml-2 d-none"
+                            >#{{id}}</span
+                          >
+                        </h6>
+                      </a>
+                      <p
+                        class="fs-16 fs-md-14 fs-xl-16 font-weight-medium text-body mb-0 d-none"
+                      >
+                        {{description}}
+                      </p>
+                    </div>
+                    <div
+                      class="col-lg-5 d-flex"
+                      style="
+                        align-self: center;
+                        border-right: 1px solid #0066a5;
+                      "
+                    >
+                      <div
+                        class="m-0 p-1 font-weight-bold"
+                        style="text-align-last: center"
+                      >
+                        <p style="height: 20px" class="m-0"></p>
+                        {{#discount}}
+                        <span
+                          class="price fs-14 px-2"
+                          style="background-color: #ff0000"
+                          >{{final_price}}</span
                         >
-                      </h6>
-                    </a>
-                    <div class="newdiv"></div>
-                    <p
-                      class="fs-16 fs-md-14 fs-xl-16 font-weight-medium text-body m-0 p-1 d-none"
-                    >
-                      {{description}}
-                    </p>
-
-                    <div class="p-1 font-weight-bold my-auto">
-                      {{#discount}}
-                      <span
-                        class="price fs-18 p-1"
-                        style="background-color: #ff0000"
-                        >{{final_price}}</span
-                      >
-                      <del class="text-white"
-                        ><span class="text-alto fs-14 mr-2 discount"
-                          >{{unit_price}}</span
-                        ></del
-                      >
-                      {{/discount}} {{^discount}}
-                      <span
-                        class="text-white fs-18 p-1"
-                        style="background-color: #ff0000"
-                        >{{final_price}}</span
-                      >
-                      {{/discount}}
+                        <del class="text-white"
+                          ><span class="text-alto fs-14 mr-2 discount"
+                            >{{unit_price}}</span
+                          ></del
+                        >
+                        {{/discount}} {{^discount}}
+                        <span
+                          class="text-white fs-14 px-1"
+                          style="background-color: #ff0000"
+                          >{{final_price}}</span
+                        >
+                        {{/discount}}
+                      </div>
                     </div>
                   </div>
                   <button
@@ -619,9 +631,6 @@
                   >
                     أضف للسلة
                   </button>
-                  <!-- ====================== -->
-
-                  <!-- ========================== -->
                 </div>
               </div>
             </div>
