@@ -426,71 +426,80 @@
         <div id="list" class="row list grid-view-filter">
           {{#products}}
           <!-- ======================== card ======================================= -->
-          <div class="col-lg-3 col-sm-6 py-3 px-4 box">
-            <div class="item hover bg-white p-2">
+          <div class="col-lg-4 col-sm-6 py-2 px-4 card-product box">
+            <div class="item hover" style="border: 1px solid #0066a5">
               <div
-                class="h-100 mb-6 mb-lg-0 product px-5 px-lg-0"
+                class="align-items-start d-flex flex-column m-0 product p-0"
+                style="background-image: url({{file_full_path}});     background-size: cover;height: 415px;
+                background-position: center;"
                 data-product-id="{{id}}"
                 data-image="{{file_full_path}}"
                 data-price="{{final_price_number}}"
                 data-name="{{name}}"
               >
-                <div class="pro-img">
-                  <a
-                    href="/contents/product_view/{{id}}"
-                    class="text-decoration-none text-primary text-hover-black"
+                <div
+                  class="row w-100"
+                  style="align-self: center; padding-top: 230px"
+                >
+                  <div
+                    class="col-lg-6 px-0"
+                    style="height: 96px; display: flex; align-items: center"
                   >
-                    <img
-                      src="{{file_full_path}}"
-                      alt=""
-                      class="product-img-sm img-fluid h-180px w-100 mx-auto img-cover"
-                    />
-                  </a>
-                </div>
-                <div class="pro-info">
-                  <a
-                    href="/contents/product_view/{{id}}"
-                    class="text-decoration-none text-primary text-hover-black"
-                  >
-                    <h6
-                      class="fs-16 font-weight-medium text-primary name m-0 p-1"
-                      style="min-height: 48px; text-align: right"
+                    <a
+                      href="/contents/product_view/{{id}}"
+                      class="text-decoration-none text-primary text-hover-black"
                     >
-                      {{ name }}<span
-                        class="font-weight-medium fs-16 text-body ml-2 d-none id"
-                        >{{id}}</span
+                      <h6
+                        class="fs-20 font-weight-semibold p-1 name my-auto"
+                        style="min-height: 52px"
                       >
-                    </h6>
-                  </a>
-                  <div class="newdiv"></div>
-                  <p
-                    class="fs-16 fs-md-14 fs-xl-16 font-weight-medium text-body m-0 p-1"
-                  >
-                    {{description}}
-                  </p>
-                </div>
-                <div class="price-add">
-                  <div class="mb-3 font-weight-bold mt-auto px-1 price-no">
-                    {{#discount}}
-                    <span class="price fs-20">{{final_price}}</span>
-                    <del class="text-danger"
-                      ><span
-                        class="text-alto font-weight-extrabold fs-14 mr-2 discount"
-                        >{{unit_price}}</span
-                      ></del
+                        {{ name }}<span
+                          class="font-weight-medium fs-16 text-body ml-2 d-none"
+                          >#{{id}}</span
+                        >
+                      </h6>
+                    </a>
+                    <p
+                      class="fs-16 fs-md-14 fs-xl-16 font-weight-medium text-body mb-0 d-none"
                     >
-
-                    {{/discount}} {{^discount}}
-                    <span class="text-primary fs-20">{{final_price}}</span>
-                    {{/discount}}
+                      {{description}}
+                    </p>
                   </div>
-                  <button
-                    data-name="sallamon"
-                    class="add-to-cart-btn btn btn-sm btn-primary text-uppercase font-weight-medium fs-16"
+                  <div
+                    class="col-lg-6 d-flex"
+                    style="align-self: center; border-right: 1px solid #0066a5"
                   >
-                    <i class="fal fa-cart-plus mr-2"></i>Add to Cart
-                  </button>
+                    <div
+                      class="m-0 p-1 font-weight-bold"
+                      style="text-align-last: center"
+                    >
+                      {{#discount}}
+                      <span
+                        class="price fs-16 p-1"
+                        style="background-color: #ff0000"
+                        >{{final_price}}</span
+                      >
+                      <del class="text-white"
+                        ><span class="text-alto fs-14 mr-2 discount"
+                          >{{unit_price}}</span
+                        ></del
+                      >
+                      {{/discount}} {{^discount}}
+                      <span
+                        class="text-white fs-16 p-1"
+                        style="background-color: #ff0000"
+                        >{{final_price}}</span
+                      >
+                      {{/discount}}
+                    </div>
+                  </div>
                 </div>
+                <button
+                  data-name="{{name}}"
+                  class="add-to-cart-btn btn btn-sm btn-primary text-uppercase font-weight-medium fs-18 p-3 m-4 w-75"
+                >
+                  أضف للسلة
+                </button>
               </div>
             </div>
           </div>
