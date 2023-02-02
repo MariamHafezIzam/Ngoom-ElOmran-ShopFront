@@ -10,6 +10,88 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.daftra.com/templates/shop_1/js/plugin_jquery.js?v={{ js_ver }}\"></script>
+<!-- Link Swiper's CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+/>
+
+<!-- Demo styles -->
+<style>
+  .row-swiper .swiper {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .row-swiper .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background-color: transparent;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .row-swiper .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .row-swiper .swiper-button-prev {
+    background-image: none !important;
+    background-color: #1467AB;
+    color: #fff;
+    display: flex !important;
+  }
+  .row-swiper .swiper-button-next {
+    background-image: none;
+    display: flex !important;
+  }
+  .row-swiper .swiper-button-prev,
+  .row-swiper .swiper-rtl .swiper-button-next {
+    background-color: #1467AB !important;
+    color: #fff !important;
+    display: flex !important;
+  }
+  #mySwiper .swiper-slide {
+    margin: 0px !important;
+  }
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    color: #fff !important;
+    background-color: #1467AB !important;
+    font-size: 26px !important;
+    font-weight: 600;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    height: 45px !important;
+    width: 45px !important;
+  }
+  .custom_content .swiper-button-prev,
+  .custom_content .swiper-rtl .custom_content .swiper-button-next {
+    color: #fff !important;
+    background-color: #1467AB !important;
+  }
+  .swiper-button-prev {
+    margin-right: 15px !important;
+  }
+  .swiper-button-next {
+    margin-left: 15px !important;
+  }
+</style>
 
   
     <style>
@@ -20,20 +102,20 @@
         }
         *::selection {
             color: #fff;
-            background-color:#0066a5;
+            background-color:#1467AB;
         }
         body{
             color: #053858;
-            background-color: #f3f5f6;
+            background-color: #f3fbff;
         }
         .container {
             max-width: 1480px
         }
         .text-primary{
-            color: #053858 !important;
+            color: #1467AB !important;
         }
         .bg-primary {
-            background-color: #0066a5 !important;
+            background-color: #1467AB !important;
 
         } 
         .white {
@@ -56,7 +138,7 @@
             border-bottom: 1px solid #00badb ;
         }
 .text-secondary  {
-    color:#0066a5 !important;
+    color:#1467AB !important;
 }
 .b-l{
     border-left: 1px solid rgba(255,255,255,0.15)
@@ -203,14 +285,14 @@ label {
 .add-to-cart-btn {
     align-self: center;
     border-radius: 20px;
-    background-color: #0066a5;
+    background-color: #1467AB;
     color: #e3eff4;
 }
 .btn-primary:hover {
     background-color: #004067 !important;
 }
 .text-color {
-    color: #053858 !important;
+    color: #1467AB !important;
 }
 .text-color:hover{
     color: #fb513e !important;
@@ -311,7 +393,7 @@ label {
     vertical-align: text-top !important;
 }
 a.dropdown-item  {
-    color: #0066a5;
+    color: #1467AB;
     transition: 0.5s;
 }
 a.dropdown-item:hover {
@@ -345,7 +427,7 @@ div#home-featured-products-section {
     z-index: 0;
     display: inline-block;
     width: max-content;
-    background: #0066a5 !important;
+    background: #1467AB !important;
     cursor: pointer;
     color: #fff;
     padding: 10px ;
@@ -431,7 +513,7 @@ a.logn {
     display: block;
 }
 .navbar-nav .dropdown-menu {
-background-color: #0066a5 !important;
+background-color: #1467AB !important;
 
 }
 a.dropdown-item {
@@ -462,7 +544,7 @@ a.dropdown-item {
   height: 260px;
 }
 .dropdown-content-cat div{
-    background-color: #0066a5;
+    background-color: #1467AB;
 }
  .dropdown-content-cat a{
     color: #fff;
@@ -524,7 +606,7 @@ a.dropdown-item {
     z-index: 1000;
     box-shadow: 2px 2px 10px 2px rgb(96 94 94 / 46%);
     font-size: 18px;
-    background: #0066a5;
+    background: #1467AB;
     transition: visibility 0s, opacity 0.5s linear;
 }
 .new-transtion{
@@ -533,7 +615,7 @@ a.dropdown-item {
   transition: visibility 0s, opacity 0.5s linear;
 }
 .button2 {
-    color: #0066a5 !important;
+    color: #1467AB !important;
 }
 .reg {
     height: 28px;
@@ -552,12 +634,36 @@ a.dropdown-item {
 .btn-primary {
     border-radius:0px !important;
 }
+#home-featured-products-section .custom_content .swiper-button-prev,
+#home-featured-products-section  .custom_content .swiper-rtl .custom_content .swiper-button-next,.row-swiper .swiper-button-next {
+    color: #fff !important;
+    background-color: #1467AB !important;
+  }
+  .swiper-container-rtl .swiper-button-next,.row-swiper .swiper-button-next {
+ 
+    left: 92% !important;
+  }
+  .swiper-container-rtl .swiper-button-prev {
+    right: 92%;
+  }
+  .product {
+    width: 315px;
+}
+.main-men {
+    justify-content: center !important;
+}
+.page-item.active .page-link {
+    background-color: #004067 !important;
+}
+.custom_content .swiper-button-prev{
+    left: 3% !important;
+}
         </style>
 
 </head>
 <body class="rtl">
 <div id="site">
-<div id="top-header" class="bg-primary white b-b">
+<div id="top-header" class="bg-primary white b-b d-none">
     <div class="container"> 
         <div class="row align-items-center">
             <div class="col-lg-6 col-4 col flex-grow-0 white fs-10 fs-lg-sm px-1">
@@ -592,10 +698,10 @@ a.dropdown-item {
         <div class="container">
             <div class="row align-items-center pt-4 pb-4">
                 <div class="col-lg-3 col-6 col flex-grow-0">
-                    <div class="text-left px-0 px-lg-3">
+                    <div class="text-left px-0 pr-lg-3">
                         <a class="logoo font-weight-extrabold fs-22 text-uppercase" href="/home">
                             {{#logo}}
-                            <img src="/files/7aae9582/logos/637b52c63ed32_blobid1669026500048.png" class="logo" alt="Logo">
+                            <img src="/files/7aae9582/logos/63ce85674cb70_blobid1674478948824.jpg" class="logo" alt="Logo">
                             {{/logo}}
                             {{^logo}}
                             {{siteName}}
@@ -714,7 +820,7 @@ a.dropdown-item {
                                   </div>
                                   {{/is_logged_in}}
 
-                                  <button type="button" style=" text-align: end;" class="cart-toggle-btn btn-focus-shadow-0 btn mr-xl-2 mr-lg-0 p-0 py-lg-1 px-lg-2  mr-1    fs-14 fs-xl-16 text-white secondary-hover"><i class="fas fa-shopping-cart mr-lg-1 position-relative fs-xl-24"><span id="totalCart"></span></i><span class="d-none d-lg-inline-block">عربة التسوق</span></button>
+                                  <button type="button" style=" text-align: end;" class="cart-toggle-btn btn-focus-shadow-0 btn mr-lg-0 p-0 py-lg-1 px-lg-0  mr-0    fs-14 fs-xl-16 text-white secondary-hover"><i class="fas fa-shopping-cart mr-lg-1 position-relative fs-xl-24"><span id="totalCart"></span></i><span class="d-none d-lg-inline-block">عربة التسوق</span></button>
 
                                </div>
                             
@@ -749,12 +855,12 @@ a.dropdown-item {
         </div>
         <div class="">
             <nav class="navbar navbar-expand-lg bg-primary p-0 b-b ">
-                <div class="container">
+                <div class="container main-men">
                     <div class="collapse show d-none d-lg-block" id="mainNav">
                         <ul class="navbar-nav px-0 py-2">
                             {{# menuItems }}
                             <li class="nav-item dropdown mr-2">
-                                <a class="nav-link fs-xl-20 py-2 px-3 {{# has_children }} dropdown-toggle {{/ has_children }}" href="{{ link }}" {{# has_children }} role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" {{/ has_children }}>
+                                <a style="align-items: center;" class="nav-link fs-xl-26 py-2 px-3 d-flex {{# has_children }} dropdown-toggle {{/ has_children }}" href="{{ link }}" {{# has_children }} role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" {{/ has_children }}>
                                 {{ title }}
                                 </a>
                                 {{# has_children }}
@@ -858,8 +964,8 @@ a.dropdown-item {
     <div class="bottom-nav bg-primary d-lg-block" id="second-menu">
         <div class="container" >
             <div class=" p-0">
-                <ul class="navbar-nav d-block p-0 ">
-                    <li class="nav-item px-1 mr-4 dropdownn-cat" >
+                <ul class="navbar-nav d-block p-0 text-center">
+                    <li class="nav-item px-1 mr-2 dropdownn-cat" >
                         <a class="nav-link fs-xl-16 d-flex text-white px-0 "id="air-link" >
                             <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/6339580e1a1ec_blobid1664702476348.png" alt="" title="ac.png" width="auto" height="36" caption="false" /> <p class="my-auto fs-12 fs-lg-16"> مكييفات  </p>
                         </a>
@@ -897,41 +1003,41 @@ a.dropdown-item {
                           </div>
                           
                     </li>
-                    <!-- <li class="nav-item px-1 mr-4">
+                    <!-- <li class="nav-item px-1 mr-2">
                         <a class="nav-link fs-xl-16 d-flex text-white px-0 "  href="/contents/products_list?cat_id=3">
                             <img class="pr-2 d-lg-flex d-none" src="https://ostarssa.daftara.com/files/7aae9582/logos/637b5280ce77b_blobid1669026430009.png" alt="" title="ac.png" width="auto" height="36" caption="false" /> <p class="my-auto fs-13 fs-lg-16"> مكييفات دكت سبليت </p>
                         </a>
                     </li> -->
-                    <li class="nav-item px-1 mr-4">
+                    <li class="nav-item px-1 mr-2">
                         <a class="nav-link fs-xl-16 d-flex text-white px-0 "  href="/contents/products_list?cat_id=110">
                             <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftara.com/files/27d1f6af/logos/63675fd5ca5e6_blobid1667719122982.png" alt="" title="water-pipe (2).png" width="auto" height="36" /><p class="my-auto fs-13 fs-lg-16">تأسيس نحاس </p>
                         </a>
                     </li>
-                    <li class="nav-item px-1 mr-4">
+                    <li class="nav-item px-1 mr-2">
                         <a class="nav-link fs-xl-16 d-flex text-white px-0 "  href="/contents/products_list?cat_id=111">
                             <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftara.com/files/27d1f6af/logos/63676079ca1f2_blobid1667719288355.png" alt="" title="water-pipe (1).png" width="auto" height="36" />
                             <p class="my-auto fs-13 fs-lg-16"> مجاري هواء دكت</p>
                         </a>
                     </li>
-                    <li class="nav-item px-1 mr-4">
+                    <li class="nav-item px-1 mr-2">
                         <a class="nav-link fs-xl-16 d-flex text-white px-0"  href="/contents/products_list?cat_id=112">
                             <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/63395876937b9_blobid1664702580602.png" title="ac (1).png" width="auto" height="36" caption="false" /> <p class="my-auto fs-13 fs-lg-16">مكييفات صحراوية  </p>
                         </a>
                     </li>
-                    <li class="nav-item px-1  mr-4">
+                    <li class="nav-item px-1  mr-2">
                         <a class="nav-link fs-xl-16 d-flex text-white px-0"  href="/contents/products_list?cat_id=113">
                             <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftara.com/files/27d1f6af/logos/636765a881562_blobid1667720615034.png" title="fan.png" width="auto" height="36" caption="false" /> <p class="my-auto fs-13 fs-lg-16"> مراوح شفط</p>
                         </a>
                     </li>
                 
-                    <li class="nav-item px-1  mr-4">
+                    <li class="nav-item px-1  mr-2">
                         <a class="nav-link fs-xl-16 d-flex text-white px-0"  href="/contents/products_list?cat_id=114">
                             <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftara.com/files/27d1f6af/logos/636761afcbfa1_blobid1667719598320.png" alt="" title="freezing.png" width="auto" height="36" />
                             <p class="my-auto fs-13 fs-lg-16">غرف تبريد وتجميد  </p>
                         </a>
                     </li>
          
-                    <li class="nav-item px-1  mr-4">
+                    <li class="nav-item px-1  mr-2">
                         <a class="nav-link fs-xl-16 d-flex text-white px-0"  href="/contents/products_list?cat_id=115">
                             <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftara.com/files/27d1f6af/logos/63676427751a4_blobid1667720230622.png" title="electric-appliance.png" width="auto" height="36" caption="false" />
                             <p class="my-auto fs-13 fs-lg-16"> اجهزة منزلية   </p>
@@ -957,6 +1063,10 @@ a.dropdown-item {
         />
       </div>
     </div>
+    <div class="d-none menu-icon" > 
+        <img class="pr-2 d-lg-flex" src="https://ostarssa.daftra.com/files/7aae9582/logos/63d90f3b234a9_blobid1675169592578.png"  width="auto" height="20"/>
+         <p class="my-auto"> الرئيسية  </p>
+    </div>
 
     <a href="https://api.whatsapp.com/send?phone=+966509912853&text=Hello!!" class="float" target="_blank">
     <i class="fab fa-whatsapp my-float"></i>
@@ -967,6 +1077,8 @@ a.dropdown-item {
      
                         
         <script>
+            var test =$(".menu-icon").html()
+            $("ul.navbar-nav.px-0.py-2 > li:nth-child(1) > a").html(test)
             var currencies = JSON.parse(`{{{currencies}}}`);
             var number_formats =JSON.parse(`{{{number_formats}}}`);
             var shopFront = null;
@@ -1284,7 +1396,27 @@ a.dropdown-item {
                     
                     })
 
-               
+                    $(".custom_content").last().css({ padding: 0, maxWidth: "100%" });    
             })
     </script>
-    
+    <!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<script>
+   
+    setTimeout(() => {
+        var swiper = new Swiper(".testnew", {
+    slidesPerView: 3,
+    spaceBetween: 0,
+    // keyboard: {
+    //   enabled: true,
+    // },
+    reverseDirection: true ,
+    navigation: {
+      nextEl:  ".swiper-button-prev",
+      prevEl:".swiper-button-next",
+    },
+  });
+    }, 5000);
+
+</script>
