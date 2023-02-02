@@ -1,142 +1,233 @@
-<!-- Link Swiper's CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
-    />
+<!-- Demo styles -->
+<style>
+  .swiper {
+    width: 100%;
+    height: 85px;
+  }
 
-    <!-- Demo styles -->
-    <style>
-          .swiper {
-        width: 100%;
-        height:85px;
-      }
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background-color: transparent;
 
-      .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background-color: transparent;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
 
-        /* Center slide text vertically */
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-      }
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .swiper-button-prev {
+    display: none;
+  }
+</style>
 
-      .swiper-slide img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .swiper-button-prev
-       {
-        background-image: none !important;
-        background-color: transparent;
-        color: #1a2756;
-        display: none;
-      }
-      .swiper-button-next
-      {
-        background-image: none;   display: none;
-      
-      }
-      .swiper-button-prev, .swiper-rtl .swiper-button-next {
-        background-color: transparent !important;
-        color: #1a2756 !important;     
-
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- Swiper -->
-    <div class="bg-yellow py-2 my-4 px-xl-10 px-4" style="position: relative;border-radius: 0px;box-shadow: 2px 2px 6px 0px rgb(96 94 94 / 46%)">
-    <!-- <h3 class="title font-weight-medium text-primary py-2 px-2">
-      <span class="b-secondary"> العلامات التجارية </span>
-    </h3> -->
- 
-    <div class="swiper mySwiper">
-     
+<body>
+  <!-- Swiper -->
+  <div
+    class="bg-yellow py-0 my-2 px-xl-10 px-4 mx-0 row"
+    style="
+      position: relative;
+      border-radius: 0px;
+      box-shadow: 2px 2px 6px 0px rgb(96 94 94 / 46%);
+      height: 80px;
+    "
+  >
+    <div class="col-xl-1" style="align-self: center">
+      <a class="" href="/contents/products_list">
+        <img
+          class=""
+          src="https://ostarssa.daftra.com/files/7aae9582/logos/63ce660608dce_blobid1674470916016.png"
+          alt=""
+          title="samsung.png"
+          width="100%"
+          height="auto"
+          caption="false"
+        />
+      </a>
+    </div>
+    <div class="swiper mySwiper col-xl-10" id="swiperBrands">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-            <a class=""  href="/contents/products_list">
-                <img class="" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/633ac90793aed_blobid1664796933043.png" alt="" title="samsung.png" width="100%" height="auto" caption="false" />
-            </a>
+          <a class="" href="/contents/products_list">
+            <img
+              class=""
+              src="https://ostarssa.daftra.com/files/7aae9582/logos/63ce74976d821_blobid1674474645123.png"
+              alt=""
+              title="lg.png"
+              width="auto"
+              height="100%"
+              caption="false"
+            />
+          </a>
         </div>
         <div class="swiper-slide">
-            <a class=""  href="/contents/products_list">
-                <img class="" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/633ac6bed4ed4_blobid1664796344051.png" alt="" title="lg.png" width="100%" height="auto" caption="false" />
-            </a>
+          <a class="" href="/contents/products_list">
+            <img
+              class=""
+              src="https://ostarssa.daftra.com/files/7aae9582/logos/63ce74af822b8_blobid1674474669898.png"
+              alt=""
+              title="gree.png"
+              width="auto"
+              height="100%"
+              caption="false"
+            />
+          </a>
         </div>
         <div class="swiper-slide">
-            <a class=""  href="/contents/products_list">
-                <img class="" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/633ac6ed3d0b9_blobid1664796395080.png" alt="" title="gree.png" width="100%" height="auto" caption="false" />
-            </a>
+          <a class="" href="/contents/products_list">
+            <img
+              class=""
+              src="https://ostarssa.daftra.com/files/7aae9582/logos/63ce74c9eedad_blobid1674474696234.png"
+              alt=""
+              title="carrier.png"
+              width="auto"
+              height="100%"
+              caption="false"
+            />
+          </a>
         </div>
         <div class="swiper-slide">
-            <a class=""  href="/contents/products_list">
-                <img class="" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/633ac709357f1_blobid1664796422114.png" alt="" title="carrier.png" width="100%" height="auto" caption="false" />
-            </a>
+          <a class="" href="/contents/products_list">
+            <img
+              class=""
+              src="https://ostarssa.daftra.com/files/7aae9582/logos/63ce74e7ab2f5_blobid1674474725929.png"
+              title="fisher.png"
+              width="auto"
+              height="100%"
+              caption="false"
+            />
+          </a>
+        </div>
+
+        <div class="swiper-slide">
+          <a class="" href="/contents/products_list">
+            <img
+              class=""
+              src="https://ostarssa.daftra.com/files/7aae9582/logos/63ce751bb0ef9_blobid1674474777867.png"
+              title="lg.png"
+              width="auto"
+              height="100%"
+              caption="false"
+            />
+          </a>
         </div>
         <div class="swiper-slide">
-            <a class=""  href="/contents/products_list">
-                <img class="" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/633ac73d76a7e_blobid1664796471468.png" alt="" title="toshipa.png" width="100%" height="auto" caption="false" />
-            </a>
+          <a class="" href="/contents/products_list">
+            <img
+              class=""
+              src="https://ostarssa.daftra.com/files/7aae9582/logos/63ce76083b9e4_blobid1674475014098.png"
+              title="york.png"
+              width="auto"
+              height="100%"
+              caption="false"
+            />
+          </a>
         </div>
         <div class="swiper-slide">
-            <a class=""  href="/contents/products_list">
-                <img class="" src="https://nogoomfront.daftra.com/files/27d1f6af/logos/633ac8113454b_blobid1664796686586.png" alt="" title="wh.png" width="100%" height="auto" caption="false" />
-            </a>
+          <a class="" href="/contents/products_list">
+            <img
+              class=""
+              src="https://ostarssa.daftra.com/files/7aae9582/logos/63ce762a0718b_blobid1674475048372.png"
+              title="trane.png"
+              width="auto"
+              height="100%"
+              caption="false"
+            />
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a class="" href="/contents/products_list">
+            <img
+              class=""
+              src="https://ostarssa.daftra.com/files/7aae9582/logos/63ce764410aaa_blobid1674475074272.png"
+              title="carrier.png"
+              width="auto"
+              height="100%"
+              caption="false"
+            />
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a class="" href="/contents/products_list">
+            <img
+              class=""
+              src="https://ostarssa.daftra.com/files/7aae9582/logos/63ce7667635a9_blobid1674475109671.png"
+              title="basic.png"
+              width="auto"
+              height="100%"
+              caption="false"
+            />
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a class="" href="/contents/products_list">
+            <img
+              class=""
+              src="https://ostarssa.daftra.com/files/7aae9582/logos/63ce76858e878_blobid1674475139648.png"
+              title="haier.png"
+              width="auto"
+              height="100%"
+              caption="false"
+            />
+          </a>
         </div>
       </div>
-     
     </div>
-    <div class="swiper-button-next" style=" background-color: transparent !important;
-    color: #1a2756 !important;"></div>
-    <div class="swiper-button-prev"></div>
+    <div class="col-xl-1" style="align-self: center">
+      <a class="" href="/contents/products_list">
+        <img
+          class=""
+          src="https://ostarssa.daftra.com/files/7aae9582/logos/63ce660608dce_blobid1674470916016.png"
+          alt=""
+          title="samsung.png"
+          width="100%"
+          height="auto"
+          caption="false"
+        />
+      </a>
+    </div>
   </div>
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
-    <!-- Initialize Swiper -->
-    <script>
-      var swiper = new Swiper(".mySwiper", {
-        breakpoints: {
-      300: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-        
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper("#swiperBrands", {
+      breakpoints: {
+        300: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1100: {
+          slidesPerView: 12,
+          spaceBetween: 10,
+          slidesPerGroup: 2,
+        },
       },
-      1100: {
-        slidesPerView: 6,
-        spaceBetween: 40,
-        slidesPerGroup: 2,
-      }
-    },
-       
-        // centeredSlides: true,
-        autoplay: {
-          delay: 2000,
-          disableOnInteraction: false,
-        },
-        loop: true,
-        loopFillGroupWithBlank: true,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
-      $(".custom_content").eq(0).css({ padding: 0, maxWidth: "100%" });
-      $(".custom_content").eq(2).css({ padding: 0, maxWidth: "100%" });
 
-
-    </script>
+      // centeredSlides: true,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+      loop: true,
+      loopFillGroupWithBlank: true,
+    });
+    $(".custom_content").eq(0).css({ padding: 0, maxWidth: "100%" });
+    $(".custom_content").eq(1).css({ padding: 0, maxWidth: "100%" });
+    $(".custom_content").eq(2).css({ padding: 0, maxWidth: "100%" });
+  </script>
+</body>
