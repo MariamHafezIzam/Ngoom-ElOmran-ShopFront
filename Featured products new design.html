@@ -1,131 +1,191 @@
+<!-- Link Swiper's CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+/>
+
+<!-- Demo styles -->
+<style>
+  .row-swiper .swiper {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .row-swiper .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background-color: transparent;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .row-swiper .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .row-swiper .swiper-button-prev {
+    background-image: none !important;
+    background-color: #0066a5;
+    color: #fff;
+    display: flex !important;
+  }
+  .row-swiper .swiper-button-next {
+    background-image: none;
+    display: flex !important;
+  }
+  .row-swiper .swiper-button-prev,
+  .row-swiper .swiper-rtl .swiper-button-next {
+    background-color: #0066a5 !important;
+    color: #fff !important;
+    display: flex !important;
+  }
+  #mySwiper .swiper-slide {
+    margin: 0px !important;
+  }
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    color: #fff !important;
+    background-color: #0066a5 !important;
+    font-size: 26px !important;
+    font-weight: 600;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    height: 45px !important;
+    width: 45px !important;
+  }
+  .custom_content .swiper-button-prev,
+  .custom_content .swiper-rtl .custom_content .swiper-button-next {
+    color: #fff !important;
+    background-color: #0066a5 !important;
+  }
+  .swiper-button-prev {
+    margin-right: 15px !important;
+  }
+  .swiper-button-next {
+    margin-left: 15px !important;
+  }
+</style>
+
 {{#itemsCount}}
 <div id="home-featured-products-section" class="pb-4">
   <div class="container px-0" style="max-width: 100%; margin: auto">
     <div>
       <h3
-        class="title font-weight-medium pt-0 pb-4 px-0"
+        class="title font-weight-medium pt-0 pb-4 my-0 px-0"
         style="color: #f75a27"
       >
         <span> الاكثر مبيعا .....</span>
       </h3>
     </div>
-    <div class="row">
-      {{#items}}
-      <div class="col-lg-4 col-sm-6 py-2 px-4 card-product box">
-        <div class="item hover" style="border: 1px solid #0066a5">
+    <div class="row row-swiper">
+      <div class="swiper mySwiper testSwiper" id="mySwiper">
+        <div class="swiper-wrapper">
+          {{#items}}
           <div
-            class="align-items-start d-flex flex-column m-0 product p-0"
-            style="background-image: url({{file_full_path}});     background-size: cover;height: 415px;
-            background-position: center;"
-            data-product-id="{{id}}"
-            data-image="{{file_full_path}}"
-            data-price="{{final_price_number}}"
-            data-name="{{name}}"
+            class="swiper-slide col-lg-4 col-sm-6 py-2 px-4 card-product box"
           >
-            <div
-              class="row w-100"
-              style="align-self: center; padding-top: 230px"
-            >
-              <div class="col-lg-6 px-0">
-                <a
-                  href="/contents/product_view/{{id}}"
-                  class="text-decoration-none text-primary text-hover-black"
-                >
-                  <h6
-                    class="fs-20 font-weight-semibold p-1 name"
-                    style="min-height: 52px"
-                  >
-                    {{ name }}<span
-                      class="font-weight-medium fs-16 text-body ml-2 d-none"
-                      >#{{id}}</span
-                    >
-                  </h6>
-                </a>
-                <p
-                  class="fs-16 fs-md-14 fs-xl-16 font-weight-medium text-body mb-0 d-none"
-                >
-                  {{description}}
-                </p>
-              </div>
+            <div class="item hover" style="border: 1px solid #0066a5">
               <div
-                class="col-lg-6"
-                style="align-self: center; border-right: 1px solid #0066a5"
+                class="align-items-start d-flex flex-column m-0 product p-0"
+                style="background-image: url({{file_full_path}});     background-size: cover;height: 415px;
+    width: 314px !important;   background-position: center; "
+                data-product-id="{{id}}"
+                data-image="{{file_full_path}}"
+                2
+                data-price="{{final_price_number}}"
+                data-name="{{name}}"
               >
-                <div class="m-0 p-1 font-weight-bold mt-auto">
-                  {{#discount}}
-                  <span
-                    class="price fs-18 p-1"
-                    style="background-color: #ff0000"
-                    >{{final_price}}</span
+                <div
+                  class="row w-100"
+                  style="align-self: center; padding-top: 240px"
+                >
+                  <div
+                    class="col-lg-7 px-0"
+                    style="height: 90px; display: flex; align-items: center"
                   >
-                  <del class="text-white"
-                    ><span class="text-alto fs-14 mr-2 discount"
-                      >{{unit_price}}</span
-                    ></del
+                    <a
+                      href="/contents/product_view/{{id}}"
+                      class="text-decoration-none text-primary text-hover-black"
+                    >
+                      <h6
+                        class="fs-18 font-weight-semibold p-1 px-3 name my-auto"
+                      >
+                        {{ name }}<span
+                          class="font-weight-medium fs-16 text-body ml-2 d-none"
+                          >#{{id}}</span
+                        >
+                      </h6>
+                    </a>
+                    <p
+                      class="fs-16 fs-md-14 fs-xl-16 font-weight-medium text-body mb-0 d-none"
+                    >
+                      {{description}}
+                    </p>
+                  </div>
+                  <div
+                    class="col-lg-5 d-flex"
+                    style="align-self: center; border-right: 1px solid #0066a5"
                   >
-                  {{/discount}} {{^discount}}
-                  <span
-                    class="text-white fs-18 p-1"
-                    style="background-color: #ff0000"
-                    >{{final_price}}</span
-                  >
-                  {{/discount}}
+                    <div
+                      class="m-0 p-1 font-weight-bold"
+                      style="text-align-last: center"
+                    >
+                      <p style="height: 20px" class="m-0"></p>
+                      {{#discount}}
+                      <span
+                        class="price fs-14 px-2"
+                        style="background-color: #ff0000"
+                        >{{final_price}}</span
+                      >
+                      <del class="text-white"
+                        ><span class="text-alto fs-14 mr-2 discount"
+                          >{{unit_price}}</span
+                        ></del
+                      >
+                      {{/discount}} {{^discount}}
+                      <span
+                        class="text-white fs-14 px-1"
+                        style="background-color: #ff0000"
+                        >{{final_price}}</span
+                      >
+                      {{/discount}}
+                    </div>
+                  </div>
                 </div>
+                <button
+                  data-name="{{name}}"
+                  class="add-to-cart-btn btn btn-sm btn-primary text-uppercase font-weight-medium fs-18 p-3 m-4 w-75"
+                >
+                  أضف للسلة
+                </button>
               </div>
             </div>
-            <button
-              data-name="{{name}}"
-              class="add-to-cart-btn btn btn-sm btn-primary text-uppercase font-weight-medium fs-18 p-3 m-4 w-75"
-            >
-              أضف للسلة
-            </button>
-            <!-- <a
-              href="/contents/product_view/{{id}}"
-              class="text-decoration-none text-primary text-hover-black"
-            >
-              <img
-                src="{{file_full_path}}"
-                width="260"
-                height="180"
-                alt=""
-                class="product-img-sm img-fluid w-100 h-180px mx-auto img-cover mb-3"
-              />
-              <h6 class="fs-18 font-weight-bold mb-2">
-                {{ name }}<span class="font-weight-medium fs-16 text-body ml-2"
-                  >#{{id}}</span
-                >
-              </h6>
-            </a>
-            <p
-              class="fs-16 fs-md-14 fs-xl-16 font-weight-medium text-body mb-3"
-            >
-              {{description}}
-            </p>
-            <div class="mb-3 font-weight-bold mt-auto">
-              {{#discount}}
-              <span class="text-black fs-24">{{final_price}}</span>
-              <del class="text-danger"
-                ><span class="text-alto fs-14 mr-2">{{unit_price}}</span></del
-              >
-              {{/discount}} {{^discount}}
-              <span class="text-black fs-24">{{final_price}}</span>
-              {{/discount}}
-            </div>
-            <button
-              data-name="{{name}}"
-              class="add-to-cart-btn btn btn-sm btn-primary text-uppercase font-weight-medium fs-16"
-            >
-              <i class="fal fa-cart-plus mr-2"></i>اضف الي العربة
-            </button> -->
           </div>
+          {{/items}}
         </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
       </div>
-      {{/items}}
     </div>
   </div>
   {{/itemsCount}}
 </div>
-<script>
+<!-- <script>
   if (
     window.location.href !=
     "https://daftralayouts.daftra.com/contents/process_content/all_featured"
@@ -143,4 +203,18 @@
   } else {
     console.log("HI");
   }
+</script> -->
+<script>
+  var swiper = new Swiper(".testSwiper", {
+    slidesPerView: 3,
+    spaceBetween: 0,
+    // keyboard: {
+    //   enabled: true,
+    // },
+
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
 </script>
