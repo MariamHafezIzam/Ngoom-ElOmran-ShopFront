@@ -320,15 +320,16 @@
     </div>
   </div>
 
-  <div id="test" class="d-none"></div>
-  <p class="clntId d-none"></p>
+  <!-- <div id="test" class="d-none"></div>
+  <p class="clntId d-none"></p> -->
 </div>
 <script>
-  let apikey = "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90";
   $(document).ready(function () {
+    let clientId = USER.client_id;
+    console.log(clientId);
     var loggedName = $(".name-logged").text().trim();
-    console.log(loggedName);
-    if (loggedName == "نجوم العمران للمقاولات والتجارة" || loggedName == "") {
+
+    if (loggedName == "شركة نجوم العمران للمقاولات" || loggedName == "") {
       $(".submit").click((e) => {
         e.preventDefault();
         console.log("HHII");
@@ -340,42 +341,35 @@
       //   $(".submit").attr("disabled", "disabled");
       //  $("#log").removeClass("d-none");
     } else {
-      $(function () {
-        $.ajax({
-          url: "/client/clients/profile/",
-          type: "get",
-          headers: { apikey: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90" },
-          success: function (resp) {
-            $("#test").html($(resp).find(".responsive"));
-          },
+      $.ajax({
+        url: "/v2/api/entity/client/" + clientId,
+        headers: { apikey: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90" },
+        type: "GET",
+      }).done((data) => {
+        let loggedName = data.business_name;
+        let loggedPhone = data.phone2;
+        let loggedEmail = data.email;
+        $("#inputName").val(loggedName);
+        $("#inputTel").val(loggedPhone);
+        $("#inputEmail").val(loggedEmail);
+        $(".submit").click((e) => {
+          e.preventDefault();
+          let name = $("#inputName").val();
+          let phone = $("#inputTel").val();
+          let email = $("#inputEmail").val();
+          let type = $("#comments").val();
+          let date = $("#date").val();
+          date = date.split("/");
+          date = `${date[2]}-${date[0]}-${date[1]}`;
+          let time = $("#time").find(":selected").val();
+          console.log(name, phone, email, type, date, time, clientId);
+          userReserv(name, phone, email, type, date, time, clientId);
         });
-
-        return false;
-      });
-
-      setTimeout(() => {
-        console.log(client_id);
-        $(".clntId").text(client_id);
-      }, "4000");
-
-      $(".submit").click((e) => {
-        e.preventDefault();
-        let name = $("#inputName").val();
-        let phone = $("#inputTel").val();
-        let email = $("#inputEmail").val();
-        let type = $("#comments").val();
-        let date = $("#date").val();
-        date = date.split("/");
-        date = `${date[2]}-${date[0]}-${date[1]}`;
-        let time = $("#time").find(":selected").val();
-
-        console.log(name, phone, email, type, date, time, client_id);
-        taric(name, phone, email, type, date, time, client_id);
       });
     }
   });
 
-  function taric(name, phone, email, type, date, time, client_id) {
+  function userReserv(name, phone, email, type, date, time, client_id) {
     let dateNow = new Date();
     let day = dateNow.toISOString().split("T")[0];
     let currTime = dateNow.toISOString().split("T")[1];
@@ -383,10 +377,10 @@
     let ourBody = `
       <p><strong> تم حجز هذا الموعد بواسطة العميل</strong> </p>
       <p> وقت الحجز ${day} ${time}</p>
-      <p> الاسم:  ${name}</p> 
-      <p> رقم الهاتف: ${phone}</p> 
-      <p>البريد :  ${email}</p> 
-      <p>نوع الخدمة :  ${type}</p> 
+      <p> الاسم:  ${name}</p>
+      <p> رقم الهاتف: ${phone}</p>
+      <p>البريد :  ${email}</p>
+      <p>نوع الخدمة :  ${type}</p>
       `;
     let dateAndTime = `${date} ${time} `;
     let id = `${client_id}`;
@@ -401,22 +395,37 @@
     };
     let data = JSON.stringify(allData);
     console.log(data);
-    $.ajax({
+    // $.ajax({
+    //   url: "https://ostarssa.daftara.com/api2/client_appointments",
+    //   method: "POST",
+    //   headers: {
+    //     apikey: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90",
+    //   },
+    //   data: data,
+    //   contentType: "application/json",
+    //   accept: "application/json",
+    // })
+
+    //   .done(function (res) {
+    //     console.log("success", res);
+    //   })
+    //   .fail((err) => {
+    //     console.log("failed", err);
+    //   });
+
+    var settings = {
       url: "https://ostarssa.daftara.com/api2/client_appointments",
       method: "POST",
+      timeout: 0,
       headers: {
-        apikey: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90",
+        APIKEY: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90",
+        "Content-Type": "application/json",
       },
       data: data,
-      contentType: "application/json",
-      accept: "application/json",
-    })
+    };
 
-      .done(function (res) {
-        console.log("success", res);
-      })
-      .fail((err) => {
-        console.log("failed", err);
-      });
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+    });
   }
 </script>
