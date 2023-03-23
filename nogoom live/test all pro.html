@@ -1,0 +1,75 @@
+<div id="all-products"></div>
+<div
+  class="overlay"
+  style="
+    left: 0%;
+    text-align: center;
+    background: white;
+    z-index: 5;
+    top: 0%;
+    width: 100%;
+    height: 400px;
+  "
+>
+  <img
+    style="padding-top: 100px"
+    class="loading-overlay-image"
+    src="https://ostarssa.daftara.com/files/7aae9582/logos/63d66770b4f05_blobid1674995567373.gif"
+    width="4%"
+  />
+</div>
+<script>
+  $(document).ready(function () {
+    let newTest = () => {
+      console.log("TEEEEEESSSST");
+    };
+
+    $(function () {
+      $.ajax({
+        url: "/contents/products_list/page:1",
+        type: "get",
+        success: function (resp) {
+          //Get first 20 Product
+          $("#all-products").html($(resp).find("#list-products-last"));
+          newTest();
+          $(".overlay").addClass("d-none");
+        },
+      }).done(() => {
+        // Get All Products When scrolling
+        let no = 1;
+        let lastNewTest = 1;
+
+        $(window).scroll(function () {
+          let productNo = $(".box").length;
+          let newProNo = (productNo - 5) / 20 + 1;
+          let scrollHeight = $(window).scrollTop();
+          let actualHeight = $(document).height() - $(window).height() - 500;
+          console.log(scrollHeight + " / " + actualHeight);
+
+          if (scrollHeight > actualHeight) {
+            console.log(no);
+            let newNo = ++no;
+            console.log("Big");
+            console.log(`newProNo ${newProNo} and No ${newNo}`);
+            if (newProNo == newNo) {
+              $(".overlay").removeClass("d-none");
+              $.ajax({
+                url: `/contents/products_list/page:${newProNo}`,
+                type: "get",
+                success: function (resp) {
+                  $("#all-products").append(
+                    $(resp).find("#list-products-last")
+                  );
+                  lastNewTest = ++lastNewTest;
+                  no = lastNewTest;
+                  $(".overlay").addClass("d-none");
+                  newTest();
+                },
+              });
+            }
+          }
+        });
+      });
+    });
+  });
+</script>
