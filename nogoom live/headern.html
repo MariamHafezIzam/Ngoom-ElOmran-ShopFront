@@ -5,7 +5,7 @@
     <meta charset="UTF-8"> <link rel="shortcut icon" href="https://nogoomfront.daftara.com/files/27d1f6af/logos/634bf75c44003_blobid1665922905534.png" title="nojom ico.png" type="image/x-icon">
          <link rel="shortcut icon" href="https://nogoomfront.daftara.com/files/27d1f6af/logos/634bf75c44003_blobid1665922905534.png" title="nojom ico.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.daftra.com/templates/shop_1/css/app.min.css?v={{ css_ver }}">
+    <link rel="stylesheet" href="https://cdn.daftra.com/templates/shop_1/css/app.min.css?v={{ css_ver }}"><script> var USER = { "client_id": {{client_id}}}; </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800&display=swap" rel="stylesheet">
@@ -96,6 +96,7 @@
   .swiper-button-next {
     margin-left: 15px !important;
   }
+  
 </style>
 
   
@@ -216,12 +217,12 @@ header#site-header .navbar .navbar-nav .nav-item .nav-link {
 }
   
 .rounded-end {
-    border-top-right-radius: 5px !important;
-    border-bottom-right-radius: 5px !important;
+    border-top-right-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
 }
 .rounded-start {
-    border-top-left-radius: 5px !important;
-    border-bottom-left-radius: 5px !important;
+    border-top-left-radius: 8px !important;
+    border-bottom-left-radius: 8px !important;
 }
 a.text-white:focus, a.text-white:hover {
     color: #fff !important;
@@ -462,99 +463,13 @@ div#home-featured-products-section {
     float: unset !important;
     display: inline-block;
 }
-@media only screen and (max-width: 991px){
-    .side-sidebar-wrap{
-        width: 65% !important;
-    }
-    .nav-link {
-        padding: 8px !important;
-    }
-    .img-cat {
-    height: 170px !important;
-    border-radius: 30px;
-} 
-    .navbar-nav .nav-item, .navbar-nav .nav-item {
-    display: flex;
-}
-    .login {
-        padding-left: 0px;
-       
-    }
-    header#site-header .col.col-lg-3 {
-        max-width: 50% !important;
-        flex: auto;
-        display: grid;
-    }
-    header#site-header .col.col-lg-3>div>a {
- 
-    height: auto !important;
-}
-.logoo {
-    height: 52px !important;
-}
-header#site-header .col.col-lg-3>div {
-    width: auto;
-}
-#site-header  {
-    height: 2.5cm;
-}
-.title {
-    font-size: 20px;
-}
-a.nav-link.dashboard {
-    font-size: 8px !important;
-}
-.dropdown-content {
+.side-sidebar-wrap {
+    width: 25% !important ;
+    position: absolute !important;
+    left: 0 !important;
+    z-index: 50;
+  }
 
-    left: 3px; 
-    min-width: 175px;
-}
-a.logn {
-    font-size: 12px !important;
-    padding: 12px;
-}
-
-.navbar-nav .nav-item, .navbar-nav .nav-item {
-    display: block;
-}
-.navbar-nav .dropdown-menu {
-background-color: #1467AB !important;
-
-}
-a.dropdown-item {
-    color: #fff !important; 
-}
-.dropdown-menu {
-    box-shadow: none !important;
-}
-.dropdown-content-cat, #second-menu  {
-    position: unset;
-    box-shadow: none;
-    margin: 0;
-    height: 0px;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear, height  0.5s ease;;
-  
-}
-
-.appear-menu {
-    visibility: visible !important;
-  opacity: 1  !important;
-  height: 600px  !important;
-}
-.appear-submenu {
-    visibility: visible;
-  opacity: 1;
-  height: 260px;
-}
-.dropdown-content-cat div{
-    background-color: #1467AB;
-}
- .dropdown-content-cat a{
-    color: #fff;
- }
-}
 .newOverlay {
     position: absolute;
     width: 100%;
@@ -651,9 +566,9 @@ a.dropdown-item {
   .swiper-container-rtl .swiper-button-prev {
     right: 92%;
   }
-  .product {
+  /* .product {
     width: 315px;
-}
+} */
 .main-men {
     justify-content: center !important;
 }
@@ -663,11 +578,199 @@ a.dropdown-item {
 .custom_content .swiper-button-prev{
     left: 3% !important;
 }
+.widget .fab {
+    padding: 10px !important;
+}
+
+#totalCarts{
+    position: absolute;
+    right: -3px;
+    top: -8px;
+    min-width: 15px;
+    min-height: 15px;
+    font-size: 10px;
+    font-weight:400;
+    border-radius: 50px;
+    font-family: Gilroy,Helvetica,arial,serif;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-color: #fb513e !important;
+    border: 1px solid #fb513e;
+   }
+   .sidepanel  {
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  height:100vh;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+.product-slider   {
+    min-width: 312px;
+}
+@media only screen and (max-width: 991px){
+    .form-control {
+        font-size: 12px;
+    }
+    #ia5h1 {
+        width: 60%;
+        margin-left: -30px;
+    }
+    footer#site-footer {
+        padding-top: 5px !important;
+    }
+    .widget  {
+        margin-bottom: 20px !important;
+    }
+    .copyrights p {
+        font-size: 8px !important;
+        margin: 0px !important;
+    }
+    
+    .side-sidebar-wrap{
+        width: 100% !important;
+    }
+    .nav-link {
+        padding: 8px !important;
+    }
+    .img-cat {
+    height: 170px !important;
+    border-radius: 30px;
+} 
+    .navbar-nav .nav-item, .navbar-nav .nav-item {
+    display: flex;
+}
+    .login {
+        padding-left: 0px;
+       
+    }
+    header#site-header .col.col-lg-3 {
+        max-width: 50% !important;
+        flex: auto;
+        display: grid;
+    }
+    header#site-header .col.col-lg-3>div>a {
+ 
+    height: auto !important;
+}
+.logoo {
+    height: 52px !important;
+}
+header#site-header .col.col-lg-3>div {
+    width: auto;
+}
+.product-slider   {
+    min-width: 208px !important;
+}
+.title {
+    font-size: 20px;
+}
+a.nav-link.dashboard {
+    font-size: 8px !important;
+}
+.dropdown-content {
+
+    left: 3px; 
+    min-width: 175px;
+}
+a.logn {
+    font-size: 12px !important;
+    padding: 12px;
+}
+ /* .product{
+    width: 160px !important;
+}  */
+/*.card-product{
+    width: 160px !important;
+} */
+.navbar-nav .nav-item, .navbar-nav .nav-item {
+    display: block;
+}
+.navbar-nav .dropdown-menu {
+background-color: #1467AB !important;
+
+}
+a.dropdown-item {
+    color: #fff !important; 
+}
+.dropdown-menu {
+    box-shadow: none !important;
+}
+.dropdown-content-cat, #second-menu  {
+    position: unset;
+    box-shadow: none;
+    margin: 0;
+    height: 0px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear, height  0.5s ease;;
+  
+}
+.news-holder {
+    height: 40px;
+}
+.spec td:first-child{
+    width: 30%;
+}
+.spec td {
+    font-size: 16px !important;
+    padding: 12px 6px  !important;
+}
+.custom_content .news {
+  
+    height: 30px  !important; 
+    line-height: 30px  !important;
+  }
+.appear-menu {
+    visibility: visible !important;
+  opacity: 1  !important;
+  height: 600px  !important;
+}
+.appear-submenu {
+    visibility: visible;
+  opacity: 1;
+  height: 260px;
+}
+.dropdown-content-cat div{
+    background-color: #1467AB;
+}
+ .dropdown-content-cat a{
+    color: #fff;
+ }
+ #home-slider-section .home-slide {
+    max-height: 160px !important;
+ }
+ .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+
+    bottom: -10px !important;
+ }
+#mainSearch {
+    width: 85%;
+}
+.swiper-rtl .swiper-button-next {
+    left:8px !important;
+  }
+ .swiper-rtl .swiper-button-prev {
+    right: 8px !important;}
+   .swiper-container-rtl .swiper-button-next {
+ left: 88% !important;
+}
+.swiper-container-rtl .swiper-button-prev {
+ right: 88% !important;
+}
+}
         </style>
 
 </head>
 <body class="rtl">
 <div id="site">
+    <input class="d-none" id="totalCart">
 <div id="top-header" class="bg-primary white b-b d-none">
     <div class="container"> 
         <div class="row align-items-center">
@@ -700,7 +803,196 @@ a.dropdown-item {
 
 </div>
     <header id="site-header" class="bg-primary">
-        <div class="container">
+        <div class="mobile-nav d-block d-lg-none">
+            
+<div id="mySidepanel" class="sidepanel">
+    <div class="text-right fs-24 px-2 text-primary">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+        <i class="fal fa-times-square"></i>
+    </a>
+</div>
+
+
+{{#is_logged_in}}      
+<!-- start new menu -->
+<div style="align-self: center;" class=" px-2">
+   <button type="button" class="dropbtn login btn-focus-shadow-0 btn mx-0 mt-1 mt-xl-0  p-0 px-lg-2 pr-xl-12 fs-14 fs-xl-15" disabled="disabled">
+<label class=" m-0 fs-14  text-capitalize d-flex text-primary">
+ 
+ <div style="align-self: center; " class="mr-2"><i class="fas fa-user fs-xl-24 fs-18 p-1" style="border: 1px solid; border-radius: 50%;"></i></div>
+<div class="d-lg-block " style="text-align: right ;line-height:1.3;"><span class="fs-10 fw-normal">مرحبا بك</span>  <br>
+    <span class="name-logged fs-xl-16 fs-12 na"> {{ logged_name }}</span></div>
+</label>
+</button>
+   <div class=" mx-lg-2 p-1">
+       
+      <div><a class="nav-link  text-primary ml-3" href="{{dashboard_url}}">
+           <i class="fas p-1 fa-home-alt mr-2 d-lg-inline-block" style="border: 1px solid; border-radius: 50%;"></i><span>لوحة التحكم</span>
+       </a></div> 
+       <div>  <a href="/contents/logout" class="nav-link text-primary  ml-3">
+           <i class="mr-2 fas p-1 fa-sign-out" style="border: 1px solid; border-radius: 50%;"></i>الخروج</a></div> 
+   </div>
+</div>
+<!-- end new menu -->
+{{/is_logged_in}}
+     
+{{^is_logged_in}}
+<div class="">
+                                        
+    <div>       <a href="/contents/login" class=" font-weight-medium nav-link  text-primary ml-3 "><i class="fas p-1 fa-sign-in mr-1" style="border: 1px solid; border-radius: 50%;"></i> دخول الحساب</a> </div>
+<div>     <a href="/contents/register" class=" font-weight-medium nav-link  text-primary ml-3 "><i class="fas p-1 fa-user-plus mr-1" style="border: 1px solid; border-radius: 50%;"></i>انشاء حساب </a> </div>
+
+</div>
+{{/is_logged_in}}
+
+<div class="py-1 my-0 mx-5" style="border-bottom:1px solid #1467AB  ;"></div>
+<div class="px-2 py-3">
+<div class="d-flex py-1">
+    <a href="/home" class="text-primary fs-18 font-weight-medium">
+    <img class="pr-2 pl-1 d-lg-flex" src="https://ostarssa.daftara.com/files/7aae9582/logos/6412dafcddfe9_blobid1678957307877.png" alt="menu" title="menu (2).png"width="auto" height="20">
+    <span class="ml-2">الرئيسية</span>
+</a>
+</div>
+<div class="d-flex py-1">
+    <button type="button" style=" text-align: end;" class="text-primary fs-18 cart-toggle-btn btn-focus-shadow-0 btn p-0 font-weight-medium">
+        <i class="pr-2 pl-1  fal fa-shopping-cart position-relative fs-20"></i>
+    <span class="ml-2">تسوق</span>
+</button>
+</div>
+</div>
+<div class="py-1 my-0 mx-5" style="border-bottom:1px solid #1467AB  ;"></div>
+
+<div class="px-2 py-3">
+    <div class="d-flex py-1 font-weight-medium">
+        <a href="/contents/products_list?cat_id=109" class="text-primary fs-18">
+        <img class="pr-2 pl-1 d-lg-flex"  src="https://ostarssa.daftra.com/files/7aae9582/logos/63c660c2129fa_blobid1673945280479.png" alt="" title="ac.png" width="48" height="auto">
+        <span class="">مكييفات</span>
+    </a>
+    </div>
+    <div class="d-flex py-1 font-weight-medium">
+        <a href="/contents/products_list?cat_id=110" class="text-primary fs-18">
+        <img class="pr-2 pl-1 d-lg-flex"  src="https://ostarssa.daftra.com/files/7aae9582/logos/63c663677226c_blobid1673945957794.png" title="tubes.png"  width="48" height="auto">
+        <span class="">    تأسيس نحاس</span>
+    </a>
+    </div>
+    <div class="d-flex py-1 font-weight-medium">
+        <a href="/contents/products_list?cat_id=111" class="text-primary fs-18">
+        <img class="pr-2 pl-1 d-lg-flex" src="https://ostarssa.daftra.com/files/7aae9582/logos/63c663d407400_blobid1673946066702.png" title="water-pipe.png" width="48" height="auto">
+        <span class="">  مجاري هواء دكت   </span>
+    </a>
+    </div>
+
+    <div class="d-flex py-1 font-weight-medium">
+        <a href="/contents/products_list?cat_id=112" class="text-primary fs-18">
+        <img class="pr-2 pl-1 d-lg-flex" src="https://ostarssa.daftra.com/files/7aae9582/logos/63c6702aa0993_blobid1673949224028.png" title="air-conditioner.png" width="48" height="auto">
+        <span class="">                مكييفات صحراوية
+        </span>
+    </a>
+    </div>
+
+    <div class="d-flex py-1 font-weight-medium">
+        <a href="/contents/products_list?cat_id=113" class="text-primary fs-18">
+        <img class="pr-2 pl-1 d-lg-flex" src="https://ostarssa.daftra.com/files/7aae9582/logos/63c66ed26784b_blobid1673948880428.png" title="fan.png" width="48" height="auto">
+        <span class="">              
+            مراوح شفط
+        </span>
+    </a>
+    </div>
+    <div class="d-flex py-1 font-weight-medium">
+        <a href="/contents/products_list?cat_id=114" class="text-primary fs-18">
+        <img class="pr-2 pl-1 d-lg-flex" src="https://ostarssa.daftra.com/files/7aae9582/logos/63c67049a3b48_blobid1673949256154.png" title="freezing.png"  width="48" height="auto">
+        <span class="">              
+            غرف تبريد وتجميد
+        </span>
+    </a>
+    </div>
+    <div class="d-flex py-1 font-weight-medium">
+        <a href="/contents/products_list?cat_id=115" class="text-primary fs-18">
+        <img class="pr-2 pl-1 d-lg-flex" src="https://ostarssa.daftra.com/files/7aae9582/logos/63c66fb488bdb_blobid1673949106991.png" title="electric-appliance.png"  width="48" height="auto">
+        <span class="">              
+            اجهزة منزلية
+        </span>
+    </a>
+    </div>
+    </div>
+    <div class="py-1 my-0 mx-5" style="border-bottom:1px solid #1467AB  ;"></div>
+
+
+
+    <div class="px-2 py-3">
+        <div class="d-flex py-1">
+            <a href="/contents/process_content/maintenance" class="text-primary fs-18 font-weight-medium">
+                
+            <span class="ml-10">            الصيانة والضمان
+            </span>
+        </a>
+        </div>
+        <div class="d-flex py-1">
+            <a href="/contents/process_content/reservation" class="text-primary fs-18 font-weight-medium">
+                
+            <span class="ml-10">     حجز موعد
+            </span>
+        </a>
+        </div>
+        <div class="d-flex py-1">
+            <a href="/contents/process_content/contact_us" class="text-primary fs-18 font-weight-medium">
+                
+            <span class="ml-10">                إتصل بنا
+            </span>
+        </a>
+        </div>
+
+
+        </div>
+
+  </div>
+
+
+            <div class="row px-3 pt-2 mx-0">
+                <div class="col-4 d-flex pt-3 px-0 " style="align-self: flex-start;">
+                    <button class="btn mx-1  p-0 text-white lh-1 " type="button" class="openbtn" onclick="openNav()" aria-expanded="false">
+                        <i class="fal fa-bars fs-24"></i>
+                    </button>
+                    <a class=" mx-1  p-0 " href="https://goo.gl/maps/PnELaP7cq5xmUDtF8"><i class="fal fa-map-marker-alt fs-24 px-2 text-white"></i></a>
+                </div>
+                    <div class="col-4 text-center px-0 py-2">
+                        <a class="logoo font-weight-extrabold fs-22 text-uppercase" href="/home">
+                            <img
+                              src="https://ostarssa.daftara.com/files/7aae9582/logos/6411976eb5ccb_blobid1678874476470.png"
+                              alt=""
+                              title="3-14-2023 3-13-25 PM.png"
+                              width="80%"
+                              height="auto"
+                            />
+                          </a>
+                    </div> 
+                    <div class="col-4 d-flex pt-3 px-0 " style="align-self: flex-start;    justify-content: left;">
+                        <button type="button" style=" text-align: end;" class="cart-toggle-btn btn-focus-shadow-0 btn mr-lg-0 p-0 py-lg-1 px-lg-0  mr-3 fs-14 fs-xl-16 text-white secondary-hover">
+                            <i class="fal fa-shopping-cart mr-lg-1 position-relative fs-24">
+                            <span id="totalCarts" class="totalCarts"></span></i>
+                        </button>
+
+                    </div> 
+                </div>
+                    <div class="row  mx-0" style="justify-content: center;">
+                        <div id="mainSearch" class="collapse show bg-primary">
+                            <form action="/contents/products_list" class=" pb-4 w-100 mx-auto px-0 text-center">
+                                <div class=" d-block">
+                                    <div class="input-group border-transparent align-items-stretch">
+                                        <input type="text" class="form-control bg-white border-0 rounded-end" placeholder="ما الذي تبحث عنه" value="{{product_name}}" name="product_name">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-white py-0 px-3 fs-18 rounded-start button2 bg-white" type="submit">
+                                                <i class="far fa-search "></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                      
+                    </div>
+            </div>
+           
+          </div>  
+        <div class="container d-none d-lg-block">
             <div class="row align-items-center pt-4 pb-4">
                 <div class="col-lg-3 col-6 col flex-grow-0">
                     <div class="text-left px-0 pr-lg-3">
@@ -747,7 +1039,7 @@ a.dropdown-item {
                    
                 </div>
                
-                <div class="col-lg-5 col-6 col order-2 order-lg-2 px-0" style="display: flex;  justify-content: left;">
+                <div class="col-lg-5 col-5 col order-lg-2 px-0" style="display: flex;">
                     <div class="text-right pl-4 d-flex" >
                         <button class="btn my-auto mr-3 p-0 text-white lh-1 d-flex d-lg-none btn-menu" >
                             <i class="fas fa-cubes fs-xl-24 fs-18"></i>
@@ -760,7 +1052,7 @@ a.dropdown-item {
                             <button type="button" class="dropbtn login btn-focus-shadow-0 btn mx-0 mt-1 mt-xl-0  p-0 px-lg-2 pr-xl-12 fs-14 fs-xl-15" disabled="disabled">
                         <label class=" mt-0 fs-14  text-capitalize d-flex text-white">
                           
-                          <div style="align-self: center; " class="mr-2"><i class="fas fa-user fs-xl-24 fs-18"></i></div>
+                          <div style="align-self: center; " class="mr-3"><i class="fas fa-user fs-xl-24 fs-18"></i></div>
                          <div class="d-lg-block d-none" style="text-align: right ;line-height:1.3;"><span class="fs-10 fw-normal">مرحبا</span>  <br><span class="name-logged fs-xl-16 fs-12 na"> {{ logged_name }}</span></div>
                         </label>
                     </button>
@@ -778,15 +1070,15 @@ a.dropdown-item {
                         {{/is_logged_in}}
 
                         {{^is_logged_in}}
-                        <div class="account dropdownn" style="">
+                        <div class="account dropdownn d-none d-lg-flex">
                                               <button type="button" class=" btn-focus-shadow-0 btn p-0 m-0">
                                 <a href="/contents/logout" class="logn" style="display: none;">
                                     <i class="mr-2 fas fa-sign-out"></i>Log Out</a> {{/is_logged_in}} {{^is_logged_in}}
                             </button>
                                 <div style="align-self: center;" class="dropdownn">
-                                    <button type="button" class="dropbtn login btn-focus-shadow-0 btn mx-2 mr-lg-4 p-0 px-lg-2 px-xl-3 fs-14 fs-xl-15" disabled="disabled">
+                                    <button type="button" class="dropbtn login btn-focus-shadow-0 btn mr-3 mr-lg-4 p-0 px-lg-2 px-xl-3 fs-14 fs-xl-15" disabled="disabled">
                                     <a href="#" class=" acc">
-                                        <i class="far fa-home-alt fs-xl-24 fs-18 mr-1 mb-2 mb-lg-0 font-weight-light"></i><span class="d-none d-lg-inline fs-14 fs-lg-16">بوابة العميل</span><i class="fal fa-chevron-down  ml-1 mb-2 mb-lg-0 font-weight-bold" ></i></a> 
+                                        <i class="far fa-home-alt fs-xl-24 fs-18 m-0 font-weight-light"></i><span class="d-none d-lg-inline fs-14 fs-lg-16">بوابة العميل</span><i class="d-none d-lg-inline fal fa-chevron-down  ml-1 mb-2 mb-lg-0 font-weight-bold" ></i></a> 
                             </button>
                                     <div class="dropdown-content mx-lg-2 p-1 pt-2">
                                         
@@ -806,7 +1098,7 @@ a.dropdown-item {
                        </div>
                      
                        {{^is_logged_in}}
-                       <div class="account dropdownn" style="">
+                       <div class="account dropdownn " >
                                              <button type="button" class=" btn-focus-shadow-0 btn p-0 m-0">
                                <a href="/contents/logout" class="logn" style="display: none;">
                                    <i class="mr-2 fas fa-sign-out"></i>Log Out</a> {{/is_logged_in}} {{^is_logged_in}}
@@ -814,7 +1106,7 @@ a.dropdown-item {
                                <div style="align-self: center;" class="dropdownn">
                                    <button type="button" class="dropbtn login btn-focus-shadow-0 btn mx-2 mr-lg-3 p-0 px-lg-2 px-xl-3 fs-14 fs-xl-15" disabled="disabled">
                                    <a href="#" class=" acc">
-                                       <i class="far fa-home-alt fs-xl-20 fs-18 mr-1 mb-2 mb-lg-0 font-weight-light"></i><span class="d-none d-lg-inline fs-14 fs-lg-16">بوابة الموظفيين</span><i class="fal fa-chevron-down  ml-1 mb-2 mb-lg-0 font-weight-bold" ></i></a> 
+                                       <i class="far fa-home-alt fs-xl-20 fs-18 m-0 font-weight-light"></i><span class="d-none d-lg-inline fs-14 fs-lg-16">بوابة الموظفيين</span><i class="d-none d-lg-inline fal fa-chevron-down  ml-1 mb-2 mb-lg-0 font-weight-bold" ></i></a> 
                            </button>
                                    <div class="dropdown-content mx-lg-2 p-1 pt-2">
                                        
@@ -825,7 +1117,7 @@ a.dropdown-item {
                                   </div>
                                   {{/is_logged_in}}
 
-                                  <button type="button" style=" text-align: end;" class="cart-toggle-btn btn-focus-shadow-0 btn mr-lg-0 p-0 py-lg-1 px-lg-0  mr-0    fs-14 fs-xl-16 text-white secondary-hover"><i class="fas fa-shopping-cart mr-lg-1 position-relative fs-xl-24"><span id="totalCart"></span></i><span class="d-none d-lg-inline-block">عربة التسوق</span></button>
+                                  <button type="button" style=" text-align: end;" class="cart-toggle-btn btn-focus-shadow-0 btn mr-lg-0 p-0 py-lg-1 px-lg-0  mr-3 fs-14 fs-xl-16 text-white secondary-hover"><i class="fas fa-shopping-cart mr-lg-1 position-relative fs-xl-24"><span id="totalCarts" class="totalCarts"></span></i><span class="d-none d-lg-inline-block">عربة التسوق</span></button>
 
                                </div>
                             
@@ -833,10 +1125,11 @@ a.dropdown-item {
                   
 
 
-                        <button class="btn mr-2 mr-lg-0 p-0 text-black lh-1 d-none" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false">
+                        <!-- <button class="btn mr-2 mr-lg-0 p-0 text-black lh-1 d-none" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false">
                             <i class="far fa-bars fs-20"></i>
-                        </button>
-                        <button style="float: left;" class="btn my-auto mx-2 p-0 text-white lh-1 d-flex d-lg-none" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false">
+                        </button> -->
+                        
+                        <button style="float: left;" class="btn my-auto mx-0  p-0 text-white lh-1 d-flex d-lg-none" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false">
                             <i class="far fa-bars fs-xl-24 fs-18"></i>
                         </button>
                     </div>
@@ -845,7 +1138,7 @@ a.dropdown-item {
 
         </div>
         <div class="bg-primary b-b" width="100%"></div>
-        <div id="mainSearch" class="collapse  bg-primary">
+        <!-- <div id="mainSearch" class="collapse  bg-primary">
             <form action="/contents/products_list" class="border-top border-black py-5 px-4 text-center">
                 <div class=" d-block">
                     <div class="input-group border-transparent align-items-stretch">
@@ -857,7 +1150,7 @@ a.dropdown-item {
                     </div>
                 </div>
             </form>
-        </div>
+        </div> -->
         <div class="">
             <nav class="navbar navbar-expand-lg bg-primary p-0 b-b ">
                 <div class="container main-men">
@@ -964,7 +1257,7 @@ a.dropdown-item {
             </nav>
          
         </div>
-        
+   
     </header>
     <div class="bottom-nav bg-primary d-lg-block" id="second-menu">
         <div class="container" >
@@ -1280,6 +1573,7 @@ a.dropdown-item {
                             $emptyTextDiv.hide();
                         }
                         totalCartEl.text(totalQty);
+                        $(".totalCarts").text(totalQty);
                     };
 
                     this.updateProductCartListItem = function (productId) {
@@ -1408,14 +1702,27 @@ a.dropdown-item {
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
 <script>
-   
+       $(".custom_content").last().css({ padding: 0, maxWidth: "100%" });
+       function openNav() {
+  document.getElementById("mySidepanel").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidepanel").style.width = "0";
+}
     setTimeout(() => {
         var swiper = new Swiper(".testnew", {
-    slidesPerView: 3,
-    spaceBetween: 0,
-    // keyboard: {
-    //   enabled: true,
-    // },
+    //         breakpoints: {
+    //             300: {
+    //     slidesPerView: 2,
+    //     spaceBetween: 0,
+    //   },
+    //   1300: {
+    //     slidesPerView: 3,
+    //     spaceBetween: 0,
+    //   },
+    //   },
+
     reverseDirection: true ,
     navigation: {
       nextEl:  ".swiper-button-prev",
@@ -1425,3 +1732,8 @@ a.dropdown-item {
     }, 5000);
 
 </script>
+
+
+
+
+
