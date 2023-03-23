@@ -39,7 +39,7 @@
   }
 </style>
 
-<div class="news-holder bg-yellow">
+<div class="news-holder bg-yellow d-none d-lg-flex">
   <div class="news"></div>
 </div>
 <script>
@@ -92,7 +92,7 @@
         data["le_shopfront-bar-text_le_shopfront-bar-text_shopfront_bar"];
       $.each(textD, async (i, val) => {
         let barText = val.textnew;
-        let barSpan = ` <span class="new bar-text mx-6 fs-20 "> ${barText}  </span>`;
+        let barSpan = ` <span class="new bar-text mx-6 fs-14 fs-lg-20 "> ${barText}  </span>`;
         $(".news").append(barSpan);
       });
     });
