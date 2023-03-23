@@ -365,71 +365,71 @@
     <p class="clntId d-none"></p>
   </div>
   <script>
-    let apikey = "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90";
     $(document).ready(function () {
+      let clientId = USER.client_id;
+      console.log(clientId);
       var loggedName = $(".name-logged").text().trim();
-      console.log(loggedName);
-      if (loggedName == "nogoomfront" || loggedName == "") {
-        $(".submit").attr("disabled", "disabled");
-        $("#log").removeClass("d-none");
-      } else {
-        $(function () {
-          $.ajax({
-            url: "/client/clients/profile/",
-            type: "get",
-            headers: { apikey: apikey },
-            success: function (resp) {
-              $("#test").html($(resp).find(".responsive"));
-            },
-          });
   
-          return false;
+      if (loggedName == "شركة نجوم العمران للمقاولات" || loggedName == "") {
+        $(".submit").click((e) => {
+          e.preventDefault();
+          console.log("HHII");
+          $(".cd-popup2").show();
         });
-  
-        setTimeout(() => {
-          console.log(client_id);
-          $(".clntId").text(client_id);
-        }, "3000");
+        $(".cd-popup-close").click(function () {
+          $(".cd-popup2").hide();
+        });
+        //   $(".submit").attr("disabled", "disabled");
+        //  $("#log").removeClass("d-none");
+      } else {
+        $.ajax({
+          url: "/v2/api/entity/client/" + clientId,
+          headers: { apikey: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90" },
+          type: "GET",
+        }).done((data) => {
+          let loggedName = data.business_name;
+          let loggedPhone = data.phone2;
+          let loggedEmail = data.email;
+          $("#inputName").val(loggedName);
+          $("#inputTel").val(loggedPhone);
+          $("#inputEmail").val(loggedEmail);
+          $(".submit").click((e) => {
+            e.preventDefault();
+            let name = $("#inputName").val();
+            let phone = $("#inputTel").val();
+            let email = $("#inputEmail").val();
+            let type = $("#comments").val();
+            let date = $("#date").val();
+            date = date.split("/");
+            date = `${date[2]}-${date[0]}-${date[1]}`;
+            let time = $("#time").find(":selected").val();
+            console.log(name, phone, email, type, date, time, clientId);
+            userReserv(name, phone, email, type, date, time, clientId);
+          });
+        });
       }
     });
   
-    $(".submit").click((e) => {
-      e.preventDefault();
-      let name = $("#inputName").val();
-      let phone = $("#inputTel").val();
-      let email = $("#inputEmail").val();
-      let reserveType = $("#resrve").find(":selected").val();
-      let type = $("#comments").val();
-      let date = $("#date").val();
-      date = date.split("/");
-      date = `${date[2]}-${date[0]}-${date[1]}`;
-      let time = $("#time").find(":selected").val();
-  
-      console.log(name, phone, email, type, date, time, client_id, reserveType);
-      taric(name, phone, email, type, date, time, client_id,reserveType);
-    });
-  
-    function taric(name, phone, email, type, date, time, client_id, reserveType) {
+    function userReserv(name, phone, email, type, date, time, client_id) {
       let dateNow = new Date();
       let day = dateNow.toISOString().split("T")[0];
       let currTime = dateNow.toISOString().split("T")[1];
   
       let ourBody = `
-      <p><strong> تم حجز هذا الموعد بواسطة العميل</strong> </p>
-      <p> وقت الحجز ${day} ${time}</p>
-      <p> الاسم:  ${name}</p> 
-      <p> رقم الهاتف: ${phone}</p> 
-      <p>البريد :  ${email}</p> 
-      <p> نوع الموعد : ${reserveType}</p>
-      <p> الرسالة :  ${type}</p> 
-      `;
+        <p><strong> تم حجز هذا الموعد بواسطة العميل</strong> </p>
+        <p> وقت الحجز ${day} ${time}</p>
+        <p> الاسم:  ${name}</p>
+        <p> رقم الهاتف: ${phone}</p>
+        <p>البريد :  ${email}</p>
+        <p>نوع الخدمة :  ${type}</p>
+        `;
       let dateAndTime = `${date} ${time} `;
       let id = `${client_id}`;
   
       let allData = {
         ClientAppointment: {
           item_id: id,
-          action_id: "93",
+          action_id: "92",
           date: dateAndTime,
           body: ourBody,
         },
@@ -440,7 +440,7 @@
         url: "https://ostarssa.daftara.com/api2/client_appointments",
         method: "POST",
         headers: {
-          apiKey: apikey,
+          apikey: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90",
         },
         data: data,
         contentType: "application/json",
@@ -454,19 +454,20 @@
           console.log("failed", err);
         });
     }
-    $(".cd-popup2-trigger").on("click", function (event) {
-        event.preventDefault();
-    $(".cd-popup2").show(); 
-  $(".new-height").css("height", "18cm")
+
+     
+  $(".cd-popup2-trigger").on("click", function (event) {
+    event.preventDefault();
+$(".cd-popup2").show(); 
+$(".new-height").css("height", "18cm")
+});
+
+  $(".cd-popup2-close, .submit").click(function () {
+    $(".cd-popup2").hide();
+    $(".new-height").css("height", "4cm")
+
+
   });
-  
-      $(".cd-popup2-close, .submit").click(function () {
-        $(".cd-popup2").hide();
-        $(".new-height").css("height", "4cm")
-  
-  
-      });
-  
   </script>
   
-  
+ 
