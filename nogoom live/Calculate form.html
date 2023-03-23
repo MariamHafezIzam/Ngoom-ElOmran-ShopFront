@@ -1,0 +1,206 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+  />
+  <link
+    rel="stylesheet"
+    href=" https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/themes/redmond/jquery-ui.css"
+  />
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+    $(function () {
+      $("#type").selectmenu();
+    });
+  </script>
+</head>
+
+<div class="container">
+  <div class="row py-10">
+    <div class="row py-4 col-4 mx-auto">
+      <form
+        accept-charset="UTF-8"
+        action=""
+        method="POST"
+        enctype="multipart/form-data"
+        target="_blank"
+        class="bg-white p-4 w-100"
+        style="border-radius: 20px"
+      >
+        <div class="form-group">
+          <label for="room-tall">الطول</label>
+          <input
+            type="text"
+            name="room-tall"
+            class="form-control"
+            id="room-tall"
+            required="required"
+          />
+        </div>
+        <div class="form-group">
+          <label for="room-width"> العرض</label>
+          <input
+            class="form-control"
+            name="room-width"
+            type="text"
+            id="room-width"
+            required="required"
+          />
+        </div>
+        <div class="form-group">
+          <label for="room-height">الارتفاع </label>
+          <input
+            class="form-control"
+            name="room-height"
+            type="text"
+            id="room-height"
+            required="required"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="type">اختر النوع </label>
+          <div class="select-time pt-2" style="text-align-last: center">
+            <select class="form-control" id="type">
+              <option value="12000">بالطن</option>
+              <option value="8000">بالحصان</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-xl-12 text-center pb-2 pt-4">
+          <button
+            type="submit"
+            class="submit btn btn-primary fs-16 py-2 px-8 font-weight-semibold my-2 w-50"
+          >
+            احسب
+          </button>
+        </div>
+        <div class="form-group d-flex">
+          <label
+            for="calc"
+            class="my-auto mx-2 fs-20 font-weight-semibold text-primary"
+            >النتيجة
+          </label>
+          <input
+            class="form-control"
+            name="calc"
+            type="text"
+            id="calc"
+            required="required"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    $(".submit").click((e) => {
+      e.preventDefault();
+      let tall = $("#room-tall").val();
+      tall = parseFloat(tall);
+      let width = $("#room-width").val();
+      width = parseFloat(width);
+      let height = $("#room-height").val();
+      height = parseFloat(height);
+      let mainFactor = $("#type").val();
+      mainFactor = parseFloat(mainFactor);
+      console.log(tall, width, height, mainFactor);
+      let calc = (tall * height * width * 300) / mainFactor;
+      console.log(calc);
+      $("#calc").val(calc.toFixed(1));
+    });
+  });
+
+  //   let clientId = USER.client_id;
+  //   console.log(clientId);
+  //   var loggedName = $(".name-logged").text().trim();
+
+  //   if (loggedName == "شركة نجوم العمران للمقاولات" || loggedName == "") {
+  //     $(".submit").click((e) => {
+  //       e.preventDefault();
+  //       console.log("HHII");
+  //       $(".cd-popup2").show();
+  //     });
+  //     $(".cd-popup-close").click(function () {
+  //       $(".cd-popup2").hide();
+  //     });
+  //     //   $(".submit").attr("disabled", "disabled");
+  //     //  $("#log").removeClass("d-none");
+  //   } else {
+  //     $.ajax({
+  //       url: "/v2/api/entity/client/" + clientId,
+  //       headers: { apikey: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90" },
+  //       type: "GET",
+  //     }).done((data) => {
+  //       let loggedName = data.business_name;
+  //       let loggedPhone = data.phone2;
+  //       let loggedEmail = data.email;
+  //       $("#inputName").val(loggedName);
+  //       $("#inputTel").val(loggedPhone);
+  //       $("#inputEmail").val(loggedEmail);
+  //       $(".submit").click((e) => {
+  //         e.preventDefault();
+  //         let name = $("#inputName").val();
+  //         let phone = $("#inputTel").val();
+  //         let email = $("#inputEmail").val();
+  //         let type = $("#comments").val();
+  //         let date = $("#date").val();
+  //         date = date.split("/");
+  //         date = `${date[2]}-${date[0]}-${date[1]}`;
+  //         let time = $("#time").find(":selected").val();
+  //         console.log(name, phone, email, type, date, time, clientId);
+  //         userReserv(name, phone, email, type, date, time, clientId);
+  //       });
+  //     });
+  //   }
+  //
+
+  // function userReserv(name, phone, email, type, date, time, client_id) {
+  //   let dateNow = new Date();
+  //   let day = dateNow.toISOString().split("T")[0];
+  //   let currTime = dateNow.toISOString().split("T")[1];
+
+  //   let ourBody = `
+  //     <p><strong> تم حجز هذا الموعد بواسطة العميل</strong> </p>
+  //     <p> وقت الحجز ${day} ${time}</p>
+  //     <p> الاسم:  ${name}</p>
+  //     <p> رقم الهاتف: ${phone}</p>
+  //     <p>البريد :  ${email}</p>
+  //     <p>نوع الخدمة :  ${type}</p>
+  //     `;
+  //   let dateAndTime = `${date} ${time} `;
+  //   let id = `${client_id}`;
+
+  //   let allData = {
+  //     ClientAppointment: {
+  //       item_id: id,
+  //       action_id: "92",
+  //       date: dateAndTime,
+  //       body: ourBody,
+  //     },
+  //   };
+  //   let data = JSON.stringify(allData);
+  //   console.log(data);
+  //   $.ajax({
+  //     url: "https://ostarssa.daftara.com/api2/client_appointments",
+  //     method: "POST",
+  //     headers: {
+  //       apikey: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90",
+  //     },
+  //     data: data,
+  //     contentType: "application/json",
+  //     accept: "application/json",
+  //   })
+
+  //     .done(function (res) {
+  //       console.log("success", res);
+  //     })
+  //     .fail((err) => {
+  //       console.log("failed", err);
+  //     });
+  // }
+</script>
