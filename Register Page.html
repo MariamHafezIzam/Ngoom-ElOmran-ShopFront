@@ -37,9 +37,37 @@
     background-color: #0066a5 !important;
     border-color: #0066a5 !important;
   }
+  .form-control-xs {
+    background-color: #0d579c !important;
+    border: 2px solid #fff;
+    border-radius: 8px;
+  }
+  @media only screen and (max-width: 991px) {
+    .form-group-icon .form-action,
+    .form-group-icon .form-action:hover {
+      color: #fff !important;
+    }
+    .form-control::placeholder {
+      color: #fff !important;
+      font-weight: 400 !important;
+    }
+    .mobile-bg {
+      background-color: #0d579c !important;
+    }
+    .form-control:focus {
+      color: #fff !important;
+      font-weight: 400 !important;
+    }
+    .btn-success {
+      background-color: #fbee12 !important;
+      border-color: #fbee12 !important;
+      border-radius: 6px;
+      color: #0d579c;
+    }
+  }
 </style>
 <div id="register-section">
-  <div class="container">
+  <div class="container d-none d-lg-block">
     <div class="row">
       <div class="col-lg-3"></div>
       <div class="col-lg-6">
@@ -162,5 +190,148 @@
       </div>
       <div class="col-lg-3"></div>
     </div>
+  </div>
+</div>
+
+<!-- Mobile Ver -->
+<div class="container mobile-bg d-block d-lg-none">
+  <div class="text-center pt-4">
+    <a class="logoo font-weight-extrabold fs-22 text-uppercase" href="/home">
+      <img
+        src="https://ostarssa.daftara.com/files/7aae9582/logos/6410733485854_blobid1678799665901.png"
+        alt=""
+        title="3-14-2023 3-13-25 PM.png"
+        width="85%"
+        height="auto"
+      />
+    </a>
+    <p class="text-white pt-2 fs-20 mb-1">
+      تسجيل أو تسجيل الدخول <br />الآن يمكن تخصيص التطبيق وتتبع طلبك
+    </p>
+  </div>
+  <div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+      <form action="/contents/register" method="POST">
+        <div class="py-4">
+          <!-- <h2 class="fs-22 font-weight-semibold text-primary mb-6">
+            تسجيل حساب جديد
+          </h2> -->
+          <div class="mb-3">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="mb-4">
+                  <div class="form-group form-group-icon mb-0">
+                    <input
+                      name="data[Client][business_name]"
+                      value="{{ business_name }}"
+                      type="text"
+                      class="form-control form-control-lg form-control-xs {{#errors.business_name}} is-invalid {{/errors.business_name}}"
+                      placeholder="الاسم بالكامل *"
+                      required=""
+                    />
+                    <i class="form-icon far text-white fs-20 fa-user"></i>
+                  </div>
+                  {{#errors.business_name}}
+                  <small class="font-weight-semibold fs-13 text-danger"
+                    >{{ errors.business_name }}</small
+                  >
+                  {{/errors.business_name}}
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="mb-4">
+                  <div class="form-group form-group-icon mb-0">
+                    <input
+                      name="data[Client][email]"
+                      type="text"
+                      value="{{ email }}"
+                      class="form-control form-control-lg  form-control-xs  {{#errors.email}} is-invalid {{/errors.email}}"
+                      placeholder="البريد الالكتروني *"
+                      required=""
+                    />
+                    <i class="form-icon far text-white fs-20 fa-envelope"></i>
+                  </div>
+                  {{#errors.email}}
+                  <small class="font-weight-semibold fs-13 text-danger"
+                    >{{ errors.email }}</small
+                  >
+                  {{/errors.email}}
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="mb-4">
+                  <div class="form-group form-group-icon mb-0">
+                    <input
+                      name="data[Client][phone2]"
+                      type="number"
+                      min="0"
+                      value="{{ phone2 }}"
+                      class="form-control form-control-lg form-control-xs  {{#errors.phone2}} is-invalid {{/errors.phone2}}"
+                      placeholder="الهاتف"
+                    />
+                    <i class="form-icon fas fa-mobile-alt text-white fs-20"></i>
+                  </div>
+                  {{#errors.phone2}}
+                  <small class="font-weight-semibold fs-13 text-danger"
+                    >{{ errors.phone2 }}</small
+                  >
+                  {{/errors.phone2}}
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="mb-4">
+                  <div class="form-group form-group-icon mb-0">
+                    <input
+                      name="data[Client][password]"
+                      type="password"
+                      class="form-control form-control-lg  form-control-xs  {{#errors.password}} is-invalid {{/errors.password}}"
+                      placeholder="كلمة المرور *"
+                      required=""
+                    />
+                    <i class="form-icon far text-white fs-20 fa-lock-alt"></i>
+                    <i class="form-action far text-white fs-20 fa-eye"></i>
+                  </div>
+                  {{#errors.password}}
+                  <small class="font-weight-semibold fs-13 text-danger"
+                    >{{ errors.password }}</small
+                  >
+                  {{/errors.password}}
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="mb-4">
+                  <div class="form-group form-group-icon mb-0">
+                    <input
+                      name="data[Client][confirm_password]"
+                      type="password"
+                      class="form-control form-control-lg form-control-xs {{#errors.confirm_password}} is-invalid {{/errors.confirm_password}}"
+                      placeholder="تأكيد كلمة المرور *"
+                      required=""
+                    />
+                    <i class="form-icon far text-white fs-20 fa-lock-alt"></i>
+                    <i class="form-action far text-white fs-20 fa-eye"></i>
+                  </div>
+                  {{#errors.confirm_password}}
+                  <small class="font-weight-semibold fs-13 text-danger"
+                    >{{ errors.confirm_password }}</small
+                  >
+                  {{/errors.confirm_password}}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-right">
+            <button
+              class="btn btn-success btn-lg py-2 fs-20 w-100"
+              type="submit"
+            >
+              تسجيل
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-lg-3"></div>
   </div>
 </div>
