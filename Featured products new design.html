@@ -79,6 +79,32 @@
   .swiper-button-next {
     margin-left: 15px !important;
   }
+  .featured-text {
+    height: 90px;
+  }
+  @media only screen and (max-width: 991px) {
+    .featured-text {
+      height: 60px;
+    }
+
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      font-size: 20px !important;
+      font-weight: 600;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      height: 30px !important;
+      width: 30px !important;
+    }
+
+    .swiper-button-prev {
+      margin-right: 5px !important;
+    }
+    .swiper-button-next {
+      margin-left: 5px !important;
+    }
+  }
 </style>
 
 {{#itemsCount}}
@@ -92,18 +118,18 @@
         <span> الاكثر مبيعا .....</span>
       </h3>
     </div>
-    <div class="row row-swiper">
+    <div class="row row-swiper px-3 mx-0 px-lg-0">
       <div class="swiper mySwiper testSwiper" id="mySwiper">
         <div class="swiper-wrapper">
           {{#items}}
           <div
-            class="swiper-slide col-lg-4 col-sm-6 py-2 px-4 card-product box"
+            class="swiper-slide col-lg-4 col-6 col py-2 px-lg-4 px-1 card-product box"
           >
-            <div class="item hover" style="border: 1px solid #0066a5">
+            <div class="item hover w-100" style="border: 1px solid #0066a5">
               <div
                 class="align-items-start d-flex flex-column m-0 product p-0"
-                style="background-image: url({{file_full_path}});     background-size: cover;height: 415px;
-    width: 314px !important;   background-position: center; "
+                style="background-image: url({{file_full_path}});     background-size: cover;
+       background-position: center; "
                 data-product-id="{{id}}"
                 data-image="{{file_full_path}}"
                 2
@@ -115,15 +141,15 @@
                   style="align-self: center; padding-top: 240px"
                 >
                   <div
-                    class="col-lg-7 px-0"
-                    style="height: 90px; display: flex; align-items: center"
+                    class="col-7 px-0 featured-text"
+                    style="display: flex; align-items: center"
                   >
                     <a
                       href="/contents/product_view/{{id}}"
                       class="text-decoration-none text-primary text-hover-black"
                     >
                       <h6
-                        class="fs-18 font-weight-semibold p-1 px-3 name my-auto"
+                        class="fs-lg-18 fs-14 font-weight-semibold p-1 px-lg-3 px-1 name my-auto"
                       >
                         {{ name }}<span
                           class="font-weight-medium fs-16 text-body ml-2 d-none"
@@ -138,7 +164,7 @@
                     </p>
                   </div>
                   <div
-                    class="col-lg-5 d-flex"
+                    class="col-5 px-0 d-flex"
                     style="align-self: center; border-right: 1px solid #0066a5"
                   >
                     <div
@@ -159,7 +185,7 @@
                       >
                       {{/discount}} {{^discount}}
                       <span
-                        class="text-white fs-14 px-1"
+                        class="text-white fs-lg-14 fs-10 px-1"
                         style="background-color: #ff0000"
                         >{{final_price}}</span
                       >
@@ -169,7 +195,7 @@
                 </div>
                 <button
                   data-name="{{name}}"
-                  class="add-to-cart-btn btn btn-sm btn-primary text-uppercase font-weight-medium fs-18 p-3 m-4 w-75"
+                  class="add-to-cart-btn btn btn-sm btn-primary text-uppercase font-weight-medium fs-lg-18 fs-14 p-lg-3 p-1 m-lg-4 m-2 w-75"
                 >
                   أضف للسلة
                 </button>
@@ -206,15 +232,21 @@
 </script> -->
 <script>
   var swiper = new Swiper(".testSwiper", {
-    slidesPerView: 3,
-    spaceBetween: 0,
-    // keyboard: {
-    //   enabled: true,
-    // },
+    breakpoints: {
+      250: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+      1300: {
+        slidesPerView: 3,
+        spaceBetween: 0,
+      },
+    },
 
+    reverseDirection: true,
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".swiper-button-prev",
+      prevEl: ".swiper-button-next",
     },
   });
 </script>
