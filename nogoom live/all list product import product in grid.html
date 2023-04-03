@@ -527,7 +527,7 @@
 
       <div
         class="mt-2 bg-white p-2 brand-list appear-before appear-menu"
-        style="height: 490px; box-shadow: rgba(0, 0, 0, 0.12) 0px 3px 8px"
+        style="box-shadow: rgba(0, 0, 0, 0.12) 0px 3px 8px"
       >
         <div class="row px-2 my-auto h-100">
           <div class="col col-lg-4 col-4 p-2">
@@ -535,7 +535,7 @@
               href="#"
               class="brand-filter"
               data-cat-search="0"
-              data-brand=""
+              data-brand="فوجي"
               style="
                 border: 1px solid #ff0000;
                 height: 90px;
@@ -560,7 +560,7 @@
               href="#"
               class="brand-filter"
               data-cat-search="0"
-              data-brand=""
+              data-brand="جري"
               style="
                 border: 1px solid #ff0000;
                 height: 90px;
@@ -585,7 +585,7 @@
               href="#"
               class="brand-filter"
               data-cat-search="0"
-              data-brand=""
+              data-brand="اوستار"
               style="
                 border: 1px solid #ff0000;
                 height: 90px;
@@ -610,7 +610,7 @@
               href="#"
               class="brand-filter"
               data-cat-search="0"
-              data-brand=""
+              data-brand="فيشر"
               style="
                 border: 1px solid #ff0000;
                 height: 90px;
@@ -635,7 +635,7 @@
               href="#"
               class="brand-filter"
               data-cat-search="0"
-              data-brand=""
+              data-brand="بيسك"
               style="
                 border: 1px solid #ff0000;
                 height: 90px;
@@ -660,7 +660,7 @@
               href="#"
               class="brand-filter"
               data-cat-search="0"
-              data-brand=""
+              data-brand="جنرال"
               style="
                 border: 1px solid #ff0000;
                 height: 90px;
@@ -685,7 +685,7 @@
               href="#"
               class="brand-filter"
               data-cat-search="0"
-              data-brand=""
+              data-brand="ميتسوبيشي"
               style="
                 border: 1px solid #ff0000;
                 height: 90px;
@@ -710,7 +710,7 @@
               href="#"
               class="brand-filter"
               data-cat-search="0"
-              data-brand=""
+              data-brand="هاير"
               style="
                 border: 1px solid #ff0000;
                 height: 90px;
@@ -735,7 +735,7 @@
               href="#"
               class="brand-filter"
               data-cat-search="0"
-              data-brand=""
+              data-brand="يورك"
               style="
                 border: 1px solid #ff0000;
                 height: 90px;
@@ -760,7 +760,7 @@
               href="#"
               class="brand-filter"
               data-cat-search="0"
-              data-brand=""
+              data-brand="ترين"
               style="
                 border: 1px solid #ff0000;
                 height: 90px;
@@ -785,7 +785,7 @@
               href="#"
               class="brand-filter"
               data-cat-search="0"
-              data-brand=""
+              data-brand="كارير"
               style="
                 border: 1px solid #ff0000;
                 height: 90px;
@@ -810,7 +810,7 @@
               href="#"
               class="brand-filter"
               data-cat-search="0"
-              data-brand=""
+              data-brand="ال جي"
               style="
                 border: 1px solid #ff0000;
                 height: 90px;
@@ -1180,7 +1180,7 @@
         {{#products}}
         <!-- ======================== card ======================================= -->
         <div class="col-xl-4 col-6 col py-2 px-lg-4 px-2 card-product box">
-          <div class="item hover" style="border: 1px solid #0066a5">
+          <div class="item hover w-100" style="border: 1px solid #0066a5">
             <div
               class="align-items-start d-flex flex-column m-0 product-x p-0 product"
               style="background-image: url({{file_full_path}});     background-size: cover;
@@ -1189,6 +1189,8 @@
               data-image="{{file_full_path}}"
               data-price="{{final_price_number}}"
               data-name="{{name}}"
+              data-category="{{category}}"
+              data-brand="{{brand}}"
             >
               <div
                 class="row w-100"
@@ -1404,7 +1406,7 @@
       </div>
     </div>
 
-    <div id="list" class="row row-swiper px-4 px-lg-0 mx-0">
+    <div id="list" class="row row-swiper px-3 px-lg-0 mx-0">
       <div class="swiper mySwiper testnew" id="mySwiper2">
         <div class="swiper-wrapper">
           {{#products}}
@@ -1413,15 +1415,17 @@
           <div
             class="swiper-slide col-lg-4 col-6 col py-2 px-lg-4 px-1 card-product box"
           >
-            <div class="item hover" style="border: 1px solid #0066a5">
+            <div class="item hover w-100" style="border: 1px solid #0066a5">
               <div
-                class="align-items-start d-flex flex-column m-0 product-slider p-0"
+                class="align-items-start d-flex flex-column m-0 product p-0"
                 style="background-image: url({{file_full_path}});     background-size: cover;height: 415px;
                     background-position: center;"
                 data-product-id="{{id}}"
                 data-image="{{file_full_path}}"
                 data-price="{{final_price_number}}"
                 data-name="{{name}}"
+                data-category="{{category}}"
+                data-brand="{{brand}}"
               >
                 <div
                   class="row w-100"
@@ -1511,6 +1515,8 @@
             data-name="{{name}}"
             data-brand="0"
             data-cat="0"
+            data-category="{{category}}"
+            data-brand="{{brand}}"
           >
             <div
               class="row w-100"
@@ -1917,6 +1923,7 @@
       });
     });
     let aLink = $(".price-filter");
+
     $.each(aLink, (isSecureContext, val) => {
       $(val).click((e) => {
         //  e.preventDefault();
@@ -1925,12 +1932,27 @@
         console.log(dataPrice, dataCat);
         if (dataCat !== "0") {
           e.originalEvent.currentTarget.href = `/contents/products_list?cat_id=${dataCat}&price=${dataPrice}`;
+        } else if (url.includes("cat_id")) {
+          e.originalEvent.currentTarget.href = `/contents/products_list?cat_id=${currCat}&price=${dataPrice}`;
         } else {
           e.originalEvent.currentTarget.href = `/contents/products_list?price=${dataPrice}`;
         }
       });
     });
-
+    let brandLink = $(".brand-filter");
+    $.each(brandLink, (isSecureContext, val) => {
+      $(val).click((e) => {
+        //  e.preventDefault();
+        let dataBrand = $(val).attr("data-brand");
+        let dataCat = $(val).attr("data-cat-search");
+        console.log(brandLink, dataCat);
+        if (dataCat !== "0") {
+          e.originalEvent.currentTarget.href = `/contents/products_list?cat_id=${dataCat}&brand=${dataBrand}`;
+        } else {
+          e.originalEvent.currentTarget.href = `/contents/products_list?brand=${dataBrand}`;
+        }
+      });
+    });
     $("#price").click(function () {
       $(".price-list").toggleClass("appear-menu");
     });
@@ -2021,47 +2043,48 @@
 
     // Start Filtering
     const filtering = () => {
-      if (url.includes("=")) {
+      let price;
+      if (url.includes("price")) {
         console.log("if true");
         let urlFiltering = url.split("?")[1].split("&");
         let urlLength = urlFiltering.length;
-
         if (urlLength == 1) {
-          if (url.includes("price")) {
-            let price = urlFiltering[0].replace(/^\D+/g, "").match(/\d+/)[0];
-            price = parseFloat(price);
-
-            switch (price) {
-              case 1000:
-                minPrice = 0;
-                maxPrice = 1000;
-                break;
-              case 5000:
-                minPrice = 1000;
-                maxPrice = 5000;
-                break;
-              case 10000:
-                minPrice = 5000;
-                maxPrice = 10000;
-                break;
-              case 20000:
-                minPrice = 10000;
-                maxPrice = 20000;
-                break;
-              default:
-                console.log("default");
-            }
-          }
+          price = urlFiltering[0].replace(/^\D+/g, "").match(/\d+/)[0];
+          price = parseFloat(price);
+        } else {
+          price = urlFiltering[1].replace(/^\D+/g, "").match(/\d+/)[0];
+          price = parseFloat(price);
+        }
+        console.log(price);
+        switch (price) {
+          case 1000:
+            minPrice = 0;
+            maxPrice = 1000;
+            break;
+          case 5000:
+            minPrice = 1000;
+            maxPrice = 5000;
+            break;
+          case 10000:
+            minPrice = 5000;
+            maxPrice = 10000;
+            break;
+          case 20000:
+            minPrice = 10000;
+            maxPrice = 20000;
+            break;
+          default:
+            console.log("default");
         }
         console.log(urlFiltering, urlLength);
-        let allProducts = $("#list-products-last .box");
+        let allProducts = $(" .box");
 
         $.each(allProducts, async (i, val) => {
           let productPrice = $(val).find(".product").data("price");
-
           if (!(minPrice <= productPrice && productPrice <= maxPrice)) {
-            console.log(productPrice);
+            console.log(val, $(val));
             $(val).addClass("d-none");
+            console.log(productPrice, "TESTUIO");
           }
         });
       } else {
