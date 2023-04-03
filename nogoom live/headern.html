@@ -632,7 +632,12 @@ div#home-featured-products-section {
         font-size: 8px !important;
         margin: 0px !important;
     }
-    
+    .copyrights .row div:nth-child(2){
+        display: none;
+    } 
+    .reg-top {
+        margin-top: -7px !important;
+    }
     .side-sidebar-wrap{
         width: 100% !important;
     }
@@ -666,10 +671,13 @@ header#site-header .col.col-lg-3>div {
     width: auto;
 }
 .product-slider   {
-    min-width: 208px !important;
+    min-width: 160px !important;
 }
 .title {
     font-size: 20px;
+}
+.ui-datepicker {
+    width: 100% !important;
 }
 a.nav-link.dashboard {
     font-size: 8px !important;
@@ -683,6 +691,9 @@ a.logn {
     font-size: 12px !important;
     padding: 12px;
 }
+.float{
+    bottom: 2%;
+ }
  /* .product{
     width: 160px !important;
 }  */
@@ -1471,38 +1482,54 @@ a.dropdown-item {
                             cartItems[productId] = {name: name,id: productId,qty: qty, image: image, price: price};
 
                         }
-                        var productAll=   $(this).parents(".product").data("product-id");
-                        $.ajax({
-                            url: "/v2/api/entity/product/" + productId,
-                            type: 'GET',
-                            headers: { 'apikey': 'eca5f677185bdbdb49f89fcc4ac9bf108cf76e90'},
-                            dataType: 'json'
-      }).done((data) => {
-        let catId = data.items_categories.length < 2
-                ? data.items_categories[0].category_id
-                : data.items_categories[1].category_id;
-        console.log(catId)
-
-          if (catId != "109" ) {
-            catId = data.items_categories[0].category_id
-               
-            console.log("HI" + catId)
-
-          }
-      if (catId == 109) {
-        loader.hideloder();
-
-            $(".custom-model-main").addClass("model-open");
+                        var productAll=   $(this).parents(".product").data("category");
+                        var categoriesName = productAll.split(",");
+                        console.log(categoriesName)
+                        $.each(categoriesName, async (i, val) => {
+                            console.log(val)
+                           if (val == "مكييفات ") {
+                           
+                        $(".custom-model-main").addClass("model-open");
                         $(".bg-popup ").addClass("model-open");
                         $("body").addClass("sidebar-active");
-        }
-        else{
-            loader.hideloder();
+                           }
+                        })
+                        loader.hideloder();
+                        $("body").addClass("sidebar-active");
+    //                     $.ajax({
+    //                         url: "/v2/api/entity/product/" + productId,
+    //                         type: 'GET',
+    //                         headers: { 'apikey': 'eca5f677185bdbdb49f89fcc4ac9bf108cf76e90'},
+    //                         dataType: 'json'
+    //   })
+      
+    //   .done((data) => {
+ 
+    //     let catId = data.product_categories.length < 2
+    //             ? data.product_categories[0].category_id
+    //             : data.product_categories[1].category_id;
+   
+      
+    //               if (catId != "109" ) {
+    //         catId = data.product_categories[0].category_id
+               
+    //         console.log("HI" + catId)
 
-            $("body").addClass("sidebar-active");
+    //       }
+    //   if (catId == 109) {
+    //     loader.hideloder();
 
-        }
-      });
+    //         $(".custom-model-main").addClass("model-open");
+    //                     $(".bg-popup ").addClass("model-open");
+    //                     $("body").addClass("sidebar-active");
+    //     }
+    //     else{
+    //         loader.hideloder();
+
+    //         $("body").addClass("sidebar-active");
+
+    //     }
+    //   });
                       
                       
                         $this.saveItemToBackEnd(productId);
@@ -1715,19 +1742,33 @@ function closeNav() {
     //         breakpoints: {
     //             300: {
     //     slidesPerView: 2,
-    //     spaceBetween: 0,
     //   },
     //   1300: {
     //     slidesPerView: 3,
     //     spaceBetween: 0,
     //   },
     //   },
-
+   // slidesPerView: 3,
     reverseDirection: true ,
     navigation: {
       nextEl:  ".swiper-button-prev",
       prevEl:".swiper-button-next",
     },
+    breakpoints: {
+        "@0.00": {
+          slidesPerView: 1,
+        
+        },
+        600: {
+          slidesPerView: 2,
+        },
+        1300: {
+          slidesPerView: 3,
+        },
+        "@1.50": {
+          slidesPerView: 4,
+        },
+      },
   });
     }, 5000);
 
