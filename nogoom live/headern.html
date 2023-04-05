@@ -1487,7 +1487,7 @@ a.dropdown-item {
                         console.log(categoriesName)
                         $.each(categoriesName, async (i, val) => {
                             console.log(val)
-                           if (val == "مكييفات ") {
+                           if (val.trim() == "مكييفات" || val.trim() == "مكيفات صحراوي" ) {
                            
                         $(".custom-model-main").addClass("model-open");
                         $(".bg-popup ").addClass("model-open");
@@ -1738,38 +1738,24 @@ function closeNav() {
   document.getElementById("mySidepanel").style.width = "0";
 }
     setTimeout(() => {
-        var swiper = new Swiper(".testnew", {
-    //         breakpoints: {
-    //             300: {
-    //     slidesPerView: 2,
-    //   },
-    //   1300: {
-    //     slidesPerView: 3,
-    //     spaceBetween: 0,
-    //   },
-    //   },
-   // slidesPerView: 3,
+        var swiper = new Swiper("#last-products .testnew,#main-content-offers .testnew", {
+ 
     reverseDirection: true ,
     navigation: {
       nextEl:  ".swiper-button-prev",
       prevEl:".swiper-button-next",
     },
-    breakpoints: {
-        "@0.00": {
-          slidesPerView: 1,
-        
-        },
-        600: {
-          slidesPerView: 2,
-        },
-        1300: {
-          slidesPerView: 3,
-        },
-        "@1.50": {
-          slidesPerView: 4,
-        },
-      },
+    slidesPerView: 3,
   });
+  var swiper = new Swiper("#last-products-mob .testnew,#main-content-offers-mob .testnew", {
+ 
+ reverseDirection: true ,
+ navigation: {
+   nextEl:  ".swiper-button-prev",
+   prevEl:".swiper-button-next",
+ },
+ slidesPerView: 2,
+});
     }, 5000);
 
 </script>
