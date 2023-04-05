@@ -169,7 +169,8 @@
               <span> العروض .....</span>
             </h3>
           </div>
-          <div id="main-content-offers"></div>
+          <div id="main-content-offers" class="d-none d-lg-block"></div>
+          <div id="main-content-offers-mob" class="d-block d-lg-none"></div>
         </div>
         <div class="last pt-2">
           <div>
@@ -180,7 +181,8 @@
               <span> وصل حديثا .....</span>
             </h3>
           </div>
-          <div id="last-products"></div>
+          <div id="last-products" class="d-none d-lg-block"></div>
+          <div id="last-products-mob" class="d-block d-lg-none"></div>
         </div>
       </div>
     </div>
@@ -193,7 +195,9 @@
         url: "/contents/products_list/limit:10?cat_id=117",
         type: "get",
         success: function (resp) {
-          $("#main-content-offers").html($(resp).find("#list"));
+          $("#main-content-offers,#main-content-offers-mob").html(
+            $(resp).find("#list")
+          );
         },
       });
 
@@ -205,7 +209,7 @@
         url: "/contents/products_list/limit:10",
         type: "get",
         success: function (resp) {
-          $("#last-products").html($(resp).find("#list"));
+          $("#last-products,#last-products-mob").html($(resp).find("#list"));
         },
       });
       return false;
