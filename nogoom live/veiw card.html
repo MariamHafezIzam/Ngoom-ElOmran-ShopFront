@@ -337,15 +337,24 @@
                   /><span class="checkmarks"></span>
                 </label>
               </div>
-
-              <div class="col-12 pt-6 text-center">
-                <p class="text-center">
-                  <input
-                    class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary close-btn"
-                    type="button"
-                    value="تم الأختيار"
-                  />
-                </p>
+              <div class="row w-100" style="justify-content: space-around">
+                <div class="col-6 pt-6 text-center">
+                  <p class="text-center">
+                    <input
+                      class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary back"
+                      value="رجوع الي القائمة السابقة"
+                    />
+                  </p>
+                </div>
+                <div class="col-6 pt-6 text-center">
+                  <p class="text-center">
+                    <input
+                      class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary close-btn back"
+                      type="button"
+                      value="تم الأختيار"
+                    />
+                  </p>
+                </div>
               </div>
             </div>
             <div class="pop-up-content-wrap d-none" id="services"></div>
@@ -369,9 +378,7 @@
         url: "/contents/products_list?cat_id=108",
         type: "get",
         success: function (resp) {
-          $("#services").html(
-            $(resp).find("#products-section .row:nth-last-child(2)")
-          );
+          $("#services").html($(resp).find("#list-products"));
           let servicess = $(".service");
           console.log(servicess);
           $.each($(servicess), (i, val) => {
@@ -420,6 +427,10 @@
           ? $(val).find("button").trigger("click")
           : "";
       });
+    });
+    $(".back").click(function () {
+      $(".select-service").removeClass("d-none");
+      $(".custom-model-wrap ").addClass("d-none");
     });
   });
 </script>
