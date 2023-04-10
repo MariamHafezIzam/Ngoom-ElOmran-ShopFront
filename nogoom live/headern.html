@@ -96,7 +96,7 @@
   .swiper-button-next {
     margin-left: 15px !important;
   }
-  
+ 
 </style>
 
   
@@ -143,6 +143,7 @@
         .b-secondary{
             border-bottom: 1px solid #00badb ;
         }
+
 .text-secondary  {
     color:#1467AB !important;
 }
@@ -171,6 +172,14 @@ min-height: auto;
 .form-control {
 height: 45px;
 }
+form {
+    min-height: auto !important;
+  }
+  #calc-page form {
+      min-height: 15cm;
+      
+    }
+  
 header#site-header #totalCart {
     background-color: #fb513e !important;
     color: #fff;
@@ -181,6 +190,18 @@ header#site-header #totalCart:hover {
 }
 .cart-toggle-btn {
     font-weight: 600;
+}
+#calc-page .checkmarks-new {
+    right : 0% !important;
+    height: 22px !important;
+      width: 22px !important;
+}
+.cont .checkmarks-new:after {
+    top: 7px !important;
+    left: 7px !important;
+    width: 8px !important;
+    height: 8px !important;
+
 }
 .btn-log{
     color: #fff;
@@ -281,7 +302,9 @@ a.text-white:focus, a.text-white:hover {
 label {
     margin-right: 0px !important;
 }
-
+ #calc-page form {
+      min-height: 15cm  !important;
+    }
 .price:hover{
     color: #053858;
 }
@@ -1164,12 +1187,12 @@ a.dropdown-item {
         </div> -->
         <div class="">
             <nav class="navbar navbar-expand-lg bg-primary p-0 b-b ">
-                <div class="container main-men">
+                <div class="container main-men px-0">
                     <div class="collapse show d-none d-lg-block" id="mainNav">
                         <ul class="navbar-nav px-0 py-2">
                             {{# menuItems }}
                             <li class="nav-item dropdown mr-2">
-                                <a style="align-items: center;" class="nav-link fs-xl-26 py-2 px-3 d-flex {{# has_children }} dropdown-toggle {{/ has_children }}" href="{{ link }}" {{# has_children }} role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" {{/ has_children }}>
+                                <a style="align-items: center;" class="nav-link fs-xl-26 py-2 px-2 d-flex {{# has_children }} dropdown-toggle {{/ has_children }}" href="{{ link }}" {{# has_children }} role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" {{/ has_children }}>
                                 {{ title }}
                                 </a>
                                 {{# has_children }}
