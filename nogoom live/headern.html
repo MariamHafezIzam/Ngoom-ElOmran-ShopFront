@@ -427,7 +427,7 @@ a.dropdown-item  {
 }
 a.dropdown-item:hover {
     color: #004067;
-    padding-right: 50px !important;
+    padding-right:35px !important;
 }
 .logn:hover {
     color: #2f65a8 !important;
@@ -526,7 +526,7 @@ div#home-featured-products-section {
     margin-top: -8px !important;
   }
   .dropdown-item {
-    padding: 15px 40px 15px 15px !important
+    padding: 15px 25px 15px 15px !important
 
   }
   .exit {
@@ -589,9 +589,12 @@ div#home-featured-products-section {
   .swiper-container-rtl .swiper-button-prev {
     right: 92%;
   }
-  /* .product {
-    width: 315px;
-} */
+  .product {
+    height:440px;
+}
+.img-padding {
+    padding-top:265px !important;
+}
 .main-men {
     justify-content: center !important;
 }
@@ -634,10 +637,30 @@ div#home-featured-products-section {
   overflow-x: hidden;
   transition: 0.5s;
 }
+.calc-menu {
+background-color: #dfeffb;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 3px 8px;
+    position: unset;
+    margin: 0;
+    height: 0px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear, height 0.5s ease;
+}
+
+.appear-calc {
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: 150px !important;
+    transition: visibility 0s, opacity 0.5s linear, height 0.5s ease;
+  }
 .product-slider   {
     min-width: 312px;
 }
 @media only screen and (max-width: 991px){
+    .swiper-pagination-bullets {
+        text-align: center !important;
+    }
     .form-control {
         font-size: 12px;
     }
@@ -717,9 +740,13 @@ a.logn {
 .float{
     bottom: 2%;
  }
- /* .product{
-    width: 160px !important;
-}  */
+ .product{
+    height: 275px !important;
+} 
+
+.img-padding {
+    padding-top: 160px !important;
+}
 /*.card-product{
     width: 160px !important;
 } */
@@ -778,7 +805,7 @@ a.dropdown-item {
     color: #fff;
  }
  #home-slider-section .home-slide {
-    max-height: 160px !important;
+    max-height: 120px !important;
  }
  .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
 
@@ -957,25 +984,54 @@ a.dropdown-item {
         <div class="d-flex py-1">
             <a href="/contents/process_content/maintenance" class="text-primary fs-18 font-weight-medium">
                 
-            <span class="ml-10">            الصيانة والضمان
+            <span class="ml-6">            الصيانة والضمان
             </span>
         </a>
         </div>
         <div class="d-flex py-1">
             <a href="/contents/process_content/reservation" class="text-primary fs-18 font-weight-medium">
                 
-            <span class="ml-10">     حجز موعد
+            <span class="ml-6">     حجز موعد
             </span>
         </a>
         </div>
         <div class="d-flex py-1">
             <a href="/contents/process_content/contact_us" class="text-primary fs-18 font-weight-medium">
                 
-            <span class="ml-10">                إتصل بنا
+            <span class="ml-6">                إتصل بنا
             </span>
         </a>
         </div>
-
+        <div class=" py-1">
+            <a href="#" class="text-primary fs-18 font-weight-medium" id="calc">
+                
+            <span class="ml-6">               احسب احتياجك
+            </span>
+        </a>
+    <div class="calc-menu pl-2 py-3 ml-6 my-2">
+        <div class="d-flex py-1">
+            <a href="/contents/process_content/calc1" class="text-primary fs-16 font-weight-medium">
+                
+            <span class="">               حساب وحدة التكييف
+            </span>
+        </a>
+        </div>
+        <div class="d-flex py-1">
+            <a href="/contents/process_content/calc2" class="text-primary fs-16 font-weight-medium">
+                
+            <span class="">              حساب غرف التبريد والتجميد
+            </span>
+        </a>
+        </div>
+        <div class="d-flex py-1">
+            <a href="/contents/process_content/calc3" class="text-primary fs-16 font-weight-medium">
+                
+            <span class="">               حساب الواح التلاجات
+            </span>
+        </a>
+        </div>
+    </div>
+        </div>
 
         </div>
 
@@ -1754,12 +1810,15 @@ a.dropdown-item {
 <script>
        $(".custom_content").last().css({ padding: 0, maxWidth: "100%" });
        function openNav() {
-  document.getElementById("mySidepanel").style.width = "250px";
+  document.getElementById("mySidepanel").style.width = "280px";
 }
 
 function closeNav() {
   document.getElementById("mySidepanel").style.width = "0";
 }
+$("#calc").click(function () {
+      $(".calc-menu ").toggleClass("appear-calc");
+    });
     setTimeout(() => {
         var swiper = new Swiper("#last-products .testnew,#main-content-offers .testnew", {
  

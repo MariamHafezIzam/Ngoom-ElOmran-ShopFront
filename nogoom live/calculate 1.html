@@ -1,0 +1,182 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+  />
+  <link
+    rel="stylesheet"
+    href=" https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/themes/redmond/jquery-ui.css"
+  />
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+    $(function () {
+      $("#type").selectmenu();
+    });
+  </script>
+  <style>
+    /* Hide the browser's default radio button */
+    .cont input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    /* Create a custom radio button */
+    #calc-page .checkmarks {
+      position: absolute;
+      top: 2px;
+      left: 2%;
+      height: 25px;
+      width: 25px;
+      background-color: #c0c0c0;
+      border-radius: 50%;
+    }
+
+    /* On mouse-over, add a grey background color */
+    .cont:hover input ~ .checkmarks {
+      background-color: #ccc;
+    }
+
+    /* When the radio button is checked, add a blue background */
+    .cont input:checked ~ .checkmarks {
+      background-color: #0066a5;
+    }
+
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+    .checkmarks:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    /* Show the indicator (dot/circle) when checked */
+    .cont input:checked ~ .checkmarks:after {
+      display: block;
+    }
+
+    /* Style the indicator (dot/circle) */
+    .cont .checkmarks:after {
+      top: 8px;
+      left: 8px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #fff;
+    }
+    #calc-page form {
+      min-height: 15cm;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    }
+  </style>
+</head>
+
+<div class="container" id="calc-page">
+  <div class="row py-10">
+    <div class="py-4 col-lg-4 col-12 px-4"></div>
+    <div class="py-4 col-lg-4 col-12 px-4">
+      <h3
+        class="text-secondary fs-lg-24 fs-18 font-weight-semibold my-3 mx-auto text-center"
+      >
+        حساب وحدة التكييف المناسب للغرفة
+      </h3>
+      <form
+        accept-charset="UTF-8"
+        action=""
+        method="POST"
+        enctype="multipart/form-data"
+        target="_blank"
+        class="bg-white p-4 w-100 mx-auto"
+        style="border-radius: 20px"
+      >
+        <div class="form-group">
+          <label for="room-tall">الطول</label>
+          <input
+            type="text"
+            name="room-tall"
+            class="form-control"
+            id="room-tall-1"
+            required="required"
+          />
+        </div>
+        <div class="form-group">
+          <label for="room-width"> العرض</label>
+          <input
+            class="form-control"
+            name="room-width"
+            type="text"
+            id="room-width-1"
+            required="required"
+          />
+        </div>
+        <div class="form-group">
+          <label for="room-height">الارتفاع </label>
+          <input
+            class="form-control"
+            name="room-height"
+            type="text"
+            id="room-height-1"
+            required="required"
+          />
+        </div>
+        <div class="form-group">
+          <div class="py-2 col-12 px-0">
+            <label class="cont">
+              <div class="ml-6 mt-1">الغرفة معرضة للشمس</div>
+              <input type="checkbox" name="choose-services" value="330" />
+              <span class="checkmarks checkmarks-new"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-xl-12 text-center pb-2 pt-4">
+          <button
+            type="submit"
+            class="submit-1 btn btn-primary fs-16 py-2 px-8 font-weight-semibold my-2 w-50"
+          >
+            احسب
+          </button>
+        </div>
+        <div class="form-group d-flex">
+          <label
+            for="calc"
+            class="my-auto mx-2 fs-20 font-weight-semibold text-primary"
+            >النتيجة
+          </label>
+          <input
+            class="form-control"
+            name="calc"
+            type="text"
+            id="calc-1"
+            required="required"
+          />
+          <span class="my-auto mx-2 font-weight-semibold text-primary">طن</span>
+        </div>
+      </form>
+    </div>
+
+    <div class="py-4 col-lg-4 col-12 px-4"></div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    $(".submit-1").click((e) => {
+      e.preventDefault();
+      let tall = $("#room-tall-1").val();
+      tall = parseFloat(tall);
+      let width = $("#room-width-1").val();
+      width = parseFloat(width);
+      let height = $("#room-height-1").val();
+      height = parseFloat(height);
+      let radiovalue = 300;
+      if ($('input[name="choose-services"]').is(":checked")) {
+        radiovalue = 330;
+      }
+
+      console.log(tall, width, height, radiovalue);
+      let calc = (tall * height * width * radiovalue) / 8000;
+      console.log(calc);
+      $("#calc-1").val(calc.toFixed());
+    });
+  });
+</script>

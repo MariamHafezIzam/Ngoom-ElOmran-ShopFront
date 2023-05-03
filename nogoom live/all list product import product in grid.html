@@ -1084,7 +1084,8 @@
                   src="{{image_full_path}}"
                   width="100%"
                   height="auto"
-                  alt="Sandwiches"
+                  alt="{{name}}"
+                  title="{{name}}"
                   class="mx-auto img-cat-sub"
                   style="max-height: 100%"
                 />
@@ -1093,7 +1094,8 @@
                   src="https://cdn.daftra.com/templates/shop_1/img/category_thumb.svg"
                   width="168"
                   height="125"
-                  alt="Sandwiches"
+                  alt="{{name}}"
+                  title="{{name}}"
                   class="img-fluid w-100 mx-auto img-cover category-img-sm img-cat-sub"
                 />
                 {{/image_full_path}}
@@ -1176,7 +1178,28 @@
       </div>
       <!-- add all products -->
 
-      <div id="list-products" class="row mx-0">
+      <div id="list-products" class="status-test row mx-0">
+        <!-- loader -->
+        <div
+          class="loader d-none"
+          style="
+            position: absolute;
+
+            left: 0%;
+            text-align: center;
+            z-index: 100;
+            top: 76%;
+            width: 100%;
+            height: 100%;
+          "
+        >
+          <img
+            style="padding-top: 70%"
+            class="loading-overlay-image"
+            src="/files/7aae9582/logos/63d66770b4f05_blobid1674995567373.gif"
+            width="5%"
+          />
+        </div>
         {{#products}}
         <!-- ======================== card ======================================= -->
         <div class="col-xl-4 col-6 col py-2 px-lg-4 px-2 card-product box">
@@ -1192,10 +1215,7 @@
               data-category="{{category}}"
               data-brand="{{brand}}"
             >
-              <div
-                class="row w-100"
-                style="align-self: center; padding-top: 240px"
-              >
+              <div class="row w-100 img-padding" style="align-self: center">
                 <div
                   class="col-7 px-0"
                   style="height: 90px; display: flex; align-items: center"
@@ -1427,10 +1447,7 @@
                 data-category="{{category}}"
                 data-brand="{{brand}}"
               >
-                <div
-                  class="row w-100"
-                  style="align-self: center; padding-top: 240px"
-                >
+                <div class="row w-100 img-padding" style="align-self: center">
                   <div
                     class="col-7 px-0"
                     style="display: flex; align-items: center"
@@ -1518,13 +1535,10 @@
             data-category="{{category}}"
             data-brand="{{brand}}"
           >
-            <div
-              class="row w-100"
-              style="align-self: center; padding-top: 240px"
-            >
+            <div class="row w-100 img-padding mx-0" style="">
               <div
                 class="col-7 px-0"
-                style="height: 90px; display: flex; align-items: center"
+                style="height: 66px; display: flex; align-items: center"
               >
                 <a
                   href="/contents/product_view/{{id}}"
@@ -1657,6 +1671,7 @@
     {{/products_count}}
   </div>
 </div>
+
 <div id="prods" class="d-none"></div>
 {{swiper_brands:Content.empty()}}
 <script>
@@ -1675,9 +1690,11 @@
     $(function () {
       let no = 1;
       let lastNewTest = 1;
-
+      let newURL = url
+        .replace("https://www.ostar.com.sa/contents/products_list", "")
+        .replace("?", "");
       $(window).scroll(function () {
-        let productNo = $(".box").length;
+        let productNo = $("#list-products-last .box").length;
         let newProNo = productNo / 20 + 1;
         let scrollHeight = $(window).scrollTop();
         let actualHeight = $(document).height() - $(window).height() - 2000;
@@ -1687,10 +1704,11 @@
           console.log(no);
           let newNo = ++no;
           console.log("Big");
+          console.log(newProNo, newNo);
           if (newProNo == newNo) {
-            $(".overlay").removeClass("d-none");
+            $(".loader").removeClass("d-none");
             $.ajax({
-              url: `/contents/products_list/page:${newProNo}`,
+              url: `/contents/products_list/page:${newProNo}&${newURL}`,
               type: "get",
               success: function (resp) {
                 let divsAppend = $(resp).find("#list-products-last .box");
@@ -1725,7 +1743,20 @@
                     $(val).find(".product").attr("data-cat", cat);
                   });
                 });
+                $.ajax({
+                  url: `/contents/products_list/page:${newProNo}&${newURL}`,
+                  type: "get",
+                  success: function (resp) {
+                    console.log(
+                      "grfswvkgkgigogototo=============================="
+                    );
 
+                    let divsAppend2 = $(resp).find("#list-products .box");
+
+                    console.log(divsAppend2);
+                    $(".status-test").eq(2).append($(divsAppend2));
+                  },
+                });
                 $("#list-products-last").append($(divsAppend));
                 lastNewTest = ++lastNewTest;
                 no = lastNewTest;
@@ -1734,13 +1765,71 @@
               filtering();
 
               setTimeout(() => {
-                $(".overlay").addClass("d-none");
-              }, 1000);
+                $(".loader").addClass("d-none");
+              }, 4500);
             });
           }
         }
       });
-      //  });
+
+      // $(window).scroll(function () {
+      //   let productNo = $("#list-products .box").length;
+      //   let newProNo = (productNo - 8) / 20 + 1;
+      //   let scrollHeight = $(window).scrollTop();
+      //   let actualHeight = $(document).height() - $(window).height() - 2000;
+      //   console.log(scrollHeight + " / " + actualHeight);
+
+      //   if (scrollHeight > actualHeight) {
+      //     console.log(no);
+      //     let newNo = ++no;
+      //     console.log(newProNo, newNo, "uu");
+      //     if (newProNo == newNo) {
+      //       console.log("TESTerr")
+      //       $.ajax({
+      //         url: `/contents/products_list/page:${newProNo}&${newURL}`,
+      //         type: "get",
+      //         success: function (resp) {
+      //           let divsAppend = $(resp).find("#list-products .box");
+      //           //    filtering();
+      //           $.each(divsAppend, async (i, val) => {
+      //             let productId = $(val).find(".product").data("product-id");
+      //             //  console.log(productId);
+      //             let apiKey = "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90";
+      //             $.ajax({
+      //               type: "GET",
+      //               url: "/v2/api/entity/product/" + productId,
+      //               headers: {
+      //                 "Content-Type": "application/json",
+      //                 Accept: "application/json",
+      //                 APIKEY: apiKey,
+      //               },
+      //               credentials: "same-origin",
+      //               contentType: "application/json",
+      //             }).done((data) => {
+      //               //  console.log(data);
+      //               let $thisProd = data;
+      //               let brand = $thisProd.brand;
+      //               let cat = 0;
+      //               cat = $thisProd.items_categories[0].category_id;
+      //               if (cat == "" || cat == undefined) {
+      //                 cat = 0;
+      //               }
+      //               let dis = $thisProd.discount;
+      //               //  console.log(brand, cat);
+      //               $(val).find(".product").attr("data-brand", brand);
+      //               $(val).find(".product").attr("data-cat", cat);
+      //             });
+      //           });
+      //           $("#list-products").append($(divsAppend));
+      //           lastNewTest = ++lastNewTest;
+      //           no = lastNewTest;
+      //         },
+      //       }).done(() => {
+      //         filtering();
+      //       });
+      //     }
+      //   }
+      // });
     });
 
     $.ajax({
@@ -2091,6 +2180,12 @@
         console.log("GGGG");
       }
     };
+    if (url.includes("cat_id")) {
+      $("#list-products-last .box").eq(0).addClass("d-none");
+      $("#list-products-last .box").eq(1).addClass("d-none");
+      $("#list-products .box").eq(0).addClass("d-none");
+      $("#list-products .box").eq(1).addClass("d-none");
+    }
     filtering();
   });
 </script>
