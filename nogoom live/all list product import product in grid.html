@@ -1673,7 +1673,7 @@
 </div>
 
 <div id="prods" class="d-none"></div>
-{{swiper_brands:Content.empty()}}
+{{swipe_brands:Content.empty()}}
 <script>
   $(document).ready(function () {
     let url = window.location.href;
@@ -1834,7 +1834,7 @@
 
     $.ajax({
       type: "GET",
-      url: "/v2/api/entity/category/" + currCat,
+      url: "/api2/product_categories/" + currCat,
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -1843,14 +1843,11 @@
       credentials: "same-origin",
       contentType: "application/json",
     }).done((data) => {
-      console.log(data);
-      let parentCat = data.parent_id;
-      console.log("parent" + parentCat);
+      let parentCat = data.data.Category.parent_id;
+      console.log("parent", parentCat);
       $.ajax({
         type: "GET",
-        url:
-          "/v2/api/entity/category/list/1?per_page=30&filter[parent_id]=" +
-          parentCat,
+        url: `/api2/product_categories?per_page=30&filter[parent_id]=${parentCat}`,
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
@@ -1860,10 +1857,11 @@
         contentType: "application/json",
       })
         .done((data) => {
+          console.log("ffff", data);
           let newData = data.data;
           $.each(newData, async (i, val) => {
-            let id = val.id;
-            let name = val.name;
+            let id = val.CategoriesCategory.id;
+            let name = val.CategoriesCategory.name;
             let newDiv = ` <div class="">
           <a
             href="/contents/products_list?cat_id=${id}" data-cat-id="${id}"
@@ -1910,7 +1908,7 @@
           });
         });
     });
-    console.log(currCat);
+    console.log("Curr" + currCat);
     if (url.includes("contents")) {
       $("#list").addClass("d-none");
     }
@@ -2123,7 +2121,7 @@
             cat = 0;
           }
           let dis = $thisProd.discount;
-          //  console.log(brand, cat);
+          console.log(brand, cat);
           $(val).find(".product").attr("data-brand", brand);
           $(val).find(".product").attr("data-cat", cat);
         });
@@ -2185,6 +2183,9 @@
       $("#list-products-last .box").eq(1).addClass("d-none");
       $("#list-products .box").eq(0).addClass("d-none");
       $("#list-products .box").eq(1).addClass("d-none");
+    }
+    if (url.includes("products_list?cat_id=117")) {
+      $("#air-cat").addClass("d-none");
     }
     filtering();
   });
