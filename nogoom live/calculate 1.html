@@ -96,6 +96,7 @@
             type="text"
             name="room-tall"
             class="form-control"
+            value="0"
             id="room-tall-1"
             required="required"
           />
@@ -105,6 +106,7 @@
           <input
             class="form-control"
             name="room-width"
+            value="0"
             type="text"
             id="room-width-1"
             required="required"
@@ -115,6 +117,7 @@
           <input
             class="form-control"
             name="room-height"
+            value="0"
             type="text"
             id="room-height-1"
             required="required"
@@ -175,6 +178,7 @@
 
       console.log(tall, width, height, radiovalue);
       let calc = (tall * height * width * radiovalue) / 8000;
+      calc = isNaN(parseFloat(calc)) ? 0 : calc;
       console.log(calc);
       $("#calc-1").val(calc.toFixed());
     });

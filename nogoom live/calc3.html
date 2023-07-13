@@ -95,6 +95,7 @@
           <input
             type="text"
             name="room-tall"
+            value="0"
             class="form-control"
             id="room-tall-3"
             required="required"
@@ -106,6 +107,7 @@
             class="form-control"
             name="room-width"
             type="text"
+            value="0"
             id="room-width-3"
             required="required"
           />
@@ -116,6 +118,8 @@
             class="form-control"
             name="room-height"
             type="text"
+            val="0"
+            value="0"
             id="room-height-3"
             required="required"
           />
@@ -126,6 +130,7 @@
             class="form-control"
             name="price"
             type="text"
+            value="0"
             id="price"
             required="required"
           />
@@ -173,8 +178,10 @@
   $(document).ready(function () {
     $(".submit-3").click((e) => {
       e.preventDefault();
-      let tall = $("#room-tall-3").val();
+      tall = $("#room-tall-3").val();
+
       tall = parseFloat(tall);
+
       let width = $("#room-width-3").val();
       width = parseFloat(width);
       let height = $("#room-height-3").val();
@@ -185,6 +192,9 @@
       let calc1 = (tall + width) * 2 * height;
       let calc2 = tall * width;
       let calc = (calc1 + calc2) * price;
+      calc = isNaN(parseFloat(calc)) ? 0 : calc;
+      console.log(calc);
+
       $("#calc-3").val(calc.toFixed());
     });
   });

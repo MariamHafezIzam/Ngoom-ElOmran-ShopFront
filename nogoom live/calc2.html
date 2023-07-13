@@ -97,6 +97,7 @@
             name="room-tall"
             class="form-control"
             id="room-tall-2"
+            value="0"
             required="required"
           />
         </div>
@@ -106,6 +107,7 @@
             class="form-control"
             name="room-width"
             type="text"
+            value="0"
             id="room-width-2"
             required="required"
           />
@@ -116,6 +118,7 @@
             class="form-control"
             name="room-height"
             type="text"
+            value="0"
             id="room-height-2"
             required="required"
           />
@@ -175,7 +178,9 @@
 
       console.log(tall, width, height, radiovalue);
       let calc = (tall * height * width) / radiovalue;
+      calc = isNaN(parseFloat(calc)) ? 0 : calc;
       console.log(calc);
+
       $("#calc-2").val(calc.toFixed());
     });
   });

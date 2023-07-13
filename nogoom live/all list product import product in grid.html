@@ -1710,6 +1710,8 @@
             $.ajax({
               url: `/contents/products_list/page:${newProNo}&${newURL}`,
               type: "get",
+              headers: { apikey: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90" },
+
               success: function (resp) {
                 let divsAppend = $(resp).find("#list-products-last .box");
                 //    filtering();
@@ -1747,10 +1749,6 @@
                   url: `/contents/products_list/page:${newProNo}&${newURL}`,
                   type: "get",
                   success: function (resp) {
-                    console.log(
-                      "grfswvkgkgigogototo=============================="
-                    );
-
                     let divsAppend2 = $(resp).find("#list-products .box");
 
                     console.log(divsAppend2);
@@ -2060,6 +2058,8 @@
       $.ajax({
         url: "/contents/products_list/limit:2?cat_id=" + currCat,
         type: "get",
+        headers: { apikey: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90" },
+
         success: function (resp) {
           $("#offers").html($(resp).find("#list-products").first());
         },

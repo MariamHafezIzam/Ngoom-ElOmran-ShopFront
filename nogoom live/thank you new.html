@@ -485,6 +485,57 @@
           });
         });
       }
+
+      let url = window.location.href
+      if (url.includes("invoice_id")){
+        let invId = url.replace("https://www.ostar.com.sa/client/contents/thankyou?invoice_id=","")
+       
+        console.log(invId)
+       
+        $.ajax({
+          url: "/v2/api/entity/le_shopfront-invoices/2",
+          headers: { apikey: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90" },
+        }).done((data) => {
+          let entityInv =
+            data[
+              "le_shopfront-invoices_le_shopfront-invoices_multiple_sub_forms"
+            ];
+          let lastElement = entityInv[entityInv.length - 1];
+          let entityID = lastElement.id;
+          let clientId = USER.client_id;
+         
+          $.each(entityInv, (i, val) => {
+              let id = val.id;
+              console.log(entityID, id);
+              if (id == entityID) {
+                val.invoice_id = invId
+                val.client_id = clientId
+                // val.qu_answer = selectVal;
+              console.log(entityInv);
+               }
+            });
+            let allData = JSON.stringify(data);
+          console.log(allData);
+
+          var settings = {
+            url: "/v2/api/entity/le_shopfront-invoices/2",
+            method: "PUT",
+            headers: {
+              APIKEY: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90",
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            data: allData,
+          };
+
+          $.ajax(settings).done(function (response) {
+            console.log(response);
+          });
+
+
+        })
+        
+      }
     });
   
     function newPostReq(name, phone, email, type, message,date, time, invoice_id) {
