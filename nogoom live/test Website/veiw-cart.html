@@ -1032,15 +1032,25 @@
             let servicess = $(".service");
             $.each($(servicess), (i, val) => {
               let newId = $(val).data("price-id");
-              $.ajax({
-                url: "/api2/products/" + newId,
-                headers: { apikey: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90" },
-                type: "GET",
-              }).done((data) => {
-                let newPrice = data.data.Product.unit_price;
+              if (newId != undefined) {
+                let apiKey = "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90";
 
-                let price = $(val).find(".new-price").text(newPrice);
-              });
+                $.ajax({
+                  type: "GET",
+                  url: "/v2/api/entity/product/" + newId,
+                  headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                    APIKEY: apiKey,
+                  },
+                  credentials: "same-origin",
+                  contentType: "application/json",
+                }).done((data) => {
+                  let newPrice = data.unit_price;
+
+                  let price = $(val).find(".new-price").text(newPrice);
+                });
+              }
             });
           },
         });

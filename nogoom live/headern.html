@@ -11,11 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.daftra.com/templates/shop_1/js/plugin_jquery.js?v={{ js_ver }}\"></script>
 <!-- Link Swiper's CSS -->
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
-/>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.css" integrity="sha512-zar81H5lVN36QFsq/da1hxpOLODXK4/oFwBGOFrvdWX6SBe3NWriWTQS6YQDVfW5fDeb2Vry41YQCELOe8cHww==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- Demo styles -->
 <style>
   .row-swiper .swiper {
@@ -832,6 +828,54 @@ a.dropdown-item {
  right: 88% !important;
 }
 }
+
+
+  /* accordion-1 */
+  #accordion-1 {
+    position: relative;
+    box-shadow: 0px 1px 7px #dbdbdb;
+  }
+
+  #accordion-1 .head {
+    background-color: #ffffff;
+    color: #0066a5;
+    padding: 20px 30px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #accordion-1 .arrow {
+    color: #0066a5;
+    font-size: 35px;
+    transition: 0.25s ease;
+    opacity: 0.3;
+    transform: rotate(-270deg);
+  }
+
+  #accordion-1 .head:hover .arrow {
+    opacity: 1;
+  }
+
+  #accordion-1 .head:hover,
+  #accordion-1 .active {
+    background-color: #c5dbec;
+  }
+
+  #accordion-1 .arrow-animate {
+    transform: rotate(-180deg);
+    opacity: 1;
+  }
+
+  #accordion-1 .content {
+    background-color: #ffffff;
+    display: none;
+    padding: 20px 30px;
+    color: #333333;
+  }
+
         </style>
 
 </head>
@@ -1572,15 +1616,48 @@ a.dropdown-item {
                         console.log(categoriesName)
                         $.each(categoriesName, async (i, val) => {
                             console.log(val)
-                           if (val.trim() == "مكييفات" || val.trim() == "مكيفات صحراوي" ) {
-                           
+                           if (val.includes("اسبلت") && !val.includes("دكت"))  {
+                           $(".pop-select").addClass("d-none");
                         $(".custom-model-main").addClass("model-open");
                         $(".bg-popup ").addClass("model-open");
+                        $(".split").removeClass("d-none");
                         $("body").addClass("sidebar-active");
                            }
+                           else if (val.includes("شباك") ) {
+                            $(".pop-select").addClass("d-none");
+                            $(".custom-model-main").addClass("model-open");
+                        $(".bg-popup ").addClass("model-open");
+                        $(".shbak").removeClass("d-none");
+                        $("body").addClass("sidebar-active");
+                           }
+                           else if (val.includes("دكت اسبلت") ) {
+                            $(".pop-select").addClass("d-none");
+                       $(".custom-model-main").addClass("model-open");
+                        $(".bg-popup ").addClass("model-open");
+                        $(".duct").removeClass("d-none");
+                        $("body").addClass("sidebar-active");
+                           }
+                           else if (val.includes("دولابي") ) {
+                            $(".pop-select").addClass("d-none");
+                            $(".custom-model-main").addClass("model-open");
+                        $(".bg-popup ").addClass("model-open");
+                        $(".dolaby").removeClass("d-none");
+                        $("body").addClass("sidebar-active");
+                           }
+                           else if (val.includes("صحراوي") ) {
+                            $(".pop-select").addClass("d-none");
+                            $(".custom-model-main").addClass("model-open");
+                        $(".bg-popup ").addClass("model-open");
+                        $(".sahrawy").removeClass("d-none");
+                        $("body").addClass("sidebar-active");
+                           }
+                           
+                          
                         })
                         loader.hideloder();
                         $("body").addClass("sidebar-active");
+
+                        
     //                     $.ajax({
     //                         url: "/v2/api/entity/product/" + productId,
     //                         type: 'GET',
@@ -1811,7 +1888,7 @@ a.dropdown-item {
             })
     </script>
     <!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.js"></script>
 
 <script>
        $(".custom_content").last().css({ padding: 0, maxWidth: "100%" });
@@ -1825,6 +1902,29 @@ function closeNav() {
 $("#calc").click(function () {
       $(".calc-menu ").toggleClass("appear-calc");
     });
+    let divMada = `
+    <div class="d-block my-2 pb-4">
+<a href="#" class="pr-2 py-4">
+                  <img
+                    src="https://www.ostar.com.sa/files/7aae9582/logos/6494067771a47_blobid1687422581222.png" 
+                    alt=""
+                    title="google play.png"
+                    width="100%"
+                    height="auto"
+                />
+            </div>
+`
+
+setTimeout(() => {
+    $(divMada).insertAfter(  $("#site-footer > div.container > div > div.col-lg-4 > div > div"));
+
+  //  $("#site-footer > div.container > div > div.col-lg-4 > div > div").append(divMada)
+    $("#site-footer > div.container > div > div.col-lg-4 > div > div").addClass("align-items-center")
+console.log(divMada)
+}, 500);
+
+
+
     setTimeout(() => {
         var swiper = new Swiper("#last-products .testnew,#main-content-offers .testnew", {
  
@@ -1847,8 +1947,4 @@ $("#calc").click(function () {
     }, 5000);
 
 </script>
-
-
-
-
-
+    

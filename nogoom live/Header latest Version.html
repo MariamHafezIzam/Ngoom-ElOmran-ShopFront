@@ -1,4 +1,4 @@
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar">
 <head>
     <title>{{page_title}}</title>
@@ -11,12 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.daftra.com/templates/shop_1/js/plugin_jquery.js?v={{ js_ver }}\"></script>
 <!-- Link Swiper's CSS -->
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-/>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.css" integrity="sha512-zar81H5lVN36QFsq/da1hxpOLODXK4/oFwBGOFrvdWX6SBe3NWriWTQS6YQDVfW5fDeb2Vry41YQCELOe8cHww==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- Demo styles -->
 <style>
   .row-swiper .swiper {
@@ -1568,7 +1563,7 @@ a.dropdown-item {
                             cartItems[productId] = {name: name,id: productId,qty: qty, image: image, price: price};
 
                         }
-                        var productAll=   $(this).parents(".product").data("category");
+                        var productAll=   $(this).parents(".product").data("categories");
                         var categoriesName = productAll.split(",");
                         console.log(categoriesName)
                         $.each(categoriesName, async (i, val) => {
@@ -1601,7 +1596,13 @@ a.dropdown-item {
                         $(".dolaby").removeClass("d-none");
                         $("body").addClass("sidebar-active");
                            }
-
+                           else if (val.includes("صحراوي") ) {
+                            $(".pop-select").addClass("d-none");
+                            $(".custom-model-main").addClass("model-open");
+                        $(".bg-popup ").addClass("model-open");
+                        $(".sahrawy").removeClass("d-none");
+                        $("body").addClass("sidebar-active");
+                           }
                            
                           
                         })
@@ -1839,7 +1840,7 @@ a.dropdown-item {
             })
     </script>
     <!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.js"></script>
 
 <script>
        $(".custom_content").last().css({ padding: 0, maxWidth: "100%" });
@@ -1853,22 +1854,26 @@ function closeNav() {
 $("#calc").click(function () {
       $(".calc-menu ").toggleClass("appear-calc");
     });
-
-let divMada = `
+    let divMada = `
+    <div class="d-block my-2 pb-4">
 <a href="#" class="pr-2 py-4">
                   <img
-                    src="https://www.ostar.com.sa/files/7aae9582/logos/6493faca7e66f_blobid1687419591623.png" 
+                    src="https://www.ostar.com.sa/files/7aae9582/logos/6494067771a47_blobid1687422581222.png" 
                     alt=""
                     title="google play.png"
-                    width="150"
+                    width="100%"
                     height="auto"
                 />
+            </div>
 `
-setTimeout(() => {
-    $("#site-footer > div.container > div > div.col-lg-4 > div > div").append(divMada)
-console.log(divMada)
-}, 200);
 
+setTimeout(() => {
+    $(divMada).insertAfter(  $("#site-footer > div.container > div > div.col-lg-4 > div > div"));
+
+  //  $("#site-footer > div.container > div > div.col-lg-4 > div > div").append(divMada)
+    $("#site-footer > div.container > div > div.col-lg-4 > div > div").addClass("align-items-center")
+console.log(divMada)
+}, 500);
 
 
 

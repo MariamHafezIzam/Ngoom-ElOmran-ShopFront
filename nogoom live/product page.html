@@ -149,7 +149,8 @@
               <p class="fs-16 font-weight-medium text-body">
                 {{ product.description }}
               </p>
-              <div class="mt-10 fs-16 text-dark font-weight-medium mb-8">
+              <div class="mt-2 fs-18 text-dark font-weight-medium mb-4">
+                متاح <span class="stock"></span>
                 <!--
                               Custom Fields Will Go Here
                               <p><span class="text-body">Color: </span>Red</p>
@@ -258,13 +259,14 @@ $.ajax({
         headers: { 'apikey': 'eca5f677185bdbdb49f89fcc4ac9bf108cf76e90'},
         type: "GET",
       }).done((data) => {
-      // console.log(data)  
+   //   console.log(data)  
        let model = data.custom_data.field_38
        let color = data.custom_data.field_39
        let cool = data.custom_data.field_40
        let guarantee = data.custom_data.field_41
        let country = data.custom_data.field_42
        let brand = data.brand
+       let stock =data.stock_balance
       
        $("#brand").text(brand);
        $("#model").text(model);
@@ -272,6 +274,7 @@ $.ajax({
        $("#guarantee").text(guarantee);
        $("#cool").text(cool);
        $("#country").text(country);
+       $(".stock").text(stock);
         
       });
 
@@ -280,4 +283,4 @@ $.ajax({
 });
 
 </script>
-  
+    

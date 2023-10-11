@@ -1,0 +1,100 @@
+<div id="checkout-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-10">
+        <div class="text-center pt-18">
+          {{# is_logged_in}} {{^ has_invoice}}
+          <h2 class="font-weight-medium fs-18 mb-8 text-danger">
+            خطأ: {{ errorMsg }}
+          </h2>
+          {{/ has_invoice}} {{# has_invoice}}
+          <h1 class="fs-40 font-weight-extrabold text-dark mb-8">شراء</h1>
+          {{/ has_invoice}} {{/ is_logged_in}} {{^ is_logged_in}}
+          <h2 class="font-weight-medium fs-18 mb-8 text-dark">
+            من فضلك
+            <a
+              href="/contents/login"
+              class="btn btn-outline-primary fs-10 fs-lg-14 fs-sm-13 fs-xl-16 mr-2 mr-lg-0 p-1 px-sm-2 py-sm-1"
+              >تسجيل الدخول</a
+            >
+            او
+            <a
+              href="/contents/register"
+              class="btn btn-outline-primary fs-10 fs-lg-14 fs-sm-13 fs-xl-16 mr-2 mr-lg-0 p-1 px-sm-2 py-sm-1"
+              >تسجيل حساب جديد</a
+            >
+          </h2>
+          {{/ is_logged_in}}
+        </div>
+        <div class="row">
+          <div class="col-lg-12" style="text-align: center">
+            {{# is_logged_in}}{{# has_invoice}}
+            <iframe
+              onload="resizeIframe(this)"
+              id="payment_iframe"
+              width="89%"
+              height="500"
+              src="{{ payment_link }}"
+              frameborder="0"
+            ></iframe>
+            {{/ has_invoice}}{{/ is_logged_in}}
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-1"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" language="javascript">
+  var iFrameSelector = $("#payment_iframe");
+  resizeIframe(iFrameSelector);
+  function resizeIframe(iframe) {
+    iframe.height = iframe.contentWindow.document.body.scrollHeight + "px";
+  }
+</script>
+<script>
+  $(document).ready(() => {
+    let id = USER.client_id;
+    console.log(id);
+    $.ajax({
+      url: `/v2/api/entity/client/${id}`,
+      headers: { apikey: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90" },
+      type: "GET",
+    }).done((data) => {
+      console.log(data);
+      let firstName = data.first_name || data.business_name;
+      let lastName = data.last_name || data.business_name;
+      let address1 = data.address1;
+      let address2 = data.address2;
+      let city = data.city;
+      let state = data.state;
+      let code = data.postal_code;
+      let phone = data.phone1;
+      // document
+      //   .querySelector("#payment_iframe")
+      //   .contentDocument.querySelector("#InvoicePaymentFirstName").innerText =
+      //   firstName;
+      // document.querySelector("#payment_iframe").contentDocument.querySelector("#InvoicePaymentState");
+      // document.querySelector("#payment_iframe").contentDocument.querySelector("#InvoicePaymentState");
+      // document.querySelector("#payment_iframe").contentDocument.querySelector("#InvoicePaymentState");
+      // document.querySelector("#payment_iframe").contentDocument.querySelector("#InvoicePaymentState");
+      // document.querySelector("#payment_iframe").contentDocument.querySelector("#InvoicePaymentState");
+      // document.querySelector("#payment_iframe").contentDocument.querySelector("#InvoicePaymentState");
+      // document.querySelector("#payment_iframe").contentDocument.querySelector("#InvoicePaymentState");
+      // document.querySelector("#payment_iframe").contentDocument.querySelector("div.wrap > div > div > div.col-flex-lg-8.pr-lg-0 > div:nth-child(1)");
+
+      console.log(
+        firstName,
+        lastName,
+        address1,
+        address2,
+        city,
+        state,
+        code,
+        phone
+      );
+    });
+  });
+</script>
