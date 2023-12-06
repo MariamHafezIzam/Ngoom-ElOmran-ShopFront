@@ -1,0 +1,142 @@
+<form action="/client/contents/booking/{{id}}" method="post">
+  <input type="hidden" name="start_date" value="{{start_date_input}}" />
+  <input type="hidden" name="end_date" value="{{end_date_input}}" />
+  <input type="hidden" name="start_time" value="{{start_time}}" />
+  <input type="hidden" name="end_time" value="{{end_time}}" />
+  {{#custom_fields}}
+  <input type="hidden" name="{{name}}" value="{{value}}" />
+  {{/custom_fields}}
+  <div class="pt-10">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div
+            class="d-flex flex-lg-row flex-column align-items-lg-center mb-5 justify-content-between"
+          >
+            <div class="d-inline-flex align-items-center">
+              <i class="mdi mdi-receipt-text text-primary mr-2 fs-22"></i>
+              <h4
+                class="text-capitalize text-primary fs-26 font-weight-extrabold mb-0"
+              >
+                تفاصيل الحجز
+              </h4>
+            </div>
+            <a
+              href="#"
+              onclick="window.history.back()"
+              class="btn mt-4 mt-lg-0 ml-lg-2 p-0 font-weight-normal d-inline-flex align-items-center fs-16 text-hover-primary"
+              ><i class="fas fa-arrow-circle-left mr-1 fs-14"></i>عودة</a
+            >
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="swiper-slider">
+            <div class="swiper-container product-swiper">
+              <div class="swiper-wrapper">
+                {{#images}}
+                <div class="swiper-slide">
+                  <a
+                    class="product-adaptive-img-wrapper product-adaptive-img-wrapper--lg"
+                    href="{{url}}"
+                    data-fancybox="images"
+                  >
+                    <img
+                      src="{{url}}"
+                      alt="{{title}}"
+                      class="product-adaptive-img"
+                    />
+                    <div class="slide-count">
+                      <p><span>صورة {{index}}/{{images_count}}</span></p>
+                    </div>
+                  </a>
+                </div>
+                {{/images}}
+              </div>
+            </div>
+            <span class="swiper-button-prev-icon"
+              ><i
+                class="fas fa-arrow-left w-38px w-lg-42px h-38px h-lg-42px d-inline-flex align-items-center justify-content-center bg-primary bg-hover-primary-2 text-white"
+              ></i
+            ></span>
+            <span class="swiper-button-next-icon"
+              ><i
+                class="fas fa-arrow-right w-38px w-lg-42px h-38px h-lg-42px d-inline-flex align-items-center justify-content-center bg-primary bg-hover-primary-2 text-white"
+              ></i
+            ></span>
+          </div>
+        </div>
+        <div class="col-lg-6 pt-4 pt-lg-0">
+          <h6 class="fs-16 font-weight-semibold">وحدة</h6>
+          <h6 class="fs-40 text-dark mb-3">{{title}}</h6>
+          <div class="my-7 text-body fs-16">
+            <p class="d-flex align-items-center justify-content-between mb-0">
+              <span class="d-inline-flex align-items-center">
+                <i class="mdi mdi-calendar-start fs-22 mr-1"></i>
+                <span class="mr-3">تاريخ البدء</span>
+                <span class="text-primary">{{start_date}}</span>
+              </span>
+              <span>
+                <span class="mr-1">الوقت</span>
+                <span class="text-primary">{{start_time}}</span>
+              </span>
+            </p>
+            <p class="d-flex align-items-center justify-content-between mb-0">
+              <span class="d-inline-flex align-items-center">
+                <i class="mdi mdi-calendar-end fs-22 mr-1"></i>
+                <span class="mr-3">تاريخ الانتهاء</span>
+                <span class="text-primary">{{end_date}}</span>
+              </span>
+              <span>
+                <span class="mr-1">الوقت</span>
+                <span class="text-primary">{{end_time}}</span>
+              </span>
+            </p>
+            <div class="bg-body w-100 my-3" style="height: 1px"></div>
+            <p class="d-flex align-items-center justify-content-between mb-0">
+              <span class="d-inline-flex align-items-center">
+                <i class="mr-1" style="width: 22px; height: 35px"></i>
+                <span class="mr-3">السعر دون الضريبة</span>
+                {{#days_count}}<span class="text-primary"
+                  >({{days_count}} أيام) &nbsp;</span
+                >{{/days_count}} {{#hours_count}}<span class="text-primary"
+                  >({{hours_count}} ساعات)</span
+                >{{/hours_count}}
+              </span>
+              <span>
+                <span class="text-primary">{{price_without_tax}}</span>
+              </span>
+            </p>
+            {{#taxes}}
+            <p class="d-flex align-items-center justify-content-between mb-0">
+              <span class="d-inline-flex align-items-center">
+                <i class="mr-1" style="width: 22px; height: 35px"></i>
+                <span class="mr-3">{{name}} {{value}}%</span>
+              </span>
+              <span>
+                <span class="text-primary">{{price}}</span>
+              </span>
+            </p>
+            {{/taxes}}
+            <div class="bg-body w-100 my-3" style="height: 1px"></div>
+            <p class="d-flex align-items-center justify-content-between mb-0">
+              <span class="d-inline-flex align-items-center">
+                <i class="mdi mdi-cash fs-22 mr-1"></i>
+                <span class="mr-3"> الاجمالي</span>
+              </span>
+              <span>
+                <span class="text-success fs-22 font-weight-bold"
+                  >{{total_price}}</span
+                >
+              </span>
+            </p>
+          </div>
+          <button
+            class="py-2 d-flex align-items-center justify-content-between d-block w-100 btn btn-sm btn-primary text-uppercase font-weight-medium fs-16"
+          >
+            احجز طلبك<i class="mdi mdi-cart-check fs-24 ml-2"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

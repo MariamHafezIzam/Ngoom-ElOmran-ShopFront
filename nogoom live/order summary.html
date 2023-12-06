@@ -1,178 +1,169 @@
-<style>
-  tr.remove_my_magic {
-    opacity: 0;
-  }
-</style>
-
 <div id="order-summary-section">
   <div class="container">
-    <div class="mt-6 mb-9">
-      <div class="mb-5 row">
-        <div class="col-xl-6">
-          <div class="py-4 text-center text-primary">
-            <h3 class="fs-30 font-weight-semibold">عربة التسوق</h3>
-          </div>
-
-          <div class="d-flex align-items-center text-primary mb-2">
-            <i class="fas fa-receipt fs-22 mr-2"></i>
-            <h3 class="font-weight-bold fs-lg-24 fs-18 mb-0 mr-2">
-              تفاصيل عملية الشراء
-            </h3>
-            <small class="fs-14 fs-lg-16 font-weight-medium text-body"
-              >({{itemsCount}} منتج)</small
-            >
-          </div>
-          <div class="table-responsive">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th
-                    scope="col"
-                    class="text-primary fs-14 fs-lg-16 font-weight-bold"
-                  >
-                    منتج
-                  </th>
-                  <th
-                    scope="col"
-                    class="d-none d-md-table-cell text-primary fs-14 fs-lg-16 font-weight-bold"
-                  >
-                    السعر
-                  </th>
-                  <th
-                    scope="col"
-                    class="d-none d-md-table-cell text-primary fs-14 fs-lg-16 font-weight-bold"
-                  >
-                    الكمية.
-                  </th>
-                  {{#hasDiscounts}}
-                  <th
-                    scope="col"
-                    width="170"
-                    class="text-primary fs-14 fs-lg-16 font-weight-bold"
-                  >
-                    خصم
-                  </th>
-                  {{/hasDiscounts}} {{^hasDiscounts}}
-                  <th
-                    scope="col"
-                    width="170"
-                    class="text-primary fs-14 fs-lg-16 font-weight-bold"
-                  ></th>
-                  {{/hasDiscounts}}
-                  <th
-                    scope="col"
-                    width="100"
-                    class="text-primary text-right fs-14 fs-lg-16 font-weight-bold"
-                  >
-                    الإجمالي
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {{#items}}
-                <tr>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <img
-                        src="{{image}}"
-                        class="w-50px h-50px img-cover mr-4"
-                        alt="Product Name"
-                      />
-                      <div>
-                        <h6
-                          class="font-weight-semibold fs-14 fs-lg-16 text-primary mb-0"
-                        >
-                          {{name}}<span class="d-block d-md-none"
-                            ><span
-                              class="d-inline-block text-readable fs-14 badge badge-cart p-1 mt-1 lh-14"
-                              >x 1 ($20.00)</span
-                            ></span
-                          >
-                        </h6>
-                        <span
-                          class="font-weight-medium fs-13 fs-lg-14 text-light"
-                          >#{{code}}</span
-                        >
-                      </div>
-                    </div>
-                  </td>
-                  <td class="d-none d-md-table-cell">
-                    <span class="fs-16 font-weight-medium text-primary"
-                      >{{formatted_price}}</span
-                    >
-                  </td>
-                  <td class="d-none d-md-table-cell">
-                    <span class="fs-16 font-weight-medium text-primary"
-                      >{{quantity}}</span
-                    >
-                  </td>
-                  {{#hasDiscounts}}
-                  <td>
-                    <span class="fs-16 font-weight-medium text-primary"
-                      >{{final_discount}}</span
-                    >
-                  </td>
-                  {{/hasDiscounts}} {{^hasDiscounts}}
-                  <td>
-                    <span class="fs-16 font-weight-medium text-primary"></span>
-                  </td>
-                  {{/hasDiscounts}}
-                  <td class="text-right">
-                    <span class="fs-16 font-weight-medium text-primary"
-                      >{{formatted_subtotal}}</span
-                    >
-                  </td>
-                </tr>
-                {{/items}}
-                <tr>
-                  <td></td>
-                  <td class="d-none d-md-table-cell"></td>
-                  <td class="d-none d-md-table-cell"></td>
-                  <td class="pb-1">
-                    <span class="fs-14 fs-lg-16 font-weight-medium text-body"
-                      >الإجمالي:</span
-                    >
-                  </td>
-                  <td class="text-right pb-1">
-                    <span class="fs-16 font-weight-bold text-primary"
-                      >{{formatted_subtotals}}</span
-                    >
-                  </td>
-                </tr>
-                {{#hasDiscounts}}
-                <tr>
-                  <td class="border-top-0"></td>
-                  <td class="d-none d-md-table-cell border-top-0"></td>
-                  <td class="d-none d-md-table-cell border-top-0"></td>
-                  <td class="border-top-0 py-1">
-                    <span class="fs-14 fs-lg-16 font-weight-medium text-body"
-                      >الخصم:</span
-                    >
-                  </td>
-                  <td class="text-right border-top-0 py-1">
-                    <span class="fs-16 font-weight-bold text-primary"
-                      >{{discounts}}</span
-                    >
-                  </td>
-                </tr>
-                {{/hasDiscounts}}
-                <!-- Taxes List Start Here -->
-                <tr id="magic_tr">
-                  <td class="border-top-0"></td>
-                  <td class="d-none d-md-table-cell border-top-0"></td>
-                  <td class="d-none d-md-table-cell border-top-0"></td>
-                  <td class="border-top-0 px-0 py-0">
-                    <hr class="spacer border-dashed border-placeholder" />
-                  </td>
-                  <td class="border-top-0 px-0 py-0">
-                    <hr class="spacer border-dashed border-placeholder" />
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+    <div class="mt-10 mb-9">
+      <div class="mb-5">
+        <div class="d-flex align-items-center text-primary mb-2">
+          <i class="fas fa-receipt fs-22 mr-2"></i>
+          <h3 class="font-weight-bold fs-lg-24 fs-18 mb-0 mr-2">
+            Order Summary
+          </h3>
+          <small class="fs-14 fs-lg-16 font-weight-medium text-body"
+            >({{itemsCount}} Items)</small
+          >
         </div>
-        <div class="col-xl-6">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th
+                  scope="col"
+                  class="text-primary fs-14 fs-lg-16 font-weight-bold"
+                >
+                  Item
+                </th>
+                <th
+                  scope="col"
+                  class="d-none d-md-table-cell text-primary fs-14 fs-lg-16 font-weight-bold"
+                >
+                  Price
+                </th>
+                <th
+                  scope="col"
+                  class="d-none d-md-table-cell text-primary fs-14 fs-lg-16 font-weight-bold"
+                >
+                  Qty.
+                </th>
+                {{#hasDiscounts}}
+                <th
+                  scope="col"
+                  width="170"
+                  class="text-primary fs-14 fs-lg-16 font-weight-bold"
+                >
+                  Discount
+                </th>
+                {{/hasDiscounts}} {{^hasDiscounts}}
+                <th
+                  scope="col"
+                  width="170"
+                  class="text-primary fs-14 fs-lg-16 font-weight-bold"
+                ></th>
+                {{/hasDiscounts}}
+                <th
+                  scope="col"
+                  width="100"
+                  class="text-primary text-right fs-14 fs-lg-16 font-weight-bold"
+                >
+                  Subtotal
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#items}}
+              <tr>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <img
+                      src="{{image}}"
+                      class="w-50px h-50px img-cover mr-4"
+                      alt="Product Name"
+                    />
+                    <div>
+                      <h6
+                        class="font-weight-semibold fs-14 fs-lg-16 text-primary mb-0"
+                      >
+                        {{name}}<span class="d-block d-md-none">
+                          <span
+                            class="d-inline-block text-readable fs-14 badge badge-cart p-1 mt-1 lh-14"
+                            >x {{quantity}} ({{formatted_price}})</span
+                          >
+                        </span>
+                      </h6>
+                      <span class="font-weight-medium fs-13 fs-lg-14 text-light"
+                        >#{{code}}</span
+                      >
+                    </div>
+                  </div>
+                </td>
+                <td class="d-none d-md-table-cell">
+                  <span class="fs-16 font-weight-medium text-primary"
+                    >{{formatted_price}}</span
+                  >
+                </td>
+                <td class="d-none d-md-table-cell">
+                  <span class="fs-16 font-weight-medium text-primary"
+                    >{{quantity}}</span
+                  >
+                </td>
+                {{#hasDiscounts}}
+                <td>
+                  <span class="fs-16 font-weight-medium text-primary"
+                    >{{final_discount}}</span
+                  >
+                </td>
+                {{/hasDiscounts}} {{^hasDiscounts}}
+                <td>
+                  <span class="fs-16 font-weight-medium text-primary"></span>
+                </td>
+                {{/hasDiscounts}}
+                <td class="text-right">
+                  <span class="fs-16 font-weight-medium text-primary"
+                    >{{formatted_subtotal}}</span
+                  >
+                </td>
+              </tr>
+              {{/items}}
+              <tr>
+                <td></td>
+                <td class="d-none d-md-table-cell"></td>
+                <td class="d-none d-md-table-cell"></td>
+                <td class="pb-1">
+                  <span class="fs-14 fs-lg-16 font-weight-medium text-body"
+                    >Subtotal:</span
+                  >
+                </td>
+                <td class="text-right pb-1">
+                  <span class="fs-16 font-weight-bold text-primary"
+                    >{{formatted_subtotals}}</span
+                  >
+                </td>
+              </tr>
+              {{#hasDiscounts}}
+              <tr>
+                <td class="border-top-0"></td>
+                <td class="d-none d-md-table-cell border-top-0"></td>
+                <td class="d-none d-md-table-cell border-top-0"></td>
+                <td class="border-top-0 py-1">
+                  <span class="fs-14 fs-lg-16 font-weight-medium text-body"
+                    >Discount:</span
+                  >
+                </td>
+                <td class="text-right border-top-0 py-1">
+                  <span class="fs-16 font-weight-bold text-primary"
+                    >{{discounts}}</span
+                  >
+                </td>
+              </tr>
+              {{/hasDiscounts}}
+              <!-- Taxes List Start Here -->
+
+              <tr id="magic_tr">
+                <td class="border-top-0"></td>
+                <td class="d-none d-md-table-cell border-top-0"></td>
+                <td class="d-none d-md-table-cell border-top-0"></td>
+                <td class="border-top-0 px-0 py-0">
+                  <hr class="spacer border-dashed border-placeholder" />
+                </td>
+                <td class="border-top-0 px-0 py-0">
+                  <hr class="spacer border-dashed border-placeholder" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
           <form
             id="placeOrderForm"
             method="POST"
@@ -190,7 +181,7 @@
               <div class="d-flex align-items-center text-primary mb-2">
                 <i class="fas fa-shipping-fast fs-22 mr-2"></i>
                 <h3 class="font-weight-bold fs-lg-24 fs-18 mb-0 mr-2">
-                  اختر طريقة الشحن
+                  Select Shipping Option
                 </h3>
               </div>
               <div class="table-responsive">
@@ -253,7 +244,7 @@
                       <td class="border-top-0 py-1 text-nowrap">
                         <span
                           class="fs-14 fs-lg-16 font-weight-medium text-body mr-4"
-                          >قيمة الشحن :</span
+                          >Shipping Fees:</span
                         >
                       </td>
                       <td class="text-right border-top-0 py-1">
@@ -286,11 +277,13 @@
             />
             {{/shippingOptionsCount}}
           </form>
+        </div>
+        <div class="col-lg-6">
           <div class="mb-6">
             <div class="d-flex align-items-center text-primary mb-2">
               <i class="fas fa-money-bill-wave fs-22 mr-2"></i>
               <h3 class="font-weight-bold fs-lg-24 fs-18 mb-0 mr-2">
-                الإجمالي:
+                Total Amount:
               </h3>
             </div>
             <div class="table-responsive">
@@ -307,7 +300,7 @@
                     <td class="border-top-0"></td>
                     <td class="border-top-0 align-middle pt-2 pb-1 text-nowrap">
                       <span class="fs-16 font-weight-medium text-body mr-4"
-                        >الإجمالي:</span
+                        >Total Amount:</span
                       >
                     </td>
                     <td class="text-right border-top-0 pt-2 pb-1">
@@ -343,7 +336,7 @@
             href="/contents/products_list"
             class="text-hover-primary mt-2 mt-lg-0 d-inline-block font-weight-medium"
             ><span class="text-decoration-underline"
-              ><i class="fas fa-arrow-left mr-1"></i>الرجوع الى التسوق</span
+              ><i class="fas fa-arrow-left mr-1"></i>Back to shopping</span
             ></a
           >
         </div>
@@ -353,7 +346,7 @@
             href="#"
             class="btn btn-success d-flex align-items-center justify-content-between rounded-lg btn-block px-6 py-3 fs-20 font-weight-medium btn-lg"
           >
-            <span>احجز طلبك</span>
+            <span>Place Order</span>
             <span class="fas fa-arrow-right fs-16"></span>
           </a>
         </div>
@@ -365,27 +358,5 @@
   // Do not remove these, they are used in another file
   let all_system_taxes = JSON.parse("{{{all_taxes}}}");
   let item_taxes = Object.values(JSON.parse("{{{totalTaxes}}}"));
-  console.log(item_taxes);
-  let count = 0;
-  const taxStyle = setInterval(() => {
-    if ($("span.fs-16.font-weight-bold.text-primary").length == 3) {
-      clearInterval(taxStyle);
-      $("span.fs-16.font-weight-bold.text-primary")
-        .eq(1)
-        .html(
-          $("span.fs-16.font-weight-bold.text-primary")
-            .eq(1)
-            .text()
-            .replace("SAR", "") + "<span>&nbsp;ر.س</span>"
-        );
-      $("tr.remove_my_magic").animate({ opacity: 1 }, "fast");
-    } else if (count == 50) {
-      clearInterval(taxStyle);
-      $("tr.remove_my_magic").css("display", "table-row");
-    } else {
-      count += 1;
-      console.log(count);
-    }
-  }, 1000);
 </script>
 <script src="/shop_front/js/order-summary.js"></script>

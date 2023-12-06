@@ -259,927 +259,1886 @@
             <p class="fs-18 p-2 m-0 text-center font-weight-bold">
               اختر الخدمة المطلوبة
             </p>
-            <div id="service-forms " class="row m-4 fs-20 font-weight-medium">
-              <div class="py-2 col-12 choose-bkg">
-                <label class="cont">
-                  <div style="width: 50%">توريد فقط</div>
-                  <input type="radio" name="choose-service" value="0" />
-                  <span class="checkmarks"></span>
-                </label>
-              </div>
-              <div class="py-2 col-12 choose-bkg">
-                <label class="cont">
-                  <div style="width: 50%">توريد وتركيب</div>
-                  <input type="radio" name="choose-service" value="1" />
-                  <span class="checkmarks"></span>
-                </label>
+            <div id="service-forms " class="row mx-4 fs-20 font-weight-medium">
+              <div class="air-cond w-100 d-none my-4">
+                <div class="py-2 col-12 choose-bkg">
+                  <label class="cont">
+                    <div style="width: 50%">توريد فقط</div>
+                    <input type="radio" name="choose-service" value="0" />
+                    <span class="checkmarks"></span>
+                  </label>
+                </div>
+                <div class="py-2 col-12 choose-bkg">
+                  <label class="cont">
+                    <div style="width: 50%">توريد وتركيب</div>
+                    <input type="radio" name="choose-service" value="1" />
+                    <span class="checkmarks"></span>
+                  </label>
+                </div>
+                <div class="col-12 pt-6 text-center">
+                  <p class="text-center">
+                    <input
+                      class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary selected"
+                      value="تم تحديد الخدمة"
+                    />
+                  </p>
+                </div>
               </div>
 
-              <div class="col-12 pt-6 text-center">
+              <!-- tases nehas Q -->
+              <div class="tases-nhas w-100 d-none px-3">
+                <div>سوال/ هل تم زراعة مواسير PVC</div>
+                <div
+                  class="d-flex row px-3"
+                  style="justify-content: space-between"
+                >
+                  <div class="py-2 col-3">
+                    <label class="cont">
+                      <div style="width: 50%">نعم</div>
+                      <input
+                        type="radio"
+                        name="choose-service"
+                        value="0"
+                        class="tases-input"
+                      />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </div>
+
+                  <div class="py-2 col-3">
+                    <label class="cont">
+                      <div style="width: 50%">لا</div>
+                      <input
+                        type="radio"
+                        name="choose-service"
+                        value="1"
+                        class="tases-input"
+                      />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- <div class="col-12 pt-6 text-center">
+                  <p class="text-center">
+                    <input
+                      class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary selected"
+                      value="تم التأكيد "
+                    />
+                  </p>
+                </div> -->
+              </div>
+              <div class="custom-model-wrap-tases d-none w-100">
+                <div>هل الموقع مليس ؟</div>
+                <div
+                  class="d-flex row px-3"
+                  style="justify-content: space-between"
+                >
+                  <div class="py-2 col-3">
+                    <label class="cont">
+                      <div style="width: 50%">نعم</div>
+                      <input
+                        type="radio"
+                        name="choose-service-1"
+                        value="1"
+                        class="tases-input-1"
+                      />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </div>
+
+                  <div class="py-2 col-3">
+                    <label class="cont">
+                      <div style="width: 50%">لا</div>
+                      <input
+                        type="radio"
+                        name="choose-service-1"
+                        value="0"
+                        class="tases-input-1"
+                      />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- tases -->
+              </div>
+              <div class="d-none col-12 pt-6 text-center note">
+                <div class="fs-18 px-4 py-2 font-weight-bold text-center">
+                  اضافة رسوم ملاحظة لكل متر 10ريال
+                </div>
                 <p class="text-center">
                   <input
-                    class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary selected"
-                    value="تم تحديد الخدمة"
+                    class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary selected-tases"
+                    value="تم التأكيد "
                   />
                 </p>
               </div>
-            </div>
-          </div>
-
-          <div class="custom-model-wrap d-none">
-            <div class="split pop-select d-none">
-              <p class="fs-18 p-2 m-0 text-center">
-                ما هو المكان المناسب لتركيب وحدة المكيف الخارجية؟
-              </p>
-              <div id="service-forms " class="row m-4 fs-20 font-weight-medium">
+              <div class="custom-model-wrap-holes d-none w-100">
+                <div>هل الموقع يحتاج اخرام</div>
                 <div
-                  class="py-2 col-12 service"
-                  data-price-id="7330"
-                  style="background-color: #f0f8ff"
+                  class="d-flex row px-3"
+                  style="justify-content: space-between"
                 >
-                  <label for="third" class="cont">
-                    <div style="width: 55%">تركيب</div>
-                    <div
-                      style="
-                        width: 25%;
-                        text-align-last: center;
-                        color: #fb513e;
-                      "
-                    >
-                      <span class="new-price mx-2"></span>ر.س
-                    </div>
-                    <input
-                      type="checkbox"
-                      class="checked"
-                      onclick="return false;"
-                      checked
-                      id="third"
-                      value="7330"
-                    /><span class="checkmark"></span>
-                  </label>
+                  <div class="py-2 col-3">
+                    <label class="cont">
+                      <div style="width: 50%">نعم</div>
+                      <input
+                        type="radio"
+                        name="choose-service-holes"
+                        value="1"
+                        class="tases-input-holes"
+                      />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </div>
+
+                  <div class="py-2 col-3">
+                    <label class="cont">
+                      <div style="width: 50%">لا</div>
+                      <input
+                        type="radio"
+                        name="choose-service-holes"
+                        value="0"
+                        class="tases-input-holes"
+                      />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </div>
                 </div>
 
-                <div
-                  class="py-2 col-12 service"
-                  data-price-id="6565"
-                  style="background-color: #f6f6f6"
-                >
-                  <label for="zero" class="cont">
-                    <div style="width: 55%">الطابق الارضي</div>
-
-                    <div
-                      style="
-                        width: 25%;
-                        text-align-last: center;
-                        color: #fb513e;
-                      "
-                    >
-                      <span class="new-price mx-2"></span>ر.س
+                <!-- tases -->
+              </div>
+              <div class="holes-number d-none w-100">
+                <div class="form-group d-flex" data-price-id="7412">
+                  <label class="col-md-10 control-label"
+                    >ادخل عدد الاخرام</label
+                  >
+                  <div class="col-md-2 inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"></span>
+                      <input
+                        class="hole-no form-control text-center"
+                        type="text"
+                        data-id="7412"
+                        data-cat="sahrawy"
+                        value="0"
+                      />
                     </div>
-                    <input
-                      type="radio"
-                      id="zero"
-                      name="select_services"
-                      value="6565"
-                    />
-                    <span class="checkmarks"></span>
-                  </label>
-                </div>
-                <div
-                  class="py-2 col-12 service"
-                  data-price-id="6566"
-                  style="background-color: #f6f6f6"
-                >
-                  <label for="first" class="cont">
-                    <div style="width: 55%">الطابق الاول</div>
-                    <div
-                      style="
-                        width: 25%;
-                        text-align-last: center;
-                        color: #fb513e;
-                      "
-                    >
-                      <span class="new-price mx-2"></span>ر.س
-                    </div>
-                    <input
-                      type="radio"
-                      id="first"
-                      name="select_services"
-                      value="6566"
-                    />
-                    <span class="checkmarks"></span>
-                  </label>
-                </div>
-
-                <div
-                  class="py-2 col-12 service"
-                  data-price-id="6567"
-                  style="background-color: #f6f6f6"
-                >
-                  <label for="second" class="cont">
-                    <div style="width: 55%">
-                      الطابق الثاني أو الثالث أو الرابع (ونش)
-                    </div>
-
-                    <div
-                      style="
-                        width: 25%;
-                        text-align-last: center;
-                        color: #fb513e;
-                      "
-                    >
-                      <span class="new-price mx-2"></span>ر.س
-                    </div>
-                    <input
-                      type="radio"
-                      id="second"
-                      name="select_services"
-                      value="6567"
-                    />
-                    <span class="checkmarks"></span>
-                  </label>
+                  </div>
                 </div>
 
                 <div class="row w-100" style="justify-content: space-around">
                   <div class="col-6 pt-6 text-center">
                     <p class="text-center">
                       <input
-                        class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary back"
-                        value="رجوع الي القائمة السابقة"
-                      />
-                    </p>
-                  </div>
-                  <div class="col-6 pt-6 text-center">
-                    <p class="text-center">
-                      <input
-                        class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary close-btn back"
-                        type="button"
-                        value="تم الأختيار"
+                        class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary selected-holes"
+                        value="تم التأكيد "
                       />
                     </p>
                   </div>
                 </div>
               </div>
-              <div class="pop-up-content-wrap d-none" id="services"></div>
-            </div>
-            <div class="shbak pop-select d-none">
-              <p class="fs-18 p-2 m-0 text-center">
-                ما هو المكان المناسب لتركيب وحدة المكيف الخارجية؟
-              </p>
-              <div id="service-forms " class="row m-4 fs-20 font-weight-medium">
-                <div
-                  class="py-2 col-12 service"
-                  data-price-id="7333"
-                  style="background-color: #f0f8ff"
-                >
-                  <label for="shebak-tarkeb" class="cont">
-                    <div style="width: 55%">
-                      توريد وتركيب (في المدينة المنورة فقط)
-                    </div>
-                    <div
-                      style="
-                        width: 25%;
-                        text-align-last: center;
-                        color: #fb513e;
-                      "
-                    >
-                      <span class="new-price mx-2"></span>ر.س
-                    </div>
-                    <input
-                      type="checkbox"
-                      class="checked-shbak"
-                      onclick="return false;"
-                      checked
-                      id="shebak-tarkeb"
-                      value="7333"
-                    /><span class="checkmark"></span>
-                  </label>
-                </div>
-
-                <div class="row w-100" style="justify-content: space-around">
-                  <div class="col-6 pt-6 text-center">
-                    <p class="text-center">
-                      <input
-                        class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary back"
-                        value="رجوع الي القائمة السابقة"
-                      />
-                    </p>
-                  </div>
-                  <div class="col-6 pt-6 text-center">
-                    <p class="text-center">
-                      <input
-                        class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary close-btn back"
-                        type="button"
-                        value="تم الأختيار"
-                      />
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="pop-up-content-wrap d-none" id="services"></div>
-            </div>
-            <div class="duct pop-select d-none">
-              <p class="fs-18 p-2 m-0 text-center">
-                ما هو المكان المناسب لتركيب وحدة المكيف الخارجية؟
-              </p>
-              <div id="service-forms " class="row m-4 fs-20 font-weight-medium">
-                <div
-                  class="py-2 col-12 service"
-                  data-price-id="7330"
-                  style="background-color: #f0f8ff"
-                >
-                  <label for="third" class="cont">
-                    <div style="width: 55%">تركيب</div>
-                    <div
-                      style="
-                        width: 25%;
-                        text-align-last: center;
-                        color: #fb513e;
-                      "
-                    >
-                      <span class="new-price mx-2"></span>ر.س
-                    </div>
-                    <input
-                      type="checkbox"
-                      class="checked"
-                      onclick="return false;"
-                      checked
-                      id="third"
-                      value="7330"
-                    /><span class="checkmark"></span>
-                  </label>
-                </div>
-
-                <div
-                  class="py-2 col-12 service"
-                  data-price-id="6565"
-                  style="background-color: #f6f6f6"
-                >
-                  <label for="duct-zero" class="cont">
-                    <div style="width: 55%">الطابق الارضي</div>
-
-                    <div
-                      style="
-                        width: 25%;
-                        text-align-last: center;
-                        color: #fb513e;
-                      "
-                    >
-                      <span class="new-price mx-2"></span>ر.س
-                    </div>
-                    <input
-                      type="radio"
-                      id="duct-zero"
-                      name="select_services"
-                      value="6565"
-                    />
-                    <span class="checkmarks"></span>
-                  </label>
-                </div>
-                <div
-                  class="py-2 col-12 service"
-                  data-price-id="6566"
-                  style="background-color: #f6f6f6"
-                >
-                  <label for="duct-first" class="cont">
-                    <div style="width: 55%">الطابق الاول</div>
-                    <div
-                      style="
-                        width: 25%;
-                        text-align-last: center;
-                        color: #fb513e;
-                      "
-                    >
-                      <span class="new-price mx-2"></span>ر.س
-                    </div>
-                    <input
-                      type="radio"
-                      id="duct-first"
-                      name="select_services"
-                      value="6566"
-                    />
-                    <span class="checkmarks"></span>
-                  </label>
-                </div>
-                <div
-                  class="py-2 col-12 service"
-                  data-price-id="6567"
-                  style="background-color: #f6f6f6"
-                >
-                  <label for="duct-second" class="cont">
-                    <div style="width: 55%">
-                      الطابق الثاني أو الثالث أو الرابع (ونش)
-                    </div>
-
-                    <div
-                      style="
-                        width: 25%;
-                        text-align-last: center;
-                        color: #fb513e;
-                      "
-                    >
-                      <span class="new-price mx-2"></span>ر.س
-                    </div>
-                    <input
-                      type="radio"
-                      id="duct-second"
-                      name="select_services"
-                      value="6567"
-                    />
-                    <span class="checkmarks"></span>
-                  </label>
-                </div>
-                <div
-                  class="py-2 col-12 service"
-                  data-price-id="7336"
-                  style="background-color: #f6f6f6"
-                >
-                  <label for="fifth" class="cont">
-                    <div style="width: 55%">كرسي خارجية</div>
-
-                    <div
-                      style="
-                        width: 25%;
-                        text-align-last: center;
-                        color: #fb513e;
-                      "
-                    >
-                      <span class="new-price mx-2"></span>ر.س
-                    </div>
-                    <input
-                      type="radio"
-                      id="fifth"
-                      name="select_services"
-                      value="7336"
-                    />
-                    <span class="checkmarks"></span>
-                  </label>
-                </div>
-                <div
-                  class="py-2 col-12 service"
-                  data-price-id="7338"
-                  style="background-color: #f6f6f6"
-                >
-                  <label for="duct-wensh" class="cont">
-                    <div style="width: 55%">ونش</div>
-
-                    <div
-                      style="
-                        width: 25%;
-                        text-align-last: center;
-                        color: #fb513e;
-                      "
-                    >
-                      <span class="new-price mx-2"></span>ر.س
-                    </div>
-                    <input
-                      type="radio"
-                      id="duct-wensh"
-                      name="select_services"
-                      value="7338"
-                    />
-                    <span class="checkmarks"></span>
-                  </label>
-                </div>
-                <div class="row w-100" style="justify-content: space-around">
-                  <div class="col-6 pt-6 text-center">
-                    <p class="text-center">
-                      <input
-                        class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary back"
-                        value="رجوع الي القائمة السابقة"
-                      />
-                    </p>
-                  </div>
-                  <div class="col-6 pt-6 text-center">
-                    <p class="text-center">
-                      <input
-                        class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary close-btn back"
-                        type="button"
-                        value="تم الأختيار"
-                      />
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="pop-up-content-wrap d-none" id="services"></div>
-            </div>
-            <div class="dolaby pop-select d-none">
-              <p class="fs-18 p-2 m-0 text-center">
-                ما هو المكان المناسب لتركيب وحدة المكيف الخارجية؟
-              </p>
-              <div id="service-forms " class="row m-4 fs-20 font-weight-medium">
-                <div
-                  class="py-2 col-12 service"
-                  data-price-id="7339"
-                  style="background-color: #f0f8ff"
-                >
-                  <label for="dolaby-third" class="cont">
-                    <div style="width: 55%">تركيب</div>
-                    <div
-                      style="
-                        width: 25%;
-                        text-align-last: center;
-                        color: #fb513e;
-                      "
-                    >
-                      <span class="new-price mx-2"></span>ر.س
-                    </div>
-                    <input
-                      type="checkbox"
-                      class="checked-dolaby"
-                      onclick="return false;"
-                      checked
-                      id="dolaby-third"
-                      value="7339"
-                    /><span class="checkmark"></span>
-                  </label>
-                </div>
-
-                <div
-                  class="py-2 col-12 service"
-                  data-price-id="6565"
-                  style="background-color: #f6f6f6"
-                >
-                  <label for="dolaby-zero" class="cont">
-                    <div style="width: 55%">الطابق الارضي</div>
-
-                    <div
-                      style="
-                        width: 25%;
-                        text-align-last: center;
-                        color: #fb513e;
-                      "
-                    >
-                      <span class="new-price mx-2"></span>ر.س
-                    </div>
-                    <input
-                      type="radio"
-                      id="dolaby-zero"
-                      name="select_services"
-                      value="6565"
-                    />
-                    <span class="checkmarks"></span>
-                  </label>
-                </div>
-                <div
-                  class="py-2 col-12 service"
-                  data-price-id="6566"
-                  style="background-color: #f6f6f6"
-                >
-                  <label for="dolaby-first" class="cont">
-                    <div style="width: 55%">الطابق الاول</div>
-                    <div
-                      style="
-                        width: 25%;
-                        text-align-last: center;
-                        color: #fb513e;
-                      "
-                    >
-                      <span class="new-price mx-2"></span>ر.س
-                    </div>
-                    <input
-                      type="radio"
-                      id="dolaby-first"
-                      name="select_services"
-                      value="6566"
-                    />
-                    <span class="checkmarks"></span>
-                  </label>
-                </div>
-                <div
-                  class="py-2 col-12 service"
-                  data-price-id="6567"
-                  style="background-color: #f6f6f6"
-                >
-                  <label for="dolaby-second" class="cont">
-                    <div style="width: 55%">
-                      الطابق الثاني أو الثالث أو الرابع (ونش)
-                    </div>
-
-                    <div
-                      style="
-                        width: 25%;
-                        text-align-last: center;
-                        color: #fb513e;
-                      "
-                    >
-                      <span class="new-price mx-2"></span>ر.س
-                    </div>
-                    <input
-                      type="radio"
-                      id="dolaby-second"
-                      name="select_services"
-                      value="6567"
-                    />
-                    <span class="checkmarks"></span>
-                  </label>
-                </div>
-                <div
-                  class="py-2 col-12 service"
-                  data-price-id="7340"
-                  style="background-color: #f6f6f6"
-                >
-                  <label for="dolaby-outdoor" class="cont">
-                    <div style="width: 55%">كرسي دولابي خارجي</div>
-
-                    <div
-                      style="
-                        width: 25%;
-                        text-align-last: center;
-                        color: #fb513e;
-                      "
-                    >
-                      <span class="new-price mx-2"></span>ر.س
-                    </div>
-                    <input
-                      type="radio"
-                      id="dolaby-outdoor"
-                      name="select_services"
-                      value="7340"
-                    />
-                    <span class="checkmarks"></span>
-                  </label>
-                </div>
-                <div
-                  class="py-2 col-12 service"
-                  data-price-id="7341"
-                  style="background-color: #f6f6f6"
-                >
-                  <label for="dolaby-indoor" class="cont">
-                    <div style="width: 55%">كرسي دولابي داخلي</div>
-
-                    <div
-                      style="
-                        width: 25%;
-                        text-align-last: center;
-                        color: #fb513e;
-                      "
-                    >
-                      <span class="new-price mx-2"></span>ر.س
-                    </div>
-                    <input
-                      type="radio"
-                      id="dolaby-indoor"
-                      name="select_services"
-                      value="7341"
-                    />
-                    <span class="checkmarks"></span>
-                  </label>
-                </div>
-                <div class="row w-100" style="justify-content: space-around">
-                  <div class="col-6 pt-6 text-center">
-                    <p class="text-center">
-                      <input
-                        class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary back"
-                        value="رجوع الي القائمة السابقة"
-                      />
-                    </p>
-                  </div>
-                  <div class="col-6 pt-6 text-center">
-                    <p class="text-center">
-                      <input
-                        class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary close-btn back"
-                        type="button"
-                        value="تم الأختيار"
-                      />
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="pop-up-content-wrap d-none" id="services"></div>
             </div>
 
-            <div class="sahrawy pop-select d-none">
-              <p class="fs-18 p-2 m-0 text-center">
-                ما هو المكان المناسب لتركيب وحدة المكيف الخارجية؟
-              </p>
-              <div id="service-forms " class="row m-4 fs-20 font-weight-medium">
+            <div class="custom-model-wrap d-none">
+              <div class="split pop-select d-none">
+                <p class="fs-18 p-2 m-0 text-center">
+                  ما هو المكان المناسب لتركيب وحدة المكيف الخارجية؟
+                </p>
                 <div
-                  class="py-2 col-12 service"
-                  data-price-id="7330"
-                  style="background-color: #f0f8ff"
+                  id="service-forms "
+                  class="row m-4 fs-20 font-weight-medium"
                 >
-                  <label for="dolaby-third" class="cont">
-                    <div style="width: 55%">تركيب</div>
-                    <div
-                      style="
-                        width: 25%;
-                        text-align-last: center;
-                        color: #fb513e;
-                      "
-                    >
-                      <span class="new-price mx-2"></span>ر.س
-                    </div>
-                    <input
-                      type="checkbox"
-                      class="checked-dolaby"
-                      onclick="return false;"
-                      checked
-                      id="dolaby-third"
-                      value="7330"
-                    /><span class="checkmark"></span>
-                  </label>
-                </div>
+                  <div
+                    class="py-2 col-12 service"
+                    data-price-id="7330"
+                    style="background-color: #f0f8ff"
+                  >
+                    <label for="third" class="cont">
+                      <div style="width: 55%">تركيب</div>
+                      <div
+                        style="
+                          width: 25%;
+                          text-align-last: center;
+                          color: #fb513e;
+                        "
+                      >
+                        <span class="new-price mx-2"></span>ر.س
+                      </div>
+                      <input
+                        type="checkbox"
+                        class="checked"
+                        onclick="return false;"
+                        checked
+                        id="third"
+                        value="7330"
+                      /><span class="checkmark"></span>
+                    </label>
+                  </div>
 
-                <div
-                  class="py-2 col-12 service"
-                  data-price-id="6565"
-                  style="background-color: #f6f6f6"
-                >
-                  <label for="sahrawy-zero" class="cont">
-                    <div style="width: 55%">الطابق الارضي</div>
+                  <div
+                    class="py-2 col-12 service"
+                    data-price-id="6565"
+                    style="background-color: #f6f6f6"
+                  >
+                    <label for="zero" class="cont">
+                      <div style="width: 55%">الطابق الارضي</div>
 
-                    <div
-                      style="
-                        width: 25%;
-                        text-align-last: center;
-                        color: #fb513e;
-                      "
-                    >
-                      <span class="new-price mx-2"></span>ر.س
-                    </div>
-                    <input
-                      type="radio"
-                      id="sahrawy-zero"
-                      name="select_services"
-                      value="6565"
-                    />
-                    <span class="checkmarks"></span>
-                  </label>
-                </div>
+                      <div
+                        style="
+                          width: 25%;
+                          text-align-last: center;
+                          color: #fb513e;
+                        "
+                      >
+                        <span class="new-price mx-2"></span>ر.س
+                      </div>
+                      <input
+                        type="radio"
+                        id="zero"
+                        name="select_services"
+                        value="6565"
+                      />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </div>
+                  <div
+                    class="py-2 col-12 service"
+                    data-price-id="6566"
+                    style="background-color: #f6f6f6"
+                  >
+                    <label for="first" class="cont">
+                      <div style="width: 55%">الطابق الاول</div>
+                      <div
+                        style="
+                          width: 25%;
+                          text-align-last: center;
+                          color: #fb513e;
+                        "
+                      >
+                        <span class="new-price mx-2"></span>ر.س
+                      </div>
+                      <input
+                        type="radio"
+                        id="first"
+                        name="select_services"
+                        value="6566"
+                      />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </div>
 
-                <div
-                  class="py-2 col-12 service"
-                  data-price-id="7338"
-                  style="background-color: #f6f6f6"
-                >
-                  <label for="sahrawy-outdoor" class="cont">
-                    <div style="width: 55%">ونش</div>
+                  <div
+                    class="py-2 col-12 service"
+                    data-price-id="6567"
+                    style="background-color: #f6f6f6"
+                  >
+                    <label for="second" class="cont">
+                      <div style="width: 55%">
+                        الطابق الثاني أو الثالث أو الرابع (ونش)
+                      </div>
 
-                    <div
-                      style="
-                        width: 25%;
-                        text-align-last: center;
-                        color: #fb513e;
-                      "
-                    >
-                      <span class="new-price mx-2"></span>ر.س
-                    </div>
-                    <input
-                      type="radio"
-                      id="sahrawy-outdoor"
-                      name="select_services"
-                      value="7338"
-                    />
-                    <span class="checkmarks"></span>
-                  </label>
-                </div>
+                      <div
+                        style="
+                          width: 25%;
+                          text-align-last: center;
+                          color: #fb513e;
+                        "
+                      >
+                        <span class="new-price mx-2"></span>ر.س
+                      </div>
+                      <input
+                        type="radio"
+                        id="second"
+                        name="select_services"
+                        value="6567"
+                      />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </div>
 
-                <div
-                  class="form col-12 py-2 px-0"
-                  style="background-color: #f0f8ff"
-                >
-                  <div class="form-group d-flex service" data-price-id="7412">
-                    <label class="col-md-10 control-label"
-                      >ادخل عدد الاخرام</label
-                    >
-                    <div class="col-md-2 inputGroupContainer">
-                      <div class="input-group">
-                        <span class="input-group-addon"></span>
+                  <div class="row w-100" style="justify-content: space-around">
+                    <div class="col-6 pt-6 text-center">
+                      <p class="text-center">
                         <input
-                          class="hole-no form-control text-center"
-                          type="text"
-                          data-id="7412"
-                          data-cat="sahrawy"
-                          value="0"
+                          class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary back"
+                          value="رجوع الي القائمة السابقة"
                         />
-                      </div>
+                      </p>
                     </div>
-                  </div>
-                  <div class="form-group d-flex service">
-                    <label class="col-md-8 control-label"
-                      >سؤال بخصوص التركيب</label
-                    >
-                    <div class="col-md-4">
-                      <div class="form-group">
-                        <select
-                          name="installation"
-                          class="form-control select-value"
-                          required
-                        >
-                          <option value="نعم" selected>نعم</option>
-                          <option value="لا">لا</option>
-                        </select>
-                      </div>
+                    <div class="col-6 pt-6 text-center">
+                      <p class="text-center">
+                        <input
+                          class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary close-btn back"
+                          type="button"
+                          value="تم الأختيار"
+                        />
+                      </p>
                     </div>
                   </div>
                 </div>
 
-                <div class="row w-100" style="justify-content: space-around">
-                  <div class="col-6 pt-6 text-center">
-                    <p class="text-center">
+                <div class="pop-up-content-wrap d-none" id="services"></div>
+              </div>
+              <div class="shbak pop-select d-none">
+                <p class="fs-18 p-2 m-0 text-center">
+                  ما هو المكان المناسب لتركيب وحدة المكيف الخارجية؟
+                </p>
+                <div
+                  id="service-forms "
+                  class="row m-4 fs-20 font-weight-medium"
+                >
+                  <div
+                    class="py-2 col-12 service"
+                    data-price-id="7333"
+                    style="background-color: #f0f8ff"
+                  >
+                    <label for="shebak-tarkeb" class="cont">
+                      <div style="width: 55%">
+                        توريد وتركيب (في المدينة المنورة فقط)
+                      </div>
+                      <div
+                        style="
+                          width: 25%;
+                          text-align-last: center;
+                          color: #fb513e;
+                        "
+                      >
+                        <span class="new-price mx-2"></span>ر.س
+                      </div>
                       <input
-                        class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary back"
-                        value="رجوع الي القائمة السابقة"
-                      />
-                    </p>
+                        type="checkbox"
+                        class="checked-shbak"
+                        onclick="return false;"
+                        checked
+                        id="shebak-tarkeb"
+                        value="7333"
+                      /><span class="checkmark"></span>
+                    </label>
                   </div>
-                  <div class="col-6 pt-6 text-center">
-                    <p class="text-center">
+
+                  <div class="row w-100" style="justify-content: space-around">
+                    <div class="col-6 pt-6 text-center">
+                      <p class="text-center">
+                        <input
+                          class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary back"
+                          value="رجوع الي القائمة السابقة"
+                        />
+                      </p>
+                    </div>
+                    <div class="col-6 pt-6 text-center">
+                      <p class="text-center">
+                        <input
+                          class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary close-btn back"
+                          type="button"
+                          value="تم الأختيار"
+                        />
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="pop-up-content-wrap d-none" id="services"></div>
+              </div>
+              <div class="duct pop-select d-none">
+                <p class="fs-18 p-2 m-0 text-center">
+                  ما هو المكان المناسب لتركيب وحدة المكيف الخارجية؟
+                </p>
+                <div
+                  id="service-forms "
+                  class="row m-4 fs-20 font-weight-medium"
+                >
+                  <div
+                    class="py-2 col-12 service"
+                    data-price-id="7330"
+                    style="background-color: #f0f8ff"
+                  >
+                    <label for="third" class="cont">
+                      <div style="width: 55%">تركيب</div>
+                      <div
+                        style="
+                          width: 25%;
+                          text-align-last: center;
+                          color: #fb513e;
+                        "
+                      >
+                        <span class="new-price mx-2"></span>ر.س
+                      </div>
                       <input
-                        class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary close-btn back"
-                        type="button"
-                        value="تم الأختيار"
-                      />
-                    </p>
+                        type="checkbox"
+                        class="checked"
+                        onclick="return false;"
+                        checked
+                        id="third"
+                        value="7330"
+                      /><span class="checkmark"></span>
+                    </label>
                   </div>
+
+                  <div
+                    class="py-2 col-12 service"
+                    data-price-id="6565"
+                    style="background-color: #f6f6f6"
+                  >
+                    <label for="duct-zero" class="cont">
+                      <div style="width: 55%">الطابق الارضي</div>
+
+                      <div
+                        style="
+                          width: 25%;
+                          text-align-last: center;
+                          color: #fb513e;
+                        "
+                      >
+                        <span class="new-price mx-2"></span>ر.س
+                      </div>
+                      <input
+                        type="radio"
+                        id="duct-zero"
+                        name="select_services"
+                        value="6565"
+                      />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </div>
+                  <div
+                    class="py-2 col-12 service"
+                    data-price-id="6566"
+                    style="background-color: #f6f6f6"
+                  >
+                    <label for="duct-first" class="cont">
+                      <div style="width: 55%">الطابق الاول</div>
+                      <div
+                        style="
+                          width: 25%;
+                          text-align-last: center;
+                          color: #fb513e;
+                        "
+                      >
+                        <span class="new-price mx-2"></span>ر.س
+                      </div>
+                      <input
+                        type="radio"
+                        id="duct-first"
+                        name="select_services"
+                        value="6566"
+                      />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </div>
+                  <div
+                    class="py-2 col-12 service"
+                    data-price-id="6567"
+                    style="background-color: #f6f6f6"
+                  >
+                    <label for="duct-second" class="cont">
+                      <div style="width: 55%">
+                        الطابق الثاني أو الثالث أو الرابع (ونش)
+                      </div>
+
+                      <div
+                        style="
+                          width: 25%;
+                          text-align-last: center;
+                          color: #fb513e;
+                        "
+                      >
+                        <span class="new-price mx-2"></span>ر.س
+                      </div>
+                      <input
+                        type="radio"
+                        id="duct-second"
+                        name="select_services"
+                        value="6567"
+                      />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </div>
+                  <div
+                    class="py-2 col-12 service"
+                    data-price-id="7336"
+                    style="background-color: #f6f6f6"
+                  >
+                    <label for="fifth" class="cont">
+                      <div style="width: 55%">كرسي خارجية</div>
+
+                      <div
+                        style="
+                          width: 25%;
+                          text-align-last: center;
+                          color: #fb513e;
+                        "
+                      >
+                        <span class="new-price mx-2"></span>ر.س
+                      </div>
+                      <input
+                        type="radio"
+                        id="fifth"
+                        name="select_services"
+                        value="7336"
+                      />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </div>
+                  <div
+                    class="py-2 col-12 service"
+                    data-price-id="7338"
+                    style="background-color: #f6f6f6"
+                  >
+                    <label for="duct-wensh" class="cont">
+                      <div style="width: 55%">ونش</div>
+
+                      <div
+                        style="
+                          width: 25%;
+                          text-align-last: center;
+                          color: #fb513e;
+                        "
+                      >
+                        <span class="new-price mx-2"></span>ر.س
+                      </div>
+                      <input
+                        type="radio"
+                        id="duct-wensh"
+                        name="select_services"
+                        value="7338"
+                      />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </div>
+                  <div class="row w-100" style="justify-content: space-around">
+                    <div class="col-6 pt-6 text-center">
+                      <p class="text-center">
+                        <input
+                          class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary back"
+                          value="رجوع الي القائمة السابقة"
+                        />
+                      </p>
+                    </div>
+                    <div class="col-6 pt-6 text-center">
+                      <p class="text-center">
+                        <input
+                          class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary close-btn back"
+                          type="button"
+                          value="تم الأختيار"
+                        />
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="pop-up-content-wrap d-none" id="services"></div>
+              </div>
+              <div class="dolaby pop-select d-none">
+                <p class="fs-18 p-2 m-0 text-center">
+                  ما هو المكان المناسب لتركيب وحدة المكيف الخارجية؟
+                </p>
+                <div
+                  id="service-forms "
+                  class="row m-4 fs-20 font-weight-medium"
+                >
+                  <div
+                    class="py-2 col-12 service"
+                    data-price-id="7339"
+                    style="background-color: #f0f8ff"
+                  >
+                    <label for="dolaby-third" class="cont">
+                      <div style="width: 55%">تركيب</div>
+                      <div
+                        style="
+                          width: 25%;
+                          text-align-last: center;
+                          color: #fb513e;
+                        "
+                      >
+                        <span class="new-price mx-2"></span>ر.س
+                      </div>
+                      <input
+                        type="checkbox"
+                        class="checked-dolaby"
+                        onclick="return false;"
+                        checked
+                        id="dolaby-third"
+                        value="7339"
+                      /><span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div
+                    class="py-2 col-12 service"
+                    data-price-id="6565"
+                    style="background-color: #f6f6f6"
+                  >
+                    <label for="dolaby-zero" class="cont">
+                      <div style="width: 55%">الطابق الارضي</div>
+
+                      <div
+                        style="
+                          width: 25%;
+                          text-align-last: center;
+                          color: #fb513e;
+                        "
+                      >
+                        <span class="new-price mx-2"></span>ر.س
+                      </div>
+                      <input
+                        type="radio"
+                        id="dolaby-zero"
+                        name="select_services"
+                        value="6565"
+                      />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </div>
+                  <div
+                    class="py-2 col-12 service"
+                    data-price-id="6566"
+                    style="background-color: #f6f6f6"
+                  >
+                    <label for="dolaby-first" class="cont">
+                      <div style="width: 55%">الطابق الاول</div>
+                      <div
+                        style="
+                          width: 25%;
+                          text-align-last: center;
+                          color: #fb513e;
+                        "
+                      >
+                        <span class="new-price mx-2"></span>ر.س
+                      </div>
+                      <input
+                        type="radio"
+                        id="dolaby-first"
+                        name="select_services"
+                        value="6566"
+                      />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </div>
+                  <div
+                    class="py-2 col-12 service"
+                    data-price-id="6567"
+                    style="background-color: #f6f6f6"
+                  >
+                    <label for="dolaby-second" class="cont">
+                      <div style="width: 55%">
+                        الطابق الثاني أو الثالث أو الرابع (ونش)
+                      </div>
+
+                      <div
+                        style="
+                          width: 25%;
+                          text-align-last: center;
+                          color: #fb513e;
+                        "
+                      >
+                        <span class="new-price mx-2"></span>ر.س
+                      </div>
+                      <input
+                        type="radio"
+                        id="dolaby-second"
+                        name="select_services"
+                        value="6567"
+                      />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </div>
+                  <div
+                    class="py-2 col-12 service"
+                    data-price-id="7340"
+                    style="background-color: #f6f6f6"
+                  >
+                    <label for="dolaby-outdoor" class="cont">
+                      <div style="width: 55%">كرسي دولابي خارجي</div>
+
+                      <div
+                        style="
+                          width: 25%;
+                          text-align-last: center;
+                          color: #fb513e;
+                        "
+                      >
+                        <span class="new-price mx-2"></span>ر.س
+                      </div>
+                      <input
+                        type="radio"
+                        id="dolaby-outdoor"
+                        name="select_services"
+                        value="7340"
+                      />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </div>
+                  <div
+                    class="py-2 col-12 service"
+                    data-price-id="7341"
+                    style="background-color: #f6f6f6"
+                  >
+                    <label for="dolaby-indoor" class="cont">
+                      <div style="width: 55%">كرسي دولابي داخلي</div>
+
+                      <div
+                        style="
+                          width: 25%;
+                          text-align-last: center;
+                          color: #fb513e;
+                        "
+                      >
+                        <span class="new-price mx-2"></span>ر.س
+                      </div>
+                      <input
+                        type="radio"
+                        id="dolaby-indoor"
+                        name="select_services"
+                        value="7341"
+                      />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </div>
+                  <div class="row w-100" style="justify-content: space-around">
+                    <div class="col-6 pt-6 text-center">
+                      <p class="text-center">
+                        <input
+                          class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary back"
+                          value="رجوع الي القائمة السابقة"
+                        />
+                      </p>
+                    </div>
+                    <div class="col-6 pt-6 text-center">
+                      <p class="text-center">
+                        <input
+                          class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary close-btn back"
+                          type="button"
+                          value="تم الأختيار"
+                        />
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="pop-up-content-wrap d-none" id="services"></div>
+              </div>
+
+              <div class="fans pop-select d-none">
+                <div
+                  id="service-forms "
+                  class="row m-4 fs-20 font-weight-medium"
+                >
+                  <div
+                    class="py-2 col-12 service"
+                    data-price-id="8415"
+                    style="background-color: #f0f8ff"
+                  >
+                    <label for="fans" class="cont">
+                      <div style="width: 55%">
+                        تركيب /اضافة فليكسبل ٣ متر بقيمة 40 ريال
+                      </div>
+                      <div
+                        style="
+                          width: 25%;
+                          text-align-last: center;
+                          color: #fb513e;
+                        "
+                      >
+                        <span class="new-price mx-2"></span>ر.س
+                      </div>
+
+                      <input
+                        type="checkbox"
+                        class="checked-fans"
+                        onclick="return false;"
+                        checked
+                        id="fans"
+                        value="8415"
+                      /><span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div
+                    class="py-2 col-12 service"
+                    data-price-id="8416"
+                    style="background-color: #f6f6f6"
+                  >
+                    <label for="grill-4" class="cont">
+                      <div style="width: 55%">جريل 4 بوصه</div>
+                      <div
+                        style="
+                          width: 25%;
+                          text-align-last: center;
+                          color: #fb513e;
+                        "
+                      >
+                        <span class="new-price mx-2"></span>ر.س
+                      </div>
+                      <input
+                        type="radio"
+                        id="grill-4"
+                        name="select_services"
+                        value="8416"
+                      />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </div>
+
+                  <div
+                    class="py-2 col-12 service"
+                    data-price-id="8417"
+                    style="background-color: #f6f6f6"
+                  >
+                    <label for="grill-6" class="cont">
+                      <div style="width: 55%">جريل 6 بوصه</div>
+                      <div
+                        style="
+                          width: 25%;
+                          text-align-last: center;
+                          color: #fb513e;
+                        "
+                      >
+                        <span class="new-price mx-2"></span>ر.س
+                      </div>
+                      <input
+                        type="radio"
+                        id="grill-6"
+                        name="select_services"
+                        value="8417"
+                      />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </div>
+
+                  <div class="row w-100" style="justify-content: space-around">
+                    <div class="col-6 pt-6 text-center">
+                      <p class="text-center">
+                        <input
+                          class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary back"
+                          value="رجوع الي القائمة السابقة"
+                        />
+                      </p>
+                    </div>
+                    <div class="col-6 pt-6 text-center">
+                      <p class="text-center">
+                        <input
+                          class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary close-btn back"
+                          type="button"
+                          value="تم الأختيار"
+                        />
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="pop-up-content-wrap d-none" id="services"></div>
+              </div>
+
+              <div class="sahrawy pop-select d-none">
+                <p class="fs-18 p-2 m-0 text-center">
+                  ما هو المكان المناسب لتركيب وحدة المكيف الخارجية؟
+                </p>
+                <div
+                  id="service-forms "
+                  class="row m-4 fs-20 font-weight-medium"
+                >
+                  <div
+                    class="py-2 col-12 service"
+                    data-price-id="6127"
+                    style="background-color: #f0f8ff"
+                  >
+                    <label for="sahrawy-third" class="cont">
+                      <div style="width: 55%">اجور عمال</div>
+                      <div
+                        style="
+                          width: 25%;
+                          text-align-last: center;
+                          color: #fb513e;
+                        "
+                      >
+                        <span class="new-price mx-2"></span>ر.س
+                      </div>
+                      <input
+                        type="checkbox"
+                        class="checked-sahrawy"
+                        onclick="return false;"
+                        checked
+                        id="sahrawy-third"
+                        value="6127"
+                      /><span class="checkmark"></span>
+                    </label>
+                  </div>
+
+                  <div
+                    class="py-2 col-12 service"
+                    data-price-id="8418"
+                    style="background-color: #f6f6f6"
+                  >
+                    <label for="sahrawy-zero" class="cont">
+                      <div style="width: 55%">قاعدة صحراوي</div>
+
+                      <div
+                        style="
+                          width: 25%;
+                          text-align-last: center;
+                          color: #fb513e;
+                        "
+                      >
+                        <span class="new-price mx-2"></span>ر.س
+                      </div>
+                      <input
+                        type="checkbox"
+                        id="sahrawy-zero"
+                        name="select_services"
+                        value="8418"
+                      />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </div>
+
+                  <div class="form col-12 px-0">
+                    <div
+                      class="form-group mb-0"
+                      style="background-color: #f6f6f6"
+                    >
+                      <div class="col-md-12 control-label font-weight-semibold">
+                        هل الموقع يحتاج الى رقبة دكت ؟
+                      </div>
+
+                      <div
+                        class="d-flex row mx-3 fs-16"
+                        style="border-bottom: 1px solid #e1e1e1"
+                      >
+                        <!--  -->
+
+                        <div
+                          class="py-2 px-0 col-10 service"
+                          data-price-id="8419"
+                          style="border: none !important"
+                        >
+                          <label for="duct-sahrawy" class="cont">
+                            <div style="width: 65%">
+                              نعم (رقبة دكت (بحد اقصى ٣ متر))
+                            </div>
+
+                            <div
+                              style="
+                                width: 25%;
+                                text-align-last: center;
+                                color: #fb513e;
+                              "
+                            >
+                              <span class="new-price mx-2"></span>ر.س
+                            </div>
+                            <input
+                              type="radio"
+                              id="duct-sahrawy"
+                              name="select_services-sahrawy"
+                              value="8419"
+                            />
+                            <span class="checkmarks"></span>
+                          </label>
+                        </div>
+
+                        <!--  -->
+
+                        <div class="py-2 col-2">
+                          <label class="cont">
+                            <div style="width: 50%">لا</div>
+                            <input
+                              type="radio"
+                              name="select_services-sahrawy"
+                              value="3"
+                              class="sahrawy-not-selected"
+                            />
+                            <span class="checkmarks"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--  -->
+                  <div class="form col-12 px-0">
+                    <div class="form-group" style="background-color: #f6f6f6">
+                      <div class="col-md-12 control-label font-weight-semibold">
+                        هل موقع المكيف في سطح المبنى ؟
+                      </div>
+
+                      <div
+                        class="d-flex row mx-3 fs-16"
+                        style="border-bottom: 1px solid #e1e1e1"
+                      >
+                        <!--  -->
+
+                        <div
+                          class="py-2 px-0 col-10 service"
+                          data-price-id="7338"
+                          style="border: none !important"
+                        >
+                          <label for="sahrawy-wensh" class="cont">
+                            <div style="width: 65%">
+                              نعم / اجور ونش لرفع المكيف لسطح البيت
+                            </div>
+
+                            <div
+                              style="
+                                width: 25%;
+                                text-align-last: center;
+                                color: #fb513e;
+                              "
+                            >
+                              <span class="new-price mx-2"></span>ر.س
+                            </div>
+                            <input
+                              type="radio"
+                              id="sahrawy-wensh"
+                              name="sahrawy-wensh"
+                              value="7338"
+                            />
+                            <span class="checkmarks"></span>
+                          </label>
+                        </div>
+
+                        <!--  -->
+
+                        <div class="py-2 col-2">
+                          <label class="cont">
+                            <div style="width: 50%">لا</div>
+                            <input
+                              type="radio"
+                              name="sahrawy-wensh"
+                              value="3"
+                              class="sahrawy-not-selected"
+                            />
+                            <span class="checkmarks"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row w-100" style="justify-content: space-around">
+                    <div class="col-6 pt-6 text-center">
+                      <p class="text-center">
+                        <input
+                          class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary back"
+                          value="رجوع الي القائمة السابقة"
+                        />
+                      </p>
+                    </div>
+                    <div class="col-6 pt-6 text-center">
+                      <p class="text-center">
+                        <input
+                          class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary close-btn back"
+                          type="button"
+                          value="تم الأختيار"
+                        />
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="pop-up-content-wrap d-none" id="services"></div>
+              </div>
+
+              <div class="freezing pop-select d-none py-3">
+                <div class="room-sizes px-2" style="background-color: #f6f6f6">
+                  <p class="fs-18 p-2 m-0 text-left font-weight-semibold">
+                    ادخل مقاسات الغرفة
+                  </p>
+                  <div class="row w-100 d-flex py-1 mx-0">
+                    <div class="col-md-8 form-group d-flex">
+                      <label
+                        class="control-label fs-18 font-weight-medium px-2"
+                        for="freezing-tall"
+                      >
+                        ادخل الطول
+                      </label>
+                    </div>
+                    <div class="col-md-4 input-group">
+                      <input
+                        id="freezing-tall"
+                        class="form-control text-center"
+                        type="text"
+                        data-cat="freezing"
+                        value="0"
+                      />
+                      <span
+                        class="input-group-addon font-weight-semibold mx-2"
+                        style="align-self: center"
+                        >متر</span
+                      >
+                    </div>
+                  </div>
+                  <div class="row w-100 d-flex py-1 mx-0">
+                    <div class="col-md-8 form-group d-flex">
+                      <label
+                        class="control-label fs-18 font-weight-medium px-2"
+                        for="freezing-width"
+                      >
+                        ادخل العرض
+                      </label>
+                    </div>
+                    <div class="col-md-4 input-group">
+                      <input
+                        id="freezing-width"
+                        class="form-control text-center"
+                        type="text"
+                        data-cat="freezing"
+                        value="0"
+                      />
+                      <span
+                        class="input-group-addon font-weight-semibold mx-2"
+                        style="align-self: center"
+                        >متر</span
+                      >
+                    </div>
+                  </div>
+                  <div class="row w-100 d-flex py-1 mx-0">
+                    <div class="col-md-8 form-group d-flex">
+                      <label
+                        class="control-label fs-18 font-weight-medium px-2"
+                        for="freezing-hieght"
+                      >
+                        ادخل الارتفاع
+                      </label>
+                    </div>
+                    <div class="col-md-4 input-group">
+                      <input
+                        id="freezing-hieght"
+                        class="form-control text-center"
+                        type="text"
+                        data-cat="freezing"
+                        value="0"
+                      />
+                      <span
+                        class="input-group-addon font-weight-semibold mx-2"
+                        style="align-self: center"
+                        >متر</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="freezing-type px-2"
+                  style="background-color: #f0f8ff"
+                >
+                  <p class="fs-18 p-2 m-0 text-left font-weight-semibold">
+                    اختر نوع الماكينة
+                  </p>
+                  <div class="py-2 px-3 col-12 choose-type">
+                    <label class="cont">
+                      <div
+                        style="width: 50%"
+                        class="fs-18 font-weight-semibold"
+                      >
+                        كوبلند
+                      </div>
+                      <input type="radio" name="machine-type" value="0" />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </div>
+                  <div class="py-2 px-3 col-12 choose-type">
+                    <label class="cont">
+                      <div
+                        style="width: 50%"
+                        class="fs-18 font-weight-semibold"
+                      >
+                        بوك
+                      </div>
+                      <input type="radio" name="machine-type" value="1" />
+                      <span class="checkmarks"></span>
+                    </label>
+                  </div>
+                </div>
+                <div
+                  class="freezing-power px-2"
+                  style="background-color: #f6f6f6"
+                >
+                  <p class="fs-18 p-2 m-0 text-left font-weight-semibold">
+                    اختر قدرة الماكينة
+                  </p>
+                  <div class="row w-100 mx-0 px-1">
+                    <div class="py-2 px-3 col-6 choose-power">
+                      <label class="cont">
+                        <div
+                          style="width: 50%"
+                          class="fs-18 font-weight-semibold"
+                        >
+                          ١.٥ حصان
+                        </div>
+                        <input type="radio" name="machine-power" value="1.5" />
+                        <span class="checkmarks mr-6"></span>
+                      </label>
+                    </div>
+                    <div class="py-2 px-3 col-6 choose-power">
+                      <label class="cont">
+                        <div
+                          style="width: 50%"
+                          class="pl-4 fs-18 font-weight-semibold"
+                        >
+                          ٢ حصان
+                        </div>
+                        <input type="radio" name="machine-power" value="2" />
+                        <span class="checkmarks"></span>
+                      </label>
+                    </div>
+                    <div class="py-2 px-3 col-6 choose-power">
+                      <label class="cont">
+                        <div
+                          style="width: 50%"
+                          class="fs-18 font-weight-semibold"
+                        >
+                          ١.٥ حصان
+                        </div>
+                        <input type="radio" name="machine-power" value="1.5" />
+                        <span class="checkmarks mr-6"></span>
+                      </label>
+                    </div>
+                    <div class="py-2 px-3 col-6 choose-power">
+                      <label class="cont">
+                        <div
+                          style="width: 50%"
+                          class="pl-4 fs-18 font-weight-semibold"
+                        >
+                          ٢ حصان
+                        </div>
+                        <input type="radio" name="machine-power" value="2" />
+                        <span class="checkmarks"></span>
+                      </label>
+                    </div>
+                    <div class="py-2 px-3 col-6 choose-power">
+                      <label class="cont">
+                        <div
+                          style="width: 50%"
+                          class="fs-18 font-weight-semibold"
+                        >
+                          ٣ حصان
+                        </div>
+                        <input type="radio" name="machine-power" value="3" />
+                        <span class="checkmarks mr-6"></span>
+                      </label>
+                    </div>
+                    <div class="py-2 px-3 col-6 choose-power">
+                      <label class="cont">
+                        <div
+                          style="width: 50%"
+                          class="pl-4 fs-18 font-weight-semibold"
+                        >
+                          ٥ حصان
+                        </div>
+                        <input type="radio" name="machine-power" value="5" />
+                        <span class="checkmarks"></span>
+                      </label>
+                    </div>
+                    <div class="py-2 px-3 col-6 choose-power">
+                      <label class="cont">
+                        <div
+                          style="width: 50%"
+                          class="fs-18 font-weight-semibold"
+                        >
+                          ٧.٥ حصان
+                        </div>
+                        <input type="radio" name="machine-power" value="7.5" />
+                        <span class="checkmarks mr-6"></span>
+                      </label>
+                    </div>
+                    <div class="py-2 px-3 col-6 choose-power">
+                      <label class="cont">
+                        <div
+                          style="width: 50%"
+                          class="pl-4 fs-18 font-weight-semibold"
+                        >
+                          ١٠ حصان
+                        </div>
+                        <input type="radio" name="machine-power" value="10" />
+                        <span class="checkmarks"></span>
+                      </label>
+                    </div>
+                    <div class="py-2 px-3 col-6 choose-power">
+                      <label class="cont">
+                        <div
+                          style="width: 50%"
+                          class="fs-18 font-weight-semibold"
+                        >
+                          ١٥ حصان
+                        </div>
+                        <input type="radio" name="machine-power" value="15" />
+                        <span class="checkmarks mr-6"></span>
+                      </label>
+                    </div>
+                    <div class="py-2 px-3 col-6 choose-power">
+                      <label class="cont">
+                        <div
+                          style="width: 50%"
+                          class="pl-4 fs-18 font-weight-semibold"
+                        >
+                          ٢٢ حصان
+                        </div>
+                        <input type="radio" name="machine-power" value="22" />
+                        <span class="checkmarks"></span>
+                      </label>
+                    </div>
+                    <div class="py-2 px-3 col-6 choose-power">
+                      <label class="cont">
+                        <div
+                          style="width: 50%"
+                          class="fs-18 font-weight-semibold"
+                        >
+                          ٢٥ حصان
+                        </div>
+                        <input type="radio" name="machine-power" value="25" />
+                        <span class="checkmarks mr-6"></span>
+                      </label>
+                    </div>
+                    <div class="py-2 px-3 col-6 choose-power">
+                      <label class="cont">
+                        <div
+                          style="width: 50%"
+                          class="pl-4 fs-18 font-weight-semibold"
+                        >
+                          ٣٠ حصان
+                        </div>
+                        <input type="radio" name="machine-power" value="30" />
+                        <span class="checkmarks"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="inputGroupContainer">
+                  <div
+                    id="service-forms "
+                    class="row m-4 fs-20 font-weight-medium"
+                  >
+                    <div
+                      class="py-2 col-12 service"
+                      data-price-id="6127"
+                      style="background-color: #f0f8ff"
+                    >
+                      <label for="sahrawy-third" class="cont">
+                        <div style="width: 55%">اجور عمال</div>
+                        <div
+                          style="
+                            width: 25%;
+                            text-align-last: center;
+                            color: #fb513e;
+                          "
+                        >
+                          <span class="new-price mx-2"></span>ر.س
+                        </div>
+                        <input
+                          type="checkbox"
+                          class="checked-sahrawy"
+                          onclick="return false;"
+                          checked
+                          id="sahrawy-third"
+                          value="6127"
+                        /><span class="checkmark"></span>
+                      </label>
+                    </div>
+
+                    <div
+                      class="py-2 col-12 service"
+                      data-price-id="8418"
+                      style="background-color: #f6f6f6"
+                    >
+                      <label for="sahrawy-zero" class="cont">
+                        <div style="width: 55%">قاعدة صحراوي</div>
+
+                        <div
+                          style="
+                            width: 25%;
+                            text-align-last: center;
+                            color: #fb513e;
+                          "
+                        >
+                          <span class="new-price mx-2"></span>ر.س
+                        </div>
+                        <input
+                          type="checkbox"
+                          id="sahrawy-zero"
+                          name="select_services"
+                          value="8418"
+                        />
+                        <span class="checkmarks"></span>
+                      </label>
+                    </div>
+
+                    <div class="form col-12 px-0">
+                      <div
+                        class="form-group mb-0"
+                        style="background-color: #f6f6f6"
+                      >
+                        <div
+                          class="col-md-12 control-label font-weight-semibold"
+                        >
+                          هل الموقع يحتاج الى رقبة دكت ؟
+                        </div>
+
+                        <div
+                          class="d-flex row mx-3 fs-16"
+                          style="border-bottom: 1px solid #e1e1e1"
+                        >
+           
+
+                          <div
+                            class="py-2 px-0 col-10 service"
+                            data-price-id="8419"
+                            style="border: none !important"
+                          >
+                            <label for="duct-sahrawy" class="cont">
+                              <div style="width: 65%">
+                                نعم (رقبة دكت (بحد اقصى ٣ متر))
+                              </div>
+
+                              <div
+                                style="
+                                  width: 25%;
+                                  text-align-last: center;
+                                  color: #fb513e;
+                                "
+                              >
+                                <span class="new-price mx-2"></span>ر.س
+                              </div>
+                              <input
+                                type="radio"
+                                id="duct-sahrawy"
+                                name="select_services-sahrawy"
+                                value="8419"
+                              />
+                              <span class="checkmarks"></span>
+                            </label>
+                          </div>
+
+
+                          <div class="py-2 col-2">
+                            <label class="cont">
+                              <div style="width: 50%">لا</div>
+                              <input
+                                type="radio"
+                                name="select_services-sahrawy"
+                                value="3"
+                                class="sahrawy-not-selected"
+                              />
+                              <span class="checkmarks"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              
+                    <div class="form col-12 px-0">
+                      <div class="form-group" style="background-color: #f6f6f6">
+                        <div
+                          class="col-md-12 control-label font-weight-semibold"
+                        >
+                          هل موقع المكيف في سطح المبنى ؟
+                        </div>
+
+                        <div
+                          class="d-flex row mx-3 fs-16"
+                          style="border-bottom: 1px solid #e1e1e1"
+                        >
+              
+
+                          <div
+                            class="py-2 px-0 col-10 service"
+                            data-price-id="7338"
+                            style="border: none !important"
+                          >
+                            <label for="sahrawy-wensh" class="cont">
+                              <div style="width: 65%">
+                                نعم / اجور ونش لرفع المكيف لسطح البيت
+                              </div>
+
+                              <div
+                                style="
+                                  width: 25%;
+                                  text-align-last: center;
+                                  color: #fb513e;
+                                "
+                              >
+                                <span class="new-price mx-2"></span>ر.س
+                              </div>
+                              <input
+                                type="radio"
+                                id="sahrawy-wensh"
+                                name="sahrawy-wensh"
+                                value="7338"
+                              />
+                              <span class="checkmarks"></span>
+                            </label>
+                          </div>
+
+                        
+
+                          <div class="py-2 col-2">
+                            <label class="cont">
+                              <div style="width: 50%">لا</div>
+                              <input
+                                type="radio"
+                                name="sahrawy-wensh"
+                                value="3"
+                                class="sahrawy-not-selected"
+                              />
+                              <span class="checkmarks"></span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="row w-100"
+                      style="justify-content: space-around"
+                    >
+                      <div class="col-6 pt-6 text-center">
+                        <p class="text-center">
+                          <input
+                            class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary back"
+                            value="رجوع الي القائمة السابقة"
+                          />
+                        </p>
+                      </div>
+                      <div class="col-6 pt-6 text-center">
+                        <p class="text-center">
+                          <input
+                            class="fs-18 px-4 py-2 font-weight-bold text-center btn btn-primary close-btn back"
+                            type="button"
+                            value="تم الأختيار"
+                          />
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pop-up-content-wrap d-none" id="services"></div>
+                </div> -->
+
+                <div
+                  class="close-btn fs-20 px-4 py-2 font-weight-bold text-center d-none"
+                >
+                  <button class="btn btn-primary">تم الأختيار</button>
+                  <div class="d-none" id="local-entity"></div>
                 </div>
               </div>
-              <div class="pop-up-content-wrap d-none" id="services"></div>
-            </div>
-
-            <div
-              class="close-btn fs-20 px-4 py-2 font-weight-bold text-center d-none"
-            >
-              <button class="btn btn-primary">تم الأختيار</button>
-              <div class="d-none" id="local-entity"></div>
             </div>
           </div>
         </div>
+
+        <!-- ================== -->
       </div>
     </div>
-
-    <!-- ================== -->
-  </div>
-</div>
-<script>
-  $(document).ready(function () {
-    let url = window.location.href;
-    if (
-      url.includes("products_list") ||
-      url.includes("product_view") ||
-      url == "https://www.ostar.com.sa/home" ||
-      url == "https://www.ostar.com.sa/"
-    ) {
-      $(function () {
-        $.ajax({
-          url: "/contents/products_list?cat_id=108",
-          type: "get",
-          headers: { apikey: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90" },
-          success: function (resp) {
-            console.log("HEELLOOOOOO");
-            $("#services").html($(resp).find("#list-products"));
-            let servicess = $(".service");
-            $.each($(servicess), (i, val) => {
-              let newId = $(val).data("price-id");
-              if (newId != undefined) {
-                let apiKey = "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90";
-
-                $.ajax({
-                  type: "GET",
-                  url: "/v2/api/entity/product/" + newId,
-                  headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json",
-                    APIKEY: apiKey,
-                  },
-                  credentials: "same-origin",
-                  contentType: "application/json",
-                }).done((data) => {
-                  let newPrice = data.unit_price;
-
-                  let price = $(val).find(".new-price").text(newPrice);
-                });
-              }
-            });
-          },
-        });
-
-        return false;
-      });
-      $(".close-btn").click(function () {
-        $(".custom-model-main").removeClass("model-open");
-        $(".bg-popup ").removeClass("model-open");
-      });
-
-      // $(".sidebar-active")
+    <script>
       $(document).ready(function () {
-        $(".selected").click(function () {
-          var serviceValue = $('input[name="choose-service"]:checked').val();
-          console.log(serviceValue);
-          if (serviceValue == "1") {
-            $(".select-service").addClass("d-none");
-            $(".custom-model-wrap ").removeClass("d-none");
-          } else {
-            $(".bg-popup ").removeClass("model-open");
-          }
-        });
-        $("input[type='button']").click(function () {
-          var radiovalue = $('input[name="select_services"]:checked').val();
-
-          var checkbox = $(".checked").val();
-          let knowCat = $("#list-products .product").last().data("category");
-          console.log(knowCat);
-          if (knowCat.includes("دولابي")) {
-            // console.log("Dolaby");
-            checkbox = $(".checked-dolaby").val();
-          } else if (knowCat.includes("شباك")) {
-            //     console.log("shbaak");
-            checkbox = $(".checked-shbak").val();
-          }
-          console.log(radiovalue, checkbox);
-
-          let product = $("#services .box .product ");
-          $(product).filter((i, val) => {
-            //   console.log(val);
-            $(val).data("product-id") == radiovalue
-              ? $(val).find("button").trigger("click")
-              : "";
-          });
-          $(product).filter((i, val) => {
-            //    console.log(val);
-            $(val).data("product-id") == checkbox
-              ? $(val).find("button").trigger("click")
-              : "";
-          });
-          let noOfHoles = $(".hole-no").val();
-          noOfHoles = parseFloat(noOfHoles);
-          let selectVal = $(".select-value").val();
-
-          $("#local-entity").text("");
-          let idProduct = $(".hole-no").data("id");
-          console.log(noOfHoles, idProduct);
-          $(product).filter((i, val) => {
-            //    console.log(val);
-            if ($(val).data("product-id") == idProduct) {
-              for (var i = 0; i < noOfHoles; i++) {
-                $(val).find("button").trigger("click");
-              }
-            }
-          });
-          console.log(selectVal);
-          if (noOfHoles != 0) {
+        let url = window.location.href;
+        if (
+          url.includes("products_list") ||
+          url == "https://www.ostar.com.sa/home" ||
+          url == "https://www.ostar.com.sa/"
+        ) {
+          $(function () {
             $.ajax({
-              url: "/v2/api/entity/le_shopfront-invoices/2",
-              headers: {
-                APIKEY: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90",
-              },
-            }).done((data) => {
-              let entityInv =
-                data[
-                  "le_shopfront-invoices_le_shopfront-invoices_multiple_sub_forms"
-                ];
-              let lastElement = entityInv[entityInv.length - 1];
-              let invId = lastElement.invoice_id;
-              let entityID = lastElement.id;
-              if (invId == null) {
-                $.each(entityInv, (i, val) => {
-                  let id = val.id;
-                  console.log(entityID, id);
-                  if (id == entityID) {
-                    val.holes_no = noOfHoles;
-                    val.qu_answer = selectVal;
-                    console.log(entityInv);
+              url: "/contents/products_list?cat_id=108",
+              type: "get",
+              headers: { apikey: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90" },
+              success: function (resp) {
+                $("#services").html($(resp).find("#list-products"));
+                let servicess = $(".service");
+                $.each($(servicess), (i, val) => {
+                  let newId = $(val).data("price-id");
+                  if (newId != undefined) {
+                    let apiKey = "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90";
+
+                    $.ajax({
+                      type: "GET",
+                      url: "/v2/api/entity/product/" + newId,
+                      headers: {
+                        "Content-Type": "application/json",
+                        Accept: "application/json",
+                        APIKEY: apiKey,
+                      },
+                      credentials: "same-origin",
+                      contentType: "application/json",
+                    }).done((data) => {
+                      let newPrice = data.unit_price;
+
+                      let price = $(val).find(".new-price").text(newPrice);
+                    });
                   }
                 });
+              },
+            });
+
+            return false;
+          });
+          $(".close-btn").click(function () {
+            $(".custom-model-main").removeClass("model-open");
+            $(".bg-popup ").removeClass("model-open");
+          });
+
+          // $(".sidebar-active")
+          $(document).ready(function () {
+            $(".tases-input").click(function () {
+              var serviceValue = $(
+                'input[name="choose-service"]:checked'
+              ).val();
+              console.log(serviceValue);
+              $(".tases-nhas").addClass("d-none");
+              if (serviceValue == "1") {
+                $(".custom-model-wrap-tases").removeClass("d-none");
               } else {
-                let clientId = USER.client_id;
-                entityInv.push({
-                  client_id: clientId,
-                  holes_no: noOfHoles,
-                  qu_answer: selectVal,
-                  reference_id: 2,
+                $(".bg-popup ").removeClass("model-open");
+                $(".tases-nhas").removeClass("d-none");
+              }
+            });
+            $(".tases-input-1").click(function () {
+              var serviceValue = $(
+                'input[name="choose-service-1"]:checked'
+              ).val();
+              console.log(serviceValue);
+              $(".custom-model-wrap-tases ").addClass("d-none");
+              if (serviceValue == "1") {
+                $(".custom-model-wrap-tases").addClass("d-none");
+                $(".note").removeClass("d-none");
+              } else {
+                $(".custom-model-wrap-holes").removeClass("d-none");
+
+                // $(".bg-popup ").removeClass("model-open");
+              }
+            });
+
+            $(".selected-tases").click(function () {
+              $(".note").addClass("d-none");
+              $(".custom-model-wrap-holes").removeClass("d-none");
+            });
+
+            $(".tases-input-holes").click(function () {
+              var serviceValue = $(
+                'input[name="choose-service-holes"]:checked'
+              ).val();
+              console.log(serviceValue);
+
+              $(".custom-model-wrap-holes ").addClass("d-none");
+              if (serviceValue == "1") {
+                //  $(".custom-model-wrap-tases").addClass("d-none");
+                $(".holes-number").removeClass("d-none");
+              } else {
+                $(".bg-popup ").removeClass("model-open");
+                //add none
+              }
+            });
+
+            $(".selected-holes").click(function () {
+              $(".holes-number").addClass("d-none");
+              $(".bg-popup ").removeClass("model-open");
+
+              let product = $("#services .box .product ");
+
+              let noOfHoles = $(".hole-no").val();
+              noOfHoles = parseFloat(noOfHoles);
+              let selectVal = $(".select-value").val();
+
+              $("#local-entity").text("");
+              let idProduct = $(".hole-no").data("id");
+              console.log(noOfHoles, idProduct);
+              $(product).filter((i, val) => {
+                //    console.log(val);
+                if ($(val).data("product-id") == idProduct) {
+                  for (var i = 0; i < noOfHoles; i++) {
+                    $(val).find("button").trigger("click");
+                  }
+                }
+              });
+              console.log(selectVal);
+              if (noOfHoles != 0) {
+                $.ajax({
+                  url: "/v2/api/entity/le_shopfront-invoices/2",
+                  headers: {
+                    APIKEY: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90",
+                  },
+                }).done((data) => {
+                  let entityInv =
+                    data[
+                      "le_shopfront-invoices_le_shopfront-invoices_multiple_sub_forms"
+                    ];
+                  let lastElement = entityInv[entityInv.length - 1];
+                  let invId = lastElement.invoice_id;
+                  let entityID = lastElement.id;
+                  if (invId == null) {
+                    $.each(entityInv, (i, val) => {
+                      let id = val.id;
+                      console.log(entityID, id);
+                      if (id == entityID) {
+                        val.holes_no = noOfHoles;
+                        val.qu_answer = selectVal;
+                        console.log(entityInv);
+                      }
+                    });
+                  } else {
+                    let clientId = USER.client_id;
+                    entityInv.push({
+                      client_id: clientId,
+                      holes_no: noOfHoles,
+                      qu_answer: selectVal,
+                      reference_id: 2,
+                    });
+                  }
+                  let allData = JSON.stringify(data);
+                  console.log(allData);
+
+                  var settings = {
+                    url: "/v2/api/entity/le_shopfront-invoices/2",
+                    method: "PUT",
+                    headers: {
+                      APIKEY: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90",
+                      "Content-Type": "application/json",
+                      Accept: "application/json",
+                    },
+                    data: allData,
+                  };
+
+                  $.ajax(settings).done(function (response) {
+                    console.log(response);
+                  });
                 });
               }
-              let allData = JSON.stringify(data);
-              console.log(allData);
-
-              var settings = {
-                url: "/v2/api/entity/le_shopfront-invoices/2",
-                method: "PUT",
-                headers: {
-                  APIKEY: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90",
-                  "Content-Type": "application/json",
-                  Accept: "application/json",
-                },
-                data: allData,
-              };
-
-              $.ajax(settings).done(function (response) {
-                console.log(response);
-              });
             });
-          }
-        });
-        $(".back").click(function () {
-          $(".select-service").removeClass("d-none");
-          $(".custom-model-wrap ").addClass("d-none");
-        });
+
+            //   choose-service-holes
+            $(".selected").click(function () {
+              var serviceValue = $(
+                'input[name="choose-service"]:checked'
+              ).val();
+              console.log(serviceValue);
+              if (serviceValue == "1") {
+                $(".air-cond").addClass("d-none");
+                $(".custom-model-wrap").removeClass("d-none");
+              } else {
+                $(".bg-popup ").removeClass("model-open");
+              }
+            });
+
+            $("input[type='button']").click(function () {
+              var radiovalue = $('input[name="select_services"]:checked').val();
+              var sahrawy;
+              var sahrawyWensh;
+              var checkbox = $(".checked").val();
+              console.log(checkbox);
+              console.log($("#list-products .product"));
+              let knowCat = $("#list-products .product")
+                .last()
+                .data("categories");
+              console.log(knowCat);
+              if (knowCat.includes("دولابي")) {
+                // console.log("Dolaby");
+                checkbox = $(".checked-dolaby").val();
+              } else if (knowCat.includes("شباك")) {
+                //     console.log("shbaak");
+                checkbox = $(".checked-shbak").val();
+              } else if (knowCat.includes("مراوح شفط")) {
+                checkbox = $(".checked-fans").val();
+              } else if (knowCat.includes("مكييفات صحراوية ")) {
+                sahrawy = $(
+                  'input[name="select_services-sahrawy"]:checked'
+                ).val();
+                sahrawyWensh = $('input[name="sahrawy-wensh"]:checked').val();
+                checkbox = $("#sahrawy-third").val();
+              }
+              console.log(radiovalue, checkbox);
+
+              let product = $("#services .box .product ");
+
+              $(product).filter((i, val) => {
+                $(val).data("product-id") == radiovalue
+                  ? $(val).find("button").trigger("click")
+                  : "";
+              });
+              $(product).filter((i, val) => {
+                $(val).data("product-id") == sahrawyWensh
+                  ? $(val).find("button").trigger("click")
+                  : "";
+              });
+              $(product).filter((i, val) => {
+                $(val).data("product-id") == sahrawy
+                  ? $(val).find("button").trigger("click")
+                  : "";
+              });
+              $(product).filter((i, val) => {
+                $(val).data("product-id") == checkbox
+                  ? $(val).find("button").trigger("click")
+                  : "";
+              });
+
+              let noOfHoles = $(".hole-no").val();
+              noOfHoles = parseFloat(noOfHoles);
+              let selectVal = $(".select-value").val();
+
+              $("#local-entity").text("");
+              let idProduct = $(".hole-no").data("id");
+              console.log(noOfHoles, idProduct);
+              $(product).filter((i, val) => {
+                //    console.log(val);
+                if ($(val).data("product-id") == idProduct) {
+                  for (var i = 0; i < noOfHoles; i++) {
+                    $(val).find("button").trigger("click");
+                  }
+                }
+              });
+              console.log(selectVal);
+              if (noOfHoles != 0) {
+                $.ajax({
+                  url: "/v2/api/entity/le_shopfront-invoices/2",
+                  headers: {
+                    APIKEY: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90",
+                  },
+                }).done((data) => {
+                  let entityInv =
+                    data[
+                      "le_shopfront-invoices_le_shopfront-invoices_multiple_sub_forms"
+                    ];
+                  let lastElement = entityInv[entityInv.length - 1];
+                  let invId = lastElement.invoice_id;
+                  let entityID = lastElement.id;
+                  if (invId == null) {
+                    $.each(entityInv, (i, val) => {
+                      let id = val.id;
+                      console.log(entityID, id);
+                      if (id == entityID) {
+                        val.holes_no = noOfHoles;
+                        val.qu_answer = selectVal;
+                        console.log(entityInv);
+                      }
+                    });
+                  } else {
+                    let clientId = USER.client_id;
+                    entityInv.push({
+                      client_id: clientId,
+                      holes_no: noOfHoles,
+                      qu_answer: selectVal,
+                      reference_id: 2,
+                    });
+                  }
+                  let allData = JSON.stringify(data);
+                  console.log(allData);
+
+                  var settings = {
+                    url: "/v2/api/entity/le_shopfront-invoices/2",
+                    method: "PUT",
+                    headers: {
+                      APIKEY: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90",
+                      "Content-Type": "application/json",
+                      Accept: "application/json",
+                    },
+                    data: allData,
+                  };
+
+                  $.ajax(settings).done(function (response) {
+                    console.log(response);
+                  });
+                });
+              }
+            });
+            $(".back").click(function () {
+              $(".air-cond").removeClass("d-none");
+              $(".custom-model-wrap ").addClass("d-none");
+            });
+          });
+        }
       });
-    }
-  });
-  // $(".close-service").click(() => {
-  //   $(".select-service").addClass("d-none");
-  //   $(".custom-model-wrap ").removeClass("d-none");
-  // });
-</script>
+      // $(".close-service").click(() => {
+      //   $(".select-service").addClass("d-none");
+      //   $(".custom-model-wrap ").removeClass("d-none");
+      // });
+    </script>
+  </div>
+</div>

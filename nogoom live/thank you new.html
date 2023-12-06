@@ -492,6 +492,39 @@
        
         console.log(invId)
        
+        function updateInvoices(invId) {
+    const apikey = "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90";
+  
+        $.ajax({
+            url:`/v2/api/entity/invoice/${invId}/fields`,
+            type:"POST",
+            headers:{
+                "Accept":"application/json",
+                "Content-Type":"application/json",
+                apikey: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90"
+            },
+            data: JSON.stringify({
+                "follow_up_status": 38
+            }),
+            success:(resp)=>{
+                console.log('Success Update Id ' + invId)
+                
+            }, error:(e)=>{
+                console.log(e)
+            }
+        })   
+    console.log("Done");
+}
+
+
+ updateInvoices(invId)
+
+
+
+
+
+
+
         $.ajax({
           url: "/v2/api/entity/le_shopfront-invoices/2",
           headers: { apikey: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90" },

@@ -1,5 +1,29 @@
 <div id="checkout-section">
-  <div class="container">
+  <div class="container" style="position: relative">
+    <div
+      class="overlay"
+      style="
+        display: none;
+        padding: 0;
+        margin-top: -4cm;
+        position: absolute;
+        left: 0%;
+        text-align: center;
+        align-self: center;
+        background: #f3fbff;
+        z-index: 5;
+        top: 155px;
+        width: 100%;
+        height: 100%;
+      "
+    >
+      <img
+        style="padding-top: 200px"
+        class="loading-overlay-image"
+        src="/files/7aae9582/logos/63d66770b4f05_blobid1674995567373.gif"
+        width="4%"
+      />
+    </div>
     <div class="row">
       <div class="col-lg-1"></div>
       <div class="col-lg-10">
@@ -57,44 +81,59 @@
 <script>
   $(document).ready(() => {
     let id = USER.client_id;
+    $(".overlay").show();
     console.log(id);
-    $.ajax({
-      url: `/v2/api/entity/client/${id}`,
-      headers: { apikey: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90" },
-      type: "GET",
-    }).done((data) => {
-      console.log(data);
-      let firstName = data.first_name || data.business_name;
-      let lastName = data.last_name || data.business_name;
-      let address1 = data.address1;
-      let address2 = data.address2;
-      let city = data.city;
-      let state = data.state;
-      let code = data.postal_code;
-      let phone = data.phone1;
-      // document
-      //   .querySelector("#payment_iframe")
-      //   .contentDocument.querySelector("#InvoicePaymentFirstName").innerText =
-      //   firstName;
-      // document.querySelector("#payment_iframe").contentDocument.querySelector("#InvoicePaymentState");
-      // document.querySelector("#payment_iframe").contentDocument.querySelector("#InvoicePaymentState");
-      // document.querySelector("#payment_iframe").contentDocument.querySelector("#InvoicePaymentState");
-      // document.querySelector("#payment_iframe").contentDocument.querySelector("#InvoicePaymentState");
-      // document.querySelector("#payment_iframe").contentDocument.querySelector("#InvoicePaymentState");
-      // document.querySelector("#payment_iframe").contentDocument.querySelector("#InvoicePaymentState");
-      // document.querySelector("#payment_iframe").contentDocument.querySelector("#InvoicePaymentState");
-      // document.querySelector("#payment_iframe").contentDocument.querySelector("div.wrap > div > div > div.col-flex-lg-8.pr-lg-0 > div:nth-child(1)");
+    // $.ajax({
+    //   url: `/v2/api/entity/client/${id}`,
+    //   headers: { apikey: "eca5f677185bdbdb49f89fcc4ac9bf108cf76e90" },
+    //   type: "GET",
+    // }).done((data) => {
+    //   console.log(data);
+    //   let firstName = data.first_name || data.business_name;
+    //   let lastName = data.last_name || data.business_name;
+    //   let address1 = data.address1;
+    //   let address2 = data.address2;
+    //   let city = data.city;
+    //   let state = data.state;
+    //   let code = data.postal_code;
+    //   let phone = data.phone1;
+    setTimeout(() => {
+      document
+        .querySelector("#payment_iframe")
+        .contentDocument.querySelector("#InvoicePaymentFirstName").value = "-";
+      document
+        .querySelector("#payment_iframe")
+        .contentDocument.querySelector("#InvoicePaymentLastName").value = "-";
+      document
+        .querySelector("#payment_iframe")
+        .contentDocument.querySelector("#InvoicePaymentState").value = "-";
+      document
+        .querySelector("#payment_iframe")
+        .contentDocument.querySelector("#InvoicePaymentState").value = "-";
+      document
+        .querySelector("#payment_iframe")
+        .contentDocument.querySelector("#InvoicePaymentState").value = "-";
+      document
+        .querySelector("#payment_iframe")
+        .contentDocument.querySelector("#InvoicePaymentState").value = "-";
+      document
+        .querySelector("#payment_iframe")
+        .contentDocument.querySelector("#InvoicePaymentState").value = "-";
+      document
+        .querySelector("#payment_iframe")
+        .contentDocument.querySelector("#InvoicePaymentState").value = "-";
+      document
+        .querySelector("#payment_iframe")
+        .contentDocument.querySelector("#InvoicePaymentState").value = "-";
+      document
+        .querySelector("#payment_iframe")
+        .contentDocument.querySelector(
+          "div.wrap > div > div > div.col-flex-lg-8.pr-lg-0 > div:nth-child(1)"
+        ).style.display = "none";
+      $(".overlay").hide();
+    }, 4000);
 
-      console.log(
-        firstName,
-        lastName,
-        address1,
-        address2,
-        city,
-        state,
-        code,
-        phone
-      );
-    });
+    // document.querySelector("#payment_iframe").contentDocument.querySelector("div.wrap > div > div > div.col-flex-lg-8.pr-lg-0 > div:nth-child(1)");
   });
+  // });
 </script>

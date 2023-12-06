@@ -828,6 +828,9 @@ a.dropdown-item {
  right: 88% !important;
 }
 }
+.old-address{
+    display: none;
+} 
         </style>
 
 </head>
@@ -962,7 +965,7 @@ a.dropdown-item {
     </a>
     </div>
     <div class="d-flex py-1 font-weight-medium">
-        <a href="/contents/products_list?cat_id=114" class="text-primary fs-18">
+        <a href="/contents/products_list?cat_id=65" class="text-primary fs-18">
         <img class="pr-2 pl-1 d-lg-flex" src="https://ostarssa.daftra.com/files/7aae9582/logos/63c67049a3b48_blobid1673949256154.png" title="freezing.png"  width="48" height="auto">
         <span class="">              
             غرف تبريد وتجميد
@@ -1421,7 +1424,7 @@ a.dropdown-item {
                     </li>
                 
                     <li class="nav-item px-1  mr-2">
-                        <a class="nav-link fs-xl-16 d-flex text-white px-0"  href="/contents/products_list?cat_id=114">
+                        <a class="nav-link fs-xl-16 d-flex text-white px-0"  href="/contents/products_list?cat_id=65">
                             <img class="pr-2 d-lg-flex d-none" src="https://nogoomfront.daftara.com/files/27d1f6af/logos/636761afcbfa1_blobid1667719598320.png" alt="" title="freezing.png" width="auto" height="36" />
                             <p class="my-auto fs-13 fs-lg-16">غرف تبريد وتجميد  </p>
                         </a>
@@ -1563,16 +1566,43 @@ a.dropdown-item {
                             cartItems[productId] = {name: name,id: productId,qty: qty, image: image, price: price};
 
                         }
-                        var productAll=   $(this).parents(".product").data("category");
+                        var productAll=   $(this).parents(".product").data("categories");
                         var categoriesName = productAll.split(",");
                         console.log(categoriesName)
+                        if (productAll.includes("مكييفات") || productAll.includes("مراوح شفط")) {
+                             $(".air-cond").removeClass("d-none")
+                            
+                        }
+                        // else if (productAll.includes("تأسيس نحاس")) {
+                        //     $(".tases-nhas").removeClass("d-none")
+     
+                        // }
+                        else{
+                            $(".air-cond").addClass("d-none")
+                             $(".tases-nhas").addClass("d-none")
+                        }
                         $.each(categoriesName, async (i, val) => {
                             console.log(val)
-                           if (val.includes("اسبلت") && !val.includes("دكت"))  {
+                           if (val.includes("اسبلت")  ||  val.includes("مكيفات اسبلت") && !val.includes("دكت"))  {
+                            $(".air-cond").removeClass("d-none");
                            $(".pop-select").addClass("d-none");
                         $(".custom-model-main").addClass("model-open");
                         $(".bg-popup ").addClass("model-open");
                         $(".split").removeClass("d-none");
+                        $("body").addClass("sidebar-active");
+                           }
+                           else if (val.includes("تأسيس نحاس")){
+                            $(".tases-nhas").removeClass("d-none")
+                            $(".pop-select").addClass("d-none");
+                            $(".custom-model-main").addClass("model-open");
+                        $(".bg-popup ").addClass("model-open");
+                           }
+                           else if (val.includes("مراوح شفط")){
+                        
+                          $(".pop-select").addClass("d-none");
+                            $(".custom-model-main").addClass("model-open");
+                        $(".bg-popup ").addClass("model-open");
+                        $(".fans").removeClass("d-none");
                         $("body").addClass("sidebar-active");
                            }
                            else if (val.includes("شباك") ) {
@@ -1601,6 +1631,14 @@ a.dropdown-item {
                             $(".custom-model-main").addClass("model-open");
                         $(".bg-popup ").addClass("model-open");
                         $(".sahrawy").removeClass("d-none");
+                        $("body").addClass("sidebar-active");
+                           }
+                           else if (val.includes("غرف تبريد و تجميد") ) {
+                            $(".pop-select").addClass("d-none");
+                            $(".custom-model-main").addClass("model-open");
+                        $(".bg-popup ").addClass("model-open");
+                        $(".custom-model-wrap").removeClass("d-none");
+                        $(".freezing").removeClass("d-none");
                         $("body").addClass("sidebar-active");
                            }
                            
@@ -1698,7 +1736,7 @@ a.dropdown-item {
                         var total = $this.getCartTotal();
                         var totalQty = $this.getCartTotalQty();
                         $(".qty-subtotal").text(`إجمالى (${totalQty} منتج)`);
-                        $(".cart-total").text(new Intl.NumberFormat(languageCode+'-US', { style: 'currency', currency: currency_code }).format(total));
+                        $(".cart-total").text(new Intl.NumberFormat(languageCode+'-US', { style: 'currency', currency: currency_code,minimumFractionDigits: 0 }).format(total));
                         // $(".cart-total").text(format_price(total,__currencyCode));
                         /*   format_price(total,__currencyCode, function (formattedPrice) {
                                console.log("fr price : "+formattedPrice)
@@ -1730,7 +1768,7 @@ a.dropdown-item {
                             }
                             cartListItem.find(".cart-item-name").text(cartItem.name);
                             cartListItem.find(".cart-item-qty").val(cartItem.qty);
-                            cartListItem.find(".cart-item-price").text(new Intl.NumberFormat(languageCode+'-US', { style: 'currency', currency: currency_code }).format(cartItem.price));
+                            cartListItem.find(".cart-item-price").text(new Intl.NumberFormat(languageCode+'-US', { style: 'currency', currency: currency_code,minimumFractionDigits: 0 }).format(cartItem.price));
                             //cartListItem.find(".cart-item-price").text(format_price(cartItem.price,__currencyCode));
                             cartListItem.find(".cart-item-image").attr("src",cartItem.image);
                             cartListItem.attr("data-id", productId);
@@ -1858,18 +1896,37 @@ $("#calc").click(function () {
     <div class="d-block my-2 pb-4">
 <a href="#" class="pr-2 py-4">
                   <img
-                    src="https://www.ostar.com.sa/files/7aae9582/logos/6493faca7e66f_blobid1687419591623.png" 
+                    src="https://www.ostar.com.sa/files/7aae9582/logos/6494067771a47_blobid1687422581222.png" 
                     alt=""
                     title="google play.png"
-                    width="100"
+                    width="100%"
                     height="auto"
                 />
             </div>
 `
+let divLocations = `
+<p class="text-white fs-16 mb-2">
+ <a href="https://maps.app.goo.gl/Q3vAU275aNGgeiJ1A?g_st=iw" class="pr-2 py-4">
+    <i class="fas fa-map-marker-alt"></i> :  فرع قباء 
+    </a>
+</p>
+<p class="text-white fs-16 mb-2">
+<a href="https://maps.app.goo.gl/64FdRHZ5892LKNMH7?g_st=iw" class="pr-2 py-4">
+    <i class="fas fa-map-marker-alt"></i> :    عنوان الفرع الرئيس 
+    </a>
+</p>
+<p class="text-white fs-16 mb-2">
+ <a href="https://maps.app.goo.gl/f4JoL8qd5jE5i1Um6?g_st=iw" class="pr-2 py-4">
+    <i class="fas fa-map-marker-alt"></i> :  عنوان قطع الغيار 
+    </a>
+</p>
+
+
+`
 
 setTimeout(() => {
     $(divMada).insertAfter(  $("#site-footer > div.container > div > div.col-lg-4 > div > div"));
-
+$(".address").append(divLocations)
   //  $("#site-footer > div.container > div > div.col-lg-4 > div > div").append(divMada)
     $("#site-footer > div.container > div > div.col-lg-4 > div > div").addClass("align-items-center")
 console.log(divMada)

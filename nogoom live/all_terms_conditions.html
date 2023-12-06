@@ -1,0 +1,3314 @@
+<style>
+  * {
+    font-family: "Tajawal", sans-serif;
+  }
+  *::selection {
+    color: #fff;
+    background-color: #1467ab;
+  }
+  body {
+    color: #053858;
+    background-color: #f3fbff;
+  }
+  .container {
+    max-width: 1480px;
+  }
+  .text-primary {
+    color: #1467ab !important;
+  }
+  .bg-primary {
+    background-color: #1467ab !important;
+  }
+  .white {
+    color: #fff !important;
+  }
+  .fs-sm {
+    font-size: 12px !important;
+  }
+  .secondary-hover:hover {
+    color: #e3eff4 !important;
+    text-decoration: none;
+  }
+  .b-b {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  .b-t {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  .b-secondary {
+    border-bottom: 1px solid #00badb;
+  }
+
+  .text-secondary {
+    color: #1467ab !important;
+  }
+  .link {
+    color: #f75a27;
+  }
+  .link:hover {
+    color: #d13300;
+  }
+  .b-l {
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  #site {
+    min-height: auto;
+  }
+  .bg-second {
+    background-color: #e3eff4;
+  }
+  .bg-third {
+    background-color: #fb513e !important;
+  }
+  .bg-yellow {
+    background-color: #fbee14 !important;
+  }
+  .bg-third:hover {
+    background-color: #e3eff4 !important;
+    color: #053858 !important;
+  }
+  .btn-outline-white:hover {
+    background-color: #fb513e;
+  }
+  .form-control {
+    height: 45px;
+  }
+  form {
+    min-height: auto !important;
+  }
+  #calc-page form {
+    min-height: 15cm;
+  }
+
+  header#site-header #totalCart {
+    background-color: #fb513e !important;
+    color: #fff;
+  }
+  header#site-header #totalCart:hover {
+    background-color: #e3eff4 !important;
+    color: #053858;
+  }
+  .cart-toggle-btn {
+    font-weight: 600;
+  }
+  #calc-page .checkmarks-new {
+    right: 0% !important;
+    height: 22px !important;
+    width: 22px !important;
+  }
+  .cont .checkmarks-new:after {
+    top: 7px !important;
+    left: 7px !important;
+    width: 8px !important;
+    height: 8px !important;
+  }
+  .btn-log {
+    color: #fff;
+    font-weight: 600;
+    /* float: right; */
+  }
+  .btn-log:hover {
+    color: #e3eff4;
+  }
+  .btn:focus {
+    box-shadow: none;
+  }
+  .collapse:not(.show) {
+    display: none !important;
+  }
+  a.nav-link {
+    color: #ffffff;
+  }
+
+  a.nav-link:hover {
+    color: #e3eff4;
+  }
+  .bottom-nav .navbar-nav {
+    flex-direction: unset;
+  }
+  .account {
+    display: flex;
+    /* padding-right: 1cm; */
+  }
+  header#site-header .navbar .navbar-nav .nav-item .nav-link {
+    font-weight: 500;
+  }
+
+  .rounded-end {
+    border-top-right-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+  }
+  .rounded-start {
+    border-top-left-radius: 8px !important;
+    border-bottom-left-radius: 8px !important;
+  }
+  a.text-white:focus,
+  a.text-white:hover {
+    color: #fff !important;
+  }
+  .font-weight-bold {
+    font-weight: 600 !important;
+  }
+
+  #site-header {
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    z-index: 50;
+    width: 100%;
+  }
+  .time-picker .time-wrapper {
+    width: 25% !important;
+    padding-top: 15px !important;
+  }
+  .wheel-picker .select-wrapper {
+    width: 25% !important;
+    left: none !important ;
+    right: 0;
+  }
+  .float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 15%;
+    left: 2%;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 40px;
+    box-shadow: 2px 2px 10px 2px rgba(96, 94, 94, 0.456);
+    z-index: 100;
+  }
+  .float:hover {
+    color: #ebf4ff;
+  }
+
+  .my-float {
+    margin-top: 8px;
+  }
+  .title {
+    font-size: 28px;
+    color: #f75a27;
+  }
+  .item {
+    border-radius: 0;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  label {
+    margin-right: 0px !important;
+  }
+  #calc-page form {
+    min-height: 15cm !important;
+  }
+  .price:hover {
+    color: #053858;
+  }
+  .h-140px {
+    height: 140px !important;
+  }
+  .add-to-cart-btn {
+    align-self: center;
+    border-radius: 20px;
+    background-color: #1467ab;
+    color: #e3eff4;
+  }
+  .btn-primary:hover {
+    background-color: #004067 !important;
+  }
+  .text-color {
+    color: #1467ab !important;
+  }
+  .text-color:hover {
+    color: #fb513e !important;
+  }
+  .box {
+    transition: all 0.5s ease-in-out;
+  }
+  .item {
+    transition: 0.3s;
+  }
+  .item:hover {
+    box-shadow: rgba(5, 16, 88, 0.5) 0px 3px 8px;
+  }
+  .air-cat {
+    box-shadow: rgba(5, 16, 88, 0.5) 0px 3px 8px;
+  }
+  #products-section {
+    padding-bottom: 0 !important;
+  }
+  .img-cat {
+    height: 400px !important;
+    border-radius: 40px;
+  }
+
+  .list.grid-view-filter .box {
+    text-align: center;
+  }
+
+  .list.grid-view-filter .price-no {
+    text-align: right;
+  }
+  .dropdown-menu {
+    min-width: 220px;
+  }
+  .ui-state-default {
+    background: #dfeffc url(images) 50% 50% repeat-x !important;
+  }
+  .ui-state-highlight,
+  .ui-widget-content .ui-state-highlight,
+  .ui-widget-header .ui-state-highlight {
+    background: #fbec88 !important;
+  }
+  .ui-state-active,
+  .ui-widget-content .ui-state-active {
+    background: #ffffff !important;
+  }
+  .ui-widget-header {
+    background: #5c9ccc url(images) 50% 50% repeat-x !important;
+  }
+  .custom_content .ui-button {
+    background-image: url(images) !important;
+    background-color: #dfeffb !important;
+  }
+
+  .ui-selectmenu-text,
+  .ui-menu .ui-menu-item-wrapper {
+    direction: ltr !important;
+    text-align: center !important;
+  }
+
+  .dropdown-content,
+  .dropdown-content-cat {
+    display: none;
+    position: absolute;
+    /* background-color: #ffffff; */
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+  }
+
+  .dropdown-content a,
+  .dropdown-content-cat a {
+    color: #053858;
+    padding: 12px 16px;
+
+    text-decoration: none;
+    display: block;
+    text-align: right;
+    font-weight: bold;
+    font-size: 14px !important;
+    transition: 0.5s;
+  }
+  .dropdown-content div {
+    background-color: #fff;
+    min-width: 230px;
+  }
+  .dropdown-content-cat div {
+    background-color: #fff;
+    min-width: 215px;
+  }
+  .dropdownn:hover .dropdown-content,
+  .dropdownn-cat:hover .dropdown-content-cat {
+    display: block;
+  }
+  .dropbtn {
+    color: white;
+    vertical-align: text-top !important;
+  }
+  a.dropdown-item {
+    color: #1467ab;
+    transition: 0.5s;
+  }
+  a.dropdown-item:hover {
+    color: #004067;
+    padding-right: 35px !important;
+  }
+  .logn:hover {
+    color: #2f65a8 !important;
+    margin-right: 12px;
+    transition: 0.5s;
+  }
+  .btn.disabled,
+  .btn:disabled {
+    opacity: 1 !important;
+  }
+  a.acc {
+    color: #fff;
+    text-decoration: none;
+  }
+  .btn:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+  div#home-featured-products-section {
+    padding-bottom: 0px !important;
+  }
+  .custom_content .new {
+    color: #fff !important;
+  }
+  .button-wrapper .choose {
+    position: relative;
+    z-index: 0;
+    display: inline-block;
+    width: max-content;
+    background: #1467ab !important;
+    cursor: pointer;
+    color: #fff;
+    padding: 10px;
+    border-radius: 7px;
+  }
+  .input#example-date-input::-webkit-datetime-edit {
+    position: absolute;
+    right: 2%;
+  }
+  .ui-datepicker {
+    width: 85% !important;
+    margin: auto;
+  }
+  .ui-datepicker td span,
+  .ui-datepicker td a {
+    padding: 5px 0px;
+    text-align: center;
+  }
+  .cd-popup.is-visible {
+    opacity: 1 !important ;
+    visibility: visible !important;
+    -webkit-transition: opacity 0.3s 0s, visibility 0s 0s;
+    -moz-transition: opacity 0.3s 0s, visibility 0s 0s;
+    transition: opacity 0.3s 0s, visibility 0s 0s;
+  }
+  .navbar-nav .nav-item,
+  .navbar-nav .nav-item {
+    float: unset !important;
+    display: inline-block;
+  }
+  .side-sidebar-wrap {
+    width: 25% !important ;
+    position: absolute !important;
+    left: 0 !important;
+    z-index: 50;
+  }
+
+  .newOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background-color: #51525259;
+  }
+  .hidden {
+    display: none;
+  }
+
+  .newOverlay-contain {
+    display: none;
+    width: 100px;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    z-index: 1001;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px;
+    height: 80px;
+    border-radius: 5px;
+  }
+  .newOverlay-contain img {
+    width: 100%;
+  }
+
+  .dropdown-content-cat {
+    margin-top: -8px !important;
+  }
+  .dropdown-item {
+    padding: 15px 25px 15px 15px !important;
+  }
+  .exit {
+    position: absolute;
+    top: 0;
+    left: 42px;
+    box-shadow: 2px 6px 10px 2px rgb(96 94 94 / 46%);
+    left: 42px;
+    padding: 6px 12px;
+  }
+  .local-text-parent {
+    position: absolute;
+    visibility: visible;
+    opacity: 1;
+    top: 0;
+    display: flex;
+    width: 100%;
+    color: #fff;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: 2px 2px 10px 2px rgb(96 94 94 / 46%);
+    font-size: 18px;
+    background: #1467ab;
+    transition: visibility 0s, opacity 0.5s linear;
+  }
+  .new-transtion {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+  }
+  .button2 {
+    color: #1467ab !important;
+  }
+  .reg {
+    height: 28px;
+    border-bottom: 40px solid #fff;
+    border-left: 40px solid transparent;
+  }
+  .reg-top {
+    height: 28px;
+    border-top: 40px solid #fff;
+    border-right: 40px solid transparent;
+  }
+  .custom_content .new {
+    color: #004067 !important;
+    font-weight: 600;
+  }
+  .btn-primary {
+    border-radius: 0px !important;
+  }
+  #home-featured-products-section .custom_content .swiper-button-prev,
+  #home-featured-products-section
+    .custom_content
+    .swiper-rtl
+    .custom_content
+    .swiper-button-next,
+  .row-swiper .swiper-button-next {
+    color: #fff !important;
+    background-color: #1467ab !important;
+  }
+  .swiper-container-rtl .swiper-button-next {
+    left: 92% !important;
+  }
+  .swiper-container-rtl .swiper-button-prev {
+    right: 92%;
+  }
+  .product {
+    height: 440px;
+  }
+  .img-padding {
+    padding-top: 265px !important;
+  }
+  .main-men {
+    justify-content: center !important;
+  }
+  .page-item.active .page-link {
+    background-color: #004067 !important;
+  }
+  .custom_content .swiper-button-prev {
+    left: 3% !important;
+  }
+  .widget .fab {
+    padding: 10px !important;
+  }
+
+  #totalCarts {
+    position: absolute;
+    right: -3px;
+    top: -8px;
+    min-width: 15px;
+    min-height: 15px;
+    font-size: 10px;
+    font-weight: 400;
+    border-radius: 50px;
+    font-family: Gilroy, Helvetica, arial, serif;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-color: #fb513e !important;
+    border: 1px solid #fb513e;
+  }
+  .sidepanel {
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  .calc-menu {
+    background-color: #dfeffb;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 3px 8px;
+    position: unset;
+    margin: 0;
+    height: 0px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear, height 0.5s ease;
+  }
+
+  .appear-calc {
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: 150px !important;
+    transition: visibility 0s, opacity 0.5s linear, height 0.5s ease;
+  }
+  .product-slider {
+    min-width: 312px;
+  }
+  @media only screen and (max-width: 991px) {
+    .swiper-pagination-bullets {
+      text-align: center !important;
+    }
+    .form-control {
+      font-size: 12px;
+    }
+    #ia5h1 {
+      width: 60%;
+      margin-left: -30px;
+    }
+    footer#site-footer {
+      padding-top: 5px !important;
+    }
+    .widget {
+      margin-bottom: 20px !important;
+    }
+    .copyrights p {
+      font-size: 8px !important;
+      margin: 0px !important;
+    }
+    .copyrights .row div:nth-child(2) {
+      display: none;
+    }
+    .reg-top {
+      margin-top: -7px !important;
+    }
+    .side-sidebar-wrap {
+      width: 100% !important;
+    }
+    .nav-link {
+      padding: 8px !important;
+    }
+    .img-cat {
+      height: 170px !important;
+      border-radius: 30px;
+    }
+    .navbar-nav .nav-item,
+    .navbar-nav .nav-item {
+      display: flex;
+    }
+    .login {
+      padding-left: 0px;
+    }
+    header#site-header .col.col-lg-3 {
+      max-width: 50% !important;
+      flex: auto;
+      display: grid;
+    }
+    header#site-header .col.col-lg-3 > div > a {
+      height: auto !important;
+    }
+    .logoo {
+      height: 52px !important;
+    }
+    header#site-header .col.col-lg-3 > div {
+      width: auto;
+    }
+    .product-slider {
+      min-width: 160px !important;
+    }
+    .title {
+      font-size: 20px;
+    }
+    .ui-datepicker {
+      width: 100% !important;
+    }
+    a.nav-link.dashboard {
+      font-size: 8px !important;
+    }
+    .dropdown-content {
+      left: 3px;
+      min-width: 175px;
+    }
+    a.logn {
+      font-size: 12px !important;
+      padding: 12px;
+    }
+    .float {
+      bottom: 2%;
+    }
+    .product {
+      height: 275px !important;
+    }
+
+    .img-padding {
+      padding-top: 160px !important;
+    }
+    /*.card-product{
+    width: 160px !important;
+} */
+    .navbar-nav .nav-item,
+    .navbar-nav .nav-item {
+      display: block;
+    }
+    .navbar-nav .dropdown-menu {
+      background-color: #1467ab !important;
+    }
+    a.dropdown-item {
+      color: #fff !important;
+    }
+    .dropdown-menu {
+      box-shadow: none !important;
+    }
+    .dropdown-content-cat,
+    #second-menu {
+      position: unset;
+      box-shadow: none;
+      margin: 0;
+      height: 0px;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity 0.5s linear, height 0.5s ease;
+    }
+    .news-holder {
+      height: 40px;
+    }
+    .spec td:first-child {
+      width: 30%;
+    }
+    .spec td {
+      font-size: 16px !important;
+      padding: 12px 6px !important;
+    }
+    .custom_content .news {
+      height: 30px !important;
+      line-height: 30px !important;
+    }
+    .appear-menu {
+      visibility: visible !important;
+      opacity: 1 !important;
+      height: 600px !important;
+    }
+    .appear-submenu {
+      visibility: visible;
+      opacity: 1;
+      height: 260px;
+    }
+    .dropdown-content-cat div {
+      background-color: #1467ab;
+    }
+    .dropdown-content-cat a {
+      color: #fff;
+    }
+    #home-slider-section .home-slide {
+      max-height: 120px !important;
+    }
+    .swiper-container-horizontal > .swiper-pagination-bullets,
+    .swiper-pagination-custom,
+    .swiper-pagination-fraction {
+      bottom: -10px !important;
+    }
+    #mainSearch {
+      width: 85%;
+    }
+    .swiper-rtl .swiper-button-next {
+      left: 8px !important;
+    }
+    .swiper-rtl .swiper-button-prev {
+      right: 8px !important;
+    }
+    .swiper-container-rtl .swiper-button-next {
+      left: 88% !important;
+    }
+    .swiper-container-rtl .swiper-button-prev {
+      right: 88% !important;
+    }
+  }
+
+  /* accordion-1 */
+  #accordion-1 {
+    position: relative;
+    box-shadow: 0px 1px 7px #dbdbdb;
+  }
+
+  #accordion-1 .head {
+    background-color: #ffffff;
+    color: #0066a5;
+    padding: 20px 30px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #accordion-1 .arrow {
+    color: #0066a5;
+    font-size: 35px;
+    transition: 0.25s ease;
+    opacity: 0.3;
+    transform: rotate(-270deg);
+  }
+
+  #accordion-1 .head:hover .arrow {
+    opacity: 1;
+  }
+
+  #accordion-1 .head:hover,
+  #accordion-1 .active {
+    background-color: #c5dbec;
+  }
+
+  #accordion-1 .arrow-animate {
+    transform: rotate(-180deg);
+    opacity: 1;
+  }
+
+  #accordion-1 .content {
+    background-color: #ffffff;
+    display: none;
+    padding: 20px 30px;
+    color: #333333;
+  }
+</style>
+
+<div id="buy-terms" class="py-5">
+  <div class="container px-0 px-lg-2" style="max-width: 1300px">
+    <div class="contaner-accordion py-2">
+      <div id="accordion-1">
+        <div class="head">
+          <h2>عقد الدكت الاسبلت والباكج</h2>
+          <i class="fas fa-angle-down arrow"></i>
+        </div>
+        <div class="content">
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            الاحكام العامة
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              حيث تعاقد الطرفان على تنفيذ الخدمة المطلوبة أعلاه وفقاً للشروط
+              والمواصفات الموضحة أعلاه وبالأماكن المحددة من الطرف الثاني، وحيث
+              يرغب الطرف الثاني بتنفيذ الأعمال حسب الأصناف المختارة من قبله في
+              هذا العقد بخصوص وحدات الدكت اسبيلت يلزم دفع قيمة الوحدة كاملة .
+            </li>
+            <li class="fs-16 py-2">
+              وحيث أن الطرف الأول متخصص في تنفيذ الأعمال المذكورة ولدية القدرة
+              المهنية والفنية والعمالة والمعدات وكل ما تحتاجه مثل هذه الأعمال
+              وأبدى استعداده التام بذلك حسب الشروط والمواصفات وبالسعر المتفق
+              عليه في العقد.
+            </li>
+            <li class="fs-16 py-2">
+              أقر الطرفان وهما بكامل الأهلية والأوصاف المعتبرة شرعاً ونظاماً
+              وتراضياً على ما يلي:
+            </li>
+            <li class="fs-16 py-2">
+              يعتبر التمهيد الوارد أعلاه جزءاً لا يتجزأ من هذا العقد ومكملة
+              لمواده وشروطه وتقرأ وتفسر على هذا الأساس.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            مرفقات العقد:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              تعتبر المستندات الموضحة أدناه جزءاً لا يتجزأ من هذا العقد ومكملة
+              لمواده وشروطه.
+            </li>
+          </ul>
+
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            مدة العقد - قيمة العقد - طريقة الدفع:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              التزم الطرف الأول في تنفيذ الأعمال المذكورة أعلاه مع جميع
+              الالتزامات الواردة بالعقد.
+            </li>
+            <li class="fs-16 py-2">
+              في حال رغبة الطرف الثاني تمديد أو تأجيل الموعد يحق له خلال مدة
+              أقصاها نهاية السنة الميلادية المنشأ فيها العقد.
+            </li>
+            <li class="fs-16 py-2">
+              في حال حدوث ظروف أو قوة قاهرة تمنع الطرف الأول من إكمال التزامه،
+              فيتم التوصل لحل مرضي للأطراف وفي حال لم يتم الاتفاق، فيحق للطرف
+              الثاني استرجاع قيمة العقد.
+            </li>
+          </ul>
+
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            قيمة العقد:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              أتفق الطرفان على أن يكون المبلغ الإجمالي هو قيمة العقد وهذا المبلغ
+              شامل لكل ما يقوم به الطرف الأول في سبيل تنفيذ التزاماته بموجب هذا
+              العقد، وفي حال وجود أعمال إضافية يتم الاتفاق عليها بملحق إضافي
+              للعقد وبسعر محدد ومعلوم حسب الشروط والمواصفات المطلوب تنفيذها من
+              الطرف الثاني.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            طريقة الدفع: % 100
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              في حال حدوث نزاع أو خلاف - لا سمح الله - بشأن تطبيق أو تفسير هذا
+              العقد يتم تسويته بالطرق الودية بين الطرفين خلال عشرة أيام من تاريخ
+              نشوء النزاع، فإذا لم تتم التسوية الودية يحق للطرف المتضرر اللجوء
+              إلى الجهة القضائية المختصة للفصل في هذا النزاع.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            المراسلات والعناوين:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              كل إخطار أو إعلان يوجه إلى أي من طرفي العقد من الطرف الآخر يكون
+              على عنوانه المثبت في مرفقات هذا العقد يعتبر صحيحاً ومنتجاً لكافة
+              آثاره النظامية، ويتعهد كل طرف بإخطار الطرف الآخر كتابة فور أي
+              تغيير يطرأ على بياناته.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            تعهد والتزام:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              يتعهد الطرف الثاني بتسليم الموقع جاهزاً للعمل به دون معوقات تمنع
+              الطرف الأول من تنفيذ التزاماته وأعماله، كما يلتزم الطرف الأول
+              بإشعار الطرف الثاني فور انتهاء الأعمال مع تسليم الموقع بموجب
+              البيانات المرفقة من فني الطرف الأول في الموقع الالكتروني في حساب
+              الطرف الثاني .
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            الضمان:
+          </h2>
+          <p class="fs-16 py-2">
+            كما هو منصوص بواجبات الطرف الأول فهو يتعهد بالضمانات المنصوص عليها
+            في العقد، وما عدى ذلك يكون الضمان من قبل الوكيل المعتمد حسب ما هو
+            منصوص عليه بأنظمة وزارة التجارة.
+          </p>
+          <ul>
+            <li class="fs-16 py-2">
+              حرر هذا العقد من نسختين وثلاثة بنود، أحتفظ كل طرف بنسخته للعمل
+              بموجبه.
+            </li>
+          </ul>
+          <h2 style="color: #f75a27" class="fs-32 font-weight-semibold pb-3">
+            عقد تركيب أجهزة الكونسيلد أو الباكيج :
+          </h2>
+          <p class="fs-16 py-2 text-primary">
+            يلتزم الطرف الأول بتنفيذ أعمال التركيب المتعاقد عليها حسب المواصفات
+            التالية :
+          </p>
+          <ul>
+            <li class="fs-16 py-2">
+              في حال حاجة المكيفات إلى زيادة في النحاس، يقوم فريق التركيب التابع
+              للطرف الأول بزيادة في أطوال مواسير النحاس بكلفة إضافية يدفعها
+              العميل قبل التركيب وستكون تكلفة المتر الواحد من النحاس الأمريكي
+              مولر فقط ٨٠ ريال وأقل من متر يعتبر متر كامل-
+            </li>
+            <li class="fs-16 py-2">
+              بعد تركيب الوحدة الخارجية والتشغيل يصبح الجهاز تحت ضمان الوكيل
+              الذي يتحمل كافة أعمال الصيانة من العيوب الصناعية والإصلاح خلال مدة
+              الضمان.
+            </li>
+            <li class="fs-16 py-2">
+              يجب أن تكون جميع التمديدات الكهربائية التي يوفرها العميل بجوار
+              الوحدة الخارجية وتكون أربعة خطوط 6ملم
+            </li>
+            <li class="fs-16 py-2">
+              فريق تركيبات نجوم العمران غير مسؤول عن تمديد التغذية الكهربائية
+              للمكيف.
+            </li>
+            <li class="fs-16 py-2">
+              الحد الأعلى للسقالة 3 متر وما زاد عن ذلك يدفع من قبل العميل ( 100
+              ريال للطابق / للمكيف الواحد) لفريق التركيب أو القيام من قبل العميل
+              بتوفير سقالة مركبة من قبله أو رافعة (ونش) وفي حالة الحاجة لصيانة
+              للأجهزة التي يكون ارتفاعها اكثر من ٤ متر يتم توفير سقالة مركبة من
+              قبل العميل في موقع الجهاز .
+            </li>
+            <li class="fs-16 py-2">
+              القواعد المرتفعة نظام بلكونة تحتاج أن تكون متينة ومناسبة مع أماكن
+              ليقف عليها عمال الصيانة ولها حماية كافية وهي من مسؤولية الطرف
+              الثاني.
+            </li>
+            <li class="fs-16 py-2">
+              تركيب مكيفات الدكت (كونسيلد أو باكيج ) يتم فيه الاعتماد على المخطط
+              المعتمد من الطرف الثاني .
+            </li>
+            <li class="fs-16 py-2">
+              في حال وجود تعديل على المخططات الخاصة بالموقع يتحمل الطرف الثاني
+              أجور التعديل في حال تم الانتهاء من التركيب أما في حال قبل التركيب
+              فالتعديل مجاني .
+            </li>
+            <li class="fs-16 py-2">
+              على الطرف الثاني التنسيق مع المهندس الانشائي لتفادي تعارض الجسور
+              الساقطة مع مجاري الهواء والوحدات الداخلية وتزويده بنسخة من مخطط
+              التكييف لعمل مخطط تنسيقي بين الاعمال المختلفة (مواسير صرف -
+              كهرباء) بالموقع .
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="contaner-accordion py-2">
+      <div id="accordion-1">
+        <div class="head">
+          <h2>عقد توريد خدمات</h2>
+          <i class="fas fa-angle-down arrow"></i>
+        </div>
+        <div class="content">
+          <p class="fs-16 py-2 text-primary font-weight-semibold">
+            ملاحظه لجهاز الصحراوي : اذا كانت المياه مالحه يرجى توريد فلاتر مياه
+            لكي يتم تركيبها اثناء التركيب من قبلنا .
+          </p>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            الاحكام العامة
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              حيث أن الطرف الثاني تعاقد مع الطرف الأول على تنفيذ الخدمة المطلوبة
+              أعلاه وفقاً للشروط والمواصفات الموضحة أعلاه وبالأماكن المحددة من
+              الطرف الثاني، وحيث يرغب الطرف الثاني بتنفيذ الأعمال حسب الأصناف
+              المختارة من قبله في هذا العقد.
+            </li>
+            <li class="fs-16 py-2">
+              وحيث أن الطرف الأول متخصص في تنفيذ الأعمال المذكورة ولدية القدرة
+              المهنية والفنية والعمالة والمعدات وكل ما تحتاجه مثل هذه الأعمال
+              وأبدى استعداده التام بذلك حسب الشروط والمواصفات وبالسعر المتفق
+              عليه في العقد.
+            </li>
+            <li class="fs-16 py-2">
+              أقر الطرفان وهما بكامل الأهلية والأوصاف المعتبرة شرعاً ونظاماً
+              وتراضياً على ما يلي:
+            </li>
+            <li class="fs-16 py-2">
+              يعتبر التمهيد الوارد أعلاه جزءاً لا يتجزأ من هذا العقد ومكملة
+              لمواده وشروطه وتقرأ وتفسر على هذا الأساس.
+            </li>
+          </ul>
+
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            مرفقات العقد:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              تعتبر المستندات الموضحة أدناه جزءاً لا يتجزأ من هذا العقد ومكملة
+              لمواده وشروطه.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            مدة العقد - قيمة العقد - طريقة الدفع:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              التزم الطرف الأول في تنفيذ الأعمال المذكورة أعلاه مع جميع
+              الالتزامات الواردة بالعقد.
+            </li>
+            <li class="fs-16 py-2">
+              في حال رغبة الطرف الثاني تمديد أو تأجيل الموعد يحق له خلال مدة
+              أقصاها نهاية السنة الميلادية المنشأ فيها العقد.
+            </li>
+            <li class="fs-16 py-2">
+              في حال حدوث ظروف أو قوة قاهرة تمنع الطرف الأول من إكمال التزامه،
+              فيتم التوصل لحل مرضي للأطراف وفي حال لم يتم الاتفاق، فيحق للطرف
+              الثاني استرجاع قيمة العقد.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            قيمة العقد:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              أتفق الطرفان على أن يكون المبلغ الإجمالي هو قيمة العقد وهذا المبلغ
+              شامل لكل ما يقوم به الطرف الأول في سبيل تنفيذ التزاماته بموجب هذا
+              العقد، وفي حال وجود أعمال إضافية يتم الاتفاق عليها بملحق إضافي
+              للعقد وبسعر محدد ومعلوم حسب الشروط والمواصفات المطلوب تنفيذها من
+              الطرف الثاني.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            طريقة الدفع: % 100
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              في حال حدوث نزاع أو خلاف - لا سمح الله - بشأن تطبيق أو تفسير هذا
+              العقد يتم تسويته بالطرق الودية بين الطرفين خلال عشرة أيام من تاريخ
+              نشوء النزاع، فإذا لم تتم التسوية الودية يحق للطرف المتضرر اللجوء
+              إلى الجهة القضائية المختصة للفصل في هذا النزاع.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            المراسلات والعناوين:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              كل إخطار أو إعلان يوجه إلى أي من طرفي العقد من الطرف الآخر يكون
+              على عنوانه المثبت في مرفقات هذا العقد يعتبر صحيحاً ومنتجاً لكافة
+              آثاره النظامية، ويتعهد كل طرف بإخطار الطرف الآخر كتابة فور أي
+              تغيير يطرأ على بياناته.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            تعهد والتزام:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              يتعهد الطرف الثاني بتسليم الموقع جاهزاً للعمل به دون معوقات تمنع
+              الطرف الأول من تنفيذ التزاماته وأعماله، كما يلتزم الطرف الأول
+              بإشعار الطرف الثاني فور انتهاء الأعمال مع تسليم الموقع بموجب
+              البيانات المرفقة من فني الطرف الأول في الموقع الالكتروني في حساب
+              الطرف الثاني .
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            ضمان اجهزة الصحراوي:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              ضمان الجهاز سنتين فقط شامل الاجهزة الداخلية والخارجية
+            </li>
+            <li class="fs-16 py-2">
+              من الافضل يظلل فوق الجهاز لعمل الجهاز بكفاءة تامه
+            </li>
+            <li class="fs-16 py-2">
+              نرجو من العميل تنظيف الجهاز كل شهر لضمان عمل الجهاز بكفاءة
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">الضمان</h2>
+          <p class="fs-16 py-2">
+            كما هو منصوص بواجبات الطرف الأول فهو يتعهد بالضمانات المنصوص عليها
+            في العقد، وما عدى ذلك يكون الضمان من قبل الوكيل المعتمد حسب ما هو
+            منصوص عليه بأنظمة وزارة التجارة.
+          </p>
+          <ul>
+            <li class="fs-16 py-2">
+              حرر هذا العقد من نسختين وثلاثة بنود، أحتفظ كل طرف بنسخته للعمل
+              بموجبه.
+            </li>
+          </ul>
+          <h2 style="color: #f75a27" class="fs-32 font-weight-semibold pb-3">
+            عقد توريد خدمات فقط:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">يرجى الاحتفاظ بالفاتورة الأصلية.</li>
+            <li class="fs-16 py-2">
+              تحتفظ نجوم العمران بحق رفض استرجاع أو استبدال المكيف بعد التركيب
+              حسب نظام وزارة التجارة، ويكون الطرف الثاني على علم ودراية بهذا
+              البند.
+            </li>
+            <li class="fs-16 py-2">
+              بعد التوريد يصبح الجهاز تحت ضمان الوكيل الذي يتحمل كافة أعمال
+              الصيانة والإصلاح خلال مدة الضمان. وبإمكان الطرف الثاني تقديم بلاغ
+              عطل لدى الوكيل عن طريق الموقع الإلكتروني .
+            </li>
+            <li class="fs-16 py-2">
+              على الطرف الثاني تجهيز مكان التسليم لتسهيل عملية التوريد إلى
+              الباب، دون وجود عوائق تمنع الطرف الأول من نفيذ الاعمال.
+            </li>
+            <li class="fs-16 py-2">
+              تعتذر مؤسسة نجوم العمران عن رفع الأجهزة إلى الأدوار العلوية.
+            </li>
+            <li class="fs-16 py-2">
+              ضمان الأجهزة الجديدة سنتان شامل الجهاز بالكامل بما في ذلك عيوب
+              التصنيع وخمس سنوات على الكمبريسور حسب سياسة الشركة الموردة.
+            </li>
+            <li class="fs-16 py-2">
+              في حالة تخلف الطرف الثاني عن الموعد المحدد لمدة أقصاها ربع ساعة
+              يحق للطرف الأول إلغاء الموعد وعلى الطرف الثاني حجز موعد جديد أو
+              التواصل مع رقم المشرف المرسل له في رسالة الموعد، مع التنبيه على
+              الطرف الثاني بتحري الدقة في المواعيد لضمان سهولة الأعمال وإنجازها.
+            </li>
+            <li class="fs-16 py-2">
+              التوصيل داخل المدينة المنورة فقط ويتحمل الطرف الثاني أي مبالغ
+              إضافية لأعمال التوصيل خارج المدينة المنورة.
+            </li>
+            <li class="fs-16 py-2">
+              سيتم إرسال الفاتورة الى جوال الطرف الثاني بالأعمال المنفذة
+              والاعمال الإضافية(إن وجدت) خلال 24 ساعة من وقت الانتهاء من
+              الاعمال.
+            </li>
+          </ul>
+          <p class="fs-16 py-2">
+            ملاحظة هامة: يعتبر هذا العقد بأنه عقد عمل مبدئي وعند الانتهاء
+            بالكامل من الاعمال المنفذة فسيتم إشعار الطرف الثاني بفاتورة ختامية
+            بجميع الأعمال المنفذة لصالحه
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contaner-accordion py-2">
+      <div id="accordion-1">
+        <div class="head">
+          <h2>عقد التاسيس</h2>
+          <i class="fas fa-angle-down arrow"></i>
+        </div>
+        <div class="content">
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            الاحكام العامة
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              حيث أن الطرف الثاني تعاقد مع الطرف الأول على تنفيذ الخدمة المطلوبة
+              أعلاه وفقاً للشروط والمواصفات الموضحة أعلاه وبالأماكن المحددة من
+              الطرف الثاني، وحيث يرغب الطرف الثاني بتنفيذ الأعمال حسب الأصناف
+              المختارة من قبله في هذا العقد.
+            </li>
+            <li class="fs-16 py-2">
+              وحيث أن الطرف الأول متخصص في تنفيذ الأعمال المذكورة ولدية القدرة
+              المهنية والفنية والعمالة والمعدات وكل ما تحتاجه مثل هذه الأعمال
+              وأبدى استعداده التام بذلك حسب الشروط والمواصفات وبالسعر المتفق
+              عليه في العقد.
+            </li>
+            <li class="fs-16 py-2">
+              أقر الطرفان وهما بكامل الأهلية والأوصاف المعتبرة شرعاً ونظاماً
+              وتراضياً على ما يلي:
+            </li>
+            <li class="fs-16 py-2">
+              يعتبر التمهيد الوارد أعلاه جزءاً لا يتجزأ من هذا العقد ومكملة
+              لمواده وشروطه وتقرأ وتفسر على هذا الأساس.
+            </li>
+          </ul>
+
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            مرفقات العقد:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              تعتبر المستندات الموضحة أدناه جزءاً لا يتجزأ من هذا العقد ومكملة
+              لمواده وشروطه.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            مدة العقد - قيمة العقد - طريقة الدفع:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              التزم الطرف الأول في تنفيذ الأعمال المذكورة أعلاه مع جميع
+              الالتزامات الواردة بالعقد.
+            </li>
+            <li class="fs-16 py-2">
+              في حال رغبة الطرف الثاني تمديد أو تأجيل الموعد يحق له خلال مدة
+              أقصاها نهاية السنة الميلادية المنشأ فيها العقد.
+            </li>
+            <li class="fs-16 py-2">
+              في حال حدوث ظروف أو قوة قاهرة تمنع الطرف الأول من إكمال التزامه،
+              فيتم التوصل لحل مرضي للأطراف وفي حال لم يتم الاتفاق، فيحق للطرف
+              الثاني استرجاع قيمة العقد.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            قيمة العقد:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              أتفق الطرفان على أن يكون المبلغ الإجمالي هو قيمة العقد وهذا المبلغ
+              شامل لكل ما يقوم به الطرف الأول في سبيل تنفيذ التزاماته بموجب هذا
+              العقد، وفي حال وجود أعمال إضافية يتم الاتفاق عليها بملحق إضافي
+              للعقد وبسعر محدد ومعلوم حسب الشروط والمواصفات المطلوب تنفيذها من
+              الطرف الثاني.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            طريقة الدفع: % 100
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              في حال حدوث نزاع أو خلاف - لا سمح الله - بشأن تطبيق أو تفسير هذا
+              العقد يتم تسويته بالطرق الودية بين الطرفين خلال عشرة أيام من تاريخ
+              نشوء النزاع، فإذا لم تتم التسوية الودية يحق للطرف المتضرر اللجوء
+              إلى الجهة القضائية المختصة للفصل في هذا النزاع.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            المراسلات والعناوين:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              كل إخطار أو إعلان يوجه إلى أي من طرفي العقد من الطرف الآخر يكون
+              على عنوانه المثبت في مرفقات هذا العقد يعتبر صحيحاً ومنتجاً لكافة
+              آثاره النظامية، ويتعهد كل طرف بإخطار الطرف الآخر كتابة فور أي
+              تغيير يطرأ على بياناته.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            تعهد والتزام:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              يتعهد الطرف الثاني بتسليم الموقع جاهزاً للعمل به دون معوقات تمنع
+              الطرف الأول من تنفيذ التزاماته وأعماله، كما يلتزم الطرف الأول
+              بإشعار الطرف الثاني فور انتهاء الأعمال مع تسليم الموقع بموجب
+              البيانات المرفقة من فني الطرف الأول في الموقع الالكتروني في حساب
+              الطرف الثاني .
+            </li>
+          </ul>
+
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">الضمان</h2>
+          <p class="fs-16 py-2">
+            كما هو منصوص بواجبات الطرف الأول فهو يتعهد بالضمانات المنصوص عليها
+            في العقد، وما عدى ذلك يكون الضمان من قبل الوكيل المعتمد حسب ما هو
+            منصوص عليه بأنظمة وزارة التجارة.
+          </p>
+          <ul>
+            <li class="fs-16 py-2">
+              حرر هذا العقد من نسختين وثلاثة بنود، أحتفظ كل طرف بنسخته للعمل
+              بموجبه.
+            </li>
+          </ul>
+
+          <h2 style="color: #f75a27" class="fs-32 font-weight-semibold pb-3">
+            عقد عمل تأسيس:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              توريد وتركيب مواسير نحاسية لموقع الطرف الثاني حسب الشروط
+              والمواصفات المذكورة
+            </li>
+            <li class="fs-16 py-2">
+              بعد التوريد يصبح الجهاز تحت ضمان الوكيل الذي يتحمل كافة أعمال
+              الصيانة والإصلاح خلال مدة الضمان. وبإمكان الطرف الثاني تقديم بلاغ
+              عطل لدى الوكيل عن طريق الموقع الإلكتروني .توريد وتركيب خطوط
+              الكهرباء والكنترول بين الوحدة الداخلية والخارجية مع استخدام أسلاك
+              كهرباء ماركة فنار بعدد خمسة أسلاك إثنان منها قطر 6 ملم للكهرباء،
+              وثلاثة قطر 2.5 ملم للكنترول ويتم تمديدها من داخل حنجرة ضمن تمديد
+              المواسيرالنحاسية.
+            </li>
+            <li class="fs-16 py-2">
+              تعتمد أطوال المواسير النحاسية من قبل الطرف الأول أو حضور من ينوب
+              عن الطرف الثاني خلال عملية رفع مقاسات المواسير.
+            </li>
+            <li class="fs-16 py-2">
+              تحديد مواقع الوحدات الخارجية والداخلية وأخذ موافقة الطرف الثاني أو
+              من ينوب عنه أثناء توقيع العقد.
+            </li>
+            <li class="fs-16 py-2">توصيل مواسير صرف المياه إلى أسفل الجدار.</li>
+            <li class="fs-16 py-2">
+              تركيب مواسير P.V.C ضغط 40 للنحاس الذي يمتد بالأرض.
+            </li>
+            <li class="fs-16 py-2">
+              تثبيت المواسير النحاسية التي بالسقف يكون باستخدام "الكليبات"
+              (Clips)
+            </li>
+            <li class="fs-16 py-2">قص الجدار باستخدام الصاروخ.</li>
+          </ul>
+
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            المواصفات الفنية للمواسير النحاسية:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              المواسير المستخدمة نحاس نوع مولر أمريكي اصلي.
+            </li>
+            <li class="fs-16 py-2">
+              عزل مواسير النحاس يتم باستخدام ربل أسود (فوم) Ostar وطني ويتم لف
+              النحاس باستخدام أسلاك الكهرباء ومن ثم تلف بشطرطون تايواني أصلي
+              بسماكة 0.2 ملم ولتصريف الماء تستخدم مواسير وطني ثلاثة أرباع بوصة
+              لجدار10 سم، ومواسير واحد بوصة لجدار 20 سم علماً بأن ضمان مواسير
+              النحاس 10 سنوات على التأسيس الداخلي فقط.
+            </li>
+            <li class="fs-16 py-2">
+              يلتزم الطرف الثاني بدفع قيمة هذا العقد حسب الأمتار المسجلة.
+            </li>
+            <li class="fs-16 py-2">
+              .يلتزم الطرف الثاني بتنفيذ جميع الأعمال الكهربائية بدءا من أعمال
+              التأسيس وحتى الانتهاء من الخدمات المضمنة في العقد مع إيصال
+              الكهرباء لمواقع المكيفات وتوفير القواطع الكهربائية المناسبة جوار
+              الوحدات (للإسبليت 2 خط 6 مل) و 1 خط أرضي. وكذلك الكابلات
+              الكهربائية وأسلاك التغذية والكنترول في حال كان الأجهزة دكت إسبليت
+              بجوار الوحدات الخارجية وفي حال شراء أجهزة دكت إسبليت 4 طن وأعلى
+              فيجب أن يكون حجم التيار الكهربائي 380 فولت وعدد الأسلاك 4 خط 6 مل
+              يتم تمديدها مباشرة من الطبلون بجوار الوحدات الخارجية.
+            </li>
+            <li class="fs-16 py-2">
+              يلتزم الطرف الثاني بإزالة أي أنقاض نتيجة تكسير الجداران .
+            </li>
+            <li class="fs-16 py-2">
+              يلتزم الطرف الثاني بإيصال مواسير تصريف المياه بالبلاعات من خلال
+              سباك الموقع والرقابة عليه مهمة جداً كما يجب التنبيه عليه بأن تكون
+              عملية توصيل مواسير صرف المياه قبل اللياسة وأن تكون المواسير من نوع
+              نبرو او مايعادله لتفادي التكسير اسفل الجدار لاحقاً الامر الذي قد
+              يلحق الضرر بمواسير النحاس.
+            </li>
+            <li class="fs-16 py-2">
+              يكون التمتير الفعلي قبل البدء بالعمل أثناء عمل مواسير تصريف المياه
+              ويعتبر هذا التمتير نهائي ويتم إبلاغ الطرف الثاني به
+            </li>
+            <li class="fs-16 py-2">
+              لدفع المبلغ المتبقي عليه ومن ثم استكمال العمل في الموقع في مدة لا
+              تتجاوز أسبوع وفي حال التأخر في السداد، سيتم احتساب سعر المتر وفق
+              سعر النحاس العالمي في حينه أو خصم قيمة التكسير وتاسيس صرف الماء
+              وأرجاع المتبقي للعميل .
+            </li>
+            <li class="fs-16 py-2">
+              في حال لم يتم إكمال دفعة العقد لأكثر من شهر فإن الاعمال المنجزة
+              سيتكون موازية للدفعة التي تم دفعها أو إعادة ما تم دفعه من قيمة
+              العقد ، أما في حال عدم التنفيذ رغم أنه قد تم زراعة مواسير P.V.C
+              فسيتم خصم قيمة الزراعة لكل دور 400 ريال.
+            </li>
+            <li class="fs-16 py-2">
+              على الطرف الثاني تنبيه عمال التكسير أثناء قص الخرسانة وخرمها
+              وأشعار الطرف الأول خطيا عن وجود أسلاك كهرباء أو مواسير داخل
+              الخرسانة والجدران مع تحديد مواقعها وفي حال لم يتم ذلك فأن الطرف
+              الأول غير مسئول عن أي أسلاك تم تقطيعها أو مواسير تضررت.
+            </li>
+            <li class="fs-16 py-2">
+              بعد الانتهاء من تسليم المواسير النحاسية وأعمال تصريف المياه للطرف
+              الثاني يعتبر الطرف الأول غير مسؤول عما يحدث لها من أضرار إن وجدت
+              نتيجة أعمال التشطيب. وفي في حال حدوثها فستكون عملية الإصلاح لخط
+              صرف المياه ( 100) ريال لكل مكيف إضافة الى قيمة الخامات وعملية
+              إصلاح المواسير النحاسية (200 ) ريال إضافة الى قيمة المواسير وتكون
+              طريقة الاحتساب بالمتر الطولي.
+            </li>
+            <li class="fs-16 py-2">
+              تنفيذ أعمال الدكت يتم فيه الاعتماد على المخطط وعمل محضر مع مهندس
+              الديكور والجبس ومهندس الكهرباء ومهندس الميكانيكا ومدير المشروع
+              وأخذ موافقتهم الخطية بالتنسيق مع الطرف الأول تجنباً لحدوث أي تعارض
+              خلال مرحلة تنفيذ الاعمال.
+            </li>
+            <li class="fs-16 py-2">
+              ملاحظة: في حال كان اختيار أماكن المكيفات باتجاه كمرات ساقطة فيجب
+              إشعار الطرف الأول خطياً من قبل مهندس الموقع بالموافقة على ذلك.
+              وبالتالي فإن تلك الموافقة تعتبر بمثابة الاعتماد الصريح والواضح على
+              التكسير في هذه الكمرات حتى وان أضطر الامر إلى قص الحديد المسلح
+              سواء كان القص بالصاروخ الكهربائي أو التخريم بالكور.
+            </li>
+            <li class="fs-16 py-2">
+              قيمة دراسة مخطط تأسيس نحاس الدكت ورسم المخطط هي 500 ريال يلتزم
+              الطرف الثاني بدفعها ، وتكون الدراسة مجانية في حال دفع قيمة كامل
+              مجاري الهواء . ستكون مسئولية عمل مخطط مجاري الهواء بالكامل على
+              الطرف الأول في حال دفع رسومها أو دفع قيمة مجاري الهواء .
+            </li>
+            <li class="fs-16 py-2">
+              في حال تعديل مواقع المكيفات عن المخطط المعتمد والمتفق عليه بين
+              الطرفين ، يتحمل الطرف الثاني قيمة أي أخرام جديدة في الصبة على كامل
+              ماسورة النحاس. مهم جداً المحافظة على السليفات المزروعة حسب المخطط
+              وأي عبث بها من البوم أو أعمال البناء فهي مسؤولية الطرف الثاني
+              وسيتحمل بذلك قيمة الأخرام.
+            </li>
+            <li class="fs-16 py-2">
+              في حال طلب أن يكون النحاس داخل مواسير بلاستيكية وعلى كامل ماسورة
+              النحاس فسيتم إضافة مبلغ 10 ريال للمتر الطولي.
+            </li>
+            <li class="fs-16 py-2">
+              تأسيس النحاس سيكون على بعد 70 سم نزولاً من السقف وفي حال الرغبة
+              بتغيير منسوب التأسيس نرجو إبلاغنا في حينه.
+            </li>
+            <li class="fs-16 py-2">
+              عند الرغبة بتعديل المنسوب بعد التأسيس تحسب تكلفة التعديل بقيمة 100
+              ريال لكل مكيف.
+            </li>
+            <li class="fs-16 py-2">
+              تنبيه: توجيه فني الديكور بأخذ 40 سم منسوب الجبس من منفذ النحاس
+              الداخلي وعدم النزول اكثر من ذلك
+            </li>
+          </ul>
+          <p class="text-secondary fs-24 font-weight-semibold pb-3">
+            ضمان أعمال التأسيس خمسة عشر عام على أعمال التأسيس الداخلية
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="contaner-accordion py-2">
+      <div id="accordion-1">
+        <div class="head">
+          <h2>عقد زراعة المواسير بي في سي</h2>
+          <i class="fas fa-angle-down arrow"></i>
+        </div>
+        <div class="content">
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            الاحكام العامة
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              حيث أن الطرف الثاني تعاقد مع الطرف الأول على تنفيذ الخدمة المطلوبة
+              أعلاه وفقاً للشروط والمواصفات الموضحة أعلاه وبالأماكن المحددة من
+              الطرف الثاني، وحيث يرغب الطرف الثاني بتنفيذ الأعمال حسب الأصناف
+              المختارة من قبله في هذا العقد.
+            </li>
+            <li class="fs-16 py-2">
+              وحيث أن الطرف الأول متخصص في تنفيذ الأعمال المذكورة ولدية القدرة
+              المهنية والفنية والعمالة والمعدات وكل ما تحتاجه مثل هذه الأعمال
+              وأبدى استعداده التام بذلك حسب الشروط والمواصفات وبالسعر المتفق
+              عليه في العقد.
+            </li>
+            <li class="fs-16 py-2">
+              أقر الطرفان وهما بكامل الأهلية والأوصاف المعتبرة شرعاً ونظاماً
+              وتراضياً على ما يلي:
+            </li>
+            <li class="fs-16 py-2">
+              يعتبر التمهيد الوارد أعلاه جزءاً لا يتجزأ من هذا العقد ومكملة
+              لمواده وشروطه وتقرأ وتفسر على هذا الأساس.
+            </li>
+          </ul>
+
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            مرفقات العقد:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              تعتبر المستندات الموضحة أدناه جزءاً لا يتجزأ من هذا العقد ومكملة
+              لمواده وشروطه.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            مدة العقد - قيمة العقد - طريقة الدفع:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              التزم الطرف الأول في تنفيذ الأعمال المذكورة أعلاه مع جميع
+              الالتزامات الواردة بالعقد.
+            </li>
+            <li class="fs-16 py-2">
+              في حال رغبة الطرف الثاني تمديد أو تأجيل الموعد يحق له خلال مدة
+              أقصاها نهاية السنة الميلادية المنشأ فيها العقد.
+            </li>
+            <li class="fs-16 py-2">
+              في حال حدوث ظروف أو قوة قاهرة تمنع الطرف الأول من إكمال التزامه،
+              فيتم التوصل لحل مرضي للأطراف وفي حال لم يتم الاتفاق، فيحق للطرف
+              الثاني استرجاع قيمة العقد.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            قيمة العقد:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              أتفق الطرفان على أن يكون المبلغ الإجمالي هو قيمة العقد وهذا المبلغ
+              شامل لكل ما يقوم به الطرف الأول في سبيل تنفيذ التزاماته بموجب هذا
+              العقد، وفي حال وجود أعمال إضافية يتم الاتفاق عليها بملحق إضافي
+              للعقد وبسعر محدد ومعلوم حسب الشروط والمواصفات المطلوب تنفيذها من
+              الطرف الثاني.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            طريقة الدفع: % 100
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              في حال حدوث نزاع أو خلاف - لا سمح الله - بشأن تطبيق أو تفسير هذا
+              العقد يتم تسويته بالطرق الودية بين الطرفين خلال عشرة أيام من تاريخ
+              نشوء النزاع، فإذا لم تتم التسوية الودية يحق للطرف المتضرر اللجوء
+              إلى الجهة القضائية المختصة للفصل في هذا النزاع.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            المراسلات والعناوين:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              كل إخطار أو إعلان يوجه إلى أي من طرفي العقد من الطرف الآخر يكون
+              على عنوانه المثبت في مرفقات هذا العقد يعتبر صحيحاً ومنتجاً لكافة
+              آثاره النظامية، ويتعهد كل طرف بإخطار الطرف الآخر كتابة فور أي
+              تغيير يطرأ على بياناته.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            تعهد والتزام:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              يتعهد الطرف الثاني بتسليم الموقع جاهزاً للعمل به دون معوقات تمنع
+              الطرف الأول من تنفيذ التزاماته وأعماله، كما يلتزم الطرف الأول
+              بإشعار الطرف الثاني فور انتهاء الأعمال مع تسليم الموقع بموجب
+              البيانات المرفقة من فني الطرف الأول في الموقع الالكتروني في حساب
+              الطرف الثاني .
+            </li>
+          </ul>
+
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">الضمان</h2>
+          <p class="fs-16 py-2">
+            كما هو منصوص بواجبات الطرف الأول فهو يتعهد بالضمانات المنصوص عليها
+            في العقد، وما عدى ذلك يكون الضمان من قبل الوكيل المعتمد حسب ما هو
+            منصوص عليه بأنظمة وزارة التجارة.
+          </p>
+          <ul>
+            <li class="fs-16 py-2">
+              حرر هذا العقد من نسختين وثلاثة بنود، أحتفظ كل طرف بنسخته للعمل
+              بموجبه.
+            </li>
+          </ul>
+          <h2 style="color: #f75a27" class="fs-32 font-weight-semibold pb-3">
+            عقد عمل زراعة مواسيرPVC:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              يتولى الطرف الأول توريد وتركيب مواسير بلاستيك للزراعة لموقع الطرف
+              الثاني حسب الشروط والمواصفات المذكورة وحسب المخطط المعتمد منه
+            </li>
+            <li class="fs-16 py-2">
+              تعتمد أطوال المواسير النحاسية من قبل الطرف الأول أو حضور من ينوب
+              عن الطرف الثاني أثناء أخذ مقاسات المواسير.
+            </li>
+            <li class="fs-16 py-2">
+              يتولى الطرف الأول تحديد مواقع الوحدات الخارجية والداخلية ومن ثم
+              أخذ موافقة الطرف الثاني أو من ينوب عنه أو أن يكون الطرف الأول هو
+              المفوض بذلك دون الرجوع للطرف الثاني.
+            </li>
+            <li class="fs-16 py-2">
+              في حال كان اختيار أماكن تركيب المكيفات باتجاه كميرات ساقطة وحاجة
+              العمل في الموقع تقتضي التكسير في هذه الكمرات ، فإن الاختيار المحدد
+              للزراعة تعتبر موافقة ضمنية وصريحة على التكسير في هذه الكمرات
+              لتوسيعها .
+            </li>
+            <li class="fs-16 py-2">
+              تأسيس نحاس الدكت يكون في الأماكن المعتمدة بموجب المخطط المعتد قي
+              عقودV.C وفي حال تعديل مواقع المكيفات عن المخطط المعتمد من الطرف
+              الثاني، فسوف يتحمل الطرف الثاني قيمة أي أخرام جديدة في الصبة على
+              كامل ماسورة النحاس.
+            </li>
+            <li class="fs-16 py-2">
+              في حال لم يتم إكمال دفعة العقد لمدة أكثر من شهر فيتم المحاسبة حسب
+              الدفعة التي تم تغطيتها أو استرجاعها.
+            </li>
+            <li class="fs-16 py-2">
+              في حال لم يتم تغذية الحساب بدفعة كافيه للعمل سوف يتم إيقاف العمل
+              مباشرة، حتى يتم السداد.
+            </li>
+            <li class="fs-16 py-2">
+              يتم تأسيس النحاس نزولاً من السقف 75 سم وفي حال الرغبة بتغير منسوب
+              التأسيس من قبل الطرف الثاني فعليه إبلاغ الطرف الأول بذلك ، أما في
+              حال انه تم الانتهاء من التأسيس ولم يتم إبلاغ الطرف الأول بالمنسوب
+              المرغوب فسوف يتم إدراج قيمة التعديل وإشعار الطرف الثاني بها.
+            </li>
+            <li class="fs-16 py-2">
+              ينغى على الطرف الثاني ابلاغ فني الديكور بأخذ 40 سم لمنسوب الجبس
+              وعدم النزول أكثر من ذلك..
+            </li>
+            <li class="fs-16 py-2">
+              يتم تأسيس النحاس نزولاً من السقف 75 سم وفي حال الرغبة بتغير منسوب
+              التأسيس من قبل الطرف الثاني فعليه إبلاغ الطرف الأول بذلك ، أما في
+              حال انه تم الانتهاء من التأسيس ولم يتم إبلاغ الطرف الأول بالمنسوب
+              المرغوب فسوف يتم إدراج قيمة التعديل وإشعار الطرف الثاني بها.
+            </li>
+          </ul>
+          <p class="fs-16 py-2">
+            توفير الكهرباء في الموقع مسؤولية الطرف الثاني.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="contaner-accordion py-2">
+      <div id="accordion-1">
+        <div class="head">
+          <h2>عقد عمل تركيب الإسبليت والدولابي والشباك</h2>
+          <i class="fas fa-angle-down arrow"></i>
+        </div>
+        <div class="content">
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            الاحكام العامة
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              حيث أن الطرف الثاني تعاقد مع الطرف الأول على تنفيذ الخدمة المطلوبة
+              أعلاه وفقاً للشروط والمواصفات الموضحة أعلاه وبالأماكن المحددة من
+              الطرف الثاني، وحيث يرغب الطرف الثاني بتنفيذ الأعمال حسب الأصناف
+              المختارة من قبله في هذا العقد.
+            </li>
+            <li class="fs-16 py-2">
+              وحيث أن الطرف الأول متخصص في تنفيذ الأعمال المذكورة ولدية القدرة
+              المهنية والفنية والعمالة والمعدات وكل ما تحتاجه مثل هذه الأعمال
+              وأبدى استعداده التام بذلك حسب الشروط والمواصفات وبالسعر المتفق
+              عليه في العقد.
+            </li>
+            <li class="fs-16 py-2">
+              أقر الطرفان وهما بكامل الأهلية والأوصاف المعتبرة شرعاً ونظاماً
+              وتراضياً على ما يلي:
+            </li>
+            <li class="fs-16 py-2">
+              يعتبر التمهيد الوارد أعلاه جزءاً لا يتجزأ من هذا العقد ومكملة
+              لمواده وشروطه وتقرأ وتفسر على هذا الأساس.
+            </li>
+          </ul>
+
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            مرفقات العقد:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              تعتبر المستندات الموضحة أدناه جزءاً لا يتجزأ من هذا العقد ومكملة
+              لمواده وشروطه.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            مدة العقد - قيمة العقد - طريقة الدفع:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              التزم الطرف الأول في تنفيذ الأعمال المذكورة أعلاه مع جميع
+              الالتزامات الواردة بالعقد.
+            </li>
+            <li class="fs-16 py-2">
+              في حال رغبة الطرف الثاني تمديد أو تأجيل الموعد يحق له خلال مدة
+              أقصاها نهاية السنة الميلادية المنشأ فيها العقد.
+            </li>
+            <li class="fs-16 py-2">
+              في حال حدوث ظروف أو قوة قاهرة تمنع الطرف الأول من إكمال التزامه،
+              فيتم التوصل لحل مرضي للأطراف وفي حال لم يتم الاتفاق، فيحق للطرف
+              الثاني استرجاع قيمة العقد.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            قيمة العقد:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              أتفق الطرفان على أن يكون المبلغ الإجمالي هو قيمة العقد وهذا المبلغ
+              شامل لكل ما يقوم به الطرف الأول في سبيل تنفيذ التزاماته بموجب هذا
+              العقد، وفي حال وجود أعمال إضافية يتم الاتفاق عليها بملحق إضافي
+              للعقد وبسعر محدد ومعلوم حسب الشروط والمواصفات المطلوب تنفيذها من
+              الطرف الثاني.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            طريقة الدفع: % 100
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              في حال حدوث نزاع أو خلاف - لا سمح الله - بشأن تطبيق أو تفسير هذا
+              العقد يتم تسويته بالطرق الودية بين الطرفين خلال عشرة أيام من تاريخ
+              نشوء النزاع، فإذا لم تتم التسوية الودية يحق للطرف المتضرر اللجوء
+              إلى الجهة القضائية المختصة للفصل في هذا النزاع.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            المراسلات والعناوين:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              كل إخطار أو إعلان يوجه إلى أي من طرفي العقد من الطرف الآخر يكون
+              على عنوانه المثبت في مرفقات هذا العقد يعتبر صحيحاً ومنتجاً لكافة
+              آثاره النظامية، ويتعهد كل طرف بإخطار الطرف الآخر كتابة فور أي
+              تغيير يطرأ على بياناته.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            تعهد والتزام:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              يتعهد الطرف الثاني بتسليم الموقع جاهزاً للعمل به دون معوقات تمنع
+              الطرف الأول من تنفيذ التزاماته وأعماله، كما يلتزم الطرف الأول
+              بإشعار الطرف الثاني فور انتهاء الأعمال مع تسليم الموقع بموجب
+              البيانات المرفقة من فني الطرف الأول في الموقع الالكتروني في حساب
+              الطرف الثاني .
+            </li>
+          </ul>
+
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">الضمان</h2>
+          <p class="fs-16 py-2">
+            كما هو منصوص بواجبات الطرف الأول فهو يتعهد بالضمانات المنصوص عليها
+            في العقد، وما عدى ذلك يكون الضمان من قبل الوكيل المعتمد حسب ما هو
+            منصوص عليه بأنظمة وزارة التجارة.
+          </p>
+          <ul>
+            <li class="fs-16 py-2">
+              حرر هذا العقد من نسختين وثلاثة بنود، أحتفظ كل طرف بنسخته للعمل
+              بموجبه.
+            </li>
+          </ul>
+          <h2 style="color: #f75a27" class="fs-32 font-weight-semibold pb-3">
+            عقد عمل تركيب الإسبليت والدولابي والشباك:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              الفاتورة الأصلية هي الوثيقة المعتمدة للتركيب والضمان.
+            </li>
+            <li class="fs-16 py-2">
+              الاستبدال والاسترجاع بعد التركيب يعتمد حسب أنظمة وزارة التجارة.
+            </li>
+            <li class="fs-16 py-2">
+              تركيب الوحدات الداخلية والخارجية يكون وفقاً للأماكن المحدد من قبل
+              الطرف الثاني .
+            </li>
+            <li class="fs-16 py-2">
+              في حال تبين أن التركيب يحتاج إلى زيادة في مواسير النحاس فسيقوم
+              فريق التركيب التابع للطرف الأول بإضافة مواسير النحاس بتكلفة إضافية
+              يدفعها الطرف الثاني قبل عملية التركيب وتحسب التكلفة للمتر الواحد
+              من النحاس الأمريكي مولر بـ 80 ريال وتحسب الكمية التي تكون أقل من
+              متر على أنها متر كامل.
+            </li>
+            <li class="fs-16 py-2">
+              بعد تركيب الوحدة الخارجية يصبح الجهاز تحت ضمان الوكيل الذي يتحمل
+              كافة أعمال الصيانة سواء أكانت عيوب تصنيع أم إصلاح وذلك خلال مدة
+              الضمان المحددة بـخمس سنوات على الكمبريسور وسنتان شاملة حسب سياسة
+              الوكيل.
+            </li>
+            <li class="fs-16 py-2">
+              ضمان التركيب يشمل أي عيوب في التركيب تنقييط ماء أو تهريب فريون فقط
+              ولمدة عام من تاريخ التركيب.
+            </li>
+            <li class="fs-16 py-2">
+              يتولى الطرف الثاني تجهيز مكان التركيب لتسهيل عملية التركيب من
+              أعمال مدنية, ديكور, سباكة، تصريف مياه وتوفير الكهرباء.
+            </li>
+            <li class="fs-16 py-2">
+              جميع التمديدات الكهربائية التي يوفرها الطرف الثاني بجوار الوحدة
+              الخارجية تكون كالاتي:
+              <p>
+                ثلاثة خطوط : أثنين للكهرباء والثالث أرضي للكهرباء للمكيفات التي
+                تحتاج الى 220 فولت فاز مفرد
+              </p>
+              <p>
+                خمسة خطوط: ثلاثة للكهرباء ، واحد حيادي (neutral) ، واحد ارضي
+                للمكيفات التي تحتاج الى 380 فولت ثلاث فاز علماً بأن فريق التركيب
+                التابع للطرف الاول غير مسؤول عن تمديدات الكهرباء.
+              </p>
+            </li>
+            <li class="fs-16 py-2">
+              الحد الأعلى للسقالة 3 متر وما زاد عن ذلك يدفع من قبل الطرف الثاني
+              بتكلفة 100 ريال للطابق / للمكيف الواحد. أو القيام من قبل الطرف
+              الثاني بتوفير سقالة مركبة أو ونش وفي حالة الحاجة لصيانة للأجهزة
+              التي يكون ارتفاعها أكثر من 4 متر يتم توفير سقالة مركبة من قبل
+              العميل في موقع الجهاز.
+            </li>
+            <li class="fs-16 py-2">
+              القواعد المرتفعة (نظام بلكونة) ينغي أن تكون متينة ومناسبة مع مواقع
+              العكل ليقف عليها عمال الصيانة ولها حماية كافية.
+            </li>
+            <li class="fs-16 py-2">
+              الطرف الأول لا يتحمل مسؤولية أداء تبريد المكيف في حال تم تركيب
+              الوحدة الخارجية داخل المنور.
+            </li>
+            <li class="fs-16 py-2">
+              الطرف الأول لا يتحمل مسؤولية أداء تبريد المكيف في حال كان حجم
+              المكان غير متوافق مع قدرة المكيف.
+            </li>
+            <li class="fs-16 py-2">
+              الطرف الأول يتحمل مسؤولية جودة مواسير النحاس التي تم تركيبها من
+              قبله فقط .
+            </li>
+            <li class="fs-16 py-2">
+              في حال تأخر الطرف الثاني عن الموعد المحدد لمدة أقصاها (15) دقيقة
+              سيضطر الطرف الأول لإلغاء الموعد وعلى الطرف الثاني حجز موعد جديد أو
+              التواصل مع رقم المشرف المرسل له في رسالة الموعد.
+            </li>
+            <li class="fs-16 py-2">
+              سيتم إضافة مبلغ 25 ريال للقاعدة الأرضية الربل في حال تم شراء
+              المكيف من محل أخر.
+            </li>
+            <li class="fs-16 py-2">
+              تركيب القاعدة الأرضية على الأسطح يتوجب على الطرف الثاني توضيح طلب
+              تثبيتها بالبلاط من عدمه في الموقع
+            </li>
+            <li class="fs-16 py-2">
+              سيتم إضافة مبلغ 70 ريال/م في حال رغبة الطرف الثاني تغطية مواسير
+              النحاس بالبلاستيك أو تحسين المنظر الخارجي أو الداخلي.
+            </li>
+            <li class="fs-16 py-2">
+              القاعدة الجدارية للوحدات الخارجية والتي قدرتها من 1 إلى 2 طن
+              قيمتها 35 ريال أما الوحدات الخارجية التي تكون قدرتها من 2.5 إلى 3
+              طن قيمتها 75 ريالا فقط، والتي تكون قدرتها من 3 إلى 5 طن فتكون
+              القيمة 150 ريال.
+            </li>
+            <li class="fs-16 py-2">
+              تعبئة مخارج المواسير بالفوم - حسب الرغبة وبكلفة إضافية تقدر ب 10
+              ريال للمكيف الواحد
+            </li>
+            <li class="fs-16 py-2">
+              فك المكيف القديم سيكون بتكلفة إضافية بقيمة 150 ريال
+            </li>
+            <li class="fs-16 py-2">
+              التوصيل والتركيب داخل المدينة المنورة فقط ويتحمل الطرف الثاني أي
+              مبالغ إضافية لأعمال التوصيل أو التركيب خارج المدينة المنورة.
+            </li>
+            <li class="fs-16 py-2">
+              في حالة الفك وإعادة التركيب وتبين أن المكيف يحتاج الى تعبئة فريون
+              فستكون التكلفة 180 إلى 300 ريال وهذا لا يشمل الغسيل أو أي أعمال
+              صيانة أخرى.
+            </li>
+            <li class="fs-16 py-2">
+              سيتم إرسال الفاتورة الى جوال الطرف الثاني بالأعمال المنفذة
+              والاعمال الإضافية(إن وجدت) خلال 24 ساعة من وقت الانتهاء من
+              الاعمال.
+              <p style="color: #f75a27">
+                ملاحظة هامة: يعتبر هذا العقد عقد عمل مبدئي وعند الانتهاء بالكامل
+                من الاعمال المنفذة فسيتم إشعار الطرف الثاني بفاتورة ختامية بجميع
+                الأعمال.
+              </p>
+            </li>
+            <li class="fs-16 py-2">
+              الحصول على ضمان الأجهزة مرتبط بسداد كامل قيمة الاعمال المنفذ
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="contaner-accordion py-2">
+      <div id="accordion-1">
+        <div class="head">
+          <h2>عقد عمل تصنيع مجاري هواء صاج:</h2>
+          <i class="fas fa-angle-down arrow"></i>
+        </div>
+        <div class="content">
+          <h2 style="color: #f75a27" class="fs-32 font-weight-semibold pb-3">
+            *ملاحظه لجهاز الصحراوي : اذا كانت المياه مالحه يرجى توريد فلاتر مياه
+            لكي يتم تركيبها اثناء التركيب من قبلنا .
+          </h2>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            الاحكام العامة
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              حيث أن الطرف الثاني تعاقد مع الطرف الأول على تنفيذ الخدمة المطلوبة
+              أعلاه وفقاً للشروط والمواصفات الموضحة أعلاه وبالأماكن المحددة من
+              الطرف الثاني، وحيث يرغب الطرف الثاني بتنفيذ الأعمال حسب الأصناف
+              المختارة من قبله في هذا العقد.
+            </li>
+            <li class="fs-16 py-2">
+              وحيث أن الطرف الأول متخصص في تنفيذ الأعمال المذكورة ولدية القدرة
+              المهنية والفنية والعمالة والمعدات وكل ما تحتاجه مثل هذه الأعمال
+              وأبدى استعداده التام بذلك حسب الشروط والمواصفات وبالسعر المتفق
+              عليه في العقد.
+            </li>
+            <li class="fs-16 py-2">
+              أقر الطرفان وهما بكامل الأهلية والأوصاف المعتبرة شرعاً ونظاماً
+              وتراضياً على ما يلي:
+            </li>
+            <li class="fs-16 py-2">
+              يعتبر التمهيد الوارد أعلاه جزءاً لا يتجزأ من هذا العقد ومكملة
+              لمواده وشروطه وتقرأ وتفسر على هذا الأساس.
+            </li>
+          </ul>
+
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            مرفقات العقد:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              تعتبر المستندات الموضحة أدناه جزءاً لا يتجزأ من هذا العقد ومكملة
+              لمواده وشروطه.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            مدة العقد - قيمة العقد - طريقة الدفع:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              التزم الطرف الأول في تنفيذ الأعمال المذكورة أعلاه مع جميع
+              الالتزامات الواردة بالعقد.
+            </li>
+            <li class="fs-16 py-2">
+              في حال رغبة الطرف الثاني تمديد أو تأجيل الموعد يحق له خلال مدة
+              أقصاها نهاية السنة الميلادية المنشأ فيها العقد.
+            </li>
+            <li class="fs-16 py-2">
+              في حال حدوث ظروف أو قوة قاهرة تمنع الطرف الأول من إكمال التزامه،
+              فيتم التوصل لحل مرضي للأطراف وفي حال لم يتم الاتفاق، فيحق للطرف
+              الثاني استرجاع قيمة العقد.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            قيمة العقد:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              أتفق الطرفان على أن يكون المبلغ الإجمالي هو قيمة العقد وهذا المبلغ
+              شامل لكل ما يقوم به الطرف الأول في سبيل تنفيذ التزاماته بموجب هذا
+              العقد، وفي حال وجود أعمال إضافية يتم الاتفاق عليها بملحق إضافي
+              للعقد وبسعر محدد ومعلوم حسب الشروط والمواصفات المطلوب تنفيذها من
+              الطرف الثاني.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            طريقة الدفع: % 100
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              في حال حدوث نزاع أو خلاف - لا سمح الله - بشأن تطبيق أو تفسير هذا
+              العقد يتم تسويته بالطرق الودية بين الطرفين خلال عشرة أيام من تاريخ
+              نشوء النزاع، فإذا لم تتم التسوية الودية يحق للطرف المتضرر اللجوء
+              إلى الجهة القضائية المختصة للفصل في هذا النزاع.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            المراسلات والعناوين:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              كل إخطار أو إعلان يوجه إلى أي من طرفي العقد من الطرف الآخر يكون
+              على عنوانه المثبت في مرفقات هذا العقد يعتبر صحيحاً ومنتجاً لكافة
+              آثاره النظامية، ويتعهد كل طرف بإخطار الطرف الآخر كتابة فور أي
+              تغيير يطرأ على بياناته.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            تعهد والتزام:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              يتعهد الطرف الثاني بتسليم الموقع جاهزاً للعمل به دون معوقات تمنع
+              الطرف الأول من تنفيذ التزاماته وأعماله، كما يلتزم الطرف الأول
+              بإشعار الطرف الثاني فور انتهاء الأعمال مع تسليم الموقع بموجب
+              البيانات المرفقة من فني الطرف الأول في الموقع الالكتروني في حساب
+              الطرف الثاني .
+            </li>
+          </ul>
+
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            ضمان اجهز ة الصحراوي :
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              ضمان الجهاز سنتين فقط شامل الاجهزة الداخلية والخارجية
+            </li>
+            <li class="fs-16 py-2">
+              من الافضل يظلل فوق الجهاز لعمل الجهاز بكفاءة تامه
+            </li>
+            <li class="fs-16 py-2">
+              نرجو من العميل تنظيف الجهاز كل شهر لضمان عمل الجهاز بكفاءة
+            </li>
+          </ul>
+
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">الضمان</h2>
+          <p class="fs-16 py-2">
+            كما هو منصوص بواجبات الطرف الأول فهو يتعهد بالضمانات المنصوص عليها
+            في العقد، وما عدى ذلك يكون الضمان من قبل الوكيل المعتمد حسب ما هو
+            منصوص عليه بأنظمة وزارة التجارة.
+          </p>
+          <ul>
+            <li class="fs-16 py-2">
+              حرر هذا العقد من نسختين وثلاثة بنود، أحتفظ كل طرف بنسخته للعمل
+              بموجبه.
+            </li>
+          </ul>
+          <h2 style="color: #f75a27" class="fs-32 font-weight-semibold pb-3">
+            عقد عمل تصنيع مجاري هواء صاج:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              جميع الخامات والمواد المستخدمة والمنصوص عليها بالمواصفات الفنية
+              مطابقة لجميع التوصيات والتعليمات والمواصفات القياسية لجمعية
+              المهندسين الأمريكية ( ASHRAE ) ومطابقة تماما لأصول الصناعة أما
+              مجاري الهواء الدكت الفوم فيتم تصنيعه حسب نظام SMAKNA G90 ) نوع
+              سابك أو ما يعادله حسب المتوفر بالسوق المحلي.
+            </li>
+            <li class="fs-16 py-2">
+              توريد وتركيب مسار ومجاري الهواء (الدكت) يكون حسب المخطط والمواصفات
+              المذكورة في العقد.
+            </li>
+            <li class="fs-16 py-2">
+              تقديم المخططات التنفيذية لتحديد مواقع الأجهزة ومسارات مجاري الهواء
+              (الدكت)
+            </li>
+            <li class="fs-16 py-2">
+              مواصفات مجاري الهواء (الدكت) يصنع ويركب حسب المخطط الذي يتم
+              إعتماده من الطرف الثاني شامل كل ما يلزم من إكسسوارات وشامل فتحات
+              التكييف من مصنع الناصرية أو ما يعادله، الحمالات زوايا مجلفنة أو
+              زوايا مدهونة، والأسياخ قلووظ 8 ملم إلى 10 ملم.
+            </li>
+            <li class="fs-16 py-2">
+              توريد وتركيب وصلة مرنة مع بداية كل جهاز لتخفيف نقل الصوت ومنع
+              الارتجاج(كنفس )
+            </li>
+            <li class="fs-16 py-2">
+              توصيل فلكسبل دائري ما بين مجاري الهواء الرئيسية والبلانيوم بوكس
+              قطره حسب التصميم.
+            </li>
+            <li class="fs-16 py-2">
+              وضع سيلكون بين المفاصل(دكت سل) لمنع تسرب الهواء.
+            </li>
+            <li class="fs-16 py-2">
+              يتم توريد وتركيب مخارج الهواء مصنوعة من الألمنيوم (دفيوزرات
+              وجريلات) من شركة الربيع أو ما يماثله، وبحسب المواصفات والمقاسات
+              المحددة بالمخطط.
+            </li>
+            <li class="fs-16 py-2">توصيل صرف الماء لكل جهاز أسفل الجدار.</li>
+            <li class="fs-16 py-2">توريد وتركيب أجهزة الثيرموستات.</li>
+            <li class="fs-16 py-2">
+              القيام بأعمال ضبط الأجهزة وقياس مستوى الفريون والتشغيل والتسليم.
+            </li>
+            <li class="fs-16 py-2">
+              العازل داخل المبنى سماكة 1 بوصة كثافة 24 كلغ
+            </li>
+            <li class="fs-16 py-2">
+              أحزمة تربيط كل 40 سم ولاصق شطرطون بين كل الفواصل.
+            </li>
+            <li class="fs-16 py-2">
+              العازل الداخلي 1 بوصة كثافة 48 كلغ لمنع الصوت حسب الحاجة.
+            </li>
+            <li class="fs-16 py-2">
+              العازل المعرض لظروف الطقس الخارجي يكون 2 بوصة كثافة 24 كلغ ملفوف
+              بالقماش مدهون بالغراء.
+            </li>
+            <li class="fs-16 py-2">
+              الصاج المجلفن سماكته حسب الأصول الفنية والمقاييس العالمية:
+              <p>من 0 � 12 انش = G26</p>
+              <p>من 13-26 انش = G24</p>
+              <p>من 31 � 54 انش = G22</p>
+              <p>من 55- 84 انش = G20</p>
+              <p>من 84 انش وأعلى = G18</p>
+            </li>
+            <li class="fs-16 py-2">
+              يتم وضع جدول زمني للتركيب بحسب المراحل الزمنية للتنفيذ والتركيب من
+              قبل الاستشاري أو المالك وبالتنسيق مع الطرف الثاني لكل مرحلة بما لا
+              يترتب عليه تعطيل العمل أو تأخيره، ويتم ذلك بموجب محاضر استلام
+              وتسليم خطية.
+            </li>
+            <li class="fs-16 py-2">
+              على الطرف الثاني توفير جميع الأعمال الكهربائية من المصدر الرئيسي
+              وحتى موقع المكيفات مع توفير القواطع الكهربائية المناسبة جوار
+              الوحدات وكذلك الكابلات الكهربائية وأسلاك التغذية والكنترول حسب
+              تعليمات الطرف الطول
+            </li>
+            <li class="fs-16 py-2">
+              على الطرف الثاني تأمين تيار كهربائي للعمل في التأسيس والتركيبات
+              بالموقع طوال فترة العمل.
+            </li>
+            <li class="fs-16 py-2">
+              يقر الطرف الثاني بأن سداد الدفعات سيكون بشكل منتظم ودون أي تأخير
+              لضمان انجاز العمل في وقته ويتحمل أي تأخير في العمل نتيجة لذلك.
+            </li>
+            <li class="fs-16 py-2">
+              يقر الطرف الثاني بأن تأخير الدفعة النهائية ينتج عنه الغاء الضمان
+              المقدم بموجب هذا العقد.
+            </li>
+            <li class="fs-16 py-2">
+              مسئولية الطرف الثاني للمكيفات الباكيج سنترال تكسير فتحات دخول
+              مجاري الهواء وتمديد خطوط الكنترول .
+            </li>
+            <li class="fs-16 py-2">ضمان التنفيذ 10 سنوات</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="contaner-accordion py-2">
+      <div id="accordion-1">
+        <div class="head">
+          <h2>عقد عمل تصنيع مجاري هواء فوم</h2>
+          <i class="fas fa-angle-down arrow"></i>
+        </div>
+        <div class="content">
+          <h2 style="color: #f75a27" class="fs-32 font-weight-semibold pb-3">
+            *ملاحظه لجهاز الصحراوي : اذا كانت المياه مالحه يرجى توريد فلاتر مياه
+            لكي يتم تركيبها اثناء التركيب من قبلنا.
+          </h2>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            الاحكام العامة
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              حيث أن الطرف الثاني تعاقد مع الطرف الأول على تنفيذ الخدمة المطلوبة
+              أعلاه وفقاً للشروط والمواصفات الموضحة أعلاه وبالأماكن المحددة من
+              الطرف الثاني، وحيث يرغب الطرف الثاني بتنفيذ الأعمال حسب الأصناف
+              المختارة من قبله في هذا العقد.
+            </li>
+            <li class="fs-16 py-2">
+              وحيث أن الطرف الأول متخصص في تنفيذ الأعمال المذكورة ولدية القدرة
+              المهنية والفنية والعمالة والمعدات وكل ما تحتاجه مثل هذه الأعمال
+              وأبدى استعداده التام بذلك حسب الشروط والمواصفات وبالسعر المتفق
+              عليه في العقد.
+            </li>
+            <li class="fs-16 py-2">
+              أقر الطرفان وهما بكامل الأهلية والأوصاف المعتبرة شرعاً ونظاماً
+              وتراضياً على ما يلي:
+            </li>
+            <li class="fs-16 py-2">
+              يعتبر التمهيد الوارد أعلاه جزءاً لا يتجزأ من هذا العقد ومكملة
+              لمواده وشروطه وتقرأ وتفسر على هذا الأساس.
+            </li>
+          </ul>
+
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            مرفقات العقد:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              تعتبر المستندات الموضحة أدناه جزءاً لا يتجزأ من هذا العقد ومكملة
+              لمواده وشروطه.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            مدة العقد - قيمة العقد - طريقة الدفع:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              التزم الطرف الأول في تنفيذ الأعمال المذكورة أعلاه مع جميع
+              الالتزامات الواردة بالعقد.
+            </li>
+            <li class="fs-16 py-2">
+              في حال رغبة الطرف الثاني تمديد أو تأجيل الموعد يحق له خلال مدة
+              أقصاها نهاية السنة الميلادية المنشأ فيها العقد.
+            </li>
+            <li class="fs-16 py-2">
+              في حال حدوث ظروف أو قوة قاهرة تمنع الطرف الأول من إكمال التزامه،
+              فيتم التوصل لحل مرضي للأطراف وفي حال لم يتم الاتفاق، فيحق للطرف
+              الثاني استرجاع قيمة العقد.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            قيمة العقد:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              أتفق الطرفان على أن يكون المبلغ الإجمالي هو قيمة العقد وهذا المبلغ
+              شامل لكل ما يقوم به الطرف الأول في سبيل تنفيذ التزاماته بموجب هذا
+              العقد، وفي حال وجود أعمال إضافية يتم الاتفاق عليها بملحق إضافي
+              للعقد وبسعر محدد ومعلوم حسب الشروط والمواصفات المطلوب تنفيذها من
+              الطرف الثاني.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            طريقة الدفع: % 100
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              في حال حدوث نزاع أو خلاف - لا سمح الله - بشأن تطبيق أو تفسير هذا
+              العقد يتم تسويته بالطرق الودية بين الطرفين خلال عشرة أيام من تاريخ
+              نشوء النزاع، فإذا لم تتم التسوية الودية يحق للطرف المتضرر اللجوء
+              إلى الجهة القضائية المختصة للفصل في هذا النزاع.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            المراسلات والعناوين:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              كل إخطار أو إعلان يوجه إلى أي من طرفي العقد من الطرف الآخر يكون
+              على عنوانه المثبت في مرفقات هذا العقد يعتبر صحيحاً ومنتجاً لكافة
+              آثاره النظامية، ويتعهد كل طرف بإخطار الطرف الآخر كتابة فور أي
+              تغيير يطرأ على بياناته.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            تعهد والتزام:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              يتعهد الطرف الثاني بتسليم الموقع جاهزاً للعمل به دون معوقات تمنع
+              الطرف الأول من تنفيذ التزاماته وأعماله، كما يلتزم الطرف الأول
+              بإشعار الطرف الثاني فور انتهاء الأعمال مع تسليم الموقع بموجب
+              البيانات المرفقة من فني الطرف الأول في الموقع الالكتروني في حساب
+              الطرف الثاني .
+            </li>
+          </ul>
+
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            ضمان اجهز ة الصحراوي :
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              ضمان الجهاز سنتين فقط شامل الاجهزة الداخلية والخارجية
+            </li>
+            <li class="fs-16 py-2">
+              من الافضل يظلل فوق الجهاز لعمل الجهاز بكفاءة تامه
+            </li>
+            <li class="fs-16 py-2">
+              نرجو من العميل تنظيف الجهاز كل شهر لضمان عمل الجهاز بكفاءة
+            </li>
+          </ul>
+
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">الضمان</h2>
+          <p class="fs-16 py-2">
+            كما هو منصوص بواجبات الطرف الأول فهو يتعهد بالضمانات المنصوص عليها
+            في العقد، وما عدى ذلك يكون الضمان من قبل الوكيل المعتمد حسب ما هو
+            منصوص عليه بأنظمة وزارة التجارة.
+          </p>
+          <ul>
+            <li class="fs-16 py-2">
+              حرر هذا العقد من نسختين وثلاثة بنود، أحتفظ كل طرف بنسخته للعمل
+              بموجبه.
+            </li>
+          </ul>
+          <h2 style="color: #f75a27" class="fs-32 font-weight-semibold pb-3">
+            عقد عمل تصنيع مجاري هواء فوم
+          </h2>
+          <p class="fs-16 py-2">
+            جميع الخامات والمواد المستخدمة والمنصوص عليها بالمواصفات الفنية
+            مطابقة لجميع التوصيات والتعليمات والمواصفات القياسية لجمعية
+            المهندسين الأمريكية ( ASHRAE ) ومطابقة تماما لأصول الصناعة أما مجاري
+            الهواء الدكت الفوم فيتم تصنيعه حسب نظام SMAKNA G90 ) نوع سابك أو ما
+            يعادله حسب المتوفر بالسوق المحلي.
+          </p>
+          <ul>
+            <li class="fs-16 py-2">
+              توريد وتركيب مسار ومجاري الهواء (الدكت) يكون حسب المخطط والمواصفات
+              المذكورة في العقد.
+            </li>
+            <li class="fs-16 py-2">
+              تقديم المخططات التنفيذية لتحديد مواقع الأجهزة ومسارات مجاري الهواء
+              (الدكت)
+            </li>
+            <li class="fs-16 py-2">
+              تصنيع وتوريد وتركيب دكت فوم مسبق العزل 80 مايكروم ملبس بألمنيوم من
+              الجهتان سماكة الدكت 20 ملي يصنع ويركب حسب المخطط الذي يتم تعميده
+              من الطرف الثاني شامل كل ما يلزم من إكسسوارات وشامل فتحات التكيف من
+              مصنع الربيع الوطني أو ما يعادله، الحمالات زوايا مجلفنة أو زوايا
+              مدهونة، والأسياخ قلووظ 8 ملم إلى 10 ملم.
+            </li>
+            <li class="fs-16 py-2">
+              توريد وتركيب وصلة مرنة مع بداية كل جهاز لتخفيف نقل الصوت ومنع
+              الارتجاج(كنفس )
+            </li>
+            <li class="fs-16 py-2">
+              توصيل فلكسبل دائري ما بين مجاري الهواء الرئيسية والبلانيوم بوكس
+              قطره حسب التصميم.
+            </li>
+            <li class="fs-16 py-2">
+              وضع سيلكون بين المفاصل(دكت سل) لمنع تسرب الهواء.
+            </li>
+            <li class="fs-16 py-2">
+              يتم توريد وتركيب مخارج الهواء مصنوعة من الألمنيوم (دفيوزرات
+              وجريلات) من شركة الربيع أو ما يماثله، وبحسب المواصفات والمقاسات
+              المحددة بالمخطط.
+            </li>
+            <li class="fs-16 py-2">توصيل صرف الماء لكل جهاز أسفل الجدار.</li>
+            <li class="fs-16 py-2">
+              يتم وضع جدول زمني للتركيب بحسب المراحل الزمنية للتنفيذ والتركيب من
+              قبل الاستشاري أو المالك وبالتنسيق مع الطرف الثاني لكل مرحلة بما لا
+              يترتب عليه تعطيل العمل أو تأخيره، ويتم ذلك بموجب محاضر استلام
+              وتسليم خطية.
+            </li>
+            <li class="fs-16 py-2">
+              على الطرف الثاني توفير جميع الأعمال الكهربائية من المصدر الرئيسي
+              وحتى موقع المكيفات مع توفير القواطع الكهربائية المناسبة جوار
+              الوحدات وكذلك الكابلات الكهربائية وأسلاك التغذية والكنترول حسب
+              تعليمات الطرف الطول
+            </li>
+            <li class="fs-16 py-2">
+              على الطرف الثاني تأمين تيار كهربائي للعمل في التأسيس والتركيبات
+              بالموقع طوال فترة العمل.
+            </li>
+            <li class="fs-16 py-2">
+              يقر الطرف الثاني بأن سداد الدفعات سيكون بشكل منتظم ودون أي تأخير
+              لضمان انجاز العمل في وقته ويتحمل أي تأخير في العمل نتيجة لذلك.
+            </li>
+            <li class="fs-16 py-2">
+              يقر الطرف الثاني بأن تأخير الدفعة النهائية ينتج عنه الغاء الضمان
+              المقدم بموجب هذا العقد.
+            </li>
+
+            <li class="fs-16 py-2">
+              مسئولية الطرف الثاني للمكيفات الباكيج سنترال تكسير فتحات دخول
+              مجاري الهواء وتمديد خطوط الكنترول .
+            </li>
+            <li class="fs-16 py-2">ضمان التنفيذ 10 سنوات</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="contaner-accordion py-2">
+      <div id="accordion-1">
+        <div class="head">
+          <h2>عقد عمل توريد وتركيب غرف تبريد او تجميد:</h2>
+          <i class="fas fa-angle-down arrow"></i>
+        </div>
+        <div class="content">
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            الاحكام العامة
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              حيث أن الطرف الثاني تعاقد مع الطرف الأول على تنفيذ الخدمة المطلوبة
+              أعلاه وفقاً للشروط والمواصفات الموضحة أعلاه وبالأماكن المحددة من
+              الطرف الثاني، وحيث يرغب الطرف الثاني بتنفيذ الأعمال حسب الأصناف
+              المختارة من قبله في هذا العقد.
+            </li>
+            <li class="fs-16 py-2">
+              وحيث أن الطرف الأول متخصص في تنفيذ الأعمال المذكورة ولدية القدرة
+              المهنية والفنية والعمالة والمعدات وكل ما تحتاجه مثل هذه الأعمال
+              وأبدى استعداده التام بذلك حسب الشروط والمواصفات وبالسعر المتفق
+              عليه في العقد.
+            </li>
+            <li class="fs-16 py-2">
+              أقر الطرفان وهما بكامل الأهلية والأوصاف المعتبرة شرعاً ونظاماً
+              وتراضياً على ما يلي:
+            </li>
+            <li class="fs-16 py-2">
+              يعتبر التمهيد الوارد أعلاه جزءاً لا يتجزأ من هذا العقد ومكملة
+              لمواده وشروطه وتقرأ وتفسر على هذا الأساس.
+            </li>
+          </ul>
+
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            مرفقات العقد:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              تعتبر المستندات الموضحة أدناه جزءاً لا يتجزأ من هذا العقد ومكملة
+              لمواده وشروطه.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            مدة العقد - قيمة العقد - طريقة الدفع:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              التزم الطرف الأول في تنفيذ الأعمال المذكورة أعلاه مع جميع
+              الالتزامات الواردة بالعقد.
+            </li>
+            <li class="fs-16 py-2">
+              في حال رغبة الطرف الثاني تمديد أو تأجيل الموعد يحق له خلال مدة
+              أقصاها نهاية السنة الميلادية المنشأ فيها العقد.
+            </li>
+            <li class="fs-16 py-2">
+              في حال حدوث ظروف أو قوة قاهرة تمنع الطرف الأول من إكمال التزامه،
+              فيتم التوصل لحل مرضي للأطراف وفي حال لم يتم الاتفاق، فيحق للطرف
+              الثاني استرجاع قيمة العقد.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            قيمة العقد:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              أتفق الطرفان على أن يكون المبلغ الإجمالي هو قيمة العقد وهذا المبلغ
+              شامل لكل ما يقوم به الطرف الأول في سبيل تنفيذ التزاماته بموجب هذا
+              العقد، وفي حال وجود أعمال إضافية يتم الاتفاق عليها بملحق إضافي
+              للعقد وبسعر محدد ومعلوم حسب الشروط والمواصفات المطلوب تنفيذها من
+              الطرف الثاني.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            طريقة الدفع:
+          </h2>
+          <p style="color: #f75a27" class="fs-20 py-1">
+            يتم دفع مبلغ 50% عند توقيع العقد وتوريد الواح الثلاجه ويتم تركيب
+            الواح الثلاجه بدون اجهزه وبعد وبعد يتم دفع المبلغ كاملا
+          </p>
+          <ul>
+            <li class="fs-16 py-2">
+              في حال حدوث نزاع أو خلاف - لا سمح الله - بشأن تطبيق أو تفسير هذا
+              العقد يتم تسويته بالطرق الودية بين الطرفين خلال عشرة أيام من تاريخ
+              نشوء النزاع، فإذا لم تتم التسوية الودية يحق للطرف المتضرر اللجوء
+              إلى الجهة القضائية المختصة للفصل في هذا النزاع.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            المراسلات والعناوين:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              كل إخطار أو إعلان يوجه إلى أي من طرفي العقد من الطرف الآخر يكون
+              على عنوانه المثبت في مرفقات هذا العقد يعتبر صحيحاً ومنتجاً لكافة
+              آثاره النظامية، ويتعهد كل طرف بإخطار الطرف الآخر كتابة فور أي
+              تغيير يطرأ على بياناته.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            تعهد والتزام:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              يتعهد الطرف الثاني بتسليم الموقع جاهزاً للعمل به دون معوقات تمنع
+              الطرف الأول من تنفيذ التزاماته وأعماله، كما يلتزم الطرف الأول
+              بإشعار الطرف الثاني فور انتهاء الأعمال مع تسليم الموقع بموجب
+              البيانات المرفقة من فني الطرف الأول في الموقع الالكتروني في حساب
+              الطرف الثاني .
+            </li>
+          </ul>
+
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">الضمان</h2>
+          <p style="color: #f75a27" class="fs-20 py-1">
+            الضمان سنتين علي وحدات التبريد والتجميد منها سنه شامل
+          </p>
+          <p class="fs-16 py-2">
+            كما هو منصوص بواجبات الطرف الأول فهو يتعهد بالضمانات المنصوص عليها
+            في العقد، وما عدى ذلك يكون الضمان من قبل الوكيل المعتمد حسب ما هو
+            منصوص عليه بأنظمة وزارة التجارة.
+          </p>
+          <ul>
+            <li class="fs-16 py-2">
+              حرر هذا العقد من نسختين وثلاثة بنود، أحتفظ كل طرف بنسخته للعمل
+              بموجبه.
+            </li>
+          </ul>
+          <h2 style="color: #f75a27" class="fs-32 font-weight-semibold pb-3">
+            عقد عمل توريد وتركيب غرف تبريد او تجميد:
+          </h2>
+          <p class="fs-16 py-2 text-secondary">المواصفات :</p>
+          <ul>
+            <li class="fs-16 py-2">
+              الجدران والأسقف
+
+              <p>
+                عـبارة عـن ألـواح مسـبقة الـصنع وطني او اردني او اماراتي ،
+                تـتكون مـن مـادة الـبیولـیوریـثان بـسماكـة 10 سـم ، وكـثافـة (40
+                - 42 كـغم/ م3 ، مـغلفة) مـن الـداخـل والـخارج بـألـواح مـن
+                الجـلفـنایـزد الـصلب ومـطلیة بـدھـان أبـیض مـعـالـج حـراریـا"
+                مـن الـداخـل والـخارج وتـكون سماكة الصاج (50.0 مم )، ویتم تركیب
+                الألواح مع بعضھا بطریقة التعشیق لضمان متانتھا وعدم تسرب البرودة
+                منھا وتركيب سلكون ابيض نفس لون الجدار.
+              </p>
+            </li>
+            <li class="fs-16 py-2">
+              الأرضیة
+              <p>
+                تـكون عـبارة عـن عازل حـراري فوم بـسماكـة 50 مـم وكـثافـة 35
+                كـغم / م3 ، حـیث یـتم تـوریـد الـفوم فقط من قبلنا ، وتتم جمیع
+                اعمال الصبة او الرخام او البلاط وملحقاتھا من طرفكم ولا یشملھا
+                عرض السعر .
+              </p>
+            </li>
+            <li class="fs-16 py-2">
+              الأبواب
+              <p>
+                یـتم تـركـیب الابواب الوطني مواصفات واكسسوارات ايطاليه حسب
+                الاتفاق وحسب المقاس المطلوب لـلغرفـة ، مـن نـوع الابـواب الـسحاب
+                ذات الـدرفـة الـواحـدةاو الباب العادي ،
+              </p>
+            </li>
+            <li class="fs-16 py-2">
+              نظام التبرید
+              <p>
+                یـركـب مجموعه التبريد او التجميد لـغرفـةحسب الحاجه - مـن مـاركـة
+                كوبلند تشيكي او بيتزر الماني تجميع كارير ، تـعمل عـلى فـریـون (
+                R22 a او R404a ) تعمل علي كهرباء 220 /380 V فولت سایكل 60 /فاز 3
+                /
+              </p>
+              <p>
+                یـركـب لـكل وحـدة تـبریـد عـدد واحـد مبخـر مـن نـوع فـریـجابـون
+                فـرنسـي الـصنع مـزود بـسخان كھـربـائـي لإذابـة الـصقیع ویـعمل
+                على كھرباء 220 -380 فولت / 3 فاز/ 60 سایكل .
+              </p>
+              <p>
+                یـركـب لـكل وحـدة تـبریـد لـوحـة كھـربـاء الـكترونـیة ( طبلون
+                تشغيل ) شاشه قراءه درجه الحراره ولـلتحكم في درجه الحراره وايقاف
+                وتشغيل الوحده ويتحكم بـالـكمبرسـورات ومـراوح الـمكثف والمبخـر
+                ومـزودة بـلمبات بـیان تـبین عـمل الـوحـدة وفـیما إذا كـان ھـناك
+                خـلل أو عـطل فـي التبريد ، مع تركیب حمایة اضافیة في اللوحة
+                لحمایة الكمبرسور في حال سقوط فاز .
+              </p>
+              <p>
+                یـتم تـثبیت الـغرفـة مـن الـداخـل بـزوایـا ألـمنیوم مـع برشام
+                تثبيت و سلكون ابيض لمنع تسريب التبريد عـلى كـافـة الـحواف
+                الـعلویـة والـعمودیـة ومنع تجمع البكتریا والأوساخ ، وللحصول على
+                دورة ھواء نظامیة كاملة داخل المستودع ،
+              </p>
+            </li>
+            <li class="fs-16 py-2">
+              الإنارة
+              <p>
+                تـزود الـغرفـة بـالـعدد الـمناسـب مـن الإضـاءة والـتي تـكون مـن
+                الـنوع الـنقطي LED الحـدیـث الـمضاد لـلرطـوبـة ویـكون ھـناك
+                مفتاح كھرباء خارجي عند باب الغرفة للإنارة ، تتحمل درجة حرارة
+                الغرفه .
+              </p>
+            </li>
+            <li class="fs-16 py-2">
+              القطع والاكسسوارات المستخدمة
+              <p>
+                یـتم تـركـیب جـمیع قـطع التبريد الـلازمـة لتـشغیل نـظام
+                الـتبریـد مـثل ( زجـاجـة الـبیان ، الـصمام الـمغناطیسـي ،
+                الـفلتر ، صـمام الـتمدد ، الـتحكم بـضغط الـزیـت ، والـتحكم
+                بـالـضغط الـعالـي والـمنخفض ) ، كـما تـركـب مـواسـیر النحاس
+                وتزود بمصاص اھتزاز ، وتعزل المواسیر بعازل مطاطي من نوع ایروفلیكس
+                اسود وتيب اسود مع تركيب اسلاك توصيل الازمه لتشغيل الوحده من نوع
+                كيبل الرياض . لكل وحده تبريداو تجميد عدد 6 متر مواصير نحاس مع
+                العزل والاسلاك، في حال الزيادة يحسب سعر المتر كالتالي:
+                <br />
+                من 1 إلى 5 حصان بقيمة 200 ريال / م.
+                <br />5 إلى 12 حصان بقيمة 290 ريال / م.
+              </p>
+            </li>
+
+            <li class="fs-16 py-2">
+              يتولى الطرف الأول ضبط الغرفة بالفريون وإجراء الاختبارات اللازمة
+              قبل التشغيل.
+            </li>
+            <li class="fs-16 py-2">
+              يتم التوريد والتنفيذ للغرفة خلال ثلاثة أسابيع من تاريخ توقيع العقد
+              واستلام الدفعة.
+            </li>
+            <li class="fs-16 py-2">
+              يكون الضمان لمدة سنتان على وحدات التبريد اوالتجميد الداخلية
+              والخارجية ضد عيوب التصنيع حسب سياسة الشركة الموردة.
+            </li>
+            <li class="fs-16 py-2">
+              يضمن الطرف الأول بأن ثلاجة التبريد تعطي نتيجة (+0) فوق الصفر
+              والتجميد يعطي نتيجة (- 18) تحت الصفر.
+            </li>
+            <li class="fs-16 py-2">
+              يضمن الطرف الأول كافة أعمال التركيب لمدة سنة من تاريخ التسليم.
+            </li>
+            <li class="fs-16 py-2">
+              على الطرف الثاني توفير جميع الأعمال الكهربائية من المصدر الرئيسي
+              وحتى موقع الطبلون
+            </li>
+            <li class="fs-16 py-2">
+              يتولى الطرف الثاني مسؤولية توصيل مواسير صرف المياه الى أماكن الصرف
+              المحددة (البالوعات)
+            </li>
+            <li class="fs-16 py-2">
+              بعد الانتهاء من تسليم المواسير النحاسية والوحدات فإن الطرف الأول
+              غير مسؤول عن ما يصيبها من أضرار بعد ذلك
+            </li>
+            <li class="fs-16 py-2">
+              يتم عمل محضر مع مهندس الديكور والجبس ومهندس الكهرباء ومهندس
+              الميكانيكا ومدير المشروع. وأخذ موافقتهم الخطية على المخطط بالتنسيق
+              مع الطرف الأول تجنباً لاي تعارض في العمل لا سمح الله
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="contaner-accordion py-2">
+      <div id="accordion-1">
+        <div class="head">
+          <h2>عقد عمل لأكثر من خدمة</h2>
+          <i class="fas fa-angle-down arrow"></i>
+        </div>
+        <div class="content">
+          <h2 style="color: #f75a27" class="fs-32 font-weight-semibold pb-3">
+            *ملاحظه لجهاز الصحراوي : اذا كانت المياه مالحه يرجى توريد فلاتر مياه
+            لكي يتم تركيبها اثناء التركيب من قبلنا.
+          </h2>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            الاحكام العامة
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              حيث أن الطرف الثاني تعاقد مع الطرف الأول على تنفيذ الخدمة المطلوبة
+              أعلاه وفقاً للشروط والمواصفات الموضحة أعلاه وبالأماكن المحددة من
+              الطرف الثاني، وحيث يرغب الطرف الثاني بتنفيذ الأعمال حسب الأصناف
+              المختارة من قبله في هذا العقد.
+            </li>
+            <li class="fs-16 py-2">
+              وحيث أن الطرف الأول متخصص في تنفيذ الأعمال المذكورة ولدية القدرة
+              المهنية والفنية والعمالة والمعدات وكل ما تحتاجه مثل هذه الأعمال
+              وأبدى استعداده التام بذلك حسب الشروط والمواصفات وبالسعر المتفق
+              عليه في العقد.
+            </li>
+            <li class="fs-16 py-2">
+              أقر الطرفان وهما بكامل الأهلية والأوصاف المعتبرة شرعاً ونظاماً
+              وتراضياً على ما يلي:
+            </li>
+            <li class="fs-16 py-2">
+              يعتبر التمهيد الوارد أعلاه جزءاً لا يتجزأ من هذا العقد ومكملة
+              لمواده وشروطه وتقرأ وتفسر على هذا الأساس.
+            </li>
+          </ul>
+
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            مرفقات العقد:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              تعتبر المستندات الموضحة أدناه جزءاً لا يتجزأ من هذا العقد ومكملة
+              لمواده وشروطه.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            مدة العقد - قيمة العقد - طريقة الدفع:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              التزم الطرف الأول في تنفيذ الأعمال المذكورة أعلاه مع جميع
+              الالتزامات الواردة بالعقد.
+            </li>
+            <li class="fs-16 py-2">
+              في حال رغبة الطرف الثاني تمديد أو تأجيل الموعد يحق له خلال مدة
+              أقصاها نهاية السنة الميلادية المنشأ فيها العقد.
+            </li>
+            <li class="fs-16 py-2">
+              في حال حدوث ظروف أو قوة قاهرة تمنع الطرف الأول من إكمال التزامه،
+              فيتم التوصل لحل مرضي للأطراف وفي حال لم يتم الاتفاق، فيحق للطرف
+              الثاني استرجاع قيمة العقد.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            قيمة العقد:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              أتفق الطرفان على أن يكون المبلغ الإجمالي هو قيمة العقد وهذا المبلغ
+              شامل لكل ما يقوم به الطرف الأول في سبيل تنفيذ التزاماته بموجب هذا
+              العقد، وفي حال وجود أعمال إضافية يتم الاتفاق عليها بملحق إضافي
+              للعقد وبسعر محدد ومعلوم حسب الشروط والمواصفات المطلوب تنفيذها من
+              الطرف الثاني.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            طريقة الدفع: % 100
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              في حال حدوث نزاع أو خلاف - لا سمح الله - بشأن تطبيق أو تفسير هذا
+              العقد يتم تسويته بالطرق الودية بين الطرفين خلال عشرة أيام من تاريخ
+              نشوء النزاع، فإذا لم تتم التسوية الودية يحق للطرف المتضرر اللجوء
+              إلى الجهة القضائية المختصة للفصل في هذا النزاع.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            المراسلات والعناوين:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              كل إخطار أو إعلان يوجه إلى أي من طرفي العقد من الطرف الآخر يكون
+              على عنوانه المثبت في مرفقات هذا العقد يعتبر صحيحاً ومنتجاً لكافة
+              آثاره النظامية، ويتعهد كل طرف بإخطار الطرف الآخر كتابة فور أي
+              تغيير يطرأ على بياناته.
+            </li>
+          </ul>
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            تعهد والتزام:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              يتعهد الطرف الثاني بتسليم الموقع جاهزاً للعمل به دون معوقات تمنع
+              الطرف الأول من تنفيذ التزاماته وأعماله، كما يلتزم الطرف الأول
+              بإشعار الطرف الثاني فور انتهاء الأعمال مع تسليم الموقع بموجب
+              البيانات المرفقة من فني الطرف الأول في الموقع الالكتروني في حساب
+              الطرف الثاني .
+            </li>
+          </ul>
+
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            ضمان اجهز ة الصحراوي :
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              ضمان الجهاز سنتين فقط شامل الاجهزة الداخلية والخارجية
+            </li>
+            <li class="fs-16 py-2">
+              من الافضل يظلل فوق الجهاز لعمل الجهاز بكفاءة تامه
+            </li>
+            <li class="fs-16 py-2">
+              نرجو من العميل تنظيف الجهاز كل شهر لضمان عمل الجهاز بكفاءة
+            </li>
+          </ul>
+
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">الضمان</h2>
+          <p class="fs-16 py-2">
+            كما هو منصوص بواجبات الطرف الأول فهو يتعهد بالضمانات المنصوص عليها
+            في العقد، وما عدى ذلك يكون الضمان من قبل الوكيل المعتمد حسب ما هو
+            منصوص عليه بأنظمة وزارة التجارة.
+          </p>
+          <ul>
+            <li class="fs-16 py-2">
+              حرر هذا العقد من نسختين وثلاثة بنود، أحتفظ كل طرف بنسخته للعمل
+              بموجبه.
+            </li>
+          </ul>
+
+          <h2 style="color: #f75a27" class="fs-32 font-weight-semibold pb-3">
+            عقد توريد خدمات فقط:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">يرجى الاحتفاظ بالفاتورة الأصلية.</li>
+            <li class="fs-16 py-2">
+              تحتفظ نجوم العمران بحق رفض استرجاع أو استبدال المكيف بعد التركيب
+              حسب نظام وزارة التجارة، ويكون الطرف الثاني على علم ودراية بهذا
+              البند.
+            </li>
+            <li class="fs-16 py-2">
+              بعد التوريد يصبح الجهاز تحت ضمان الوكيل الذي يتحمل كافة أعمال
+              الصيانة والإصلاح خلال مدة الضمان. وبإمكان الطرف الثاني تقديم بلاغ
+              عطل لدى الوكيل عن طريق الموقع الإلكتروني .
+            </li>
+            <li class="fs-16 py-2">
+              على الطرف الثاني تجهيز مكان التسليم لتسهيل عملية التوريد إلى
+              الباب، دون وجود عوائق تمنع الطرف الأول من نفيذ الاعمال.
+            </li>
+            <li class="fs-16 py-2">
+              تعتذر مؤسسة نجوم العمران عن رفع الأجهزة إلى الأدوار العلوية.
+            </li>
+            <li class="fs-16 py-2">
+              ضمان الأجهزة الجديدة سنتان شامل الجهاز بالكامل بما في ذلك عيوب
+              التصنيع وخمس سنوات على الكمبريسور حسب سياسة الشركة الموردة.
+            </li>
+            <li class="fs-16 py-2">
+              في حالة تخلف الطرف الثاني عن الموعد المحدد لمدة أقصاها ربع ساعة
+              يحق للطرف الأول إلغاء الموعد وعلى الطرف الثاني حجز موعد جديد أو
+              التواصل مع رقم المشرف المرسل له في رسالة الموعد، مع التنبيه على
+              الطرف الثاني بتحري الدقة في المواعيد لضمان سهولة الأعمال وإنجازها.
+            </li>
+            <li class="fs-16 py-2">
+              التوصيل داخل المدينة المنورة فقط ويتحمل الطرف الثاني أي مبالغ
+              إضافية لأعمال التوصيل خارج المدينة المنورة.
+            </li>
+            <li class="fs-16 py-2">
+              سيتم إرسال الفاتورة الى جوال الطرف الثاني بالأعمال المنفذة
+              والاعمال الإضافية(إن وجدت) خلال 24 ساعة من وقت الانتهاء من
+              الاعمال.
+            </li>
+          </ul>
+          <p class="fs-16 py-2">
+            ملاحظة هامة: يعتبر هذا العقد بأنه عقد عمل مبدئي وعند الانتهاء
+            بالكامل من الاعمال المنفذة فسيتم إشعار الطرف الثاني بفاتورة ختامية
+            بجميع الأعمال المنفذة لصالحه
+          </p>
+
+          <h2 style="color: #f75a27" class="fs-32 font-weight-semibold pb-3">
+            عقد عمل تأسيس:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              توريد وتركيب مواسير نحاسية لموقع الطرف الثاني حسب الشروط
+              والمواصفات المذكورة
+            </li>
+            <li class="fs-16 py-2">
+              بعد التوريد يصبح الجهاز تحت ضمان الوكيل الذي يتحمل كافة أعمال
+              الصيانة والإصلاح خلال مدة الضمان. وبإمكان الطرف الثاني تقديم بلاغ
+              عطل لدى الوكيل عن طريق الموقع الإلكتروني .توريد وتركيب خطوط
+              الكهرباء والكنترول بين الوحدة الداخلية والخارجية مع استخدام أسلاك
+              كهرباء ماركة فنار بعدد خمسة أسلاك إثنان منها قطر 6 ملم للكهرباء،
+              وثلاثة قطر 2.5 ملم للكنترول ويتم تمديدها من داخل حنجرة ضمن تمديد
+              المواسيرالنحاسية.
+            </li>
+            <li class="fs-16 py-2">
+              تعتمد أطوال المواسير النحاسية من قبل الطرف الأول أو حضور من ينوب
+              عن الطرف الثاني خلال عملية رفع مقاسات المواسير.
+            </li>
+            <li class="fs-16 py-2">
+              تحديد مواقع الوحدات الخارجية والداخلية وأخذ موافقة الطرف الثاني أو
+              من ينوب عنه أثناء توقيع العقد.
+            </li>
+            <li class="fs-16 py-2">توصيل مواسير صرف المياه إلى أسفل الجدار.</li>
+            <li class="fs-16 py-2">
+              تركيب مواسير P.V.C ضغط 40 للنحاس الذي يمتد بالأرض.
+            </li>
+            <li class="fs-16 py-2">
+              تثبيت المواسير النحاسية التي بالسقف يكون باستخدام "الكليبات"
+              (Clips)
+            </li>
+            <li class="fs-16 py-2">قص الجدار باستخدام الصاروخ.</li>
+          </ul>
+
+          <h2 class="text-secondary fs-24 font-weight-semibold pb-3">
+            المواصفات الفنية للمواسير النحاسية:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              المواسير المستخدمة نحاس نوع مولر أمريكي اصلي.
+            </li>
+            <li class="fs-16 py-2">
+              عزل مواسير النحاس يتم باستخدام ربل أسود (فوم) Ostar وطني ويتم لف
+              النحاس باستخدام أسلاك الكهرباء ومن ثم تلف بشطرطون تايواني أصلي
+              بسماكة 0.2 ملم ولتصريف الماء تستخدم مواسير وطني ثلاثة أرباع بوصة
+              لجدار10 سم، ومواسير واحد بوصة لجدار 20 سم علماً بأن ضمان مواسير
+              النحاس 10 سنوات على التأسيس الداخلي فقط.
+            </li>
+            <li class="fs-16 py-2">
+              يلتزم الطرف الثاني بدفع قيمة هذا العقد حسب الأمتار المسجلة.
+            </li>
+            <li class="fs-16 py-2">
+              .يلتزم الطرف الثاني بتنفيذ جميع الأعمال الكهربائية بدءا من أعمال
+              التأسيس وحتى الانتهاء من الخدمات المضمنة في العقد مع إيصال
+              الكهرباء لمواقع المكيفات وتوفير القواطع الكهربائية المناسبة جوار
+              الوحدات (للإسبليت 2 خط 6 مل) و 1 خط أرضي. وكذلك الكابلات
+              الكهربائية وأسلاك التغذية والكنترول في حال كان الأجهزة دكت إسبليت
+              بجوار الوحدات الخارجية وفي حال شراء أجهزة دكت إسبليت 4 طن وأعلى
+              فيجب أن يكون حجم التيار الكهربائي 380 فولت وعدد الأسلاك 4 خط 6 مل
+              يتم تمديدها مباشرة من الطبلون بجوار الوحدات الخارجية.
+            </li>
+            <li class="fs-16 py-2">
+              يلتزم الطرف الثاني بإزالة أي أنقاض نتيجة تكسير الجداران .
+            </li>
+            <li class="fs-16 py-2">
+              يلتزم الطرف الثاني بإيصال مواسير تصريف المياه بالبلاعات من خلال
+              سباك الموقع والرقابة عليه مهمة جداً كما يجب التنبيه عليه بأن تكون
+              عملية توصيل مواسير صرف المياه قبل اللياسة وأن تكون المواسير من نوع
+              نبرو او مايعادله لتفادي التكسير اسفل الجدار لاحقاً الامر الذي قد
+              يلحق الضرر بمواسير النحاس.
+            </li>
+            <li class="fs-16 py-2">
+              يكون التمتير الفعلي قبل البدء بالعمل أثناء عمل مواسير تصريف المياه
+              ويعتبر هذا التمتير نهائي ويتم إبلاغ الطرف الثاني به
+            </li>
+            <li class="fs-16 py-2">
+              لدفع المبلغ المتبقي عليه ومن ثم استكمال العمل في الموقع في مدة لا
+              تتجاوز أسبوع وفي حال التأخر في السداد، سيتم احتساب سعر المتر وفق
+              سعر النحاس العالمي في حينه أو خصم قيمة التكسير وتاسيس صرف الماء
+              وأرجاع المتبقي للعميل .
+            </li>
+            <li class="fs-16 py-2">
+              في حال لم يتم إكمال دفعة العقد لأكثر من شهر فإن الاعمال المنجزة
+              سيتكون موازية للدفعة التي تم دفعها أو إعادة ما تم دفعه من قيمة
+              العقد ، أما في حال عدم التنفيذ رغم أنه قد تم زراعة مواسير P.V.C
+              فسيتم خصم قيمة الزراعة لكل دور 400 ريال.
+            </li>
+            <li class="fs-16 py-2">
+              على الطرف الثاني تنبيه عمال التكسير أثناء قص الخرسانة وخرمها
+              وأشعار الطرف الأول خطيا عن وجود أسلاك كهرباء أو مواسير داخل
+              الخرسانة والجدران مع تحديد مواقعها وفي حال لم يتم ذلك فأن الطرف
+              الأول غير مسئول عن أي أسلاك تم تقطيعها أو مواسير تضررت.
+            </li>
+            <li class="fs-16 py-2">
+              بعد الانتهاء من تسليم المواسير النحاسية وأعمال تصريف المياه للطرف
+              الثاني يعتبر الطرف الأول غير مسؤول عما يحدث لها من أضرار إن وجدت
+              نتيجة أعمال التشطيب. وفي في حال حدوثها فستكون عملية الإصلاح لخط
+              صرف المياه ( 100) ريال لكل مكيف إضافة الى قيمة الخامات وعملية
+              إصلاح المواسير النحاسية (200 ) ريال إضافة الى قيمة المواسير وتكون
+              طريقة الاحتساب بالمتر الطولي.
+            </li>
+            <li class="fs-16 py-2">
+              تنفيذ أعمال الدكت يتم فيه الاعتماد على المخطط وعمل محضر مع مهندس
+              الديكور والجبس ومهندس الكهرباء ومهندس الميكانيكا ومدير المشروع
+              وأخذ موافقتهم الخطية بالتنسيق مع الطرف الأول تجنباً لحدوث أي تعارض
+              خلال مرحلة تنفيذ الاعمال.
+            </li>
+            <li class="fs-16 py-2">
+              ملاحظة: في حال كان اختيار أماكن المكيفات باتجاه كمرات ساقطة فيجب
+              إشعار الطرف الأول خطياً من قبل مهندس الموقع بالموافقة على ذلك.
+              وبالتالي فإن تلك الموافقة تعتبر بمثابة الاعتماد الصريح والواضح على
+              التكسير في هذه الكمرات حتى وان أضطر الامر إلى قص الحديد المسلح
+              سواء كان القص بالصاروخ الكهربائي أو التخريم بالكور.
+            </li>
+            <li class="fs-16 py-2">
+              قيمة دراسة مخطط تأسيس نحاس الدكت ورسم المخطط هي 500 ريال يلتزم
+              الطرف الثاني بدفعها ، وتكون الدراسة مجانية في حال دفع قيمة كامل
+              مجاري الهواء . ستكون مسئولية عمل مخطط مجاري الهواء بالكامل على
+              الطرف الأول في حال دفع رسومها أو دفع قيمة مجاري الهواء .
+            </li>
+            <li class="fs-16 py-2">
+              في حال تعديل مواقع المكيفات عن المخطط المعتمد والمتفق عليه بين
+              الطرفين ، يتحمل الطرف الثاني قيمة أي أخرام جديدة في الصبة على كامل
+              ماسورة النحاس. مهم جداً المحافظة على السليفات المزروعة حسب المخطط
+              وأي عبث بها من البوم أو أعمال البناء فهي مسؤولية الطرف الثاني
+              وسيتحمل بذلك قيمة الأخرام.
+            </li>
+            <li class="fs-16 py-2">
+              في حال طلب أن يكون النحاس داخل مواسير بلاستيكية وعلى كامل ماسورة
+              النحاس فسيتم إضافة مبلغ 10 ريال للمتر الطولي.
+            </li>
+            <li class="fs-16 py-2">
+              تأسيس النحاس سيكون على بعد 70 سم نزولاً من السقف وفي حال الرغبة
+              بتغيير منسوب التأسيس نرجو إبلاغنا في حينه.
+            </li>
+            <li class="fs-16 py-2">
+              عند الرغبة بتعديل المنسوب بعد التأسيس تحسب تكلفة التعديل بقيمة 100
+              ريال لكل مكيف.
+            </li>
+            <li class="fs-16 py-2">
+              تنبيه: توجيه فني الديكور بأخذ 40 سم منسوب الجبس من منفذ النحاس
+              الداخلي وعدم النزول اكثر من ذلك
+            </li>
+          </ul>
+          <h2 style="color: #f75a27" class="fs-32 font-weight-semibold pb-3">
+            عقد عمل تركيب الإسبليت والدولابي والشباك:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              الفاتورة الأصلية هي الوثيقة المعتمدة للتركيب والضمان.
+            </li>
+            <li class="fs-16 py-2">
+              الاستبدال والاسترجاع بعد التركيب يعتمد حسب أنظمة وزارة التجارة.
+            </li>
+            <li class="fs-16 py-2">
+              تركيب الوحدات الداخلية والخارجية يكون وفقاً للأماكن المحدد من قبل
+              الطرف الثاني .
+            </li>
+            <li class="fs-16 py-2">
+              في حال تبين أن التركيب يحتاج إلى زيادة في مواسير النحاس فسيقوم
+              فريق التركيب التابع للطرف الأول بإضافة مواسير النحاس بتكلفة إضافية
+              يدفعها الطرف الثاني قبل عملية التركيب وتحسب التكلفة للمتر الواحد
+              من النحاس الأمريكي مولر بـ 80 ريال وتحسب الكمية التي تكون أقل من
+              متر على أنها متر كامل.
+            </li>
+            <li class="fs-16 py-2">
+              بعد تركيب الوحدة الخارجية يصبح الجهاز تحت ضمان الوكيل الذي يتحمل
+              كافة أعمال الصيانة سواء أكانت عيوب تصنيع أم إصلاح وذلك خلال مدة
+              الضمان المحددة بـخمس سنوات على الكمبريسور وسنتان شاملة حسب سياسة
+              الوكيل.
+            </li>
+            <li class="fs-16 py-2">
+              ضمان التركيب يشمل أي عيوب في التركيب تنقييط ماء أو تهريب فريون فقط
+              ولمدة عام من تاريخ التركيب.
+            </li>
+            <li class="fs-16 py-2">
+              يتولى الطرف الثاني تجهيز مكان التركيب لتسهيل عملية التركيب من
+              أعمال مدنية, ديكور, سباكة، تصريف مياه وتوفير الكهرباء.
+            </li>
+            <li class="fs-16 py-2">
+              جميع التمديدات الكهربائية التي يوفرها الطرف الثاني بجوار الوحدة
+              الخارجية تكون كالاتي:
+              <p>
+                ثلاثة خطوط : أثنين للكهرباء والثالث أرضي للكهرباء للمكيفات التي
+                تحتاج الى 220 فولت فاز مفرد
+              </p>
+              <p>
+                خمسة خطوط: ثلاثة للكهرباء ، واحد حيادي (neutral) ، واحد ارضي
+                للمكيفات التي تحتاج الى 380 فولت ثلاث فاز علماً بأن فريق التركيب
+                التابع للطرف الاول غير مسؤول عن تمديدات الكهرباء.
+              </p>
+            </li>
+            <li class="fs-16 py-2">
+              الحد الأعلى للسقالة 3 متر وما زاد عن ذلك يدفع من قبل الطرف الثاني
+              بتكلفة 100 ريال للطابق / للمكيف الواحد. أو القيام من قبل الطرف
+              الثاني بتوفير سقالة مركبة أو ونش وفي حالة الحاجة لصيانة للأجهزة
+              التي يكون ارتفاعها أكثر من 4 متر يتم توفير سقالة مركبة من قبل
+              العميل في موقع الجهاز.
+            </li>
+            <li class="fs-16 py-2">
+              القواعد المرتفعة (نظام بلكونة) ينغي أن تكون متينة ومناسبة مع مواقع
+              العكل ليقف عليها عمال الصيانة ولها حماية كافية.
+            </li>
+            <li class="fs-16 py-2">
+              الطرف الأول لا يتحمل مسؤولية أداء تبريد المكيف في حال تم تركيب
+              الوحدة الخارجية داخل المنور.
+            </li>
+            <li class="fs-16 py-2">
+              الطرف الأول لا يتحمل مسؤولية أداء تبريد المكيف في حال كان حجم
+              المكان غير متوافق مع قدرة المكيف.
+            </li>
+            <li class="fs-16 py-2">
+              الطرف الأول يتحمل مسؤولية جودة مواسير النحاس التي تم تركيبها من
+              قبله فقط .
+            </li>
+            <li class="fs-16 py-2">
+              في حال تأخر الطرف الثاني عن الموعد المحدد لمدة أقصاها (15) دقيقة
+              سيضطر الطرف الأول لإلغاء الموعد وعلى الطرف الثاني حجز موعد جديد أو
+              التواصل مع رقم المشرف المرسل له في رسالة الموعد.
+            </li>
+            <li class="fs-16 py-2">
+              سيتم إضافة مبلغ 25 ريال للقاعدة الأرضية الربل في حال تم شراء
+              المكيف من محل أخر.
+            </li>
+            <li class="fs-16 py-2">
+              تركيب القاعدة الأرضية على الأسطح يتوجب على الطرف الثاني توضيح طلب
+              تثبيتها بالبلاط من عدمه في الموقع
+            </li>
+            <li class="fs-16 py-2">
+              سيتم إضافة مبلغ 70 ريال/م في حال رغبة الطرف الثاني تغطية مواسير
+              النحاس بالبلاستيك أو تحسين المنظر الخارجي أو الداخلي.
+            </li>
+            <li class="fs-16 py-2">
+              القاعدة الجدارية للوحدات الخارجية والتي قدرتها من 1 إلى 2 طن
+              قيمتها 35 ريال أما الوحدات الخارجية التي تكون قدرتها من 2.5 إلى 3
+              طن قيمتها 75 ريالا فقط، والتي تكون قدرتها من 3 إلى 5 طن فتكون
+              القيمة 150 ريال.
+            </li>
+            <li class="fs-16 py-2">
+              تعبئة مخارج المواسير بالفوم - حسب الرغبة وبكلفة إضافية تقدر ب 10
+              ريال للمكيف الواحد
+            </li>
+            <li class="fs-16 py-2">
+              فك المكيف القديم سيكون بتكلفة إضافية بقيمة 150 ريال
+            </li>
+            <li class="fs-16 py-2">
+              التوصيل والتركيب داخل المدينة المنورة فقط ويتحمل الطرف الثاني أي
+              مبالغ إضافية لأعمال التوصيل أو التركيب خارج المدينة المنورة.
+            </li>
+            <li class="fs-16 py-2">
+              في حالة الفك وإعادة التركيب وتبين أن المكيف يحتاج الى تعبئة فريون
+              فستكون التكلفة 180 إلى 300 ريال وهذا لا يشمل الغسيل أو أي أعمال
+              صيانة أخرى.
+            </li>
+            <li class="fs-16 py-2">
+              سيتم إرسال الفاتورة الى جوال الطرف الثاني بالأعمال المنفذة
+              والاعمال الإضافية(إن وجدت) خلال 24 ساعة من وقت الانتهاء من
+              الاعمال.
+              <p style="color: #f75a27">
+                ملاحظة هامة: يعتبر هذا العقد عقد عمل مبدئي وعند الانتهاء بالكامل
+                من الاعمال المنفذة فسيتم إشعار الطرف الثاني بفاتورة ختامية بجميع
+                الأعمال.
+              </p>
+            </li>
+            <li class="fs-16 py-2">
+              الحصول على ضمان الأجهزة مرتبط بسداد كامل قيمة الاعمال المنفذ
+            </li>
+          </ul>
+          <h2 style="color: #f75a27" class="fs-32 font-weight-semibold pb-3">
+            عقد عمل تصنيع مجاري هواء صاج:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              جميع الخامات والمواد المستخدمة والمنصوص عليها بالمواصفات الفنية
+              مطابقة لجميع التوصيات والتعليمات والمواصفات القياسية لجمعية
+              المهندسين الأمريكية ( ASHRAE ) ومطابقة تماما لأصول الصناعة أما
+              مجاري الهواء الدكت الفوم فيتم تصنيعه حسب نظام SMAKNA G90 ) نوع
+              سابك أو ما يعادله حسب المتوفر بالسوق المحلي.
+            </li>
+            <li class="fs-16 py-2">
+              توريد وتركيب مسار ومجاري الهواء (الدكت) يكون حسب المخطط والمواصفات
+              المذكورة في العقد.
+            </li>
+            <li class="fs-16 py-2">
+              تقديم المخططات التنفيذية لتحديد مواقع الأجهزة ومسارات مجاري الهواء
+              (الدكت)
+            </li>
+            <li class="fs-16 py-2">
+              مواصفات مجاري الهواء (الدكت) يصنع ويركب حسب المخطط الذي يتم
+              إعتماده من الطرف الثاني شامل كل ما يلزم من إكسسوارات وشامل فتحات
+              التكييف من مصنع الناصرية أو ما يعادله، الحمالات زوايا مجلفنة أو
+              زوايا مدهونة، والأسياخ قلووظ 8 ملم إلى 10 ملم.
+            </li>
+            <li class="fs-16 py-2">
+              توريد وتركيب وصلة مرنة مع بداية كل جهاز لتخفيف نقل الصوت ومنع
+              الارتجاج(كنفس )
+            </li>
+            <li class="fs-16 py-2">
+              توصيل فلكسبل دائري ما بين مجاري الهواء الرئيسية والبلانيوم بوكس
+              قطره حسب التصميم.
+            </li>
+            <li class="fs-16 py-2">
+              وضع سيلكون بين المفاصل(دكت سل) لمنع تسرب الهواء.
+            </li>
+            <li class="fs-16 py-2">
+              يتم توريد وتركيب مخارج الهواء مصنوعة من الألمنيوم (دفيوزرات
+              وجريلات) من شركة الربيع أو ما يماثله، وبحسب المواصفات والمقاسات
+              المحددة بالمخطط.
+            </li>
+            <li class="fs-16 py-2">توصيل صرف الماء لكل جهاز أسفل الجدار.</li>
+            <li class="fs-16 py-2">توريد وتركيب أجهزة الثيرموستات.</li>
+            <li class="fs-16 py-2">
+              القيام بأعمال ضبط الأجهزة وقياس مستوى الفريون والتشغيل والتسليم.
+            </li>
+            <li class="fs-16 py-2">
+              العازل داخل المبنى سماكة 1 بوصة كثافة 24 كلغ
+            </li>
+            <li class="fs-16 py-2">
+              أحزمة تربيط كل 40 سم ولاصق شطرطون بين كل الفواصل.
+            </li>
+            <li class="fs-16 py-2">
+              العازل الداخلي 1 بوصة كثافة 48 كلغ لمنع الصوت حسب الحاجة.
+            </li>
+            <li class="fs-16 py-2">
+              العازل المعرض لظروف الطقس الخارجي يكون 2 بوصة كثافة 24 كلغ ملفوف
+              بالقماش مدهون بالغراء.
+            </li>
+            <li class="fs-16 py-2">
+              الصاج المجلفن سماكته حسب الأصول الفنية والمقاييس العالمية:
+              <p>من 0 � 12 انش = G26</p>
+              <p>من 13-26 انش = G24</p>
+              <p>من 31 � 54 انش = G22</p>
+              <p>من 55- 84 انش = G20</p>
+              <p>من 84 انش وأعلى = G18</p>
+            </li>
+            <li class="fs-16 py-2">
+              يتم وضع جدول زمني للتركيب بحسب المراحل الزمنية للتنفيذ والتركيب من
+              قبل الاستشاري أو المالك وبالتنسيق مع الطرف الثاني لكل مرحلة بما لا
+              يترتب عليه تعطيل العمل أو تأخيره، ويتم ذلك بموجب محاضر استلام
+              وتسليم خطية.
+            </li>
+            <li class="fs-16 py-2">
+              على الطرف الثاني توفير جميع الأعمال الكهربائية من المصدر الرئيسي
+              وحتى موقع المكيفات مع توفير القواطع الكهربائية المناسبة جوار
+              الوحدات وكذلك الكابلات الكهربائية وأسلاك التغذية والكنترول حسب
+              تعليمات الطرف الطول
+            </li>
+            <li class="fs-16 py-2">
+              على الطرف الثاني تأمين تيار كهربائي للعمل في التأسيس والتركيبات
+              بالموقع طوال فترة العمل.
+            </li>
+            <li class="fs-16 py-2">
+              يقر الطرف الثاني بأن سداد الدفعات سيكون بشكل منتظم ودون أي تأخير
+              لضمان انجاز العمل في وقته ويتحمل أي تأخير في العمل نتيجة لذلك.
+            </li>
+            <li class="fs-16 py-2">
+              يقر الطرف الثاني بأن تأخير الدفعة النهائية ينتج عنه الغاء الضمان
+              المقدم بموجب هذا العقد.
+            </li>
+            <li class="fs-16 py-2">
+              مسئولية الطرف الثاني للمكيفات الباكيج سنترال تكسير فتحات دخول
+              مجاري الهواء وتمديد خطوط الكنترول .
+            </li>
+            <li class="fs-16 py-2">ضمان التنفيذ 10 سنوات</li>
+          </ul>
+
+          <h2 style="color: #f75a27" class="fs-32 font-weight-semibold pb-3">
+            عقد عمل تصنيع مجاري هواء فوم
+          </h2>
+          <p class="fs-16 py-2">
+            جميع الخامات والمواد المستخدمة والمنصوص عليها بالمواصفات الفنية
+            مطابقة لجميع التوصيات والتعليمات والمواصفات القياسية لجمعية
+            المهندسين الأمريكية ( ASHRAE ) ومطابقة تماما لأصول الصناعة أما مجاري
+            الهواء الدكت الفوم فيتم تصنيعه حسب نظام SMAKNA G90 ) نوع سابك أو ما
+            يعادله حسب المتوفر بالسوق المحلي.
+          </p>
+          <ul>
+            <li class="fs-16 py-2">
+              توريد وتركيب مسار ومجاري الهواء (الدكت) يكون حسب المخطط والمواصفات
+              المذكورة في العقد.
+            </li>
+            <li class="fs-16 py-2">
+              تقديم المخططات التنفيذية لتحديد مواقع الأجهزة ومسارات مجاري الهواء
+              (الدكت)
+            </li>
+            <li class="fs-16 py-2">
+              تصنيع وتوريد وتركيب دكت فوم مسبق العزل 80 مايكروم ملبس بألمنيوم من
+              الجهتان سماكة الدكت 20 ملي يصنع ويركب حسب المخطط الذي يتم تعميده
+              من الطرف الثاني شامل كل ما يلزم من إكسسوارات وشامل فتحات التكيف من
+              مصنع الربيع الوطني أو ما يعادله، الحمالات زوايا مجلفنة أو زوايا
+              مدهونة، والأسياخ قلووظ 8 ملم إلى 10 ملم.
+            </li>
+            <li class="fs-16 py-2">
+              توريد وتركيب وصلة مرنة مع بداية كل جهاز لتخفيف نقل الصوت ومنع
+              الارتجاج(كنفس )
+            </li>
+            <li class="fs-16 py-2">
+              توصيل فلكسبل دائري ما بين مجاري الهواء الرئيسية والبلانيوم بوكس
+              قطره حسب التصميم.
+            </li>
+            <li class="fs-16 py-2">
+              وضع سيلكون بين المفاصل(دكت سل) لمنع تسرب الهواء.
+            </li>
+            <li class="fs-16 py-2">
+              يتم توريد وتركيب مخارج الهواء مصنوعة من الألمنيوم (دفيوزرات
+              وجريلات) من شركة الربيع أو ما يماثله، وبحسب المواصفات والمقاسات
+              المحددة بالمخطط.
+            </li>
+            <li class="fs-16 py-2">توصيل صرف الماء لكل جهاز أسفل الجدار.</li>
+            <li class="fs-16 py-2">
+              يتم وضع جدول زمني للتركيب بحسب المراحل الزمنية للتنفيذ والتركيب من
+              قبل الاستشاري أو المالك وبالتنسيق مع الطرف الثاني لكل مرحلة بما لا
+              يترتب عليه تعطيل العمل أو تأخيره، ويتم ذلك بموجب محاضر استلام
+              وتسليم خطية.
+            </li>
+            <li class="fs-16 py-2">
+              على الطرف الثاني توفير جميع الأعمال الكهربائية من المصدر الرئيسي
+              وحتى موقع المكيفات مع توفير القواطع الكهربائية المناسبة جوار
+              الوحدات وكذلك الكابلات الكهربائية وأسلاك التغذية والكنترول حسب
+              تعليمات الطرف الطول
+            </li>
+            <li class="fs-16 py-2">
+              على الطرف الثاني تأمين تيار كهربائي للعمل في التأسيس والتركيبات
+              بالموقع طوال فترة العمل.
+            </li>
+            <li class="fs-16 py-2">
+              يقر الطرف الثاني بأن سداد الدفعات سيكون بشكل منتظم ودون أي تأخير
+              لضمان انجاز العمل في وقته ويتحمل أي تأخير في العمل نتيجة لذلك.
+            </li>
+            <li class="fs-16 py-2">
+              يقر الطرف الثاني بأن تأخير الدفعة النهائية ينتج عنه الغاء الضمان
+              المقدم بموجب هذا العقد.
+            </li>
+
+            <li class="fs-16 py-2">
+              مسئولية الطرف الثاني للمكيفات الباكيج سنترال تكسير فتحات دخول
+              مجاري الهواء وتمديد خطوط الكنترول .
+            </li>
+            <li class="fs-16 py-2">ضمان التنفيذ 10 سنوات</li>
+          </ul>
+
+          <h2 style="color: #f75a27" class="fs-32 font-weight-semibold pb-3">
+            عقد عمل توريد وتركيب غرف تربيد:
+          </h2>
+
+          <ul>
+            <li class="fs-16 py-2">
+              تركيب الألواح حسب المواصفات المذكورة في بيان الاعمال المتعاقد
+              عليها ، ونوعية مادة البوليوريثان شديدة العزل، بكثافة 38 / 40 كجم
+              للمتر المكعب ، ومعامل حراري 0.14 كيلو للمتر المربع ، والتغليف صاج
+              مجلفن مدهون بالأبيض سماكة الصاج 0.5 ملم وسماكة اللوح 100 ملم.
+            </li>
+            <li class="fs-16 py-2">
+              يتم تزويد الغرف بترموستات لضبط درجات الحرارة حسب الطلب وبما يتوافق
+              مع قدرات المكائن. والإنارة الداخلية تكون بحسب الحاجة.
+            </li>
+            <li class="fs-16 py-2">
+              توريد وتركيب لوحات الكهرباء اللازمة للتشغيل مع المواسير النحاسية
+              حسب الأمتار الموضحة ، في حال الزيادة يحسب سعر المتر كالتالي:
+            </li>
+            <li class="fs-16 py-2">من 1 إلى 5 حصان بقيمة 200 ريال / م.</li>
+            <li class="fs-16 py-2">5 إلى 12 حصان بقيمة 290 ريال / م.</li>
+            <li class="fs-16 py-2">
+              يتولى الطرف الأول ضبط الغرفة بالفريون وإجراء الاختبارات اللازمة
+              قبل التشغيل.
+            </li>
+            <li class="fs-16 py-2">
+              يتم التوريد والتنفيذ للغرفة خلال ثلاثة أسابيع من تاريخ توقيع العقد
+              واستلام الدفعة.
+            </li>
+            <li class="fs-16 py-2">
+              يكون الضمان لمدة سنتان على وحدات التجميد الداخلية والخارجية ضد
+              عيوب التصنيع حسب سياسة الشركة الموردة.
+            </li>
+            <li class="fs-16 py-2">
+              يضمن الطرف الأول بأن ثلاجة التبريد تعطي نتيجة (+1) فوق الصفر
+              والتجميد يعطي نتيجة (- 18) تحت الصفر.
+            </li>
+            <li class="fs-16 py-2">
+              يضمن الطرف الأول كافة أعمال التركيب لمدة سنة من تاريخ التسليم.
+            </li>
+            <li class="fs-16 py-2">
+              على الطرف الثاني توفير جميع الأعمال الكهربائية من المصدر الرئيسي
+              وحتى موقع المكيفات مع توفير القواطع الكهربائية المناسبة جوار
+              الوحدات وكذلك الكابلات الكهربائية وأسلاك التغذية والكنترول حسب
+              تعليمات الطرف الطول
+            </li>
+            <li class="fs-16 py-2">
+              يتولى الطرف الثاني مسؤولية توصيل مواسير صرف المياه الى أماكن الصرف
+              المحددة (البالوعات)
+            </li>
+
+            <li class="fs-16 py-2">
+              بعد الانتهاء من تسليم المواسير النحاسية والوحدات فإن الطرف الأول
+              غير مسؤول عن ما يصيبها من أضرار بعد ذلك
+            </li>
+            <li class="fs-16 py-2">
+              يتم عمل محضر مع مهندس الديكور والجبس ومهندس الكهرباء ومهندس
+              الميكانيكا ومدير المشروع. وأخذ موافقتهم الخطية على المخطط بالتنسيق
+              مع الطرف الأول تجنباً لاي تعارض في العمل لا سمح الله.
+            </li>
+          </ul>
+
+          <h2 style="color: #f75a27" class="fs-32 font-weight-semibold pb-3">
+            عقد عمل زراعة مواسيرPVC:
+          </h2>
+          <ul>
+            <li class="fs-16 py-2">
+              يتولى الطرف الأول توريد وتركيب مواسير بلاستيك للزراعة لموقع الطرف
+              الثاني حسب الشروط والمواصفات المذكورة وحسب المخطط المعتمد منه
+            </li>
+            <li class="fs-16 py-2">
+              تعتمد أطوال المواسير النحاسية من قبل الطرف الأول أو حضور من ينوب
+              عن الطرف الثاني أثناء أخذ مقاسات المواسير.
+            </li>
+            <li class="fs-16 py-2">
+              يتولى الطرف الأول تحديد مواقع الوحدات الخارجية والداخلية ومن ثم
+              أخذ موافقة الطرف الثاني أو من ينوب عنه أو أن يكون الطرف الأول هو
+              المفوض بذلك دون الرجوع للطرف الثاني.
+            </li>
+            <li class="fs-16 py-2">
+              في حال كان اختيار أماكن تركيب المكيفات باتجاه كميرات ساقطة وحاجة
+              العمل في الموقع تقتضي التكسير في هذه الكمرات ، فإن الاختيار المحدد
+              للزراعة تعتبر موافقة ضمنية وصريحة على التكسير في هذه الكمرات
+              لتوسيعها .
+            </li>
+            <li class="fs-16 py-2">
+              تأسيس نحاس الدكت يكون في الأماكن المعتمدة بموجب المخطط المعتد قي
+              عقودV.C وفي حال تعديل مواقع المكيفات عن المخطط المعتمد من الطرف
+              الثاني، فسوف يتحمل الطرف الثاني قيمة أي أخرام جديدة في الصبة على
+              كامل ماسورة النحاس.
+            </li>
+            <li class="fs-16 py-2">
+              في حال لم يتم إكمال دفعة العقد لمدة أكثر من شهر فيتم المحاسبة حسب
+              الدفعة التي تم تغطيتها أو استرجاعها.
+            </li>
+            <li class="fs-16 py-2">
+              في حال لم يتم تغذية الحساب بدفعة كافيه للعمل سوف يتم إيقاف العمل
+              مباشرة، حتى يتم السداد.
+            </li>
+            <li class="fs-16 py-2">
+              يتم تأسيس النحاس نزولاً من السقف 75 سم وفي حال الرغبة بتغير منسوب
+              التأسيس من قبل الطرف الثاني فعليه إبلاغ الطرف الأول بذلك ، أما في
+              حال انه تم الانتهاء من التأسيس ولم يتم إبلاغ الطرف الأول بالمنسوب
+              المرغوب فسوف يتم إدراج قيمة التعديل وإشعار الطرف الثاني بها.
+            </li>
+            <li class="fs-16 py-2">
+              ينغى على الطرف الثاني ابلاغ فني الديكور بأخذ 40 سم لمنسوب الجبس
+              وعدم النزول أكثر من ذلك..
+            </li>
+            <li class="fs-16 py-2">
+              يتم تأسيس النحاس نزولاً من السقف 75 سم وفي حال الرغبة بتغير منسوب
+              التأسيس من قبل الطرف الثاني فعليه إبلاغ الطرف الأول بذلك ، أما في
+              حال انه تم الانتهاء من التأسيس ولم يتم إبلاغ الطرف الأول بالمنسوب
+              المرغوب فسوف يتم إدراج قيمة التعديل وإشعار الطرف الثاني بها.
+            </li>
+          </ul>
+          <p class="fs-16 py-2">
+            توفير الكهرباء في الموقع مسؤولية الطرف الثاني.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    $(".head").click(function () {
+      $(this).toggleClass("active");
+      $(this).parent().find(".arrow").toggleClass("arrow-animate");
+      $(this).parent().find(".content").slideToggle(280);
+    });
+  });
+</script>
