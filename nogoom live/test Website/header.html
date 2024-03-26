@@ -807,7 +807,8 @@ a.dropdown-item {
     color: #fff;
  }
  #home-slider-section .home-slide {
-    max-height: 120px !important;
+    max-height: 134px !important;
+    
  }
  .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
 
@@ -827,10 +828,41 @@ a.dropdown-item {
 .swiper-container-rtl .swiper-button-prev {
  right: 88% !important;
 }
+.custom-model-main {
+    width:360px !important;
+}
 }
 .old-address{
     display: none;
 } 
+
+.submenu-submenu li{
+    list-style: none;
+    padding: 5px 0 ;
+    font-size: 17px;
+    color: #004067;
+   
+}
+.submenu-submenu {
+    height: 0px;
+    transition: visibility 0s, opacity 0.5s linear, height  0.5s ease;;
+    visibility: hidden;
+    opacity: 0;
+}
+.submenu-show {
+    height: 250px;
+    transition: visibility 0s, opacity 0.5s linear, height  0.5s ease; 
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+.menu-element {
+    
+    justify-content: space-between;
+
+}
+.plus {
+    font-size: 29px;
+    line-height: 0.8;}
         </style>
 
 </head>
@@ -929,12 +961,26 @@ a.dropdown-item {
 <div class="py-1 my-0 mx-5" style="border-bottom:1px solid #1467AB  ;"></div>
 
 <div class="px-2 py-3">
-    <div class="d-flex py-1 font-weight-medium">
-        <a href="/contents/products_list?cat_id=109" class="text-primary fs-18">
-        <img class="pr-2 pl-1 d-lg-flex"  src="https://ostarssa.daftra.com/files/7aae9582/logos/63c660c2129fa_blobid1673945280479.png" alt="" title="ac.png" width="48" height="auto">
-        <span class="">مكييفات</span>
-    </a>
+    <div class="d-block ">
+    <div class="d-flex py-0 font-weight-medium menu-element">
+        <a href="/contents/products_list?cat_id=109" class="text-primary fs-18" id="ac">
+            <img class="pr-2 pl-1 d-lg-flex"  src="https://ostarssa.daftra.com/files/7aae9582/logos/63c660c2129fa_blobid1673945280479.png" alt="" title="ac.png" width="48" height="auto">
+            <span class="">مكييفات</span>
+        </a> <span class="plus">+</span>
     </div>
+          <ul class="submenu-submenu">
+            <li><a class="text-primary" href="/contents/products_list?cat_id=118">مكيفات اسبلت</a></li>
+            <li><a class="text-primary" href="/contents/products_list?cat_id=119">مكيفات شباك </a></li>
+            <li><a class="text-primary" href="/contents/products_list?cat_id=120">مكيفات دكت اسبلت</a></li>
+            <li><a class="text-primary" href="/contents/products_list?cat_id=121">مكيفات كاست</a></li>
+            <li><a class="text-primary" href="/contents/products_list?cat_id=121">مكيفات  كاست</a></li>
+            <li><a class="text-primary" href="/contents/products_list?cat_id=122">مكيفات  دولابي</a></li>
+            <li><a class="text-primary" href="/contents/products_list?cat_id=123">مكيفات  باكيج</a></li>
+
+       
+    </ul>
+    </div>
+
     <div class="d-flex py-1 font-weight-medium">
         <a href="/contents/products_list?cat_id=110" class="text-primary fs-18">
         <img class="pr-2 pl-1 d-lg-flex"  src="https://ostarssa.daftra.com/files/7aae9582/logos/63c663677226c_blobid1673945957794.png" title="tubes.png"  width="48" height="auto">
@@ -1954,6 +2000,10 @@ console.log(divMada)
  slidesPerView: 2,
 });
     }, 5000);
+$(".plus").click(()=>{
+    console.log("cliced");
+    $(".submenu-submenu").toggleClass("submenu-show")
+})
 
 </script>
     

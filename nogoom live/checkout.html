@@ -97,7 +97,8 @@
     //   let state = data.state;
     //   let code = data.postal_code;
     //   let phone = data.phone1;
-    setTimeout(() => {
+    let checkData = setInterval(() => {
+      console.log(document.querySelector("#payment_iframe"));
       document
         .querySelector("#payment_iframe")
         .contentDocument.querySelector("#InvoicePaymentFirstName").value = "-";
@@ -131,9 +132,55 @@
           "div.wrap > div > div > div.col-flex-lg-8.pr-lg-0 > div:nth-child(1)"
         ).style.display = "none";
       $(".overlay").hide();
-    }, 4000);
+
+      clearInterval(checkData);
+    }, 1000);
+    checkData();
+    // setTimeout(() => {
+    //   console.log(document.querySelector("#payment_iframe"));
+    //   document
+    //     .querySelector("#payment_iframe")
+    //     .contentDocument.querySelector("#InvoicePaymentFirstName").value = "-";
+    //   document
+    //     .querySelector("#payment_iframe")
+    //     .contentDocument.querySelector("#InvoicePaymentLastName").value = "-";
+    //   document
+    //     .querySelector("#payment_iframe")
+    //     .contentDocument.querySelector("#InvoicePaymentState").value = "-";
+    //   document
+    //     .querySelector("#payment_iframe")
+    //     .contentDocument.querySelector("#InvoicePaymentState").value = "-";
+    //   document
+    //     .querySelector("#payment_iframe")
+    //     .contentDocument.querySelector("#InvoicePaymentState").value = "-";
+    //   document
+    //     .querySelector("#payment_iframe")
+    //     .contentDocument.querySelector("#InvoicePaymentState").value = "-";
+    //   document
+    //     .querySelector("#payment_iframe")
+    //     .contentDocument.querySelector("#InvoicePaymentState").value = "-";
+    //   document
+    //     .querySelector("#payment_iframe")
+    //     .contentDocument.querySelector("#InvoicePaymentState").value = "-";
+    //   document
+    //     .querySelector("#payment_iframe")
+    //     .contentDocument.querySelector("#InvoicePaymentState").value = "-";
+    //   document
+    //     .querySelector("#payment_iframe")
+    //     .contentDocument.querySelector(
+    //       "div.wrap > div > div > div.col-flex-lg-8.pr-lg-0 > div:nth-child(1)"
+    //     ).style.display = "none";
+    //   $(".overlay").hide();
+    // }, 5000);
 
     // document.querySelector("#payment_iframe").contentDocument.querySelector("div.wrap > div > div > div.col-flex-lg-8.pr-lg-0 > div:nth-child(1)");
   });
   // });
 </script>
+<!-- <script>
+  $(document).ready(() => {
+    setTimeout(() => {
+      $(".overlay").hide();
+    }, 5000);
+  });
+</script> -->
