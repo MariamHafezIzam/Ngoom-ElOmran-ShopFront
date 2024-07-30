@@ -4,7 +4,6 @@
 
     position: relative;
     overflow: hidden;
-    margin-top: 20px;
   }
 
   .news {
@@ -39,7 +38,7 @@
   }
 </style>
 
-<div class="news-holder bg-yellow d-none d-lg-flex">
+<div class="news-holder d-lg-flex" style="background-color: #fbee14">
   <div class="news"></div>
 </div>
 <script>
@@ -52,6 +51,7 @@
   });
 
   function newsBar() {
+    totalWidth += 1000;
     var news = $(".news-holder .news"),
       actualWidth =
         totalWidth +
@@ -88,8 +88,16 @@
       type: "GET",
     }).done((data) => {
       console.log(data);
+      let color = data.color;
+      console.log(color);
+      $(".news-holder").css("background-color", color);
+
       var textD =
         data["le_shopfront-bar-text_le_shopfront-bar-text_shopfront_bar"];
+      var textDLength =
+        data["le_shopfront-bar-text_le_shopfront-bar-text_shopfront_bar"]
+          .length;
+      console.log(textDLength);
       $.each(textD, async (i, val) => {
         let barText = val.textnew;
         let barSpan = ` <span class="new bar-text mx-6 fs-14 fs-lg-20 "> ${barText}  </span>`;
