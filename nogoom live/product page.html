@@ -55,12 +55,17 @@
               {{ product.name }}
             </a>
           </div>
-          <div class="row bg-white p-xl-8 p-2 radius mb-10"  >
+          <div class="row bg-white p-xl-8 p-2 radius mb-10"    data-product-id="{{id}}"
+          data-image="{{file_full_path}}"
+          data-price="{{final_price_number}}"
+          data-name="{{name}}"
+          data-categories="uu"
+          data-brands="{{brand}}">
             <div class="col-lg-6">
               <div class="swiper-slider">
                 <div
                   class="swiper-container product-swiper swiper-container-initialized swiper-container-horizontal"
-                  style="cursor: grab"
+                  style="cursor: grab"    
                 >
                   <div
                     class="swiper-wrapper"
@@ -178,6 +183,7 @@
                   data-image="{{ product_images.0 }}"
                   data-price="{{ product.final_price_number }}"
                   data-name="{{ product.name }}"
+                  data-categories="uu"
                 >
                   <div
                     class="input-group col cart-item-count px-0 pr-lg-6 mr-2 mr-lg-0"
@@ -254,12 +260,13 @@
 <script>
 $(document).ready(function(){
 let id = $(".product").data("product-id");
+let arr4 =[];
+
 $.ajax({
         url: "/v2/api/entity/product/" + id,
         headers: { 'apikey': 'eca5f677185bdbdb49f89fcc4ac9bf108cf76e90'},
         type: "GET",
       }).done((data) => {
-   //   console.log(data)  
        let model = data.custom_data.field_38
        let color = data.custom_data.field_39
        let cool = data.custom_data.field_40
@@ -275,7 +282,32 @@ $.ajax({
        $("#cool").text(cool);
        $("#country").text(country);
        $(".stock").text(stock);
-        
+       let cat = data.product_categories
+
+       $.each(cat, async (i, val) => {
+        let catId = val.category_id
+        $.ajax({
+        url: "/v2/api/entity/category/" + catId,
+        headers: { 'apikey': 'eca5f677185bdbdb49f89fcc4ac9bf108cf76e90'},
+        type: "GET",
+      }).done((data) => {
+        let name = data.name
+        console.log(name);
+        arr4.push(name)
+
+
+      }).done(()=>{
+        console.log(arr4);
+
+      })
+
+       })
+       setTimeout(() => {
+        console.log(arr4);
+        $('.product').attr('data-categories', arr4);
+
+
+       }, 1000);
       });
 
 

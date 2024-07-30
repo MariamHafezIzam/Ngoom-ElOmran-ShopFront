@@ -38,7 +38,9 @@
     -webkit-align-items: center;
     align-items: center;
   }
-
+  .news-holder{
+    padding-top: 0 !important;
+  }
   .row-swiper .swiper-slide img {
     display: block;
     width: 100%;
@@ -54,6 +56,9 @@
   .row-swiper .swiper-button-next {
     background-image: none;
     display: flex !important;
+  }
+  .custom_content .news-holder {
+    margin: 0 !important;
   }
   .row-swiper .swiper-button-prev,
   .row-swiper .swiper-rtl .swiper-button-next {
@@ -91,6 +96,9 @@
   }
   .swiper-button-next {
     margin-left: 15px !important;
+  }
+  .item  img {
+   height: 300px !important;
   }
  
 </style>
@@ -660,6 +668,10 @@ background-color: #dfeffb;
     min-width: 312px;
 }
 @media only screen and (max-width: 991px){
+    .item img {
+   height: 180px !important;
+  }
+
     .swiper-pagination-bullets {
         text-align: center !important;
     }
@@ -807,7 +819,7 @@ a.dropdown-item {
     color: #fff;
  }
  #home-slider-section .home-slide {
-    max-height: 134px !important;
+    max-height: 188px !important;
     
  }
  .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
@@ -867,6 +879,8 @@ a.dropdown-item {
 
 </head>
 <body class="rtl">
+    {{bar:Content.empty()}}
+
 <div id="site">
     <input class="d-none" id="totalCart">
 <div id="top-header" class="bg-primary white b-b d-none">
@@ -1102,7 +1116,7 @@ a.dropdown-item {
                               src="https://ostarssa.daftara.com/files/7aae9582/logos/6411976eb5ccb_blobid1678874476470.png"
                               alt=""
                               title="3-14-2023 3-13-25 PM.png"
-                              width="80%"
+                              width="77%"
                               height="auto"
                             />
                           </a>
@@ -1591,7 +1605,6 @@ a.dropdown-item {
                         e.stopPropagation();
                         loader.showloder();
 
-                        console.log("Test")
                         qtyEl = $(this).parents(".product").find("input.qty");
                         var qty = 1;
                         if(qtyEl.length) {
@@ -1612,9 +1625,11 @@ a.dropdown-item {
                             cartItems[productId] = {name: name,id: productId,qty: qty, image: image, price: price};
 
                         }
+                        console.log("Test",$(this),$(this).parents(".product") )
+
                         var productAll=   $(this).parents(".product").data("categories");
+                        console.log(productAll);
                         var categoriesName = productAll.split(",");
-                        console.log(categoriesName)
                         if (productAll.includes("مكييفات") || productAll.includes("مراوح شفط")) {
                              $(".air-cond").removeClass("d-none")
                             
